@@ -1,0 +1,48 @@
+>lcl|NZ_JAAMCR010000014.1_cds_WP_174073509.1_5986 [locus_tag=G6L80_RS21520] [protein=NIPSNAP family protein] [protein_id=WP_174073509.1] [location=245437..245796] [gbkey=CDS] [strain=Strain2]
+ATGTCGACTGCGCCAGTAACATGCGAGGTTCGCTATCGCCTCGATCCGGACAGGATCGAG
+GACTTCAAAGCCTATGCGAAAATCTGGATCAAACTTATCGAGCGTCACGGTGGGACGCAT
+CACGGCTACTTCCTTCCCCGTGAGAGACCAACCGGCATTGGCATAAGCTTTCCGGGCGTG
+GGAGAG-GATGGGGCTGACGATATTGCTATAGCCCTGTTCACCTTTCCAGATGATGAGGC
+GTATCTCACCTACCGCGAAAAGGTCGCCAACGATCCTGACGGTATCGAAGCCAACGCACG
+GTTTGGAGAGCAGCCGCCGTTCCTTGGCTACGAGCGCGTTTTTCTGCAGCTGCTTCCGTG
+A
+>lcl|NZ_JAAMCU010000020.1_cds_WP_153510398.1_1111 [locus_tag=G6L12_RS26085] [protein=hypothetical protein] [protein_id=WP_153510398.1] [location=complement(137249..137401)] [gbkey=CDS] [strain=Strain3]
+-------------------------------------------------------TTGAG
+-----------------------------------TATCGAACAT-------GAACGCAA
+AACTAACATCTCAGTTTTGGAAATTGA------------AGTGTCAGTTTT----GCGCG
+GACGAGCGATATTGCGGACTATTTTGCTG-AGCCAGGG--ATCGGTTCAG----------
+----------------GAAAAAATCGGCAATGAGATCGACCG------------------
+--------------CGCCATCCTCTGA---------------------------------
+-
+>lcl|NZ_JAAMCS010000016.1_cds_WP_153510398.1_6122 [locus_tag=G6L91_RS25275] [protein=hypothetical protein] [protein_id=WP_153510398.1] [location=complement(137257..137409)] [gbkey=CDS] [strain=Strain6]
+-------------------------------------------------------TTGAG
+-----------------------------------TATCGAACAT-------GAACGCAA
+AACTAACATCTCAGTTTTGGAAATTGA------------AGTGTCAGTTTT----GCGCG
+GACGAGCGATATTGCGGACTATTTTGCTG-AGCCAGGG--ATCGGTTCAG----------
+----------------GAAAAAATCGGCAATGAGATCGACCG------------------
+--------------CGCCATCCTCTGA---------------------------------
+-
+>lcl|NZ_JAAMCV010000014.1_cds_WP_153510398.1_133 [locus_tag=G6L02_RS26475] [protein=hypothetical protein] [protein_id=WP_153510398.1] [location=complement(137291..137443)] [gbkey=CDS] [strain=Strain4]
+-------------------------------------------------------TTGAG
+-----------------------------------TATCGAACAT-------GAACGCAA
+AACTAACATCTCAGTTTTGGAAATTGA------------AGTGTCAGTTTT----GCGCG
+GACGAGCGATATTGCGGACTATTTTGCTG-AGCCAGGG--ATCGGTTCAG----------
+----------------GAAAAAATCGGCAATGAGATCGACCG------------------
+--------------CGCCATCCTCTGA---------------------------------
+-
+>lcl|NZ_JAAMCT010000018.1_cds_WP_153510398.1_945 [locus_tag=G6L17_RS26105] [protein=hypothetical protein] [protein_id=WP_153510398.1] [location=complement(137249..137401)] [gbkey=CDS] [strain=Strain5]
+-------------------------------------------------------TTGAG
+-----------------------------------TATCGAACAT-------GAACGCAA
+AACTAACATCTCAGTTTTGGAAATTGA------------AGTGTCAGTTTT----GCGCG
+GACGAGCGATATTGCGGACTATTTTGCTG-AGCCAGGG--ATCGGTTCAG----------
+----------------GAAAAAATCGGCAATGAGATCGACCG------------------
+--------------CGCCATCCTCTGA---------------------------------
+-
+>lcl|NZ_JAAMCQ010000016.1_cds_WP_174014460.1_2401 [locus_tag=G6L77_RS26520] [protein=hypothetical protein] [protein_id=WP_174014460.1] [location=complement(137329..137481)] [gbkey=CDS] [strain=Strain1]
+-------------------------------------------------------TTGAG
+-----------------------------------TATCGAACAT-------GAACGCAA
+AACTAACATCTCAGTTTTTGAAATTGA------------AGTGTCAGTTTT----GCGCG
+GACGAGCGATATTGCGGACTATTTTGCTG-AGCCAGGG--ATCGGTTCAG----------
+----------------GAAAAAATCGGCAATGAGATCGACCG------------------
+--------------CGCCATCCTCTGA---------------------------------
+-

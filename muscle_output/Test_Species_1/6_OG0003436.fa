@@ -1,0 +1,60 @@
+>lcl|NZ_JAAMCR010000008.1_cds_WP_174072851.1_4840 [locus_tag=G6L80_RS18900] [protein=MmcB family DNA repair protein] [protein_id=WP_174072851.1] [location=613521..614009] [gbkey=CDS] [strain=Strain2]
+ATGACGATTTTGAACGTTTACAATAACAATCCGTTAATAGATGGCCGGCAGTCGGAGCGT
+GCCATGCTTGTACGCAAGGGCATGCAACTATTACTGCACGAAATGCGCCATGCTGTCTTG
+CCTGAGTTGCCGCTGGCCAGCGGTCGCAGGGCCGACCTCATCACCCTTTCGGAAAAGGGC
+GAGATCTGGATCATCGAGATAAAGACATCGATCGAGGATTTCCGCGTCGACCGCAAATGG
+CCCGACTATCGGCAGCATTGCGACAGGCTGTTCTTCGCCACGCACAAGGACGTGCCGCTG
+GATATCTTTCCGGAGGAATGCGGGCTGTTCCTGTCGGACGGCTATGGCGCCCATATGATC
+CGCGAGGCGCCGGAGCATCGCCTGGCGCCGGCAACCCGCAAGTCGGTGACGTTGAATTTC
+TCCCGCGCGGCCGCCCAGCGCCTGTTGTTGGCGGAATGGGCGACGGGCAAGTCCTTCGCA
+CCGGAATAG
+>lcl|NZ_JAAMCU010000011.1_cds_WP_153510757.1_5984 [locus_tag=G6L12_RS19635] [protein=hypothetical protein] [protein_id=WP_153510757.1] [location=394712..394861] [gbkey=CDS] [strain=Strain3]
+ATGGTA------------------------------------------------------
+------------------------------------------------------------
+------------------------------------TTCACCATCTTT------------
+-GAATATGGTTTAT------------------------TTTCCAT--------TAAA---
+--------------------------------CTTTGCTTTGCAAGCGGCAGCGCTCCTA
+GTT--------------------------------------CAATGGCGC-----TGCTG
+CGCAAATTAAAGGGACATGGCT----------------------------------TTTT
+TGCAACGTTTCTTGCCGGTTCCCG--------------------AGGCAATTC-------
+-----ATGA
+>lcl|NZ_JAAMCQ010000010.1_cds_WP_153510757.1_5281 [locus_tag=G6L77_RS19460] [protein=hypothetical protein] [protein_id=WP_153510757.1] [location=559727..559876] [gbkey=CDS] [strain=Strain1]
+ATGGTA------------------------------------------------------
+------------------------------------------------------------
+------------------------------------TTCACCATCTTT------------
+-GAATATGGTTTAT------------------------TTTCCAT--------TAAA---
+--------------------------------CTTTGCTTTGCAAGCGGCAGCGCTCCTA
+GTT--------------------------------------CAATGGCGC-----TGCTG
+CGCAAATTAAAGGGACATGGCT----------------------------------TTTT
+TGCAACGTTTCTTGCCGGTTCCCG--------------------AGGCAATTC-------
+-----ATGA
+>lcl|NZ_JAAMCT010000009.1_cds_WP_153510757.1_4115 [locus_tag=G6L17_RS19645] [protein=hypothetical protein] [protein_id=WP_153510757.1] [location=724673..724822] [gbkey=CDS] [strain=Strain5]
+ATGGTA------------------------------------------------------
+------------------------------------------------------------
+------------------------------------TTCACCATCTTT------------
+-GAATATGGTTTAT------------------------TTTCCAT--------TAAA---
+--------------------------------CTTTGCTTTGCAAGCGGCAGCGCTCCTA
+GTT--------------------------------------CAATGGCGC-----TGCTG
+CGCAAATTAAAGGGACATGGCT----------------------------------TTTT
+TGCAACGTTTCTTGCCGGTTCCCG--------------------AGGCAATTC-------
+-----ATGA
+>lcl|NZ_JAAMCS010000010.1_cds_WP_174010406.1_6501 [locus_tag=G6L91_RS18840] [protein=hypothetical protein] [protein_id=WP_174010406.1] [location=241783..241932] [gbkey=CDS] [strain=Strain6]
+ATGGTA------------------------------------------------------
+------------------------------------------------------------
+------------------------------------TTCACCATCTTT------------
+-GAATATGGTTTAT------------------------TTTCCAT--------TAAA---
+--------------------------------CTTTGCTTTGCAAGCGGCAGCGCTCCTA
+GTT--------------------------------------TAATGGCGC-----CGCTG
+CGCAAATTAAAGGGACATGGCT----------------------------------TTTT
+TGCAACGTTTCTTGCCGGTTCCCG--------------------AGGCAATTC-------
+-----ATGA
+>lcl|NZ_JAAMCV010000008.1_cds_WP_155293944.1_3338 [locus_tag=G6L02_RS19105] [protein=hypothetical protein] [protein_id=WP_155293944.1] [location=742644..742793] [gbkey=CDS] [strain=Strain4]
+ATGGTA------------------------------------------------------
+------------------------------------------------------------
+------------------------------------TTCACCATCTTT------------
+-GAATATGGTTTAT------------------------TTTCCAT--------TAAA---
+--------------------------------CTTTGCTTTGCAAGCGGCAGCGCTCCTA
+GTT--------------------------------------CAATGGCGC-----CGCTG
+CGCAAATTAAAGGGACATGGCT----------------------------------TTTT
+TGCAACGTTTCTTGCCGGTTCCCG--------------------AGGCAATTC-------
+-----ATGA

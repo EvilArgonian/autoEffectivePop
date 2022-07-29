@@ -1,0 +1,50 @@
+>lcl|NZ_JAAMCV010000007.1_cds_WP_174005878.1_4594 [locus_tag=G6L02_RS15560] [protein=helix-turn-helix domain-containing protein] [protein_id=WP_174005878.1] [location=complement(538822..539304)] [gbkey=CDS] [strain=Strain4]
+ATGCATGATCGAGTGTTGAAAACGTTGACCGCAAACTCGCAGCGGCAATCCATTCGGGGT
+AGGGGGGCTGCTCCA---GACACGCAATCGATCCA---CCCGATCGACCGCCATGTC--G
+GCCAGCAGCTTCGGATCATCCGGATCCATTCCAATCTGTCGCAGACTGAGCTCGGCCATA
+AGGTGGATTTGAGCTATCAGCAGATCCAGAAATACGAGAGCGGCAAGAACCGCATGAGCG
+CCTCGGTGCTCTACGAGATCGCCAACTGCCTGAACGTTCCGATCTCCCGCTTCTACGATG
+GTCTGCCGCAGGATGGATCAGAACTGGTGAACGGCGGCTTGCCTGAGATCGACGAGCGTA
+TCGCTTACCTGGCAACAAGCGAAGGTCGGCGCTTCGTCGAAGAGATCCTGCGGCTTCCGC
+CGCGGCTCAGAACCCGAACCTTTGCCCTGATCCAAGTCCTGACCGGCGATGACGAAGAGA
+CTGCAGGGTAG
+>lcl|NZ_JAAMCU010000009.1_cds_3732 [locus_tag=G6L12_RS33460] [protein=hypothetical protein] [pseudo=true] [location=complement(58650..58859)] [gbkey=CDS] [strain=Strain3]
+ATG-----------------AGCACTGATTACA----------------CCATTGTCGAC
+GGCTGGGAATCCCTAAGCGACGCCGAAGCGATCGAAACGGCGGTCGATCGGCATGGCAAG
+GACGGTA------------CCACGTCGGTTGC---CTGGTGCAT-----GCTCG-----A
+AGCCTGATTCGGGC-------------------------GCGGC----------------
+----------------------------CCTGAG----------TACCGGTTCT------
+----------GGATGGACCTG------------------TTTCTGAAACTAAC-------
+-----------ACAGCAGACGCATGTCGG-------------------------------
+--------------------------CTGGGCC---------------------------
+--------TAG
+>lcl|NZ_JAAMCQ010000007.1_cds_2143 [locus_tag=G6L77_RS33760] [protein=hypothetical protein] [pseudo=true] [location=complement(58278..58487)] [gbkey=CDS] [strain=Strain1]
+ATG-----------------AGCACTGATTACA----------------CCATTGTCGAC
+GGCTGGGAATCCCTAAGCGACGCCGAAGCGATCGAAACGGCGGTCGATCGGCATGGCAAG
+GACGGTA------------CCACGTCGGTTGC---CTGGTGCAT-----GCTCG-----A
+AGCCTGATTCGGGC-------------------------GCGGC----------------
+----------------------------CCTGAG----------TACCGGTTCT------
+----------GGATGGACCTG------------------TTTCTGAAACTAAC-------
+-----------ACAGCAGACGCATGTCGG-------------------------------
+--------------------------CTGGGCC---------------------------
+--------TAG
+>lcl|NZ_JAAMCT010000008.1_cds_3315 [locus_tag=G6L17_RS33615] [protein=hypothetical protein] [pseudo=true] [location=complement(57058..57267)] [gbkey=CDS] [strain=Strain5]
+ATG-----------------AGCACTGATTACA----------------CCATTGTCGAC
+GGCTGGGAATCCCTAAGCGACGCCGAAGCGATCGAAACGGCGGTCGATCGGCATGGCAAG
+GACGGTA------------CCACGTCGGTTGC---CTGGTGCAT-----GCTCG-----A
+AGCCTGATTCGGGC-------------------------GCGGC----------------
+----------------------------CCTGAG----------TACCGGTTCT------
+----------GGATGGACCTG------------------TTTCTGAAACTAAC-------
+-----------ACAGCAGACGCATGTCGG-------------------------------
+--------------------------CTGGGCC---------------------------
+--------TAG
+>lcl|NZ_JAAMCS010000007.1_cds_WP_065663868.1_2134 [locus_tag=G6L91_RS15190] [protein=hypothetical protein] [protein_id=WP_065663868.1] [location=complement(56776..56985)] [gbkey=CDS] [strain=Strain6]
+ATG-----------------AGCACTGATTACA----------------CCATTGTCGAC
+GGCTGGGAATCCCTAAGCGACGCCGAAGCGATCAAGGCTGCAGTCGACCGGCATGGCAAG
+GACGGCA------------CCACGTCGGTTGC---CTGGTGCAC-----GCTTG-----A
+GGCGTGGTTCGATC-------------------------GCGGG----------------
+----------------------------CCTGAG----------TACCGGTTCT------
+----------GGATGGACCTG------------------TTCCTCAAGCTGAC-------
+-----------AAAGCAGACGCATGTCGG-------------------------------
+--------------------------CTGGGCC---------------------------
+--------TAG

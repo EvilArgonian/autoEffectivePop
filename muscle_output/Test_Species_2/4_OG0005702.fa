@@ -1,0 +1,12 @@
+>lcl|NZ_JAAMCU010000030.1_cds_1211 [gene=tnpB] [locus_tag=G6L12_RS32430] [protein=IS66 family insertion sequence element accessory protein TnpB] [pseudo=true] [partial=3'] [location=446..>547] [gbkey=CDS] [strain=Strain3]
+ATGATCTTTCCATCGAACCGTGTACGGATCATGGTCGCGACCAAGCCGGTCGACTTCCGT
+AAAGGTCATGATGGATTGGCGGCATTGGTCAAGAATGAGCTG
+>lcl|NZ_JAAMCT010000027.1_cds_1046 [gene=tnpB] [locus_tag=G6L17_RS32555] [protein=IS66 family insertion sequence element accessory protein TnpB] [pseudo=true] [partial=3'] [location=446..>547] [gbkey=CDS] [strain=Strain5]
+ATGATCTTTCCATCGAACCGTGTACGGATCATGGTCGCGACCAAGCCGGTCGACTTCCGT
+AAAGGTCATGATGGATTGGCGGCATTGGTCAAGAATGAGCTG
+>lcl|NZ_JAAMCQ010000027.1_cds_1803 [gene=tnpB] [locus_tag=G6L77_RS33580] [protein=IS66 family insertion sequence element accessory protein TnpB] [pseudo=true] [partial=3'] [location=113797..>113898] [gbkey=CDS] [strain=Strain1]
+ATGATCTTTCCGTCGAACCGCGTACGGATCATGGTCGCGACCAAGCCGGTCGACTTCCGT
+AAAGGTCATGATGGATTGGCGGCATTGGTCAAGAATGAGCTG
+>lcl|NZ_JAAMCS010000032.1_cds_1638 [gene=tnpB] [locus_tag=G6L91_RS32350] [protein=IS66 family insertion sequence element accessory protein TnpB] [pseudo=true] [partial=3'] [location=103184..>103285] [gbkey=CDS] [strain=Strain6]
+ATGATCTTTCCGTCGAACCGCGTACGGATCATGGTCGCGACCAAGCCGGTCGACTTCCGT
+AAAGGTCATGATGGATTGGCGGCATTGGTCAAGAATGAGCTG

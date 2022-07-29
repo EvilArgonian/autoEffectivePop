@@ -1,0 +1,2 @@
+Total elapsed real time (Standard):
+Strains: 6	0h34m27.212s

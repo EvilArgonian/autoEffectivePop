@@ -1,0 +1,60 @@
+>lcl|NZ_JAAMCR010000015.1_cds_WP_174074057.1_651 [locus_tag=G6L80_RS25090] [protein=NUDIX domain-containing protein] [protein_id=WP_174074057.1] [location=complement(729078..729581)] [gbkey=CDS] [strain=Strain2]
+ATGACGGATACTGCACGCACCATGATTGTCATGAACGCTGGAGATTCTCGCTTCCAATTG
+CGGGCTGGTGCATTGATCCGTTCCAACGGCCACATCCTCATTCATCGGGCCGTTGGAGAC
+CGGTTCTGGGTTCTGCCCGGCGGTCGGGTGGAGTTTCACGAGGCGAGCGCCGAAACGCTT
+GCGCGCGAGATCGAGGAAGAGATCGGCTGTCCGGCAATGATCGGTCCGCTGTGCTTCATC
+ATCGAAAATTTCTTCGAGTTCGCGGGAACGCGCGTACATGAACTCGGCTTCTATTATGAA
+GCGGAGCTGTCGCGGCCATTGCCCTTCCACGAGAACGAGATCGTGCATCGGATCAAGGAC
+GGCAATGCGGAGCTTGAATTTCGATGGGCATTGTCCACCCGAGCCGCCTTGGACCAGTTC
+GATCTGCAGCCCTTGCCTG-TGCGAGACCTCATCGAAACCATGCCCGCCGGCATCCAACA
+TCTCGTTCGGCGCGATGCTGCCTGA
+>lcl|NZ_JAAMCS010000008.1_cds_WP_007690031.1_4676 [locus_tag=G6L91_RS15765] [protein=hypothetical protein] [protein_id=WP_007690031.1] [location=complement(90227..90472)] [gbkey=CDS] [strain=Strain6]
+ATGACG------------------------------------------CTTCTACAGTTC
+CCGG------------------CCGACAGACGAA-CCGCAGACGTAAGACGGT-------
+--GTGCCGAA----GCCCTGCAGC-------AATTGCATGGGGAG-GCGGCAAATCGCTT
+----------------------TTGGCGGT-CGGAAATGGCCGG----------------
+-----------------ATTTGCAG-----------------CCGGGC-----TAAGGGG
+GCAGGG-TGTCGC----------------CGAGGACGAGATTGGTCATC------AGGCC
+GGC---------------------------CTGTTCATGCGCGC------GGTTCAGATG
+GAGCTGGAGTTGGTGTTTGCTGCGGAA---------------------------------
+--------GAGGCGCTG--GCCTAG
+>lcl|NZ_JAAMCV010000008.1_cds_WP_007690031.1_2737 [locus_tag=G6L02_RS16085] [protein=hypothetical protein] [protein_id=WP_007690031.1] [location=complement(91934..92179)] [gbkey=CDS] [strain=Strain4]
+ATGACG------------------------------------------CTTCTACAGTTC
+CCGG------------------CCGACAGACGCA-CCGCAGACGTAAGACGGT-------
+--GTGCCGAA----GCCCTGCAGC-------AATTGCATGGGGAG-GCGGCAAATCGCTT
+----------------------TTGGCGGT-CGGAAATGGCCGG----------------
+-----------------ATTTGCAG-----------------CCGGGC-----TAAGGGG
+GCAGGG-TGTCGC----------------CGAGGACGAGATTGGTCATC------AGGCC
+GGC---------------------------CTGTTCATGCGCGC------GGTTCAGATG
+GAGCTGGAGCTGGTGTTTGCTGCGGAA---------------------------------
+--------GAGGCGCTG--GCCTAG
+>lcl|NZ_JAAMCU010000010.1_cds_WP_007690031.1_6083 [locus_tag=G6L12_RS16730] [protein=hypothetical protein] [protein_id=WP_007690031.1] [location=complement(91838..92083)] [gbkey=CDS] [strain=Strain3]
+ATGACG------------------------------------------CTTCTACAGTTC
+CCGG------------------CCGACAGACGAA-CCGCAGACGTAAGACGGT-------
+--GTGCCGAA----GCCCTGCAGC-------AATTGCATGGGGAG-GCGGCAAATCGCTT
+----------------------TTGGCGGT-CGGAAATGGCCGG----------------
+-----------------ATTTGCAG-----------------CCGGGC-----TAAGGGG
+GCAGGG-TGTCGC----------------CGAGGACGAGATTGGTCATC------AGGCC
+GGC---------------------------CTGTTCATGCGCGC------GGTTCAGATG
+GAGCTGGAGCTGGTGTTTGCTGCGGAA---------------------------------
+--------GAGGCGCTG--GCCTAG
+>lcl|NZ_JAAMCQ010000008.1_cds_WP_007690031.1_1659 [locus_tag=G6L77_RS16580] [protein=hypothetical protein] [protein_id=WP_007690031.1] [location=complement(91837..92082)] [gbkey=CDS] [strain=Strain1]
+ATGACG------------------------------------------CTTCTACAGTTC
+CCGG------------------CCGACAGACGAA-CCGCAGACGTAAGACGGT-------
+--GTGCCGAA----GCCCTGCAGC-------AATTGCATGGGGAG-GCGGCAAATCGCTT
+----------------------TTGGCGGT-CGGAAATGGCCGG----------------
+-----------------ATTTGCAG-----------------CCGGGC-----TAAGGGG
+GCAGGG-TGTCGC----------------CGAGGACGAGATTGGTCATC------AGGCC
+GGC---------------------------CTGTTCATGCGCGC------GGTTCAGATG
+GAGCTGGAGCTGGTGTTTGCTGCGGAA---------------------------------
+--------GAGGCGCTG--GCCTAG
+>lcl|NZ_JAAMCT010000009.1_cds_WP_007690031.1_3538 [locus_tag=G6L17_RS16745] [protein=hypothetical protein] [protein_id=WP_007690031.1] [location=complement(91838..92083)] [gbkey=CDS] [strain=Strain5]
+ATGACG------------------------------------------CTTCTACAGTTC
+CCGG------------------CCGACAGACGAA-CCGCAGACGTAAGACGGT-------
+--GTGCCGAA----GCCCTGCAGC-------AATTGCATGGGGAG-GCGGCAAATCGCTT
+----------------------TTGGCGGT-CGGAAATGGCCGG----------------
+-----------------ATTTGCAG-----------------CCGGGC-----TAAGGGG
+GCAGGG-TGTCGC----------------CGAGGACGAGATTGGTCATC------AGGCC
+GGC---------------------------CTGTTCATGCGCGC------GGTTCAGATG
+GAGCTGGAGCTGGTGTTTGCTGCGGAA---------------------------------
+--------GAGGCGCTG--GCCTAG

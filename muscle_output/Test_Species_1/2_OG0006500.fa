@@ -1,0 +1,10 @@
+>lcl|NZ_JAAMCU010000018.1_cds_2137 [locus_tag=G6L12_RS24340] [protein=bifunctional methylenetetrahydrofolate dehydrogenase/methenyltetrahydrofolate cyclohydrolase] [pseudo=true] [frame=2] [location=<1..97] [gbkey=CDS] [strain=Strain3]
+-------------------CCCGGTGGTGTCGGGCCGATGA-----CCATCGCCA-----
+-------------------------TGCTGATGGCC------------------------
+------AATACCGTCATTGCCGCGTATCGGGCAGCCGGCAAG---AGCGCGCCAAAGTTC
+---------TGA
+>lcl|NZ_JAAMCT010000025.1_cds_WP_174049046.1_1755 [locus_tag=G6L17_RS31550] [protein=hypothetical protein] [protein_id=WP_174049046.1] [location=complement(166888..167079)] [gbkey=CDS] [strain=Strain5]
+ATGAAACTCATCCCCTCGTCCATGCGGAAGTGGGAAGACGGCATCCCTATCCCCAACACC
+TGCCAGCTCCGCCGACAGATCAGTCCGCCGATGGGCCACCAGATGCATAAAGTTCCCTTC
+CCGCTGAATGCGGCCGTAAACGCCTATCATGCCAGCGCCGAGTACAGCGTGGCGATATTT
+CTTGAAGAGTAA

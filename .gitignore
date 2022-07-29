@@ -1,0 +1,36 @@
+# Ignore most processing species...
+
+input/*
+temp/*
+muscle_input/*
+muscle_output/*
+final_output/*
+
+# Except Test Species...
+
+!input/Test_Species*
+!temp/Test_Species*
+!muscle_input/Test_Species*
+!muscle_output/Test_Species*
+!final_output/Test_Species*
+
+# Also ignore these non-integral files (most likely should be cleaned up eventually)
+
+davidEffPopSizes
+dendropyComparison
+dividedInput.sh
+fake_muscle_output
+filterAccuracyTesting
+My_Calculations.txt
+massOutput
+massOutput/*
+noFilterDendropyComparison
+oldInput
+OrthoFinderbak
+pipeline1
+preDendropyChange
+shortOutput.txt
+time_old_stuff
+unused_or_old
+vibrioTesting
+

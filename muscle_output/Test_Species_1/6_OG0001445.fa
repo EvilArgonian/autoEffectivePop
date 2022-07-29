@@ -1,0 +1,66 @@
+>lcl|NZ_JAAMCR010000005.1_cds_WP_174071561.1_3141 [locus_tag=G6L80_RS10400] [protein=DUF1638 domain-containing protein] [protein_id=WP_174071561.1] [location=1249981..1250568] [gbkey=CDS] [strain=Strain2]
+ATGAACACGCAAAAGGTTCATGTGATCGCGTGCGGGGCAATCGCGCGCGAGATATTGGCG
+GTAACCCGAATAAACGGGCTCGACCATATCGACCTGCACTGTCTTCCGGCGATCTATCAT
+TCGTACCCGCAAAAAATCGCGCCGGCGCTGGAAGAGGCGATTGTCGATGCGCGATCGCGC
+GGCTTCGAGAAGATCTTCATCGGCTATGCCGATTGCGGCACCGGCGGTCTGATCGACCGC
+ATTTGCGAGCGAGAGGGCATCGAACGCCTCTCCGGACCACACTGTTATTCCTTTTTCACC
+GGCAACGAGGCTTTCGCCGCTGGGGACGATGACATCACCTCGTTTTTCCTTACCGATTTT
+CTGGCCCGCCAGTTCGAGGCCTTCGTCATCGTCCCGCTTGGGCTGGATCGCCATCCGCAA
+CTGCGCGACATGTATTTCGGCAACTACCGCAAGGTGGTTTATCTCTCGCAGGAGGAAGAC
+CCGGTGCTGCAGGCAAAGGCCAGGGAAGCCGCCGCCTATCTCGGACTCGACTACGAATAT
+CGCTTTACCGGCTATGGCGATCTTGGCCGCGAACTGCTGGCCGTCTGA---
+>lcl|NZ_JAAMCU010000007.1_cds_WP_007696798.1_314 [locus_tag=G6L12_RS11385] [protein=entericidin A/B family lipoprotein] [protein_id=WP_007696798.1] [location=complement(326070..326228)] [gbkey=CDS] [strain=Strain3]
+AT----------------------------------------------------------
+---------------------GACTTCACCGACATTCACC--------------------
+------------AAAATCGC----------------------------------------
+--------------------------CGCCGCCTGCG-----------------------
+-----------------------------------------CTGTT--------------
+----------CTTATGCTGCTGG--------------CTTCATG----------------
+------CGCCAACACAA----TTCGT--------GGTGTGGGCAGG--------------
+------GATA-------CGGCCAATGCC--------------------------------
+------------GTCAACGCGACGGAAGATGCCGGTCATACC------------------
+-------------------------GTCAAGAA-----GGCTGCCCAATAA
+>lcl|NZ_JAAMCS010000004.1_cds_WP_007696798.1_1102 [locus_tag=G6L91_RS10325] [protein=entericidin A/B family lipoprotein] [protein_id=WP_007696798.1] [location=complement(1125201..1125359)] [gbkey=CDS] [strain=Strain6]
+AT----------------------------------------------------------
+---------------------GACTTCACCGACATTCACC--------------------
+------------AAAATCGC----------------------------------------
+--------------------------CGCCGCCTGCG-----------------------
+-----------------------------------------CTGTT--------------
+----------CTTATGCTGCTGG--------------CTTCATG----------------
+------CGCCAACACAA----TTCGT--------GGTGTGGGCAGG--------------
+------GATA-------CGGCCAATGCC--------------------------------
+------------GTCAACGCGACGGAAGATGCCGGTCATACC------------------
+-------------------------GTCAAGAA-----GGCTGCCCAATAA
+>lcl|NZ_JAAMCV010000006.1_cds_WP_007696798.1_2204 [locus_tag=G6L02_RS10755] [protein=entericidin A/B family lipoprotein] [protein_id=WP_007696798.1] [location=complement(467188..467346)] [gbkey=CDS] [strain=Strain4]
+AT----------------------------------------------------------
+---------------------GACTTCACCGACATTCACC--------------------
+------------AAAATCGC----------------------------------------
+--------------------------CGCCGCCTGCG-----------------------
+-----------------------------------------CTGTT--------------
+----------CTTATGCTGCTGG--------------CTTCATG----------------
+------CGCCAACACAA----TTCGT--------GGTGTGGGCAGG--------------
+------GATA-------CGGCCAATGCC--------------------------------
+------------GTCAACGCGACGGAAGATGCCGGTCATACC------------------
+-------------------------GTCAAGAA-----GGCTGCCCAATAA
+>lcl|NZ_JAAMCT010000006.1_cds_WP_007696798.1_2767 [locus_tag=G6L17_RS11405] [protein=entericidin A/B family lipoprotein] [protein_id=WP_007696798.1] [location=complement(326070..326228)] [gbkey=CDS] [strain=Strain5]
+AT----------------------------------------------------------
+---------------------GACTTCACCGACATTCACC--------------------
+------------AAAATCGC----------------------------------------
+--------------------------CGCCGCCTGCG-----------------------
+-----------------------------------------CTGTT--------------
+----------CTTATGCTGCTGG--------------CTTCATG----------------
+------CGCCAACACAA----TTCGT--------GGTGTGGGCAGG--------------
+------GATA-------CGGCCAATGCC--------------------------------
+------------GTCAACGCGACGGAAGATGCCGGTCATACC------------------
+-------------------------GTCAAGAA-----GGCTGCCCAATAA
+>lcl|NZ_JAAMCQ010000003.1_cds_WP_007696798.1_1123 [locus_tag=G6L77_RS10935] [protein=entericidin A/B family lipoprotein] [protein_id=WP_007696798.1] [location=complement(1148010..1148168)] [gbkey=CDS] [strain=Strain1]
+AT----------------------------------------------------------
+---------------------GACTTCACCGACATTCACC--------------------
+------------AAAATCGC----------------------------------------
+--------------------------CGCCGCCTGCG-----------------------
+-----------------------------------------CTGTT--------------
+----------CTTATGCTGCTGG--------------CTTCATG----------------
+------CGCCAATACAA----TTCGT--------GGTGTGGGCAGG--------------
+------GATA-------CGGCCAATGCC--------------------------------
+------------GTCAACGCGACGGAAGATGCCGGTCATACC------------------
+-------------------------GTCAAGAA-----GGCTGCCCAATAA

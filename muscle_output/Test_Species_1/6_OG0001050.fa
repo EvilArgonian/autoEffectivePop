@@ -1,0 +1,48 @@
+>lcl|NZ_JAAMCV010000027.1_cds_4071 [locus_tag=G6L02_RS31245] [protein=bifunctional methylenetetrahydrofolate dehydrogenase/methenyltetrahydrofolate cyclohydrolase] [pseudo=true] [location=complement(<1..123)] [gbkey=CDS] [strain=Strain4]
+------------------------------------------------------------
+----ATGACTGCGATGACTGCG---------GCAACCGTGAT------------------
+-----------------CGACGGCAAGCAGGT----------------------------
+-------------GGCGGCT-----TC---------------GGTGATCG----------
+-------------------------------AGGCGGTGAAGACGGC---------AACG
+TCTGCGCTGGAAAGAGATACCGGAACGAAGGCCGGTCTTGCG------------------
+------------------
+>lcl|NZ_JAAMCU010000006.1_cds_WP_142888854.1_6462 [locus_tag=G6L12_RS08925] [protein=hypothetical protein] [protein_id=WP_142888854.1] [location=complement(128034..128396)] [gbkey=CDS] [strain=Strain3]
+TTGCAGGGTTTTGCGGTCGGAATTGGACCCCCGGGGATCGACGAGACCGACCAGGAACTG
+ACGGATATTCTCGGAGCCGACA---CCAGCCTCATCTACCACTTCATCGGAGAGGGAAAG
+ACCTTTACCCAAGGTCGCATCGCCGAACTGATTATTGCGTCGGGGATTCCAGCCAACCGG
+GTCGATGATGTCTTGCGCCTCATGGTCTATTATGGGTTCCTGGGCATTCACATACAGGAT
+AATGGCGTGAAGTATATCTTCGACGTCCGCTACGACATGAAGCTGATGCAGGTTTTGATA
+TCGAAG------------GCCGGGGCGGACGTCAGCTATGCGTTGAACCCTGCCTTCGAT
+GCGAGATTGAACTTCTGA
+>lcl|NZ_JAAMCT010000005.1_cds_WP_142888854.1_6266 [locus_tag=G6L17_RS08940] [protein=hypothetical protein] [protein_id=WP_142888854.1] [location=complement(129207..129569)] [gbkey=CDS] [strain=Strain5]
+TTGCAGGGTTTTGCGGTCGGAATTGGACCCCCGGGGATCGACGAGACCGACCAGGAACTG
+ACGGATATTCTCGGAGCCGACA---CCAGCCTCATCTACCACTTCATCGGAGAGGGAAAG
+ACCTTTACCCAAGGTCGCATCGCCGAACTGATTATTGCGTCGGGGATTCCAGCCAACCGG
+GTCGATGATGTCTTGCGCCTCATGGTCTATTATGGGTTCCTGGGCATTCACATACAGGAT
+AATGGCGTGAAGTATATCTTCGACGTCCGCTACGACATGAAGCTGATGCAGGTTTTGATA
+TCGAAG------------GCCGGGGCGGACGTCAGCTATGCGTTGAACCCTGCCTTCGAT
+GCGAGATTGAACTTCTGA
+>lcl|NZ_JAAMCR010000005.1_cds_WP_180226369.1_2674 [locus_tag=G6L80_RS08050] [protein=hypothetical protein] [protein_id=WP_180226369.1] [location=complement(769098..769295)] [gbkey=CDS] [strain=Strain2]
+ATGCGGCATTCACGAGACGTCGGGGGAAACGGGGCCGTGAAAAAAAGCGAC---------
+-AGAATCATCGGTGGGCTCGCATTGCTAGGTGTAGCCATCAT------------------
+-----------------CGTTATCAAACTGGC-------------------------CGG
+CGCCATG------TTCGGCT-ACGATCTCATCCAGAT-----GGCGGTCG----------
+-------------------------------ATGCCACGAGACCGGTC--------AATG
+CCGGCG------------GTTGGATGG-----CAGCGGCGAATTAA--------------
+------------------
+>lcl|NZ_JAAMCQ010000003.1_cds_WP_155293906.1_663 [locus_tag=G6L77_RS08620] [protein=hypothetical protein] [protein_id=WP_155293906.1] [location=complement(670815..670976)] [gbkey=CDS] [strain=Strain1]
+------------------------------------GTGAAGAAGAGCGAC---------
+-AGGATAATCATGACACTTGCGCTTCTGGGCGCGGCGATCAT------------------
+-----------------CGTCATAAAAATGAT-------------------------CGG
+GGCGATG------TCCGGAT-ACGATCTGATCGAGAT-----GGCTGTCA----------
+-------------------------------ATGCGACCAGGCCAGCG--------GATA
+GCCGCG------------GCTGGCTCG-----CGGCGACACGCTGA--------------
+------------------
+>lcl|NZ_JAAMCS010000004.1_cds_WP_153510241.1_653 [locus_tag=G6L91_RS08070] [protein=hypothetical protein] [protein_id=WP_153510241.1] [location=complement(658587..658748)] [gbkey=CDS] [strain=Strain6]
+------------------------------------GTGAAGAAGAGCGAC---------
+-AGGATAGTCATGACACTTGCGCTTCTGGGCGCAGCGATCAT------------------
+-----------------CGTCATAAAAATGAT-------------------------CGG
+GGCGATG------TCCGGAT-ACGATCTGATCGAGAT-----GGCTGTCA----------
+-------------------------------ATGCGACCAGGCCAGCG--------GATA
+GCGGCG------------GCTGGCTCG-----CGGCGACACGCTGA--------------
+------------------

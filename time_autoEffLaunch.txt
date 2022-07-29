@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "manualCalculations.py", line 634, in <module>
+    consensus=getConsensus(nucDict)
+  File "manualCalculations.py", line 132, in getConsensus
+    gc_file.write(specName + "\t" + float(GC_sum) / seqLength)
+TypeError: cannot concatenate 'str' and 'float' objects
+
+real	0m0.175s
+user	0m0.109s
+sys	0m0.030s
+
+real	0m0.031s
+user	0m0.011s
+sys	0m0.005s
+
+real	0m0.017s
+user	0m0.014s
+sys	0m0.003s
+
+real	0m0.018s
+user	0m0.011s
+sys	0m0.007s
+
+real	0m0.018s
+user	0m0.013s
+sys	0m0.005s

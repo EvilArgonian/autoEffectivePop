@@ -1,0 +1,30 @@
+>lcl|NZ_JAAMCR010000015.1_cds_WP_068393729.1_544 [locus_tag=G6L80_RS24555] [protein=4-oxalocrotonate tautomerase] [protein_id=WP_068393729.1] [location=complement(612293..612478)] [gbkey=CDS] [strain=Strain2]
+ATGCCCATCTTGCGCTTGGAAATGCATCCCGGACGTACACAGGACCAGAAGCGTGCCTTT
+GTTCGTGAAGCCACCAAGGTCGTCGTCGAAACGCTGGTTTGCCCGCCGGAATCGGTGGAA
+ATCATCATTACCGAGATTTCGAAGGATTCCTGGGCGACGGCGGGCAAACTGAAATCGGAT
+AGCTGA
+>lcl|NZ_JAAMCU010000023.1_cds_WP_007691771.1_5404 [gene=kdpF] [locus_tag=G6L12_RS28300] [protein=K(+)-transporting ATPase subunit F] [protein_id=WP_007691771.1] [location=168561..168650] [gbkey=CDS] [strain=Strain3]
+ATGCTCCT----------GGATTATATTCTCGGCG------------GCGGCGTGACTAT
+CTTCCTCA--CCGCCTA---CCTGATCTACGCCCTCATTCGC------------------
+----------------------------CCTGAGCGCT----------------------
+-TTTAA
+>lcl|NZ_JAAMCS010000017.1_cds_WP_007691771.1_3795 [gene=kdpF] [locus_tag=G6L91_RS27820] [protein=K(+)-transporting ATPase subunit F] [protein_id=WP_007691771.1] [location=389209..389298] [gbkey=CDS] [strain=Strain6]
+ATGCTCCT----------GGATTATATTCTCGGCG------------GCGGCGTGACTAT
+CTTCCTCA--CCGCCTA---CCTGATCTACGCCCTCATTCGC------------------
+----------------------------CCTGAGCGCT----------------------
+-TTTAA
+>lcl|NZ_JAAMCV010000014.1_cds_WP_007691771.1_573 [gene=kdpF] [locus_tag=G6L02_RS28680] [protein=K(+)-transporting ATPase subunit F] [protein_id=WP_007691771.1] [location=635787..635876] [gbkey=CDS] [strain=Strain4]
+ATGCTCCT----------GGATTATATTCTCGGCG------------GCGGCGTGACTAT
+CTTCCTCA--CCGCCTA---CCTGATCTACGCCCTCATTCGC------------------
+----------------------------CCTGAGCGCT----------------------
+-TTTAA
+>lcl|NZ_JAAMCT010000019.1_cds_WP_007691771.1_4473 [gene=kdpF] [locus_tag=G6L17_RS28305] [protein=K(+)-transporting ATPase subunit F] [protein_id=WP_007691771.1] [location=385884..385973] [gbkey=CDS] [strain=Strain5]
+ATGCTCCT----------GGATTATATTCTCGGCG------------GCGGCGTGACTAT
+CTTCCTCA--CCGCCTA---CCTGATCTACGCCCTCATTCGC------------------
+----------------------------CCTGAGCGCT----------------------
+-TTTAA
+>lcl|NZ_JAAMCQ010000016.1_cds_WP_007691771.1_2839 [gene=kdpF] [locus_tag=G6L77_RS28710] [protein=K(+)-transporting ATPase subunit F] [protein_id=WP_007691771.1] [location=631628..631717] [gbkey=CDS] [strain=Strain1]
+ATGCTCCT----------GGATTATATTCTCGGCG------------GCGGCGTGACTAT
+CTTCCTCA--CCGCCTA---CCTGATCTACGCTCTCATTCGC------------------
+----------------------------CCTGAGCGCT----------------------
+-TTTAA

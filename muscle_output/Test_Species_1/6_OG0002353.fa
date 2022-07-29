@@ -1,0 +1,36 @@
+>lcl|NZ_JAAMCU010000002.1_cds_WP_007692629.1_2765 [locus_tag=G6L12_RS01355] [protein=hypothetical protein] [protein_id=WP_007692629.1] [location=154063..154203] [gbkey=CDS] [strain=Strain3]
+ATG--------GCAAAGGGTCAA--------------------GTAAGAGGAAATCGCGA
+-----------AACGCGAAAACCCAAGAAG---------GACAAGACAGCCGAAG-----
+------------------------CTCCAAAGCCGCAGCCG-------------------
+---------------GGCTTTGCC--GTCAAACAGGCTGGAAC--------CCCGATG--
+---------------GGCTTCGGCAAGAAAGACAAA---------------TAA
+>lcl|NZ_JAAMCQ010000002.1_cds_WP_007692629.1_3430 [locus_tag=G6L77_RS01335] [protein=hypothetical protein] [protein_id=WP_007692629.1] [location=155240..155380] [gbkey=CDS] [strain=Strain1]
+ATG--------GCAAAGGGTCAA--------------------GTAAGAGGAAATCGCGA
+-----------AACGCGAAAACCCAAGAAG---------GACAAGACAGCCGAAG-----
+------------------------CTCCAAAGCCGCAGCCG-------------------
+---------------GGCTTTGCC--GTCAAACAGGCTGGAAC--------CCCGATG--
+---------------GGCTTCGGCAAGAAAGACAAA---------------TAA
+>lcl|NZ_JAAMCS010000003.1_cds_WP_007692629.1_2565 [locus_tag=G6L91_RS01345] [protein=hypothetical protein] [protein_id=WP_007692629.1] [location=155339..155479] [gbkey=CDS] [strain=Strain6]
+ATG--------GCAAAGGGTCAA--------------------GTAAGAGGAAATCGCGA
+-----------AACGCGAAAACCCAAGAAG---------GACAAGACAGCCGAAG-----
+------------------------CTCCAAAGCCGCAGCCG-------------------
+---------------GGCTTTGCC--GTCAAACAGGCTGGAAC--------CCCGATG--
+---------------GGCTTCGGCAAGAAAGACAAA---------------TAA
+>lcl|NZ_JAAMCV010000003.1_cds_WP_007692629.1_5148 [locus_tag=G6L02_RS01380] [protein=hypothetical protein] [protein_id=WP_007692629.1] [location=66960..67100] [gbkey=CDS] [strain=Strain4]
+ATG--------GCAAAGGGTCAA--------------------GTAAGAGGAAATCGCGA
+-----------AACGCGAAAACCCAAGAAG---------GACAAGACAGCCGAAG-----
+------------------------CTCCAAAGCCGCAGCCG-------------------
+---------------GGCTTTGCC--GTCAAACAGGCTGGAAC--------CCCGATG--
+---------------GGCTTCGGCAAGAAAGACAAA---------------TAA
+>lcl|NZ_JAAMCT010000002.1_cds_WP_007692629.1_147 [locus_tag=G6L17_RS01355] [protein=hypothetical protein] [protein_id=WP_007692629.1] [location=154063..154203] [gbkey=CDS] [strain=Strain5]
+ATG--------GCAAAGGGTCAA--------------------GTAAGAGGAAATCGCGA
+-----------AACGCGAAAACCCAAGAAG---------GACAAGACAGCCGAAG-----
+------------------------CTCCAAAGCCGCAGCCG-------------------
+---------------GGCTTTGCC--GTCAAACAGGCTGGAAC--------CCCGATG--
+---------------GGCTTCGGCAAGAAAGACAAA---------------TAA
+>lcl|NZ_JAAMCR010000002.1_cds_WP_034514177.1_5457 [locus_tag=G6L80_RS01335] [protein=SelT/SelW/SelH family protein] [protein_id=WP_034514177.1] [location=complement(158578..158871)] [gbkey=CDS] [strain=Strain2]
+ATGAGCGATAAGCCGCGGATCACCATTCTCTATTGCACGCAATGCAACTGGCTGCTGCGC
+TCCGGCTGGATGGCGCAGGAACTGCTGCAGACCTTTACCGACAGCCTCGGCGAAGTGGCG
+CTGATCCCCGGCACCGGCGGCGTCTTCGAAATCCGCATCGATGGCGAGCTTCTATGGGAG
+CGCAAGCGCGATGGCGGCTTCCCCGGGCCGAAGGAACTGAAGCAGCGGGTGCGCGATGTC
+ATCGATCCCGAGCGCGATCTCGGCCATACGGACAGGGCGTCGCTGGAGAGCTGA

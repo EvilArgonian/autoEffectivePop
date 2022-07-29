@@ -1,0 +1,15 @@
+Strain1_vs_Strain4 > 1 of 15- Strain1_vs_Strain4	0.989782484053
+Strain1_vs_Strain5 > 2 of 15- Strain1_vs_Strain5	0.991483842628
+Strain1_vs_Strain6 > 3 of 15- Strain1_vs_Strain6	0.992158196835
+Strain3_vs_Strain6 > 4 of 15- Strain3_vs_Strain6	0.993371993132
+Strain3_vs_Strain4 > 5 of 15- Strain3_vs_Strain4	0.99074678171
+Strain1_vs_Strain3 > 6 of 15- Strain1_vs_Strain3	0.991481482871
+Strain4_vs_Strain6 > 7 of 15- Strain4_vs_Strain6	0.989719677532
+Strain4_vs_Strain5 > 8 of 15- Strain4_vs_Strain5	0.990450562467
+Strain1_vs_Strain2 > 9 of 15- Strain1_vs_Strain2	0.8599285368
+Strain2_vs_Strain3 > 10 of 15- Strain2_vs_Strain3	0.859918650526
+Strain3_vs_Strain5 > 11 of 15- Strain3_vs_Strain5	0.999247195154
+Strain2_vs_Strain5 > 12 of 15- Strain2_vs_Strain5	0.859907705992
+Strain2_vs_Strain4 > 13 of 15- Strain2_vs_Strain4	0.860471243512
+Strain5_vs_Strain6 > 14 of 15- Strain5_vs_Strain6	0.993289129171
+Strain2_vs_Strain6 > 15 of 15- Strain2_vs_Strain6	0.860124017614

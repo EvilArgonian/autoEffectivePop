@@ -1,0 +1,34 @@
+Beginning BLAST data collection for Test_Species_2
+Data added: Strain1_vs_Strain2 with score 0.8599285368
+Data added: Strain1_vs_Strain3 with score 0.991481482871
+Data added: Strain1_vs_Strain4 with score 0.989782484053
+Data added: Strain1_vs_Strain5 with score 0.991483842628
+Data added: Strain1_vs_Strain6 with score 0.992158196835
+Data added: Strain2_vs_Strain3 with score 0.859918650526
+Data added: Strain2_vs_Strain4 with score 0.860471243512
+Data added: Strain2_vs_Strain5 with score 0.859907705992
+Data added: Strain2_vs_Strain6 with score 0.860124017614
+Data added: Strain3_vs_Strain4 with score 0.99074678171
+Data added: Strain3_vs_Strain5 with score 0.999247195154
+Data added: Strain3_vs_Strain6 with score 0.993371993132
+Data added: Strain4_vs_Strain5 with score 0.990450562467
+Data added: Strain4_vs_Strain6 with score 0.989719677532
+Data added: Strain5_vs_Strain6 with score 0.993289129171
+6 strains recognized: ['Strain1', 'Strain2', 'Strain3', 'Strain4', 'Strain5', 'Strain6']
+Sample statistics:
+Sample Size: 15
+Sample Mean: 0.94813876666644236745895568674313835799694061279296875
+Sample Standard Deviation: 0.0644988455042128372429743876637076027691364288330078125
+Sample Standard Error: 0.0166535302991614279910503881865224684588611125946044921875
+Sample T Score: 4.98501315771976383217634065658785402774810791015625
+Upperbound of Test_Species_2 determined to be: 1.031156834330246840848639180
+Remaining 6 Test_Species_2 strains recognized (partial): ['Strain1', 'Strain2', 'Strain3', 'Strain4', 'Strain5', 'Strain6']
+Sample statistics:
+Sample Size: 15
+Sample Mean: 0.9481387666664422564366532242274843156337738037109375
+Sample Standard Deviation: 0.06449884550421282336518657984925084747374057769775390625
+Sample Standard Error: 0.016653530299161424521603436232908279635012149810791015625
+Sample T Score: 4.98501315771976383217634065658785402774810791015625
+Lowerbound of Test_Species_2 determined to be: 0.8651206990026378003422084361
+Strain2 Average of Strain-Vs-Other-Strain Average Identities: 0.860070030888698711102335892, which is under the critical value by 0.0050506681139390892398725441
+Remaining 5 Test_Species_2 strains recognized (final): ['Strain1', 'Strain3', 'Strain4', 'Strain5', 'Strain6']
