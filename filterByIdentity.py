@@ -191,7 +191,11 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
                 if strain in twoStrainArr:
                     strainData.append(Decimal(remaining[versus]))
             avgOfStrainAvgs = numpy.mean(strainData)
-            if numpy.isnan(float(avgOfStrainAvgs)) or avgOfStrainAvgs < lowerBound:  # Occasional NaN issue with avgOfStrainAvgs? How to handle?
+            if numpy.isnan(float(avgOfStrainAvgs)): # Occasional NaN issue with avgOfStrainAvgs? How to handle?
+                removed.append(strain)
+                removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which produced a NaN.")
+                logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which produced a NaN." + "\n")
+            if avgOfStrainAvgs < lowerBound:
                 removed.append(strain)
                 removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs))
                 logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs) + "\n")
