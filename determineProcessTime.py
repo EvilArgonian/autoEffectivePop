@@ -9,5 +9,5 @@ if sys.argv[4]:
 
 with open(outFile, "w") as o:
     o.write("Total elapsed real time (" + label + "):\n")
-    o.write("Strains: " + str(strains) + "\t" + str(runtime) + "s")
+    o.write("Strains: " + str(strains) + "\t" + str(runtime) + " Seconds")
 
