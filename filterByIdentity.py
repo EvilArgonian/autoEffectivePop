@@ -195,7 +195,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
                 removed.append(strain)
                 removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which produced a NaN.")
                 logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which produced a NaN." + "\n")
-            if avgOfStrainAvgs < lowerBound:
+            elif avgOfStrainAvgs < lowerBound:
                 removed.append(strain)
                 removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs))
                 logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs) + "\n")
