@@ -133,7 +133,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
     with open("temp/" + specLabel + "/Filtered/RemovalForSimilarity.txt", "w") as f:
         f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(sampleStdDev) + "\tUpper Bound: " + str(upperBound) + "\n")
         for item in removalInfo:
-            f.write(item + "\n") # Records comparisons that resulted in removal
+            f.write(item + "\n")  # Records comparisons that resulted in removal
 
     logFile.write("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized (partial): " + str(strains) + "\n")
     if len(strains) >= 3: # Ceases calculations if less than 3 strains
@@ -188,12 +188,10 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             strainData = []
             for versus in remaining.keys(): # For each 1v1 that compares 2 surviving strains
                 twoStrainArr = versus.split("_vs_")
-                #if len(twoStrainArr) != 2:
-                #    continue # This shouldn't occur; determine what it means if it does. What error handling is appropriate?
                 if strain in twoStrainArr:
                     strainData.append(Decimal(remaining[versus]))
             avgOfStrainAvgs = numpy.mean(strainData)
-            if avgOfStrainAvgs < lowerBound:
+            if not numpy.isnan(avgOfStrainAvgs) and avgOfStrainAvgs < lowerBound:
                 removed.append(strain)
                 removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs))
                 logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs) + "\n")
@@ -207,10 +205,10 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             except IOError as e:
                 logFile.write("Strain copy to " + destination + " failed!" + "\n")
 
-        with open("temp/" + specLabel + "/Filtered/RemovalForDissimilarity.txt", "w") as f: # "Mean AvgIdentity: " + str(sampleMean)
+        with open("temp/" + specLabel + "/Filtered/RemovalForDissimilarity.txt", "w") as f:  # "Mean AvgIdentity: " + str(sampleMean)
             f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(sampleStdDev) + "\tLower Bound: " + str(lowerBound) + "\n")
             for item in removalInfo:
-                f.write(item + "\n") # Records comparisons that resulted in removal
+                f.write(item + "\n")  # Records comparisons that resulted in removal
 
         logFile.write("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized (final): " + str(strains) + "\n")
         if len(strains) >= 2: # Ceases calculations if less than 2 strains
