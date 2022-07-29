@@ -16,7 +16,7 @@ dendropyTheta = sys.argv[7]
 dendropyPi = sys.argv[8]
 mutRate = sys.argv[9]
 specName = sys.argv[10]
-outFile = sys.argv[11]
+# outFile = sys.argv[11]
 
 if mutRate != "Unknown":
     effPopSizeThS = float(watsThetaS) / (2 * float(mutRate))
@@ -39,18 +39,22 @@ else:
 
 currDate = datetime.datetime.now().strftime("%b%d")
 
-with open(outFile, "a+") as f:
-    with open("final_output/" + specName + "/Results.txt", "w") as f2:
-        with open("consolidated_output/All_Results_" + currDate + ".txt", "a+") as f3:
-            outStr = specName + "\t" + str(effPopSizeThS) + "\t" + str(effPopSizeThN) + "\t" + str(effPopSizeTh) \
-                     + "\t" + str(effPopSizePiS) + "\t" + str(effPopSizePiN) + "\t" + str(effPopSizePi) \
-                     + "\t" + str(effPopSizeDendropyTh) + "\t" + str(effPopSizeDendropyPi) \
-                     + "\t" + str(watsThetaS) + "\t" + str(watsThetaN) + "\t" + str(watsTheta) \
-                     + "\t" + str(piS) + "\t" + str(piN) + "\t" + str(pi) + "\t" \
-                     + "\t" + str(dendropyTheta) + "\t" + str(dendropyPi) + "\n"
-            f.write(outStr)
-            f2.write(outStr)
-            f3.write(outStr)
+
+with open("final_output/" + specName + "/Results.txt", "w") as f1:
+    with open("consolidated_output/All_Results_" + currDate + ".txt", "a+") as f2:
+        # with open(outFile, "a+") as f3: # This output removed in favor of consolidated output approach.
+        if not f2.read(1):  # If the file is empty, put headers in it.
+            f2.write("Species\tNE (ThS)\tNE (ThN)\tNE (Th)\tNE (PiS)\tNE (PiN)\tNE (Pi)\tNE (DenTh)\tNE (DenPi)"
+                     "\tThetaS\tThetaN\tTheta\tPiS\tPiN\tPi\tDenTh\tDenPi")
+        outStr = specName + "\t" + str(effPopSizeThS) + "\t" + str(effPopSizeThN) + "\t" + str(effPopSizeTh) \
+                 + "\t" + str(effPopSizePiS) + "\t" + str(effPopSizePiN) + "\t" + str(effPopSizePi) \
+                 + "\t" + str(effPopSizeDendropyTh) + "\t" + str(effPopSizeDendropyPi) \
+                 + "\t" + str(watsThetaS) + "\t" + str(watsThetaN) + "\t" + str(watsTheta) \
+                 + "\t" + str(piS) + "\t" + str(piN) + "\t" + str(pi) + "\t" \
+                 + "\t" + str(dendropyTheta) + "\t" + str(dendropyPi) + "\n"
+        f1.write(outStr)
+        f2.write(outStr)
+        # f3.write(outStr)
 
 print(specName + " calculations complete! Effective Population Size " +
       "(Using ThetaS): " + str(effPopSizeThS) + "\t(Using ThetaN): " + str(effPopSizeThN) + "\t(Using Theta): " + str(effPopSizeTh)
