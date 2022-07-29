@@ -19,11 +19,11 @@ folder = "temp/" + specLabel + "/BLAST/"
 # Folder will contain the strain files in the form <strain>.ffn, and the BLAST comparisons in the form <strain1>_vs_<strain2>.txt
 
 with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
-    avgIdentityData = {} # This dict will record all observations of avgIdentity in the 1 on 1 BLASTs
-    strains = [] # This list will record each strain name
+    avgIdentityData = {}  # This dict will record all observations of avgIdentity in the 1 on 1 BLASTs
+    strains = []  # This list will record each strain name
     logFile.write("Beginning BLAST data collection for " + specLabel + "\n")
-    for filename in os.listdir(folder):# For every file
-        if "_vs_" in filename and filename.endswith(".txt"): # Interprets identity from strain v strain BLAST
+    for filename in os.listdir(folder):  # For every file
+        if "_vs_" in filename and filename.endswith(".txt"):  # Interprets identity from strain v strain BLAST
             thisVs = ".".join(filename.split(".")[0:len(filename.split(".")) - 1])  # This nonsense to allow for strain names with periods in them
             mismatches = 0
             length = 0
@@ -184,14 +184,14 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         # On an unrelated note, the word "exceeds" should really have an established antonym "deceeds"
         removed = []
         removalInfo = []
-        for strain in strains: # For each remaining strain
+        for strain in strains:  # For each remaining strain
             strainData = []
-            for versus in remaining.keys(): # For each 1v1 that compares 2 surviving strains
+            for versus in remaining.keys():  # For each 1v1 that compares 2 surviving strains
                 twoStrainArr = versus.split("_vs_")
                 if strain in twoStrainArr:
                     strainData.append(Decimal(remaining[versus]))
             avgOfStrainAvgs = numpy.mean(strainData)
-            if not numpy.isnan(avgOfStrainAvgs) and avgOfStrainAvgs < lowerBound:
+            if numpy.isnan(float(avgOfStrainAvgs)) or avgOfStrainAvgs < lowerBound:  # Occasional NaN issue with avgOfStrainAvgs? How to handle?
                 removed.append(strain)
                 removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs))
                 logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs) + "\n")
@@ -219,7 +219,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
                     shutil.copy(source, destination)
                 except IOError as e:
                     logFile.write("Strain copy to " + destination + " failed!" + "\n")
-            print(len(strains)) # Marks that not too many species were filtered
+            print(len(strains))  # Marks that not too many species were filtered
         else:
             logFile.write("Not enough strains surviving final filtration of " + specLabel + "\n")
             print("-1") # Marks that too many species were filtered
