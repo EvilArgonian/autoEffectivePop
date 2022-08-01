@@ -129,7 +129,7 @@ def getConsensus(nucDict):
 
     currDate = datetime.datetime.now().strftime("%b%d")
     with open("final_output/GC_Contents_" + currDate + ".txt", "a+") as gc_file:
-        gc_file.write(specName + "\t" + str(float(GC_sum) / seqLength))
+        gc_file.write(specName + "\t" + str(float(GC_sum) / seqLength) + "\n")
 
     return consensus
 
