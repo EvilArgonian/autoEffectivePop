@@ -127,9 +127,8 @@ def getConsensus(nucDict):
         if highestNuc == 'G' or highestNuc == 'C':
             GC_sum += 1
 
-    currDate = datetime.datetime.now().strftime("%b%d")
-    with open("final_output/GC_Contents_" + currDate + ".txt", "a+") as gc_file:
-        gc_file.write(specName + "\t" + str(float(GC_sum) / seqLength) + "\n")
+    with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
+        gc_file.write(str(float(GC_sum) / seqLength) + "\n")
 
     return consensus
 
@@ -621,6 +620,8 @@ def calcDendropy(nucDict, numStrains, file):
 with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
     with open("final_output/" + specName + "/piValues.txt", "w") as f2:
         with open("final_output/" + specName + "/dendropyValues.txt", "w") as f3:
+            with open("final_output/" + specName + "/GC_values.txt", "r+") as gc_file:
+                gc_file.truncate(0)  # To clear the file for later appends
             for file in os.listdir("muscle_output/" + specName + "/"):
                 nucDict = buildNucDict(specName, file)
                 # nucDict is a dictionary of sequence names mapped to actual sequences.
@@ -631,10 +632,24 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
 
                 # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
                 numStrains = file.split("_")[0]
-                consensus=getConsensus(nucDict)
+                consensus = getConsensus(nucDict)
                 f.write(calcThetas(nucDict, numStrains, consensus))
                 f2.write(calcPis(nucDict, numStrains, consensus))
                 f3.write(calcDendropy(nucDict, numStrains, file))
+
+with open("final_output/" + specName + "/GC_values.txt", "r+") as gc_file:
+    gc_sum = 0.0
+    count_GCs = 0
+    for line in gc_file.readlines():
+        gc_sum += float(line.strip())
+        count_GCs += 1
+
+    avg_GC = gc_sum / count_GCs
+    currDate = datetime.datetime.now().strftime("%b%d")
+    with open("consolidated_output/GC_Values_" + currDate + ".txt", "a+") as consGC:
+        with open("final_output/" + specName + "/GC_Content.txt", "w") as finGC:
+            finGC.write(specName + "\t" + str(avg_GC) + "\n")
+            consGC.write(specName + "\t" + str(avg_GC) + "\n")
 
 sumOfAllAvgThetaS = 0.0
 sumOfAllAvgThetaN = 0.0
