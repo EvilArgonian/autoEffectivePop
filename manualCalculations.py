@@ -620,7 +620,7 @@ def calcDendropy(nucDict, numStrains, file):
 with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
     with open("final_output/" + specName + "/piValues.txt", "w") as f2:
         with open("final_output/" + specName + "/dendropyValues.txt", "w") as f3:
-            with open("final_output/" + specName + "/GC_values.txt", "r+") as gc_file:
+            with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
                 gc_file.truncate(0)  # To clear the file for later appends
             for file in os.listdir("muscle_output/" + specName + "/"):
                 nucDict = buildNucDict(specName, file)
