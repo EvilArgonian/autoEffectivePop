@@ -10,7 +10,9 @@ with open("GatheredResults.txt", "a+") as outFile:
             if os.path.isdir(speciesFolder):
                 resultsFile = os.path.join(speciesFolder, "Results.txt")
                 if os.path.isfile(resultsFile):
+                    print("Found " + resultsFile)
                     with open(resultsFile, "r") as readFile:
                         outFile.write(readFile.readlines()[0])
                 else:
+                    print("Did not find " + resultsFile)
                     badOutFile.write(filename + "\n")
