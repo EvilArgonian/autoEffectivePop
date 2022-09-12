@@ -3,8 +3,9 @@ import os
 resultsSuperFolder = "final_output"
 
 
-with open("GatheredResults.txt", "a+") as outFile:
-    with open("NoResultsFound.txt", "a+") as badOutFile:
+with open("GatheredResults.txt", "w+") as outFile:
+
+    with open("NoResultsFound.txt", "w+") as badOutFile:
         for filename in os.listdir(resultsSuperFolder):
             speciesFolder = os.path.join(resultsSuperFolder, filename)
             if os.path.isdir(speciesFolder):
