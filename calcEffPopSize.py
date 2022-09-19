@@ -50,7 +50,7 @@ with open("final_output/" + specName + "/Results.txt", "w") as f1:
                  + "\t" + str(effPopSizePiS) + "\t" + str(effPopSizePiN) + "\t" + str(effPopSizePi) \
                  + "\t" + str(effPopSizeDendropyTh) + "\t" + str(effPopSizeDendropyPi) \
                  + "\t" + str(watsThetaS) + "\t" + str(watsThetaN) + "\t" + str(watsTheta) \
-                 + "\t" + str(piS) + "\t" + str(piN) + "\t" + str(pi) + "\t" \
+                 + "\t" + str(piS) + "\t" + str(piN) + "\t" + str(pi) \
                  + "\t" + str(dendropyTheta) + "\t" + str(dendropyPi) + "\n"
         f1.write(outStr)
         f2.write(outStr)
