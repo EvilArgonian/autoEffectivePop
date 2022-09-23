@@ -61,6 +61,3 @@ print(specName + " calculations complete! Effective Population Size " +
       + "\t(Using PiS): " + str(effPopSizePiS) + "\t(Using PiN): " + str(effPopSizePiN) + "\t(Using Pi): " + str(effPopSizePi)
       + "\t(Using DendropyTheta):" + str(effPopSizeDendropyTh) + "\t(Using DendropyPi):" + str(effPopSizeDendropyPi))
 
-
-
-
