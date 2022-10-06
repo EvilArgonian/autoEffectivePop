@@ -1,10 +1,13 @@
 import sys
 import datetime
 
-# watsTheta = 2 * (Eff. Pop. Size) * (Mut. Rate)
+# watsTheta = ploidy * 2 * (Eff. Pop. Size) * (Mut. Rate)
 # Rearranged:
-# (Eff. Pop. Size) = watsTheta / (2 * (Mut. Rate))
-# watsTheta roughly equates to pi; watsThetaS roughly equates to piS
+# (Eff. Pop. Size) = watsTheta / (ploidy * 2 * (Mut. Rate))
+# watsTheta (S, N, A) roughly equates to pi (S, N, A)
+
+finalOutFolder = "../../../final_output"
+consolidatedFolder = "../../../consolidated_output"
 
 watsThetaS = sys.argv[1]
 watsThetaN = sys.argv[2]
@@ -20,15 +23,17 @@ strains = -1
 if sys.argv[11]:
     strains = sys.argv[11]
 
+ploidy = 1  # TO DO: Implement choice of haploid (1) and diploid (2)
+
 if mutRate != "Unknown":
-    effPopSizeThS = float(watsThetaS) / (2 * float(mutRate))
-    effPopSizeThN = float(watsThetaN) / (2 * float(mutRate))
-    effPopSizeTh = float(watsTheta) / (2 * float(mutRate))
-    effPopSizePiS = float(piS) / (2 * float(mutRate))
-    effPopSizePiN = float(piN) / (2 * float(mutRate))
-    effPopSizePi = float(pi) / (2 * float(mutRate))
-    effPopSizeDendropyTh = float(dendropyTheta) / (2 * float(mutRate))
-    effPopSizeDendropyPi = float(dendropyPi) / (2 * float(mutRate))
+    effPopSizeThS = float(watsThetaS) / (ploidy * 2 * float(mutRate))
+    effPopSizeThN = float(watsThetaN) / (ploidy * 2 * float(mutRate))
+    effPopSizeTh = float(watsTheta) / (ploidy * 2 * float(mutRate))
+    effPopSizePiS = float(piS) / (ploidy * 2 * float(mutRate))
+    effPopSizePiN = float(piN) / (ploidy * 2 * float(mutRate))
+    effPopSizePi = float(pi) / (ploidy * 2 * float(mutRate))
+    effPopSizeDendropyTh = float(dendropyTheta) / (ploidy * 2 * float(mutRate))
+    effPopSizeDendropyPi = float(dendropyPi) / (ploidy * 2 * float(mutRate))
 else:
     effPopSizeThS = "Unknown"
     effPopSizeThN = "Unknown"
@@ -42,8 +47,8 @@ else:
 currDate = datetime.datetime.now().strftime("%b%d")
 
 
-with open("final_output/" + specName + "/Results.txt", "w") as f1:
-    with open("consolidated_output/All_Results_" + currDate + ".txt", "a+") as f2:
+with open(finalOutFolder + specName + "/Results.txt", "w") as f1:
+    with open(consolidatedFolder + "/All_Results_" + currDate + ".txt", "a+") as f2:
         header = "Species\tNE (ThS)\tNE (ThN)\tNE (Th)\tNE (PiS)\tNE (PiN)\tNE (Pi)\tNE (DenTh)\tNE (DenPi)" \
                  "\tThetaS\tThetaN\tTheta\tPiS\tPiN\tPi\tDenTh\tDenPi\tStrains\n"
         f1.write(header)

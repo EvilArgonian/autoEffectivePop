@@ -5,14 +5,16 @@ IFS=$'\n\t'
 echo "Launching!"
 
 #Establish what species are being processed; $1 and further arguments should be species names matching those used as directory names in the input folder
+#If no arguments are present, uses entire input directory
+input="../../../input"
 processSpecies=()
 if [ -z "${1+set}" ]; then 
-    for file in $(find input/ -mindepth 1 -maxdepth 1 -type d); do
+    for file in $(find ${input}/ -mindepth 1 -maxdepth 1 -type d); do
 		processSpecies+=($file)
 	done
 else 
 	for arg in "$@"; do
-		processSpecies+=("input/"$arg)
+		processSpecies+=("${input}/"$arg)
 	done
 fi
 
@@ -28,11 +30,11 @@ for specFolder in ${processSpecies[@]}; do
 		echo "Processing input for Species ${processCount}: ${specLabel}"
 		start_time=`date +%s`
 		
+		# Processes input strains into acceptable formats
 		sh inputProcessing.sh ${specFolder}
 		
-		specFolderTemp=temp/${specLabel}
+		specFolderTemp=../../../temp/${specLabel}
 		
-		# This line should determine number of strains
 		echo "Finding number of strains..."
 		strains=$(find ${specFolderTemp}/BLAST/ -mindepth 1 -maxdepth 1 -type f -name '*.ffn' -printf x | wc -c)
 		if (( strains > 400 )); then
@@ -47,10 +49,11 @@ for specFolder in ${processSpecies[@]}; do
 		fi
 		
 		sh orthoFinding.sh ${specFolderTemp}
-		sh findingOrthogroups.sh ${specFolderTemp}
 		sh muscleAligning.sh ${specFolderTemp}
 		
-		mkdir -p final_output/${specLabel}
+		specOutputFolder=../../../final_output/${specLabel}
+		
+		mkdir -p ${specOutputFolder}
 		readarray -d ',' -t calculations <<< $(echo $(python manualCalculations.py ${specLabel} ))
 		watsThetaS=${calculations[0]}
 		watsThetaN=${calculations[1]}
@@ -68,8 +71,8 @@ for specFolder in ${processSpecies[@]}; do
 		end_time=`date +%s`
 		runtime=$((end_time-start_time))
 		finished=`date +"%Y-%m-%d %T"`
-		echo -e "${specLabel} Process Time (Standard run): " > final_output/${specLabel}/Process_Time.txt
-		echo -e "Strains: ${strains}\tRuntime: ${runtime} seconds\tFinished: ${finished}" >> final_output/${specLabel}/Process_Time.txt		
+		echo -e "${specLabel} Process Time (Standard run): " > ${specOutputFolder}/Process_Time.txt
+		echo -e "Strains: ${strains}\tRuntime: ${runtime} seconds\tFinished: ${finished}" >> ${specOutputFolder}/Process_Time.txt		
 	
 	} || { # Catch
 		echo "Some kind of interrupting error occurred while processing ${specFolder##*/}"

@@ -22,7 +22,7 @@ def main():
     # Read arguments from command line
     args = parser.parse_args()
 
-    scriptCall = '../autoEffLaunch.sh ' # Add ploidy functionality here, as arg before input species. Edit autoEffLaunch appropriately!
+    scriptCall = 'resources/core_programs/autoEffLaunch.sh ' # Add ploidy functionality here, as arg before input species. Edit autoEffLaunch appropriately!
     for inSpec in args.input_species:
         scriptCall += inSpec + " "
     subprocess.run(['sh', scriptCall])

@@ -13,7 +13,8 @@ from scipy import stats
 print("Beginning a lite filtering round... ")
 
 specLabel = sys.argv[1]
-with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as logFile:
+tempFolder = "../../../temp/" + specLabel
+with open(tempFolder + "/Filtered/Filtration_Log_Lite.txt", "a+") as logFile:
     confidence = .9999  # Defaults to 99.99%
     currStrain = sys.argv[2]
     if len(sys.argv) > 2:
@@ -24,13 +25,13 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
         hardCut = Decimal(sys.argv[4])
         logFile.write("Hard Upperbound provided: " + str(hardCut) + "\n")
 
-    folder = "temp/" + specLabel + "/BLAST/"
+    folder = tempFolder + "/BLAST/"
     # Folder will contain the strain files in the form <strain>.ffn, and the BLAST comparisons in the form <strain1>_vs_<strain2>.txt
 
     logFile.write("Determining any prior removed strains:\n")
     removed = []
-    if os.path.isfile("temp/" + specLabel + "/Filtered/Removal_Log.txt"):
-        with open("temp/" + specLabel + "/Filtered/Removal_Log.txt", "r") as removedStrains:
+    if os.path.isfile(tempFolder + "/Filtered/Removal_Log.txt"):
+        with open(tempFolder + "/Filtered/Removal_Log.txt", "r") as removedStrains:
             for line in removedStrains.readlines():
                 removed.append(line.strip())
                 logFile.write(line.strip() + " already removed.\n")
@@ -61,7 +62,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
             strains.append(fileNameFormatted)
 
     # Outputting for testing
-    with open("temp/" + specLabel + "/Filtered/Statistics_Lite.txt", "a+") as f:
+    with open(tempFolder + "/Filtered/Statistics_Lite.txt", "a+") as f:
         for versus in avgIdentityData.keys():
             f.write(versus + "\t" + str(avgIdentityData[versus]) + "\n")
 
@@ -88,10 +89,10 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
     if sampleSize == 1:  # One versus file, or just 2 strains
         twoStrainArr = avgIdentityData.keys()[0].split("_vs_")
         for strain in twoStrainArr:  # For each of the only 2 strains
-            source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
-            destination = "temp/" + specLabel + "/Nucleotide/"
+            source = tempFolder + "/BLAST/" + strain + ".ffn"
+            destination = tempFolder + "/Nucleotide/"
             shutil.copy(source, destination)
-        with open("temp/" + specLabel + "/Filtered/Output.txt", "w") as outFile:
+        with open(tempFolder + "/Filtered/Output.txt", "w") as outFile:
             outFile.write(
                 " ".join(strains))  # Cannot do any statistical evaluation, so the strains are simply passed through
         sys.exit()
@@ -152,12 +153,12 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
                         testValue) + ", which is over the critical value by " + str(testValue - upperBound) + "\n")
 
     logFile.write("Total strains removed: " + str(len(removed)) + "\n")
-    with open("temp/" + specLabel + "/Filtered/Removal_Log.txt", "a+") as removedStrains:
+    with open(tempFolder + "/Filtered/Removal_Log.txt", "a+") as removedStrains:
         for strain in removed:
             strain = str(strain)  # Maybe necessary in case strain name was interpreted as numeric??
             strains.remove(str(strain))  # Redundant casting probably
-            source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
-            destination = "temp/" + specLabel + "/Filtered/"
+            source = tempFolder + "/BLAST/" + strain + ".ffn"
+            destination = tempFolder + "/Filtered/"
             try:
                 shutil.move(source, destination)
             except IOError as e:
@@ -165,14 +166,14 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
                 logFile.write("Strain move to " + destination + " failed!")
             removedStrains.write(strain + "\n")
 
-    with open("temp/" + specLabel + "/Filtered/RemovalForSimilarity_Lite.txt", "a+") as f:
+    with open(tempFolder + "/Filtered/RemovalForSimilarity_Lite.txt", "a+") as f:
         f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(
             sampleStdDev) + "\tUpper Bound: " + str(upperBound) + "\n")
         for item in removalInfo:
             f.write(item + "\n")  # Records comparisons that resulted in removal
 
     logFile.write("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized: " + str(strains) + "\n")
-    with open("temp/" + specLabel + "/Filtered/Output.txt", "w") as outFile:
+    with open(tempFolder + "/Filtered/Output.txt", "w") as outFile:
         outFile.write(",".join(strains))
 
 print("Total strains removed: " + str(len(removed)))

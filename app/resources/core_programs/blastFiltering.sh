@@ -4,6 +4,7 @@ IFS=$'\n\t'
 
 specFolder=${1}
 specLabel="${specFolder##*/}"
+temp="../../../temp"
 
 # Writing boolean logic as arithmetic expressions for ease of use.
 true=1
@@ -49,13 +50,13 @@ for filename in ${specFolder}/BLAST/*.ffn; do
 		titleWithoutFolder2="${filename2##*/}"
 		title2="${titleWithoutFolder2%%.ffn*}"
 		if [[ ${title} != ${title2} && ! ${seen[@]} =~ "${title2}" ]]; then
-			redundancyCheck1=temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
-			redundancyCheck2=temp/${specLabel}/BLAST/${title2}_vs_${title}.txt
+			redundancyCheck1=${temp}/${specLabel}/BLAST/${title}_vs_${title2}.txt
+			redundancyCheck2=${temp}/${specLabel}/BLAST/${title2}_vs_${title}.txt
 			if [[ -f "$redundancyCheck1" || -f "$redundancyCheck2" ]]; then
 				echo "BLAST for ${title} and ${title2} already exists."
 			else
 				echo "BLASTing ${title} against ${title2}"
-				./ncbi-blast-2.10.1+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
+				./ncbi-blast-2.10.1+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> ${temp}/${specLabel}/BLAST/${title}_vs_${title2}.txt
 			fi
 		fi
 	done
