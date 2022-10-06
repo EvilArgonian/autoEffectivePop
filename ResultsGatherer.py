@@ -5,7 +5,7 @@ resultsSuperFolder = "final_output"
 
 with open("GatheredResults.txt", "w+") as outFile:
     with open("NoResultsFound.txt", "w+") as badOutFile:
-        with open("OldRunSpecies", "w+") as oldOutFile:
+        with open("OldRunSpecies.txt", "w+") as oldOutFile:
             for filename in os.listdir(resultsSuperFolder):
                 speciesFolder = os.path.join(resultsSuperFolder, filename)
                 if os.path.isdir(speciesFolder):
@@ -15,7 +15,7 @@ with open("GatheredResults.txt", "w+") as outFile:
                         with open(resultsFile, "r") as readFile:
                             lines = readFile.readlines()
                             if lines[0].startswith("Species"):
-                                oldOutFile.write(filename)
+                                oldOutFile.write(filename + "\n")
                             else:
                                 outFile.write(lines[0])
                     else:
