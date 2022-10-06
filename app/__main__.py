@@ -31,10 +31,5 @@ def main():
     print("Alternatively, find the output values quickly in the consolidated_output file corresponding to the run date.")
 
 
-
-
-
-
-
 if __name__ == '__main__':
     main()
