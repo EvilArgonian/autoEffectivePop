@@ -13,10 +13,11 @@ with open("GatheredResults.txt", "w+") as outFile:
                     if os.path.isfile(resultsFile):
                         print("Found " + resultsFile)
                         with open(resultsFile, "r") as readFile:
-                            if readFile.readlines()[0].startswith("Species"):
+                            lines = readFile.readlines()
+                            if lines[0].startswith("Species"):
                                 oldOutFile.write(filename)
                             else:
-                                outFile.write(readFile.readlines()[0])
+                                outFile.write(lines[0])
                     else:
                         print("Did not find " + resultsFile)
                         badOutFile.write(filename + "\n")
