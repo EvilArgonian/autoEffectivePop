@@ -11,7 +11,7 @@ with open("speciesStrainTable.txt", "w") as tableFile:
             with open(speciesPath + "Strains.txt", "w") as strainFile:
                 strainList = []
                 speciesMuscleFolder = os.path.join(muscleOutFolder, speciesFolder)
-                if len(os.listdir(speciesMuscleFolder)) > 0:
+                if os.listdir(speciesMuscleFolder):
                     for muscleAlignment in os.listdir(speciesMuscleFolder):
                         with open(os.path.join(speciesMuscleFolder, muscleAlignment), "r") as alignFile:
                             for line in alignFile.readlines():
