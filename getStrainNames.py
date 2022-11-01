@@ -21,4 +21,4 @@ for speciesFolder in os.listdir(outputFolder):
                     for strain in strainList:
                         strainFile.write(strain + "\n")
                         tableFile.write(speciesFolder + "\t" + strain + "\n")
-                    break # Use to test
+        print("Completed searching " + speciesFolder)
