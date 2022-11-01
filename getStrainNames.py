@@ -20,5 +20,5 @@ for speciesFolder in os.listdir(outputFolder):
                                         strainList.append(strainName)
                     for strain in strainList:
                         strainFile.write(strain + "\n")
-                        tableFile.write(speciesFolder + "\t" + strain)
+                        tableFile.write(speciesFolder + "\t" + strain + "\n")
                     break # Use to test
