@@ -31,8 +31,7 @@ with open(indexFile, "w") as n:
                     conflictList.append(geneName + "\t" + lineIndex + "\t" + line)
                 else:
                     seenList.append(geneName)
-                # n.write(geneName + "\t" + str(lineIndex) + "\n") # THIS IS LIKELY CAUSING PROBLEMS
-                n.write(geneName + "\t#---#\t" + str(lineIndex) + "\n")  # IMPLEMENT THIS WHEN POSSIBLE
+                n.write(geneName + "\t#---#\t" + str(lineIndex) + "\n")
 
 if conflicts > 0:
     with open(errorFile, "w") as e:
