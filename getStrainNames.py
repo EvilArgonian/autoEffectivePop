@@ -8,7 +8,7 @@ with open("speciesStrainTable.txt", "w") as tableFile:
     for speciesFolder in os.listdir(outputFolder):
         speciesPath = os.path.join(outputFolder, speciesFolder)
         if os.path.isdir(speciesPath):
-            with open(speciesPath + "Strains.txt", "w") as strainFile:
+            with open(speciesPath + "/Strains.txt", "w") as strainFile:
                 strainList = []
                 speciesMuscleFolder = os.path.join(muscleOutFolder, speciesFolder)
                 try:
