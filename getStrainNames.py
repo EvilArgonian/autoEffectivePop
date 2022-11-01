@@ -10,8 +10,9 @@ for speciesFolder in os.listdir(outputFolder):
             with open("speciesStrainTable.txt", "w") as tableFile:
                 with open(speciesPath + "Strains.txt", "w") as strainFile:
                     strainList = []
-                    for muscleAlignment in os.listdir(os.path.join(muscleOutFolder, speciesFolder)):
-                        with open(muscleAlignment, "r") as alignFile:
+                    speciesMuscleFolder = os.path.join(muscleOutFolder, speciesFolder)
+                    for muscleAlignment in os.listdir(speciesMuscleFolder):
+                        with open(os.path.join(speciesMuscleFolder, muscleAlignment), "r") as alignFile:
                             for line in alignFile.readlines():
                                 if line.startswith(">"):
                                     strainName = re.search("\[strain=(.+?)\]", line).group(1)
