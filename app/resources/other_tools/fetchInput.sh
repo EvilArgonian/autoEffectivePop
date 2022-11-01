@@ -7,8 +7,8 @@ if [ -z "${1+set}" ]; then
     echo "Input not provided!"
 else
 	a=("$@")
-	num_left=${#a[@]}
-	echo "${num_left} Inputs"
+	count=1
+	echo "$Input {count}"
 	for spec in ${a[@]}; do
 		python fetchInput.py $spec
 		sh ${spec}_fetch.sh
@@ -21,13 +21,8 @@ else
 			rmdir input/${spec}
 		fi
 		
-		num_left=$(( num_left-1 ))
-		if [[ "${num_left}" == "0" ]]; then
-			echo "All done!"
-		else
-			echo "${num_left} inputs left!"
-			sleep 30
-		fi
+		count=$(( count+1 ))
+		sleep 5
 	done
 	echo "Done fetching input!"
 fi
