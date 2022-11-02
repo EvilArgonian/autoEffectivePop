@@ -30,3 +30,4 @@ with open("speciesStrainTable.txt", "w") as tableFile:
                 except Exception:
                     continue
         print("Completed searching " + speciesFolder)
+print("All done!")
