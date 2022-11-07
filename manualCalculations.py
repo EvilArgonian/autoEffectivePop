@@ -644,7 +644,10 @@ with open("final_output/" + specName + "/GC_values.txt", "r+") as gc_file:
         gc_sum += float(line.strip())
         count_GCs += 1
 
-    avg_GC = gc_sum / count_GCs
+    if count_GCs == 0:
+        avg_GC = -1  # Error occurs when no GC_values file exists, usually due to a run of the same species being started too soon before another finishes.
+    else:
+        avg_GC = gc_sum / count_GCs
     currDate = datetime.datetime.now().strftime("%b%d")
     with open("consolidated_output/GC_Values_" + currDate + ".txt", "a+") as consGC:
         with open("final_output/" + specName + "/GC_Content.txt", "w") as finGC:
