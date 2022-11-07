@@ -192,7 +192,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             # one from -Inf to the determined upperBound, used to filter out too similar strains
             # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
             zScore = Decimal(abs(stats.norm.ppf(1.0 - float(confidence))))
-            boundDiff = Decimal(zScore * 3 * sampleStdDev)
+            boundDiff = Decimal(3 * sampleStdDev)
             upperBound = Decimal(sampleMean + boundDiff)
             logFile.write("Sample Z Score: " + str(zScore) + "\n")
 
@@ -203,7 +203,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
             degsFreedom = sampleSize - 1
             tScore = Decimal(abs(stats.t.ppf((1.0 - float(confidence)), degsFreedom)))
-            boundDiff = Decimal(tScore * 3 * sampleStdDev)
+            boundDiff = Decimal(3 * sampleStdDev)
             upperBound = Decimal(sampleMean + boundDiff)
             logFile.write("Sample T Score: " + str(tScore) + "\n")
 
