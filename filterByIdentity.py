@@ -87,12 +87,12 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         # one from -Inf to the determined upperBound, used to filter out too similar strains
         # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
         zScore = Decimal(abs(stats.norm.ppf(1.0 - float(confidence))))
-        boundDiff = Decimal(3 * sampleStdDev)  # Trying not using z or t score. If made permanent, remove if/else for sampleSize >=30.
+        test3Diff = Decimal(3 * sampleStdDev)  # Trying not using z or t score. If made permanent, remove if/else for sampleSize >=30.
         test2Diff = Decimal(2 * sampleStdDev)
-        test1Diff = Decimal(1 * sampleStdDev)
-        lowerBound = Decimal(sampleMean - boundDiff)
+        boundDiff = Decimal(1 * sampleStdDev)
+        test3Bound = Decimal(sampleMean - test3Diff)
         test2Bound = Decimal(sampleMean - test2Diff)
-        test1Bound = Decimal(sampleMean - test1Diff)
+        lowerBound = Decimal(sampleMean - boundDiff)
         logFile.write("Sample Z Score: " + str(zScore) + "\n")
 
     else:  # Else if sampleSize is lower than 30...
@@ -102,12 +102,12 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
         degsFreedom = sampleSize - 1
         tScore = Decimal(abs(stats.t.ppf((1.0 - float(confidence)), degsFreedom)))
-        boundDiff = Decimal(3 * sampleStdDev)  # Trying not using z or t score. If made permanent, remove if/else for sampleSize >=30.
+        test3Diff = Decimal(3 * sampleStdDev)  # Trying not using z or t score. If made permanent, remove if/else for sampleSize >=30.
         test2Diff = Decimal(2 * sampleStdDev)
-        test1Diff = Decimal(1 * sampleStdDev)
-        lowerBound = Decimal(sampleMean - boundDiff)
+        boundDiff = Decimal(1 * sampleStdDev)
+        test3Bound = Decimal(sampleMean - test3Diff)
         test2Bound = Decimal(sampleMean - test2Diff)
-        test1Bound = Decimal(sampleMean - test1Diff)
+        lowerBound = Decimal(sampleMean - boundDiff)
         logFile.write("Sample T Score: " + str(tScore) + "\n")
 
     logFile.write("Lowerbound of " + specLabel + " determined to be: " + str(lowerBound) + "\n")
@@ -192,7 +192,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             # one from -Inf to the determined upperBound, used to filter out too similar strains
             # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
             zScore = Decimal(abs(stats.norm.ppf(1.0 - float(confidence))))
-            boundDiff = Decimal(3 * sampleStdDev)
+            boundDiff = Decimal(1 * sampleStdDev)
             upperBound = Decimal(sampleMean + boundDiff)
             logFile.write("Sample Z Score: " + str(zScore) + "\n")
 
@@ -203,7 +203,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
             degsFreedom = sampleSize - 1
             tScore = Decimal(abs(stats.t.ppf((1.0 - float(confidence)), degsFreedom)))
-            boundDiff = Decimal(3 * sampleStdDev)
+            boundDiff = Decimal(1 * sampleStdDev)
             upperBound = Decimal(sampleMean + boundDiff)
             logFile.write("Sample T Score: " + str(tScore) + "\n")
 
