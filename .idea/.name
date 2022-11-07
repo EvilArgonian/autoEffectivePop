@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-ResultsGatherer.py
-=======
-__main__.py
->>>>>>> create-executable
+filterByIdentity.py

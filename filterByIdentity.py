@@ -11,7 +11,7 @@ from scipy import stats
 # Null hypothesis 2: A given strain is not too dissimilar to the others; it is close enough to be a part of the same species. The average of 1v1 data points of that strain is above (within) the critical lower boundary.
 # Alternate hypothesis 2: A given strain is too dissimilar to the others and thus likely to be a unique species. The average of 1v1 data points of that strain is below (beyond) the critical lower boundary.
 specLabel = sys.argv[1]
-confidence = .9999 # Defaults to 99.99%
+confidence = .9999  # Defaults to 99.99%
 if len(sys.argv) > 1:
     confidence = Decimal(sys.argv[2])
 
@@ -32,7 +32,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
                     mismatches += float(line.split("\t")[4])
                     length += float(line.split("\t")[3])
             if length == 0:
-                avg_identity = 1 # Shouldn't happen. What might cause this?
+                avg_identity = 1  # Shouldn't happen. What might cause this?
             else:
                 avg_identity = float((length - mismatches)/length)
             avgIdentityData.update({thisVs: avg_identity})
@@ -47,6 +47,9 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         for versus in avgIdentityData.keys():
             dataCount += 1
             twoStrainArr = versus.split("_vs_")
+            if len(twoStrainArr) != 2:
+                logFile.write("ERROR: twoStrainArr found with " + str(len(twoStrainArr)) + " strains: " + str(twoStrainArr))
+                continue  # This shouldn't occur.
             f.write(versus + " > ")
             if twoStrainArr[0] not in strains or twoStrainArr[1] not in strains:
                 avgIdentityData.pop(versus)
@@ -69,13 +72,13 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
     logFile.write("Sample Standard Deviation: " + str(sampleStdDev) + "\n")
     logFile.write("Sample Standard Error: " + str(sampleStdError) + "\n")
 
-    if sampleSize == 1: # One versus file, or just 2 strains
+    if sampleSize == 1:  # One versus file, or just 2 strains
         twoStrainArr = avgIdentityData.keys()[0].split("_vs_")
-        for strain in twoStrainArr: # For each of the only 2 strains
+        for strain in twoStrainArr:  # For each of the only 2 strains
             source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
             destination = "temp/" + specLabel + "/Nucleotide/"
             shutil.copy(source, destination)
-        print("2") # Cannot do any statistical evaluation, so the strains are simply passed through
+        print("2")  # Cannot do any statistical evaluation, so the strains are simply passed through
         sys.exit()
 
     if sampleSize >= 30:
@@ -84,64 +87,90 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         # one from -Inf to the determined upperBound, used to filter out too similar strains
         # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
         zScore = Decimal(abs(stats.norm.ppf(1.0 - float(confidence))))
-        boundDiff = Decimal(zScore * sampleStdError) # Trying StdErr
-        upperBound = Decimal(sampleMean + boundDiff)
+        boundDiff = Decimal(zScore * 3 * sampleStdDev)
+        test2Diff = Decimal(zScore * 2 * sampleStdDev)
+        test1Diff = Decimal(zScore * 1 * sampleStdDev)
+        lowerBound = Decimal(sampleMean - boundDiff)
+        test2Bound = Decimal(sampleMean - test2Diff)
+        test1Bound = Decimal(sampleMean - test1Diff)
         logFile.write("Sample Z Score: " + str(zScore) + "\n")
 
-    else: # Else if sampleSize is lower than 30...
+    else:  # Else if sampleSize is lower than 30...
         # Confidence interval (unknown pop variance, small n, normal distribution) = [sample mean] ( + or - ) [T score with respect to alpha and df = sample size -1] * [Sample variance]
         # Note that the + or - is actually two separate confidence intervals:
         # one from -Inf to the determined upperBound, used to filter out too similar strains
         # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
         degsFreedom = sampleSize - 1
         tScore = Decimal(abs(stats.t.ppf((1.0 - float(confidence)), degsFreedom)))
-        boundDiff = Decimal(tScore * sampleStdError) # Trying StdErr
-        upperBound = Decimal(sampleMean + boundDiff)
+        boundDiff = Decimal(tScore * 3 * sampleStdDev)
+        test2Diff = Decimal(tScore * 2 * sampleStdDev)
+        test1Diff = Decimal(tScore * 1 * sampleStdDev)
+        lowerBound = Decimal(sampleMean - boundDiff)
+        test2Bound = Decimal(sampleMean - test2Diff)
+        test1Bound = Decimal(sampleMean - test1Diff)
         logFile.write("Sample T Score: " + str(tScore) + "\n")
 
-    logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + "\n")
+    logFile.write("Lowerbound of " + specLabel + " determined to be: " + str(lowerBound) + "\n")
 
-    # Any 1v1 that *exceeds* the range indicates too similar strains
+    # Any average of all 1v1s incorporating a given strain that *falls below* the range indicates too dissimilar strains
+    # On an unrelated note, the word "exceeds" should really have an established antonym "deceeds"
     removed = []
     removalInfo = []
-    for strain in strains: # For each strain
-        if strain in removed:
-            continue # If the strain was already flagged for similarity, ignore
-        for versus in avgIdentityData.keys(): # For each...
+    countTest3 = 0
+    countTest2 = 0
+    countTest1 = 0
+    for strain in strains:  # For each strain
+        strainData = []
+        for versus in avgIdentityData.keys():  # For each 1v1 that compares 2 surviving strains
             twoStrainArr = versus.split("_vs_")
-            if strain in twoStrainArr: # ...appearance of the strain in a 1v1 comparison
-                testValue = Decimal(avgIdentityData[versus])
-                if testValue > upperBound: # Strains are too similar
-                    otherStrain = twoStrainArr[1 - twoStrainArr.index(strain)]
-                    if otherStrain in removed:
-                        continue # If the other strain was already flagged for similarity, ignore
-                    removed.append(otherStrain) # Remove one of the too similar strains
-                    removalInfo.append("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(testValue) + ", which is over the critical value by " + str(testValue - upperBound))
-                    logFile.write("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(testValue) + ", which is over the critical value by " + str(testValue - upperBound) + "\n")
+            if strain in twoStrainArr:
+                strainData.append(Decimal(avgIdentityData[versus]))
+        avgOfStrainAvgs = numpy.mean(strainData)
+        if numpy.isnan(float(avgOfStrainAvgs)):  # Occasional NaN issue with avgOfStrainAvgs? How to handle?
+            removed.append(strain)
+            removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(
+                avgOfStrainAvgs) + ", which produced a NaN.")
+            logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(
+                avgOfStrainAvgs) + ", which produced a NaN." + "\n")
+        else:
+            if avgOfStrainAvgs < lowerBound:
+                removed.append(strain)
+                removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(
+                    avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs))
+                logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(
+                    avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs) + "\n")
+                countTest3 += 1
+            if avgOfStrainAvgs < test2Bound:
+                countTest2 += 1
+            if avgOfStrainAvgs < test1Bound:
+                countTest1 += 1
 
     for strain in removed:
-        logFile.write("Enacting removal of " + strain + "\n")
         strains.remove(strain)
         source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
         destination = "temp/" + specLabel + "/Filtered/"
         try:
             shutil.copy(source, destination)
         except IOError as e:
-            logFile.write("Strain copy to " + destination + " failed!")
+            logFile.write("Strain copy to " + destination + " failed!" + "\n")
 
-
-    with open("temp/" + specLabel + "/Filtered/RemovalForSimilarity.txt", "w") as f:
-        f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(sampleStdDev) + "\tUpper Bound: " + str(upperBound) + "\n")
+    with open("temp/" + specLabel + "/Filtered/RemovalForDissimilarity.txt",
+              "w") as f:
+        f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(
+            sampleStdDev) + "\tLower Bound: " + str(lowerBound) + "\n")
         for item in removalInfo:
             f.write(item + "\n")  # Records comparisons that resulted in removal
+        f.write("Strains removed at Mean-3xStdDev: " + str(countTest3) + "\n")
+        f.write("Strains theoretically removed at Mean-2xStdDev: " + str(countTest2) + "\n")
+        f.write("Strains theoretically removed at Mean-1xStdDev: " + str(countTest1) + "\n")
 
-    logFile.write("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized (partial): " + str(strains) + "\n")
-    if len(strains) >= 3: # Ceases calculations if less than 3 strains
-        remaining = {} # For reanalyzing remaining data
+    logFile.write(
+        "Remaining " + str(len(strains)) + " " + specLabel + " strains recognized (partial): " + str(strains) + "\n")
+
+    if len(strains) >= 3:  # Ceases calculations if less than 3 strains
+        remaining = {}  # For reanalyzing remaining data
         for versus in avgIdentityData.keys():
             twoStrainArr = versus.split("_vs_")
-            if len(twoStrainArr) != 2:
-                continue # This shouldn't occur; determine what it means if it does. What error handling is appropriate?
             if twoStrainArr[0] in strains and twoStrainArr[1] in strains:
                 remaining.update({versus: avgIdentityData[versus]})
 
@@ -163,60 +192,64 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             # one from -Inf to the determined upperBound, used to filter out too similar strains
             # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
             zScore = Decimal(abs(stats.norm.ppf(1.0 - float(confidence))))
-            boundDiff = Decimal(zScore * sampleStdError) # Trying StdErr
-            lowerBound = Decimal(sampleMean - boundDiff)
+            boundDiff = Decimal(zScore * 3 * sampleStdDev)
+            upperBound = Decimal(sampleMean + boundDiff)
             logFile.write("Sample Z Score: " + str(zScore) + "\n")
 
-        else: # Else if sampleSize is lower than 30...
+        else:  # Else if sampleSize is lower than 30...
             # Confidence interval (unknown pop variance, small n, normal distribution) = [sample mean] ( + or - ) [T score with respect to alpha and df = sample size -1] * [Sample variance]
             # Note that the + or - is actually two separate confidence intervals:
             # one from -Inf to the determined upperBound, used to filter out too similar strains
             # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
             degsFreedom = sampleSize - 1
             tScore = Decimal(abs(stats.t.ppf((1.0 - float(confidence)), degsFreedom)))
-            boundDiff = Decimal(tScore * sampleStdError) # Trying StdErr
-            lowerBound = Decimal(sampleMean - boundDiff)
+            boundDiff = Decimal(tScore * 3 * sampleStdDev)
+            upperBound = Decimal(sampleMean + boundDiff)
             logFile.write("Sample T Score: " + str(tScore) + "\n")
 
-        logFile.write("Lowerbound of " + specLabel + " determined to be: " + str(lowerBound) + "\n")
+        logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + "\n")
 
-        # Any average of all 1v1s incorporating a given strain that *falls below* the range indicates too dissimilar strains
-        # On an unrelated note, the word "exceeds" should really have an established antonym "deceeds"
+        # Any 1v1 that *exceeds* the range indicates too similar strains
         removed = []
         removalInfo = []
-        for strain in strains:  # For each remaining strain
-            strainData = []
-            for versus in remaining.keys():  # For each 1v1 that compares 2 surviving strains
+        for strain in strains:  # For each strain
+            if strain in removed:
+                continue  # If the strain was already flagged for similarity, ignore
+            for versus in remaining.keys():  # For each...
                 twoStrainArr = versus.split("_vs_")
-                if strain in twoStrainArr:
-                    strainData.append(Decimal(remaining[versus]))
-            avgOfStrainAvgs = numpy.mean(strainData)
-            if numpy.isnan(float(avgOfStrainAvgs)): # Occasional NaN issue with avgOfStrainAvgs? How to handle?
-                removed.append(strain)
-                removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which produced a NaN.")
-                logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which produced a NaN." + "\n")
-            elif avgOfStrainAvgs < lowerBound:
-                removed.append(strain)
-                removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs))
-                logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs) + "\n")
+                if strain in twoStrainArr:  # ...appearance of the strain in a 1v1 comparison
+                    testValue = Decimal(remaining[versus])
+                    if testValue > upperBound:  # Strains are too similar
+                        otherStrain = twoStrainArr[1 - twoStrainArr.index(strain)]
+                        if otherStrain in removed:
+                            continue  # If the other strain was already flagged for similarity, ignore
+                        removed.append(otherStrain)  # Remove one of the too similar strains
+                        removalInfo.append(
+                            "Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
+                                testValue) + ", which is over the critical value by " + str(testValue - upperBound))
+                        logFile.write("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
+                            testValue) + ", which is over the critical value by " + str(
+                            testValue - upperBound) + "\n")
 
         for strain in removed:
+            logFile.write("Enacting removal of " + strain + "\n")
             strains.remove(strain)
             source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
             destination = "temp/" + specLabel + "/Filtered/"
             try:
                 shutil.copy(source, destination)
             except IOError as e:
-                logFile.write("Strain copy to " + destination + " failed!" + "\n")
+                logFile.write("Strain copy to " + destination + " failed!")
 
-        with open("temp/" + specLabel + "/Filtered/RemovalForDissimilarity.txt", "w") as f:  # "Mean AvgIdentity: " + str(sampleMean)
-            f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(sampleStdDev) + "\tLower Bound: " + str(lowerBound) + "\n")
+        with open("temp/" + specLabel + "/Filtered/RemovalForSimilarity.txt", "w") as f:
+            f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(
+                sampleStdDev) + "\tUpper Bound: " + str(upperBound) + "\n")
             for item in removalInfo:
                 f.write(item + "\n")  # Records comparisons that resulted in removal
 
         logFile.write("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized (final): " + str(strains) + "\n")
-        if len(strains) >= 2: # Ceases calculations if less than 2 strains
-            for strain in strains: # For each finally remaining strain
+        if len(strains) >= 2:  # Ceases calculations if less than 2 strains
+            for strain in strains:  # For each finally remaining strain
                 source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
                 destination = "temp/" + specLabel + "/Nucleotide/"
                 try:
@@ -226,8 +259,8 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             print(len(strains))  # Marks that not too many species were filtered
         else:
             logFile.write("Not enough strains surviving final filtration of " + specLabel + "\n")
-            print("-1") # Marks that too many species were filtered
+            print("-1")  # Marks that too many species were filtered
     else:
         logFile.write("Not enough strains surviving partial filtration of " + specLabel + "\n")
-        print("-1") # Marks that too many species were filtered
+        print("-1")  # Marks that too many species were filtered
 
