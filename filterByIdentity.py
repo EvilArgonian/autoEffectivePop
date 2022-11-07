@@ -87,9 +87,9 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         # one from -Inf to the determined upperBound, used to filter out too similar strains
         # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
         zScore = Decimal(abs(stats.norm.ppf(1.0 - float(confidence))))
-        boundDiff = Decimal(zScore * 3 * sampleStdDev)
-        test2Diff = Decimal(zScore * 2 * sampleStdDev)
-        test1Diff = Decimal(zScore * 1 * sampleStdDev)
+        boundDiff = Decimal(3 * sampleStdDev)  # Trying not using z or t score. If made permanent, remove if/else for sampleSize >=30.
+        test2Diff = Decimal(2 * sampleStdDev)
+        test1Diff = Decimal(1 * sampleStdDev)
         lowerBound = Decimal(sampleMean - boundDiff)
         test2Bound = Decimal(sampleMean - test2Diff)
         test1Bound = Decimal(sampleMean - test1Diff)
@@ -102,9 +102,9 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
         degsFreedom = sampleSize - 1
         tScore = Decimal(abs(stats.t.ppf((1.0 - float(confidence)), degsFreedom)))
-        boundDiff = Decimal(tScore * 3 * sampleStdDev)
-        test2Diff = Decimal(tScore * 2 * sampleStdDev)
-        test1Diff = Decimal(tScore * 1 * sampleStdDev)
+        boundDiff = Decimal(3 * sampleStdDev)  # Trying not using z or t score. If made permanent, remove if/else for sampleSize >=30.
+        test2Diff = Decimal(2 * sampleStdDev)
+        test1Diff = Decimal(1 * sampleStdDev)
         lowerBound = Decimal(sampleMean - boundDiff)
         test2Bound = Decimal(sampleMean - test2Diff)
         test1Bound = Decimal(sampleMean - test1Diff)
