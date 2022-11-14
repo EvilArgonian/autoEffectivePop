@@ -113,11 +113,6 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
                     avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs))
                 logFile.write(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(
                     avgOfStrainAvgs) + ", which is under the critical value by " + str(lowerBound - avgOfStrainAvgs) + "\n")
-                countTest1 += 1
-            if avgOfStrainAvgs < test2Bound:
-                countTest2 += 1
-            if avgOfStrainAvgs < test3Bound:
-                countTest3 += 1
 
     for strain in removed:
         strains.remove(strain)
