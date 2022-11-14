@@ -81,34 +81,8 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         print("2")  # Cannot do any statistical evaluation, so the strains are simply passed through
         sys.exit()
 
-    if sampleSize >= 30:
-        # Confidence interval (unknown pop variance, large n) = [sample mean] ( + or - ) [Z score with respect to alpha] * [Sample variance]
-        # Note that the + or - is actually two separate confidence intervals:
-        # one from -Inf to the determined upperBound, used to filter out too similar strains
-        # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
-        zScore = Decimal(abs(stats.norm.ppf(1.0 - float(confidence))))
-        test3Diff = Decimal(3 * sampleStdDev)  # Trying not using z or t score. If made permanent, remove if/else for sampleSize >=30.
-        test2Diff = Decimal(2 * sampleStdDev)
-        boundDiff = Decimal(1 * sampleStdDev)
-        test3Bound = Decimal(sampleMean - test3Diff)
-        test2Bound = Decimal(sampleMean - test2Diff)
-        lowerBound = Decimal(sampleMean - boundDiff)
-        logFile.write("Sample Z Score: " + str(zScore) + "\n")
-
-    else:  # Else if sampleSize is lower than 30...
-        # Confidence interval (unknown pop variance, small n, normal distribution) = [sample mean] ( + or - ) [T score with respect to alpha and df = sample size -1] * [Sample variance]
-        # Note that the + or - is actually two separate confidence intervals:
-        # one from -Inf to the determined upperBound, used to filter out too similar strains
-        # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
-        degsFreedom = sampleSize - 1
-        tScore = Decimal(abs(stats.t.ppf((1.0 - float(confidence)), degsFreedom)))
-        test3Diff = Decimal(3 * sampleStdDev)  # Trying not using z or t score. If made permanent, remove if/else for sampleSize >=30.
-        test2Diff = Decimal(2 * sampleStdDev)
-        boundDiff = Decimal(1 * sampleStdDev)
-        test3Bound = Decimal(sampleMean - test3Diff)
-        test2Bound = Decimal(sampleMean - test2Diff)
-        lowerBound = Decimal(sampleMean - boundDiff)
-        logFile.write("Sample T Score: " + str(tScore) + "\n")
+    boundDiff = Decimal(2 * sampleStdDev)
+    lowerBound = Decimal(sampleMean - boundDiff)
 
     logFile.write("Lowerbound of " + specLabel + " determined to be: " + str(lowerBound) + "\n")
 
@@ -186,28 +160,14 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         logFile.write("Sample Standard Deviation: " + str(sampleStdDev) + "\n")
         logFile.write("Sample Standard Error: " + str(sampleStdError) + "\n")
 
-        if sampleSize >= 30:
-            # Confidence interval (unknown pop variance, large n) = [sample mean] ( + or - ) [Z score with respect to alpha] * [Sample variance]
-            # Note that the + or - is actually two separate confidence intervals:
-            # one from -Inf to the determined upperBound, used to filter out too similar strains
-            # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
-            zScore = Decimal(abs(stats.norm.ppf(1.0 - float(confidence))))
-            boundDiff = Decimal(1 * sampleStdDev)
-            upperBound = Decimal(sampleMean + boundDiff)
-            logFile.write("Sample Z Score: " + str(zScore) + "\n")
-
-        else:  # Else if sampleSize is lower than 30...
-            # Confidence interval (unknown pop variance, small n, normal distribution) = [sample mean] ( + or - ) [T score with respect to alpha and df = sample size -1] * [Sample variance]
-            # Note that the + or - is actually two separate confidence intervals:
-            # one from -Inf to the determined upperBound, used to filter out too similar strains
-            # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
-            degsFreedom = sampleSize - 1
-            tScore = Decimal(abs(stats.t.ppf((1.0 - float(confidence)), degsFreedom)))
-            boundDiff = Decimal(1 * sampleStdDev)
-            upperBound = Decimal(sampleMean + boundDiff)
-            logFile.write("Sample T Score: " + str(tScore) + "\n")
-
-        logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + "\n")
+        boundDiff = Decimal(2 * sampleStdDev)
+        upperBound = Decimal(sampleMean + boundDiff)
+        upperbound = .999  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev
+        if upperbound >= 1:
+            logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + ", which is greater than 1. Upperbound set instead to .999.\n")
+            upperbound = .999
+        else:
+            logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + "\n")
 
         # Any 1v1 that *exceeds* the range indicates too similar strains
         removed = []
