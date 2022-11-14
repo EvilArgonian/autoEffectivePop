@@ -90,9 +90,6 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
     # On an unrelated note, the word "exceeds" should really have an established antonym "deceeds"
     removed = []
     removalInfo = []
-    countTest3 = 0
-    countTest2 = 0
-    countTest1 = 0
     for strain in strains:  # For each strain
         strainData = []
         for versus in avgIdentityData.keys():  # For each 1v1 that compares 2 surviving strains
@@ -157,7 +154,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
 
         boundDiff = Decimal(2 * sampleStdDev)
         upperBound = Decimal(sampleMean + boundDiff)
-        upperbound = .999  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev
+        upperbound = .995  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev
         if upperbound >= 1:
             logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + ", which is greater than 1. Upperbound set instead to .999.\n")
             upperbound = .999
