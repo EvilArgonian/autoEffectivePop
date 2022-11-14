@@ -151,7 +151,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
 
         boundDiff = Decimal(2 * sampleStdDev)
         upperBound = Decimal(sampleMean + boundDiff)
-        upperBound = .995  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev
+        upperBound = .999  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev
         if upperBound >= 1:
             logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + ", which is greater than 1. Upperbound set instead to .999\n")
             upperbound = .999
