@@ -126,9 +126,6 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             sampleStdDev) + "\tLower Bound: " + str(lowerBound) + "\n")
         for item in removalInfo:
             f.write(item + "\n")  # Records comparisons that resulted in removal
-        f.write("Strains removed at lowerbound using 3xStdDev: " + str(countTest3) + "\n")
-        f.write("Strains theoretically removed at lowerbound using 2xStdDev: " + str(countTest2) + "\n")
-        f.write("Strains theoretically removed at lowerbound using 1xStdDev: " + str(countTest1) + "\n")
 
     logFile.write(
         "Remaining " + str(len(strains)) + " " + specLabel + " strains recognized (partial): " + str(strains) + "\n")
