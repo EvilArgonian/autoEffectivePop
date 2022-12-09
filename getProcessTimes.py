@@ -10,7 +10,7 @@ with open("speciesProcessTimeTable.txt", "w") as tableFile:
         if os.path.isdir(speciesPath):
             #try:
             with open(speciesPath + "/Process_Time.txt", "r") as timeFile:
-                timeString = re.search(r"/Runtime: \d+ seconds/", timeFile.readlines()[1])
+                timeString = re.findall(r"/Runtime: \d+ seconds/", timeFile.read())[0]
                 runtimeSeconds = int(timeString.split()[1])
                 tableFile.write(speciesFolder + "\t" + runtimeSeconds + "\n")
                 print("Found runtime for " + speciesFolder + ": " + runtimeSeconds + " seconds.")
