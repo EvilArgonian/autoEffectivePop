@@ -13,7 +13,7 @@ with open("speciesProcessTimeTable.txt", "w") as tableFile:
                 timeString = re.findall(r"Runtime: \d+ seconds", timeFile.read())
                 runtimeSeconds = int(timeString[0].split()[1])
                 tableFile.write(speciesFolder + "\t" + str(runtimeSeconds) + "\n")
-                print("Found runtime for " + speciesFolder + ": " + runtimeSeconds + " seconds.")
+                print("Found runtime for " + speciesFolder + ": " + str(runtimeSeconds) + " seconds.")
             #except Exception:
                 #print("Failed to find runtime for " + speciesFolder + ".")
                 #continue
