@@ -15,5 +15,6 @@ with open("speciesProcessTimeTable.txt", "w") as tableFile:
                     tableFile.write(speciesFolder + "\t" + runtimeSeconds + "\n")
                     print("Found runtime for " + speciesFolder + ": " + runtimeSeconds + " seconds.")
             except Exception:
+                print("Failed to find runtime for " + speciesFolder + ".")
                 continue
 print("All done!")
