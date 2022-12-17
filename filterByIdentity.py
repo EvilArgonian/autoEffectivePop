@@ -97,7 +97,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             if strain in twoStrainArr:
                 strainData.append(Decimal(avgIdentityData[versus]))
         avgOfStrainAvgs = numpy.mean(strainData)
-        if numpy.isnan(float(avgOfStrainAvgs)):  # Occasional NaN issue with avgOfStrainAvgs? How to handle?
+        if numpy.isnan(float(avgOfStrainAvgs)):  # Occasional NaN issue with avgOfStrainAvgs
             removed.append(strain)
             removalInfo.append(strain + " Average of Strain-Vs-Other-Strain Average Identities: " + str(
                 avgOfStrainAvgs) + ", which produced a NaN.")

@@ -19,7 +19,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
     if len(sys.argv) > 2:
         confidence = float(sys.argv[3])
         logFile.write("Confidence provided: " + str(confidence) + "\n")
-    hardCut = None
+    hardCut = .995 # Using default of .995; return to None to remove
     if len(sys.argv) > 3:
         hardCut = Decimal(sys.argv[4])
         logFile.write("Hard Upperbound provided: " + str(hardCut) + "\n")
@@ -39,8 +39,8 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
     strains = []  # This list will record each strain name
     logFile.write("Beginning BLAST data collection for " + specLabel + "\n")
     for filename in os.listdir(folder):  # For every file
-        fileNameFormatted = ".".join(filename.split(".")[0:len(
-            filename.split(".")) - 1])  # This nonsense to allow for strain names with periods in them
+        # This nonsense to allow for strain names with periods in them
+        fileNameFormatted = ".".join(filename.split(".")[0:len(filename.split(".")) - 1])
         if "_vs_" in filename and filename.endswith(".txt"):  # Interprets identity from strain v strain BLAST
             thisVs = fileNameFormatted
             if thisVs.split("_vs_")[0] in removed or thisVs.split("_vs_")[1] in removed:
@@ -92,50 +92,25 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
             destination = "temp/" + specLabel + "/Nucleotide/"
             shutil.copy(source, destination)
         with open("temp/" + specLabel + "/Filtered/Output.txt", "w") as outFile:
-            outFile.write(
-                " ".join(strains))  # Cannot do any statistical evaluation, so the strains are simply passed through
+            # Cannot do any statistical evaluation, so the strains are simply passed through
+            outFile.write(" ".join(strains))
         sys.exit()
 
-    if sampleSize >= 30:
-        # Confidence interval (unknown pop variance, large n) = [sample mean] ( + or - ) [Z score with respect to alpha] * Sample variance]
-        # Note that the + or - is actually two separate confidence intervals:
-        # one from -Inf to the determined upperBound, used to filter out too similar strains
-        # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
-        print("Test point 1")
-        zScore = Decimal(abs(stats.norm.ppf(1.0 - confidence)))
-        print("Test point 2")
-        boundDiff = Decimal(zScore * sampleStdDev)
-        print("Test point 3")
-        if (not hardCut) or (hardCut and Decimal(sampleMean + boundDiff) < hardCut):
-            upperBound = Decimal(sampleMean + boundDiff)
-        else:
-            upperBound = hardCut
-        logFile.write("Sample Z Score: " + str(zScore) + "\n")
-        print("Sample Z Score: " + str(zScore) + "\n")
-        logFile.write("Upperbound of " + specLabel + " set to be: " + str(upperBound) + "\n")
+    boundDiff = Decimal(2 * sampleStdDev)
+    lowerBound = Decimal(sampleMean - boundDiff)
+    if (not hardCut) or (hardCut and Decimal(sampleMean + boundDiff) < hardCut):
+        upperBound = Decimal(sampleMean + boundDiff)
+    else:
+        upperBound = hardCut
+    logFile.write("Lowerbound of " + specLabel + " set to be: " + str(lowerBound) + "\n")
+    logFile.write("Upperbound of " + specLabel + " set to be: " + str(upperBound) + "\n")
 
-    else:  # Else if sampleSize is lower than 30...
-        # Confidence interval (unknown pop variance, small n, normal distribution) = [sample mean] ( + or - ) [T score with respect to alpha and df = sample size -1] * [Sample variance]
-        # Note that the + or - is actually two separate confidence intervals:
-        # one from -Inf to the determined upperBound, used to filter out too similar strains
-        # one from the determined lowerBound to Inf, used to filter out too dissimilar strains
-        degsFreedom = sampleSize - 1
-        tScore = Decimal(abs(stats.t.ppf((1.0 - confidence), degsFreedom)))
-        boundDiff = Decimal(tScore * sampleStdDev)
-        if (not hardCut) or (hardCut and Decimal(sampleMean + boundDiff) < hardCut):
-            upperBound = Decimal(sampleMean + boundDiff)
-        else:
-            upperBound = hardCut
-        logFile.write("Sample T Score: " + str(tScore) + "\n")
-        print("Sample T Score: " + str(tScore) + "\n")
-        logFile.write("Upperbound of " + specLabel + " set to be: " + str(upperBound) + "\n")
-
-    # Any 1v1 that *exceeds* the range indicates too similar strains
+    # Any 1v1 outside of the range indicates too much dissimilarity (below) or similarity (above)
     removed = []
     removalInfo = []
     for strain in strains:  # For each strain
         if strain in removed:
-            continue  # If the strain was already flagged for similarity, ignore
+            continue  # If the strain was already flagged for removal, ignore
         for versus in avgIdentityData.keys():  # For each...
             twoStrainArr = versus.split("_vs_")
             if strain in twoStrainArr and currStrain in twoStrainArr:  # ...appearance of the strain in a 1v1 comparison
@@ -150,6 +125,16 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
                         testValue) + ", which is over the critical value by " + str(testValue - upperBound))
                     logFile.write("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
                         testValue) + ", which is over the critical value by " + str(testValue - upperBound) + "\n")
+            if testValue < lowerBound:  # Strains are too dissimilar
+                otherStrain = twoStrainArr[1 - twoStrainArr.index(strain)]
+                if otherStrain in removed:
+                    continue  # If the other strain was already flagged for similarity, ignore
+                otherStrain = twoStrainArr[1 - twoStrainArr.index(currStrain)]  # Avoid removing the current strain
+                removed.append(str(otherStrain))  # Remove one of the too similar strains
+                removalInfo.append("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
+                    testValue) + ", which is under the critical value by " + str(lowerBound - testValue))
+                logFile.write("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
+                    testValue) + ", which is under the critical value by " + str(lowerBound - testValue) + "\n")
 
     logFile.write("Total strains removed: " + str(len(removed)) + "\n")
     with open("temp/" + specLabel + "/Filtered/Removal_Log.txt", "a+") as removedStrains:
@@ -166,10 +151,16 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
             removedStrains.write(strain + "\n")
 
     with open("temp/" + specLabel + "/Filtered/RemovalForSimilarity_Lite.txt", "a+") as f:
-        f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(
-            sampleStdDev) + "\tUpper Bound: " + str(upperBound) + "\n")
-        for item in removalInfo:
-            f.write(item + "\n")  # Records comparisons that resulted in removal
+        with open("temp/" + specLabel + "/Filtered/RemovalForDissimilarity_Lite.txt", "a+") as f2:
+            f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(
+                sampleStdDev) + "\tUpper Bound: " + str(upperBound) + "\n")
+            f2.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(
+                sampleStdDev) + "\tLower Bound: " + str(lowerBound) + "\n")
+            for item in removalInfo:
+                if " over the critical value " in item:
+                    f.write(item + "\n")  # Records comparisons that resulted in removal
+                else:
+                    f2.write(item + "\n")  # Records comparisons that resulted in removal
 
     logFile.write("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized: " + str(strains) + "\n")
     with open("temp/" + specLabel + "/Filtered/Output.txt", "w") as outFile:
