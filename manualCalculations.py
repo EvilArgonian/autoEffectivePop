@@ -6,9 +6,6 @@ import datetime
 
 specName = sys.argv[1]
 if len(sys.argv) > 1:
-    with open("temp_test_file.txt", "w") as w:
-        w.write(str(len(sys.argv)))
-        w.close()
     ignoreStrain = bool(sys.argv[2])
 else:
     ignoreStrain = False
