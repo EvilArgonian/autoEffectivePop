@@ -12,7 +12,7 @@ from scipy import stats
 # Alternate hypothesis 2: A given strain is too dissimilar to the others and thus likely to be a unique species. The average of 1v1 data points of that strain is below (beyond) the critical lower boundary.
 specLabel = sys.argv[1]
 confidence = .9999  # Defaults to 99.99%
-if len(sys.argv) > 1:
+if len(sys.argv) > 2:
     confidence = Decimal(sys.argv[2])
 
 folder = "temp/" + specLabel + "/BLAST/"
