@@ -6,7 +6,7 @@ import datetime
 
 specName = sys.argv[1]
 if len(sys.argv) > 2:
-    ignoreStrain = bool(sys.argv[2])
+    ignoreStrain = True
 else:
     ignoreStrain = False
 
