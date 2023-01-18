@@ -6,7 +6,8 @@ import datetime
 
 specName = sys.argv[1]
 if len(sys.argv) > 1:
-    print("Arg check: " + str(len(sys.argv)))
+    with open("temp_test_file.txt") as w:
+        w.write(len(sys.argv))
     ignoreStrain = bool(sys.argv[2])
 else:
     ignoreStrain = False
