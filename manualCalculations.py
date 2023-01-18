@@ -5,6 +5,10 @@ import re
 import datetime
 
 specName = sys.argv[1]
+if sys.argv[2]:
+    ignoreStrain = True
+else:
+    ignoreStrain = False
 
 table = {
     # 'M' - START, '_' - STOP
@@ -135,13 +139,13 @@ def getConsensus(nucDict):
 
 def getComplement(nucStr):
     if nucStr == "BEG" or nucStr == "END":
-        return nucStr # Should this switch BEG and END?
+        return nucStr  # Should this switch BEG and END?
     outStr = ""
     for nuc in nucStr:
         if nuc == 'A':
             outStr += 'T'
         elif nuc == 'T':
-            outStr+='A'
+            outStr += 'A'
         elif nuc == 'C':
             outStr += 'G'
         elif nuc == 'G':
@@ -211,13 +215,17 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                         continue
                     if consensusCodon[pos] != actualCodon[pos]:
                         mutsInCodon[pos] = 1
-                        strainName = re.search("\[strain=(.+?)\]", nucDict.keys()[seqIndex]).group(1)
+                        if not ignoreStrain:
+                            strainName = re.search("\[strain=(.+?)\]", nucDict.keys()[seqIndex]).group(1)
+                        else:
+                            strainName = "No Strain Designated"
                         geneName = nucDict.keys()[seqIndex].split(" ")[0]
-                        synStatus = "S" if table[consensusCodon] == table[actualCodon] else "N" # Technically could be inaccurate in codons with 2 or 3 mutations; minor difference.
-                        twoLeft = "BEG" if i+pos-2 < leadingGaps else ancestralSeq[i+pos-2]
+                        synStatus = "S" if table[consensusCodon] == table[
+                            actualCodon] else "N"  # Technically could be inaccurate in codons with 2 or 3 mutations; minor difference.
+                        twoLeft = "BEG" if i + pos - 2 < leadingGaps else ancestralSeq[i + pos - 2]
                         oneLeft = "BEG" if i + pos - 1 < leadingGaps else ancestralSeq[i + pos - 1]
-                        middle = ancestralSeq[i+pos]
-                        oneRight = "END" if i +pos + 1 >= seqLength - trailingGaps else ancestralSeq[i + pos + 1]
+                        middle = ancestralSeq[i + pos]
+                        oneRight = "END" if i + pos + 1 >= seqLength - trailingGaps else ancestralSeq[i + pos + 1]
                         twoRight = "END" if i + pos + 2 >= seqLength - trailingGaps else ancestralSeq[i + pos + 2]
                         adjPos = "Err"
                         try:
@@ -236,10 +244,12 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                                 adjPos = str(int(actualPos) + i + pos)
                             except ValueError:
                                 adjPos = "Err " + actualPos + "+" + str(i + pos)
-                            callOutput = specName + ", " + strainName + ", " + geneName + ", " + synStatus + ", " + adjPos + ", " + twoLeft + ", " + oneLeft + ", " + middle + ", " + nucDict.values()[seqIndex][i + pos] + ", " + oneRight + ", " + twoRight + "\n"
+                            callOutput = specName + ", " + strainName + ", " + geneName + ", " + synStatus + ", " + adjPos + ", " + twoLeft + ", " + oneLeft + ", " + middle + ", " + \
+                                         nucDict.values()[seqIndex][i + pos] + ", " + oneRight + ", " + twoRight + "\n"
                             mutCalls.write(callOutput)
                         except Exception:
-                            callOutput = specName + ", " + strainName + ", " + geneName + ", " + synStatus + ", " + adjPos + ", " + twoLeft + ", " + oneLeft + ", " + middle + ", " + nucDict.values()[seqIndex][i + pos] + ", " + oneRight + ", " + twoRight + "\n"
+                            callOutput = specName + ", " + strainName + ", " + geneName + ", " + synStatus + ", " + adjPos + ", " + twoLeft + ", " + oneLeft + ", " + middle + ", " + \
+                                         nucDict.values()[seqIndex][i + pos] + ", " + oneRight + ", " + twoRight + "\n"
                             mutCalls.write(callOutput)
                         if not foundSegSite[pos]:
                             actualAllChanges += 1
@@ -248,61 +258,73 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                     continue  # Ignore positions within the leading and trailing gap sections
                 if consensusCodon not in table.keys() or actualCodon not in table.keys():
                     continue
-                if sum(mutsInCodon) == 3: # This gets ridiculous fast...
-                    inBetween12_1 = actualCodon[0] + consensusCodon[1:] # Ttt
-                    inBetween13_2 = actualCodon[0:2] + consensusCodon[2] # TTt
+                if sum(mutsInCodon) == 3:  # This gets ridiculous fast...
+                    inBetween12_1 = actualCodon[0] + consensusCodon[1:]  # Ttt
+                    inBetween13_2 = actualCodon[0:2] + consensusCodon[2]  # TTt
                     inBetween25_2 = actualCodon[0] + consensusCodon[1] + actualCodon[2]  # TtT
-                    inBetween34_1 = consensusCodon[0] + actualCodon[1] + consensusCodon[2] # tTt
-                    inBetween46_2 = consensusCodon[0] + actualCodon[1:] # tTT
-                    inBetween56_1 = consensusCodon[0:2] + actualCodon[2] # ttT
+                    inBetween34_1 = consensusCodon[0] + actualCodon[1] + consensusCodon[2]  # tTt
+                    inBetween46_2 = consensusCodon[0] + actualCodon[1:]  # tTT
+                    inBetween56_1 = consensusCodon[0:2] + actualCodon[2]  # ttT
 
                     totSynFound = 0.0
                     totNonSynFound = 0.0
-                    if table[consensusCodon] == table[inBetween12_1]:  # Compare consensus to between possibility part 1 of paths 1 and 2 [Weight = 2]
+                    if table[consensusCodon] == table[
+                        inBetween12_1]:  # Compare consensus to between possibility part 1 of paths 1 and 2 [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween12_1] == table[inBetween13_2]:  # Compare between possibility part 1 of path 1 to part 2 of path 1
+                    if table[inBetween12_1] == table[
+                        inBetween13_2]:  # Compare between possibility part 1 of path 1 to part 2 of path 1
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween13_2] == table[actualCodon]:  # Compare between possibility part 2 of paths 1 and 3 to actual [Weight = 2]
+                    if table[inBetween13_2] == table[
+                        actualCodon]:  # Compare between possibility part 2 of paths 1 and 3 to actual [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween12_1] == table[inBetween25_2]: # Compare between possibility part 1 of path 2 to part 2 of path 2
+                    if table[inBetween12_1] == table[
+                        inBetween25_2]:  # Compare between possibility part 1 of path 2 to part 2 of path 2
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween25_2] == table[actualCodon]:  # Compare between possibility part 2 of paths 2 and 5 to actual [Weight = 2]
+                    if table[inBetween25_2] == table[
+                        actualCodon]:  # Compare between possibility part 2 of paths 2 and 5 to actual [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[consensusCodon] == table[inBetween34_1]: # Compare consensus to between possibility part 1 of paths 3 and 4 [Weight = 2]
+                    if table[consensusCodon] == table[
+                        inBetween34_1]:  # Compare consensus to between possibility part 1 of paths 3 and 4 [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween34_1] == table[inBetween13_2]: # Compare between possibility part 1 of path 3 to part 2 of path 3
+                    if table[inBetween34_1] == table[
+                        inBetween13_2]:  # Compare between possibility part 1 of path 3 to part 2 of path 3
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween34_1] == table[inBetween46_2]:  # Compare between possibility part 1 of path 4 to part 2 of path 4
+                    if table[inBetween34_1] == table[
+                        inBetween46_2]:  # Compare between possibility part 1 of path 4 to part 2 of path 4
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween46_2] == table[actualCodon]:  # Compare between possibility part 2 of paths 4 and 6 to actual [Weight = 2]
+                    if table[inBetween46_2] == table[
+                        actualCodon]:  # Compare between possibility part 2 of paths 4 and 6 to actual [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[consensusCodon] == table[inBetween56_1]:  # Compare consensus to between possibility part 1 of paths 5 and 6 [Weight = 2]
+                    if table[consensusCodon] == table[
+                        inBetween56_1]:  # Compare consensus to between possibility part 1 of paths 5 and 6 [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween56_1] == table[inBetween25_2]:  # Compare between possibility part 1 of path 5 to part 2 of path 5
+                    if table[inBetween56_1] == table[
+                        inBetween25_2]:  # Compare between possibility part 1 of path 5 to part 2 of path 5
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween56_1] == table[inBetween46_2]:  # Compare between possibility part 1 of path 6 to part 2 of path 6
+                    if table[inBetween56_1] == table[
+                        inBetween46_2]:  # Compare between possibility part 1 of path 6 to part 2 of path 6
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
@@ -329,19 +351,19 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
 
                     totSynFound = 0.0
                     totNonSynFound = 0.0
-                    if table[consensusCodon] == table[inBetween1]: # Compare consensus to to first between possibility
+                    if table[consensusCodon] == table[inBetween1]:  # Compare consensus to to first between possibility
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween1] == table[actualCodon]:# Compare first between possibility to actual
+                    if table[inBetween1] == table[actualCodon]:  # Compare first between possibility to actual
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[consensusCodon] == table[inBetween2]: # Compare consensus to to second between possibility
+                    if table[consensusCodon] == table[inBetween2]:  # Compare consensus to to second between possibility
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween2] == table[actualCodon]: # Compare second between possibility to actual
+                    if table[inBetween2] == table[actualCodon]:  # Compare second between possibility to actual
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
@@ -433,7 +455,6 @@ def calcPis(nucDict, numStrains, ancestralSeq):
     nonSynMutations = 0.0
     mutations = 0.0
 
-
     for index1 in range(0, numSeq):
         seq1 = nucDict.values()[index1]
         for index2 in range(index1 + 1, numSeq):
@@ -465,51 +486,63 @@ def calcPis(nucDict, numStrains, ancestralSeq):
 
                     totSynFound = 0.0
                     totNonSynFound = 0.0
-                    if table[site1] == table[inBetween12_1]:  # Compare consensus to between possibility part 1 of paths 1 and 2 [Weight = 2]
+                    if table[site1] == table[
+                        inBetween12_1]:  # Compare consensus to between possibility part 1 of paths 1 and 2 [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween12_1] == table[inBetween13_2]:  # Compare between possibility part 1 of path 1 to part 2 of path 1
+                    if table[inBetween12_1] == table[
+                        inBetween13_2]:  # Compare between possibility part 1 of path 1 to part 2 of path 1
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween13_2] == table[site2]:  # Compare between possibility part 2 of paths 1 and 3 to actual [Weight = 2]
+                    if table[inBetween13_2] == table[
+                        site2]:  # Compare between possibility part 2 of paths 1 and 3 to actual [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween12_1] == table[inBetween25_2]:  # Compare between possibility part 1 of path 2 to part 2 of path 2
+                    if table[inBetween12_1] == table[
+                        inBetween25_2]:  # Compare between possibility part 1 of path 2 to part 2 of path 2
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween25_2] == table[site2]:  # Compare between possibility part 2 of paths 2 and 5 to actual [Weight = 2]
+                    if table[inBetween25_2] == table[
+                        site2]:  # Compare between possibility part 2 of paths 2 and 5 to actual [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[site1] == table[inBetween34_1]:  # Compare consensus to between possibility part 1 of paths 3 and 4 [Weight = 2]
+                    if table[site1] == table[
+                        inBetween34_1]:  # Compare consensus to between possibility part 1 of paths 3 and 4 [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween34_1] == table[inBetween13_2]:  # Compare between possibility part 1 of path 3 to part 2 of path 3
+                    if table[inBetween34_1] == table[
+                        inBetween13_2]:  # Compare between possibility part 1 of path 3 to part 2 of path 3
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween34_1] == table[inBetween46_2]:  # Compare between possibility part 1 of path 4 to part 2 of path 4
+                    if table[inBetween34_1] == table[
+                        inBetween46_2]:  # Compare between possibility part 1 of path 4 to part 2 of path 4
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween46_2] == table[site2]:  # Compare between possibility part 2 of paths 4 and 6 to actual [Weight = 2]
+                    if table[inBetween46_2] == table[
+                        site2]:  # Compare between possibility part 2 of paths 4 and 6 to actual [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[site1] == table[inBetween56_1]:  # Compare consensus to between possibility part 1 of paths 5 and 6 [Weight = 2]
+                    if table[site1] == table[
+                        inBetween56_1]:  # Compare consensus to between possibility part 1 of paths 5 and 6 [Weight = 2]
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween56_1] == table[inBetween25_2]:  # Compare between possibility part 1 of path 5 to part 2 of path 5
+                    if table[inBetween56_1] == table[
+                        inBetween25_2]:  # Compare between possibility part 1 of path 5 to part 2 of path 5
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween56_1] == table[inBetween46_2]:  # Compare between possibility part 1 of path 6 to part 2 of path 6
+                    if table[inBetween56_1] == table[
+                        inBetween46_2]:  # Compare between possibility part 1 of path 6 to part 2 of path 6
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
@@ -594,7 +627,8 @@ def calcDendropy(nucDict, numStrains, file):
         schema="fasta"
     )
 
-    dendropyTheta = dendropy.calculate.popgenstat.wattersons_theta(dnaMatrix) / seqLength # Dendropy does not appear to already divide by seqLength (Should I worry about leading/trailing gaps?)
+    dendropyTheta = dendropy.calculate.popgenstat.wattersons_theta(
+        dnaMatrix) / seqLength  # Dendropy does not appear to already divide by seqLength (Should I worry about leading/trailing gaps?)
     dendropyPi = dendropy.calculate.popgenstat.nucleotide_diversity(dnaMatrix)  # / seqLength
 
     # dendropyByNumStrains is a dictionary containing all values needed to average Dendropy Theta and Pi over all same-num-contributor orthogroups
@@ -605,15 +639,16 @@ def calcDendropy(nucDict, numStrains, file):
     # Item 1 = The cumulative value of each orthogroups' Dendropy Pi  (for all orthogroups belonging to this key)
     # Item 2 = The number of orthogroups seen belonging to this key (the number which the cumulative values are divided by)
     if numStrains not in dendropyByNumStrains.keys():
-        dendropyByNumStrains.update({numStrains: [dendropyTheta, dendropyPi, 1]})  # Initialize the key:value for newly encountered key
+        dendropyByNumStrains.update(
+            {numStrains: [dendropyTheta, dendropyPi, 1]})  # Initialize the key:value for newly encountered key
     else:
         update_sumTheta = dendropyByNumStrains.get(numStrains)[0] + dendropyTheta
         update_sumPi = dendropyByNumStrains.get(numStrains)[1] + dendropyPi
         update_num = dendropyByNumStrains.get(numStrains)[2] + 1
         dendropyByNumStrains.update({numStrains: [update_sumTheta, update_sumPi, update_num]})
 
-
-    outString = file.split(".")[0] + "\tDendropy Watterson's Theta: " + str(dendropyTheta) + "\tDendropy Pi: " + str(dendropyPi) + "\n"
+    outString = file.split(".")[0] + "\tDendropy Watterson's Theta: " + str(dendropyTheta) + "\tDendropy Pi: " + str(
+        dendropyPi) + "\n"
     return outString
 
 
@@ -722,4 +757,3 @@ avgDendropyPi = float(sumOfAllAvgDendropyPi) / allCountDendropies if allCountDen
 print(str(avgWatsThetaS) + "," + str(avgWatsThetaN) + "," + str(avgWatsTheta)
       + "," + str(avgPiS) + "," + str(avgPiN) + "," + str(avgPi)
       + "," + str(avgDendropyTheta) + "," + str(avgDendropyPi))
-
