@@ -16,12 +16,6 @@ else
 	done
 fi
 
-effPopSizeCurrentDate=$(date +%d-%b-%Y)
-effPopSizeFile="final_output/Calculations_Only_Effective_Population_Sizes_${effPopSizeCurrentDate}.txt"
-rm -f ${effPopSizeFile}
-touch ${effPopSizeFile}
-echo "Species	NE (ThS)	NE (ThN) NE (Th) 	NE (PiS) 	NE (PiN)  NE (Pi) 	ThetaS 	Theta	PiS 	Pi" > final_output/Effective_Population_Sizes_${effPopSizeCurrentDate}.txt
-
 for specFolder in $(find muscle_output/ -mindepth 1 -maxdepth 1 -type d); do
 	specLabel="${specFolder##*/}"
 	if [[ ! " ${processSpecies[@]} " =~ " input/${specLabel} " ]]; then
@@ -36,11 +30,12 @@ for specFolder in $(find muscle_output/ -mindepth 1 -maxdepth 1 -type d); do
 	piS=${calculations[3]}
 	piN=${calculations[4]}
 	pi=${calculations[5]}
+	dendropyTheta=${calculations[6]}
+	dendropyPi=${calculations[7]}
 	mutRate=$(echo $(python getMutationRate.py ${specLabel}))
 	
-	echo watsThetaS: ${watsThetaS} watsThetaN: ${watsThetaN} watsTheta: ${watsTheta} piS: ${piS} piN: ${piN} pi: ${pi} mutRate: ${mutRate} specLabel: ${specLabel}
-	
-	python calcEffPopSize.py ${watsThetaS} ${watsThetaN} ${watsTheta} ${piS} ${piN} ${pi} ${mutRate} ${specLabel} ${effPopSizeFile}
+	echo watsThetaS: ${watsThetaS} watsThetaN: ${watsThetaN} watsTheta: ${watsTheta} piS: ${piS} piN: ${piN} pi: ${pi} dendropyTheta: ${dendropyTheta} dendropyPi: ${dendropyPi} mutRate: ${mutRate} specLabel: ${specLabel} strains: ${strains}
+	python calcEffPopSize.py ${watsThetaS} ${watsThetaN} ${watsTheta} ${piS} ${piN} ${pi} ${dendropyTheta} ${dendropyPi} ${mutRate} ${specLabel} ${strains}
 	
 done
 

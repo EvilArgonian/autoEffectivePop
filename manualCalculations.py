@@ -5,10 +5,6 @@ import re
 import datetime
 
 specName = sys.argv[1]
-if len(sys.argv) > 1:
-    ignoreStrain = bool(sys.argv[2])
-else:
-    ignoreStrain = False
 
 table = {
     # 'M' - START, '_' - STOP
@@ -215,10 +211,10 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                         continue
                     if consensusCodon[pos] != actualCodon[pos]:
                         mutsInCodon[pos] = 1
-                        if not ignoreStrain:
+                        try:
                             strainName = re.search("\[strain=(.+?)\]", nucDict.keys()[seqIndex]).group(1)
-                        else:
-                            strainName = "No Strain Designated"
+                        except Exception:
+                            strainName = "Strain Name Not Found"
                         geneName = nucDict.keys()[seqIndex].split(" ")[0]
                         synStatus = "S" if table[consensusCodon] == table[
                             actualCodon] else "N"  # Technically could be inaccurate in codons with 2 or 3 mutations; minor difference.
