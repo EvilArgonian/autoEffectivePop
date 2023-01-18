@@ -17,7 +17,7 @@ dendropyPi = sys.argv[8]
 mutRate = sys.argv[9]
 specName = sys.argv[10]
 strains = -1
-if sys.argv[11]:
+if len(sys.argv) > 10:
     strains = sys.argv[11]
 
 if mutRate != "Unknown":

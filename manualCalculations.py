@@ -5,8 +5,8 @@ import re
 import datetime
 
 specName = sys.argv[1]
-if sys.argv[2]:
-    ignoreStrain = True
+if len(sys.argv) > 1:
+    ignoreStrain = bool(sys.argv[2])
 else:
     ignoreStrain = False
 
