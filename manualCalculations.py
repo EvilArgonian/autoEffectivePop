@@ -223,7 +223,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                         middle = ancestralSeq[i + pos]
                         oneRight = "END" if i + pos + 1 >= seqLength - trailingGaps else ancestralSeq[i + pos + 1]
                         twoRight = "END" if i + pos + 2 >= seqLength - trailingGaps else ancestralSeq[i + pos + 2]
-                        adjPos = "Err"
+                        adjPos = "InSeq_" + str(i+pos)
                         try:
                             actualPos = re.search("\[location=(.+?)\]", nucDict.keys()[seqIndex]).group(1)
                             if "complement" in actualPos:
