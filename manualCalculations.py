@@ -654,6 +654,7 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
             with open("final_output/" + specName + "/consensusSeqs.txt", "w") as f4:
                 with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
                     gc_file.truncate(0)  # To clear the file for later appends
+                warnings = []
                 for file in os.listdir("muscle_output/" + specName + "/"):
                     nucDict = buildNucDict(specName, file)
                     # nucDict is a dictionary of sequence names mapped to actual sequences.
@@ -663,14 +664,22 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                         continue
 
                     # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
-                    numStrains = file.split("_")[0]
-                    if not numStrains.isnumeric():
+                    try:
+                        numStrains = int(file.split("_")[0])
+                    except Exception:
+                        warnings.append(file)
                         numStrains = "-1"  # Indicates that strain number is not being considered as a factor
                     consensus = getConsensus(nucDict)
                     f.write(calcThetas(nucDict, numStrains, consensus))
                     f2.write(calcPis(nucDict, numStrains, consensus))
                     f3.write(calcDendropy(nucDict, numStrains, file))
                     f4.write(">" + file + "\n" + consensus + "\n")
+
+if len(warnings) > 0:
+    with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
+        warn_file.write("File names did not all convey the number of strains; two-step averaging may be skewed if some and not all were conveyed. Files not conveyed:\n")
+        for warning in warnings:
+            warn_file.write(warning + "\n")
 
 with open("final_output/" + specName + "/GC_values.txt", "r+") as gc_file:
     gc_sum = 0.0
