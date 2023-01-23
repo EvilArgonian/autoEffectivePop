@@ -88,7 +88,7 @@ def buildNucDict(specName, file):
             nucSeqBuilder = ""
         else:
             nucSeqBuilder += line.strip()
-    nucDict.update({nucSeqTitle: nucSeqBuilder})
+    nucDict.update({nucSeqTitle: nucSeqBuilder.upper()})
     return nucDict
 
 
@@ -651,22 +651,26 @@ def calcDendropy(nucDict, numStrains, file):
 with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
     with open("final_output/" + specName + "/piValues.txt", "w") as f2:
         with open("final_output/" + specName + "/dendropyValues.txt", "w") as f3:
-            with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
-                gc_file.truncate(0)  # To clear the file for later appends
-            for file in os.listdir("muscle_output/" + specName + "/"):
-                nucDict = buildNucDict(specName, file)
-                # nucDict is a dictionary of sequence names mapped to actual sequences.
-                # the sequences are aligned coding sequences, thus equal length and divisible by 3
+            with open("final_output/" + specName + "/consensusSeqs.txt", "w") as f4:
+                with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
+                    gc_file.truncate(0)  # To clear the file for later appends
+                for file in os.listdir("muscle_output/" + specName + "/"):
+                    nucDict = buildNucDict(specName, file)
+                    # nucDict is a dictionary of sequence names mapped to actual sequences.
+                    # the sequences are aligned coding sequences, thus equal length and divisible by 3
 
-                if len(nucDict) < 2:
-                    continue
+                    if len(nucDict) < 2:
+                        continue
 
-                # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
-                numStrains = file.split("_")[0]
-                consensus = getConsensus(nucDict)
-                f.write(calcThetas(nucDict, numStrains, consensus))
-                f2.write(calcPis(nucDict, numStrains, consensus))
-                f3.write(calcDendropy(nucDict, numStrains, file))
+                    # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
+                    numStrains = file.split("_")[0]
+                    if not numStrains.isnumeric():
+                        numStrains = "-1"  # Indicates that strain number is not being considered as a factor
+                    consensus = getConsensus(nucDict)
+                    f.write(calcThetas(nucDict, numStrains, consensus))
+                    f2.write(calcPis(nucDict, numStrains, consensus))
+                    f3.write(calcDendropy(nucDict, numStrains, file))
+                    f4.write(">" + file + "\n" + consensus + "\n")
 
 with open("final_output/" + specName + "/GC_values.txt", "r+") as gc_file:
     gc_sum = 0.0
