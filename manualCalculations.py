@@ -677,7 +677,7 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
 
 if len(warnings) > 0:
     with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
-        warn_file.write("File names did not all convey the number of strains; two-step averaging may be skewed if some and not all were conveyed. Files not conveyed:\n")
+        warn_file.write("File names did not all convey the number of strains; two-step averaging may be inaccurate if some and not all were conveyed. Files not conveyed:\n")
         for warning in warnings:
             warn_file.write(warning + "\n")
 
