@@ -654,6 +654,8 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
             with open("final_output/" + specName + "/consensusSeqs.txt", "w") as f4:
                 with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
                     gc_file.truncate(0)  # To clear the file for later appends
+                with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
+                    mutCalls.truncate(0)  # To clear the file for later appends
                 warnings = []
                 for file in os.listdir("muscle_output/" + specName + "/"):
                     nucDict = buildNucDict(specName, file)
