@@ -88,8 +88,8 @@ def buildNucDict(specName, file):
             nucSeqTitle = line.strip()
             nucSeqBuilder = ""
         else:
-            nucSeqBuilder += line.strip()
-    nucDict.update({nucSeqTitle: nucSeqBuilder.upper()})
+            nucSeqBuilder += line.strip().upper()
+    nucDict.update({nucSeqTitle: nucSeqBuilder})
     return nucDict
 
 
@@ -670,7 +670,6 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                     nucDict = buildNucDict(specName, file)
                     # nucDict is a dictionary of sequence names mapped to actual sequences.
                     # the sequences are aligned coding sequences, thus equal length and divisible by 3
-
                     if len(nucDict) < 2:
                         continue
 
