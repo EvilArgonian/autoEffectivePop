@@ -7,28 +7,29 @@ import datetime
 specName = sys.argv[1]
 
 table = {
+    # Other IUPAC codes with certain results commented for possible later integration
     # 'M' - START, '_' - STOP
-    "GCT": "A", "GCC": "A", "GCA": "A", "GCG": "A",
-    "TGT": "C", "TGC": "C",
-    "GAT": "D", "GAC": "D",
-    "GAA": "E", "GAG": "E",
-    "TTT": "F", "TTC": "F",
-    "GGT": "G", "GGC": "G", "GGA": "G", "GGG": "G",
-    "CAT": "H", "CAC": "H",
-    "ATA": "I", "ATT": "I", "ATC": "I",
-    "AAA": "K", "AAG": "K",
-    "TTA": "L", "TTG": "L", "CTT": "L", "CTC": "L", "CTA": "L", "CTG": "L",
+    "GCT": "A", "GCC": "A", "GCA": "A", "GCG": "A",  # "GCR": "A", "GCY": "A", "GCS": "A", "GCW": "A", "GCK": "A", "GCM": "A", "GCB": "A", "GCD": "A", "GCH": "A", "GCV": "A", "GCN": "A",
+    "TGT": "C", "TGC": "C",  # "TGY": "C",
+    "GAT": "D", "GAC": "D",  # "GAY": "D",
+    "GAA": "E", "GAG": "E",  # "GAR": "E",
+    "TTT": "F", "TTC": "F",  # "TTY": "F",
+    "GGT": "G", "GGC": "G", "GGA": "G", "GGG": "G",  # "GGR": "G", "GGY": "G", "GGS": "G", "GGW": "G", "GGK": "G", "GGM": "G", "GGB": "G", "GGD": "G", "GGH": "G", "GGV": "G", "GGN": "G",
+    "CAT": "H", "CAC": "H",  # "CAY": "H",
+    "ATA": "I", "ATT": "I", "ATC": "I",  # "ATY": "I", "ATW": "I", "ATM": "I", "ATH": "I",
+    "AAA": "K", "AAG": "K",  # "AAR": "K",
+    "TTA": "L", "TTG": "L", "CTT": "L", "CTC": "L", "CTA": "L", "CTG": "L",  # "TTR": "L", "CTR": "L", "CTY": "L", "CTS": "L", "CTW": "L", "CTK": "L", "CTM": "L", "CTB": "L", "CTD": "L", "CTH": "L", "CTV": "L", "CTN": "L",
     "ATG": "M",
-    "AAT": "N", "AAC": "N",
-    "CCT": "P", "CCC": "P", "CCA": "P", "CCG": "P",
-    "CAA": "Q", "CAG": "Q",
-    "CGT": "R", "CGC": "R", "CGA": "R", "CGG": "R", "AGA": "R", "AGG": "R",
-    "TCT": "S", "TCC": "S", "TCA": "S", "TCG": "S", "AGT": "S", "AGC": "S",
-    "ACT": "T", "ACC": "T", "ACA": "T", "ACG": "T",
-    "GTT": "V", "GTC": "V", "GTA": "V", "GTG": "V",
+    "AAT": "N", "AAC": "N",  # "AAY": "N",
+    "CCT": "P", "CCC": "P", "CCA": "P", "CCG": "P",  # "CCR": "P", "CCY": "P", "CCS": "P", "CCW": "P", "CCK": "P", "CCM": "P", "CCB": "P", "CCD": "P", "CCH": "P", "CCV": "P", "CCN": "P",
+    "CAA": "Q", "CAG": "Q",  # "CAR": "Q",
+    "CGT": "R", "CGC": "R", "CGA": "R", "CGG": "R", "AGA": "R", "AGG": "R",  # "CGR": "R", "CGY": "R", "CGS": "R", "CGW": "R", "CGK": "R", "CGM": "R", "CGB": "R", "CGD": "R", "CGH": "R", "CGV": "R", "CGN": "R", "AGR": "R",
+    "TCT": "S", "TCC": "S", "TCA": "S", "TCG": "S", "AGT": "S", "AGC": "S",  # "TCR": "S", "TCY": "S", "TCS": "S", "TCW": "S", "TCK": "S", "TCM": "S", "TCB": "S", "TCD": "S", "TCH": "S", "TCV": "S", "TCN": "S", "AGY": "S",
+    "ACT": "T", "ACC": "T", "ACA": "T", "ACG": "T",  # "ACR": "T", "ACY": "T", "ACS": "T", "ACW": "T", "ACK": "T", "ACM": "T", "ACB": "T", "ACD": "T", "ACH": "T", "ACV": "T", "ACN": "T",
+    "GTT": "V", "GTC": "V", "GTA": "V", "GTG": "V",  # "GTR": "V", "GTY": "V", "GTS": "V", "GTW": "V", "GTK": "V", "GTM": "V", "GTB": "V", "GTD": "V", "GTH": "V", "GTV": "V", "GTN": "V",
     "TGG": "W",
-    "TAT": "Y", "TAC": "Y",
-    "TAA": "_", "TAG": "_", "TGA": "_"
+    "TAT": "Y", "TAC": "Y",  # "TAY": "Y",
+    "TAA": "_", "TAG": "_", "TGA": "_"  # "TAR": "_"
 }
 synChances = {
     "GCT": [0.0, 0.0, 1.0], "GCC": [0.0, 0.0, 1.0], "GCA": [0.0, 0.0, 1.0], "GCG": [0.0, 0.0, 1.0],
@@ -99,12 +100,14 @@ def getConsensus(nucDict):
     consensus = ""
     GC_sum = 1
     for pos in range(0, seqLength):
-        freqDict = {'A': 0, 'C': 0, 'G': 0, 'T': 0, '-': 0}
+        freqDict = {'A': 0, 'C': 0, 'G': 0, 'T': 0, '-': 0,  # Standard codes
+                    'R': 0, 'Y': 0, 'S': 0, 'W': 0, 'K': 0, 'M': 0, 'B': 0, 'D': 0, 'H': 0, 'V': 0, 'N': 0}
+        # Note that other IUPAC codes, while counted, are currently unused in any calculations
         for i in range(0, numSeq):
             nuc = (nucDict.values()[i][pos]).upper()
-            if nuc == '_':  # Corrective in case '_' is used to mark gaps instead of '-'
+            if nuc == '_' or nuc == '.':  # Corrective in case '_' or '.' is used to mark gaps instead of '-'
                 nuc = '-'
-            if nuc not in freqDict.keys():  # Encountered rarely. N's for unknown, perhaps?
+            if nuc not in freqDict.keys():  # Encountered rarely.
                 continue
             freqDict.update({nuc: freqDict.get(nuc) + 1})
         # Favors A, C, G, T, _ in that order for breaking ties
@@ -125,6 +128,7 @@ def getConsensus(nucDict):
         consensus += highestNuc
 
         if highestNuc == 'G' or highestNuc == 'C':
+            # or highestNuc == 'S', should inclusion of other IUPAC codes be implemented
             GC_sum += 1
 
     with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
@@ -206,7 +210,9 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                     if i + pos < leadingGaps or i + pos >= seqLength - trailingGaps:
                         continue  # Ignore positions within the leading and trailing gap sections
                     if not consensusCodon in table.keys() or not actualCodon in table.keys():
-                        continue
+                        synCheck = False
+                    else:
+                        synCheck = True
                     if pos >= len(consensusCodon) or pos >= len(actualCodon):
                         continue
                     if consensusCodon[pos] != actualCodon[pos]:
@@ -216,14 +222,17 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                         except Exception:
                             strainName = "Strain Name Not Found"
                         geneName = nucDict.keys()[seqIndex].split(" ")[0]
-                        synStatus = "S" if table[consensusCodon] == table[
-                            actualCodon] else "N"  # Technically could be inaccurate in codons with 2 or 3 mutations; minor difference.
+                        if synCheck:
+                            # Technically could be inaccurate in codons with 2 or 3 mutations; minor difference.
+                            synStatus = "S" if table[consensusCodon] == table[actualCodon] else "N"
+                        else:
+                            synStatus = "U"  # Represents uncertain synonymity
                         twoLeft = "BEG" if i + pos - 2 < leadingGaps else ancestralSeq[i + pos - 2]
                         oneLeft = "BEG" if i + pos - 1 < leadingGaps else ancestralSeq[i + pos - 1]
                         middle = ancestralSeq[i + pos]
                         oneRight = "END" if i + pos + 1 >= seqLength - trailingGaps else ancestralSeq[i + pos + 1]
                         twoRight = "END" if i + pos + 2 >= seqLength - trailingGaps else ancestralSeq[i + pos + 2]
-                        adjPos = "InSeq_" + str(i+pos)
+                        adjPos = "InSeq_" + str(i + pos)
                         try:
                             actualPos = re.search("\[location=(.+?)\]", nucDict.keys()[seqIndex]).group(1)
                             if "complement" in actualPos:
@@ -679,7 +688,8 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
 
 if len(warnings) > 0:
     with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
-        warn_file.write("File names did not all convey the number of strains; two-step averaging may be inaccurate if some and not all were conveyed. Files not conveyed:\n")
+        warn_file.write(
+            "File names did not all convey the number of strains; two-step averaging may be inaccurate if some and not all were conveyed. Files not conveyed:\n")
         for warning in warnings:
             warn_file.write(warning + "\n")
 
