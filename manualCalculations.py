@@ -182,7 +182,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
             break
     trailingGaps = max(gapLengths)
 
-    with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a") as mutCalls:
+    with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
         # Tracking for mutations seen
         actualSynChanges = 0.0
         actualNonSynChanges = 0.0
