@@ -83,6 +83,7 @@ def buildNucDict(specName, file):
     nucSeqBuilder = ""
     with open("final_output/" + specName + "/testLimit.txt", "w") as limit_file:
         limit_file.truncate(0)  # To clear the file for later appends
+        limit_file.close()
     countLimit = 0
     for line in open("muscle_output/" + specName + "/" + file, "r").readlines():
         if line.startswith(">"):
@@ -91,6 +92,7 @@ def buildNucDict(specName, file):
                 countLimit += 1
                 with open("final_output/" + specName + "/testLimit.txt", "a") as limit_file:
                     limit_file.write(str(countLimit) + " - " + nucSeqTitle)
+                    limit_file.close()
             nucSeqTitle = line.strip()
             nucSeqBuilder = ""
         else:
