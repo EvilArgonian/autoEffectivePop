@@ -85,19 +85,20 @@ def buildNucDict(specName, file):
         limit_file.truncate(0)  # To clear the file for later appends
         limit_file.close()
     countLimit = 0
-    for line in open("muscle_output/" + specName + "/" + file, "r").readlines():
-        if line.startswith(">"):
-            if nucSeqTitle != "":
-                nucDict.update({nucSeqTitle: nucSeqBuilder})
-                countLimit += 1
-                with open("final_output/" + specName + "/testLimit.txt", "a") as limit_file:
-                    limit_file.write(str(countLimit) + " - " + nucSeqTitle)
-                    limit_file.close()
-            nucSeqTitle = line.strip()
-            nucSeqBuilder = ""
-        else:
-            nucSeqBuilder += line.strip().upper()
-    nucDict.update({nucSeqTitle: nucSeqBuilder})
+    with open("muscle_output/" + specName + "/" + file, "r") as alignedFile:
+        for line in alignedFile:
+            if line.startswith(">"):
+                if nucSeqTitle != "":
+                    nucDict.update({nucSeqTitle: nucSeqBuilder})
+                    countLimit += 1
+                    with open("final_output/" + specName + "/testLimit.txt", "a") as limit_file:
+                        limit_file.write(str(countLimit) + " - " + nucSeqTitle)
+                        limit_file.close()
+                nucSeqTitle = line.strip()
+                nucSeqBuilder = ""
+            else:
+                nucSeqBuilder += line.strip().upper()
+        nucDict.update({nucSeqTitle: nucSeqBuilder})
     return nucDict
 
 
