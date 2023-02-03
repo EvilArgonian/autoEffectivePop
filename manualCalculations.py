@@ -92,7 +92,7 @@ def buildNucDict(specName, file):
                     nucDict.update({nucSeqTitle: nucSeqBuilder})
                     countLimit += 1
                     with open("final_output/" + specName + "/testLimit.txt", "a") as limit_file:
-                        limit_file.write(str(countLimit) + " - " + nucSeqTitle)
+                        limit_file.write(str(countLimit) + " - " + nucSeqTitle +"\n")
                         limit_file.close()
                 nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
