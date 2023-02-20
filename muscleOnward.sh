@@ -16,14 +16,18 @@ else
 	done
 fi
 
-for specFolder in $(find muscle_output/ -mindepth 1 -maxdepth 1 -type d); do
+for specFolder in $(find muscle_input/ -mindepth 1 -maxdepth 1 -type d); do
 	specLabel="${specFolder##*/}"
 	if [[ ! " ${processSpecies[@]} " =~ " input/${specLabel} " ]]; then
 		continue
 	fi
+	
+	sh muscleAligning.sh ${specFolder}
+	
 	rm -rf final_output/${specLabel}
 	mkdir -p final_output/${specLabel}
 	readarray -d ',' -t calculations <<< $(echo $(python manualCalculations.py ${specLabel}))
+	echo ${calculations}
 	watsThetaS=${calculations[0]}
 	watsThetaN=${calculations[1]}
 	watsTheta=${calculations[2]}
@@ -38,3 +42,5 @@ for specFolder in $(find muscle_output/ -mindepth 1 -maxdepth 1 -type d); do
 	python calcEffPopSize.py ${watsThetaS} ${watsThetaN} ${watsTheta} ${piS} ${piN} ${pi} ${dendropyTheta} ${dendropyPi} ${mutRate} ${specLabel}
 	
 done
+
+
