@@ -14,12 +14,12 @@ print("Beginning a lite filtering round... ")
 
 specLabel = sys.argv[1]
 with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as logFile:
-    confidence = .9999  # Defaults to 99.99%
+    confidence = 2.0  # Defaults to 2 standard deviations
     currStrain = sys.argv[2]
     if len(sys.argv) > 2:
         confidence = float(sys.argv[3])
-        logFile.write("Confidence provided: " + str(confidence) + "\n")
-    hardCut = .995 # Using default of .995; return to None to remove
+        logFile.write("Confidence provided: " + str(confidence) + " standard deviations from the mean\n")
+    hardCut = .995  # Using default of .995; return to None to remove
     if len(sys.argv) > 3:
         hardCut = Decimal(sys.argv[4])
         logFile.write("Hard Upperbound provided: " + str(hardCut) + "\n")

@@ -11,9 +11,9 @@ from scipy import stats
 # Null hypothesis 2: A given strain is not too dissimilar to the others; it is close enough to be a part of the same species. The average of 1v1 data points of that strain is above (within) the critical lower boundary.
 # Alternate hypothesis 2: A given strain is too dissimilar to the others and thus likely to be a unique species. The average of 1v1 data points of that strain is below (beyond) the critical lower boundary.
 specLabel = sys.argv[1]
-confidence = .9999  # Defaults to 99.99%
+confidence_deviation = 2.0  # Defaults to 2 standard deviations
 if len(sys.argv) > 1:
-    confidence = Decimal(sys.argv[2])
+    confidence_deviation = float(sys.argv[2])
 
 folder = "temp/" + specLabel + "/BLAST/"
 # Folder will contain the strain files in the form <strain>.ffn, and the BLAST comparisons in the form <strain1>_vs_<strain2>.txt
@@ -81,7 +81,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         print("2")  # Cannot do any statistical evaluation, so the strains are simply passed through
         sys.exit()
 
-    boundDiff = Decimal(2 * sampleStdDev)
+    boundDiff = Decimal(confidence_deviation * sampleStdDev)  # confidence_deviation defaults to 2
     lowerBound = Decimal(sampleMean - boundDiff)
 
     logFile.write("Lowerbound of " + specLabel + " determined to be: " + str(lowerBound) + "\n")
@@ -149,9 +149,9 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         logFile.write("Sample Standard Deviation: " + str(sampleStdDev) + "\n")
         logFile.write("Sample Standard Error: " + str(sampleStdError) + "\n")
 
-        boundDiff = Decimal(2 * sampleStdDev)
+        boundDiff = Decimal(confidence_deviation * sampleStdDev)  # confidence_deviation defaults to 2
         upperBound = Decimal(sampleMean + boundDiff)
-        upperBound = Decimal(.995)  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev
+        upperBound = Decimal(.995)  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev # Definitely add something here to improve configurability...
         if upperBound >= 1:
             logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + ", which is greater than 1. Upperbound set instead to .999\n")
             upperbound = Decimal(.999)

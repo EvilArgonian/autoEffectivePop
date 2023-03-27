@@ -84,7 +84,7 @@ while (( elemsUnseen > 0 )); do
 	strains=()
 	elemsUnseen=0
 	seen+=("${title}")
-	python filterByIdentityLite.py ${specLabel} ${title} ".9999" ".995"
+	python filterByIdentityLite.py ${specLabel} ${title} "2" ".995"
 	# IFS=$','
 	readarray -d ',' -t remStrains < "${specFolder}/Filtered/Output.txt"
 	echo "Remaining strains: ${remStrains[@]}"

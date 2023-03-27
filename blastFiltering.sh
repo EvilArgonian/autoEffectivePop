@@ -64,7 +64,7 @@ done
 
 echo "Launching full filtering round on all strains:"
 # Create distribution of avgIdentities; Analyze for strains that fail statistical tests
-finalSurvivingStrains=$(echo $(python filterByIdentity.py ${specLabel} .9999))
+finalSurvivingStrains=$(echo $(python filterByIdentity.py ${specLabel} 2))
 # Surviving unfiltered strains have been copied to temp/Nucleotide
 
 if (( finalSurvivingStrains == -1)); then
