@@ -1,8 +1,12 @@
 import os
+import sys
 import re
 
 outputFolder = "final_output"
 inputFolder = "input"
+
+if len(sys.argv) > 1:
+    outputFolder = "input"  # Causes this to report all strains, even of non-finishing inputs
 
 with open("speciesUnfilteredStrainTable.txt", "w") as tableFile:
     for speciesFolder in os.listdir(outputFolder):
