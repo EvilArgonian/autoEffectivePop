@@ -125,16 +125,16 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
                         testValue) + ", which is over the critical value by " + str(testValue - upperBound))
                     logFile.write("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
                         testValue) + ", which is over the critical value by " + str(testValue - upperBound) + "\n")
-            if testValue < lowerBound:  # Strains are too dissimilar
-                otherStrain = twoStrainArr[1 - twoStrainArr.index(strain)]
-                if otherStrain in removed:
-                    continue  # If the other strain was already flagged for similarity, ignore
-                otherStrain = twoStrainArr[1 - twoStrainArr.index(currStrain)]  # Avoid removing the current strain
-                removed.append(str(otherStrain))  # Remove one of the too similar strains
-                removalInfo.append("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
-                    testValue) + ", which is under the critical value by " + str(lowerBound - testValue))
-                logFile.write("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
-                    testValue) + ", which is under the critical value by " + str(lowerBound - testValue) + "\n")
+                if testValue < lowerBound:  # Strains are too dissimilar
+                    otherStrain = twoStrainArr[1 - twoStrainArr.index(strain)]
+                    if otherStrain in removed:
+                        continue  # If the other strain was already flagged for similarity, ignore
+                    otherStrain = twoStrainArr[1 - twoStrainArr.index(currStrain)]  # Avoid removing the current strain
+                    removed.append(str(otherStrain))  # Remove one of the too similar strains
+                    removalInfo.append("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
+                        testValue) + ", which is under the critical value by " + str(lowerBound - testValue))
+                    logFile.write("Removed " + otherStrain + " from " + versus + " Average Identity: " + str(
+                        testValue) + ", which is under the critical value by " + str(lowerBound - testValue) + "\n")
 
     logFile.write("Total strains removed: " + str(len(removed)) + "\n")
     with open("temp/" + specLabel + "/Filtered/Removal_Log.txt", "a+") as removedStrains:
