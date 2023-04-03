@@ -11,7 +11,7 @@ from scipy import stats
 # Null hypothesis 2: A given strain is not too dissimilar to the others; it is close enough to be a part of the same species. The average of 1v1 data points of that strain is above (within) the critical lower boundary.
 # Alternate hypothesis 2: A given strain is too dissimilar to the others and thus likely to be a unique species. The average of 1v1 data points of that strain is below (beyond) the critical lower boundary.
 specLabel = sys.argv[1]
-confidence_deviation = 2.0  # Defaults to 2 standard deviations
+confidence_deviation = float(2.0)  # Defaults to 2 standard deviations
 if len(sys.argv) > 1:
     confidence_deviation = float(sys.argv[2])
 
@@ -81,7 +81,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         print("2")  # Cannot do any statistical evaluation, so the strains are simply passed through
         sys.exit()
 
-    boundDiff = Decimal(confidence_deviation * sampleStdDev)  # confidence_deviation defaults to 2
+    boundDiff = Decimal(confidence_deviation) * sampleStdDev  # confidence_deviation defaults to 2
     lowerBound = Decimal(sampleMean - boundDiff)
 
     logFile.write("Lowerbound of " + specLabel + " determined to be: " + str(lowerBound) + "\n")
