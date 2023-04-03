@@ -149,7 +149,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         logFile.write("Sample Standard Deviation: " + str(sampleStdDev) + "\n")
         logFile.write("Sample Standard Error: " + str(sampleStdError) + "\n")
 
-        boundDiff = Decimal(confidence_deviation * sampleStdDev)  # confidence_deviation defaults to 2
+        boundDiff = Decimal(confidence_deviation) * sampleStdDev  # confidence_deviation defaults to 2
         upperBound = Decimal(sampleMean + boundDiff)
         upperBound = Decimal(.995)  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev # Definitely add something here to improve configurability...
         if upperBound >= 1:
