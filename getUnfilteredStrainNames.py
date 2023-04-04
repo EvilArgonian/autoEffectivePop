@@ -6,7 +6,23 @@ outputFolder = "final_output"
 inputFolder = "input"
 
 if len(sys.argv) > 1:
-    outputFolder = "input"  # Causes this to report all strains, even of non-finishing inputs
+    speciesFolder = sys.argv[1]
+    speciesPath = os.path.join(outputFolder, speciesFolder)
+    if os.path.isdir(speciesPath):
+        with open(speciesPath + "/UnfilteredStrains.txt", "w") as strainFile:
+            strainList = []
+            speciesInputFolder = os.path.join(inputFolder, speciesFolder)
+            for strainFolder in os.listdir(speciesInputFolder):
+                if os.path.isdir(os.path.join(speciesInputFolder, strainFolder)):
+                    strainList.append(strainFolder)
+            if len(strainList) == 0:
+                print("No unfiltered input strains found in " + speciesFolder)
+            for strain in strainList:
+                strainFile.write(strain + "\n")
+            print("Unfiltered strains found in " + speciesFolder + ": " + str(len(strainList)))
+    else:
+        print("Unrecognized species folder: " + speciesFolder)
+    exit(0)
 
 with open("speciesUnfilteredStrainTable.txt", "w") as tableFile:
     for speciesFolder in os.listdir(outputFolder):
