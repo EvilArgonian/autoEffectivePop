@@ -16,9 +16,12 @@ dendropyTheta = sys.argv[7]
 dendropyPi = sys.argv[8]
 mutRate = sys.argv[9]
 specName = sys.argv[10]
-strains = -1
+unfiltered_strains = -1
 if len(sys.argv) > 11:
-    strains = sys.argv[11]
+    unfiltered_strains = sys.argv[11]
+surviving_strains = -1
+if len(sys.argv) > 12:
+    surviving_strains = sys.argv[12]
 
 if mutRate != "Unknown":
     effPopSizeThS = float(watsThetaS) / (2 * float(mutRate))
@@ -45,7 +48,7 @@ currDate = datetime.datetime.now().strftime("%b%d")
 with open("final_output/" + specName + "/Results.txt", "w") as f1:
     with open("consolidated_output/All_Results_" + currDate + ".txt", "a+") as f2:
         header = "Species\tNE (ThS)\tNE (ThN)\tNE (Th)\tNE (PiS)\tNE (PiN)\tNE (Pi)\tNE (DenTh)\tNE (DenPi)" \
-                 "\tThetaS\tThetaN\tTheta\tPiS\tPiN\tPi\tDenTh\tDenPi\tStrains\n"
+                 "\tThetaS\tThetaN\tTheta\tPiS\tPiN\tPi\tDenTh\tDenPi\tUnfiltered Strains\tSurviving Strains\n"
         f1.write(header)
         if not f2.read(1):  # If the file is empty, put headers in it.
             f2.write(header)
@@ -54,7 +57,8 @@ with open("final_output/" + specName + "/Results.txt", "w") as f1:
                  + "\t" + str(effPopSizeDendropyTh) + "\t" + str(effPopSizeDendropyPi) \
                  + "\t" + str(watsThetaS) + "\t" + str(watsThetaN) + "\t" + str(watsTheta) \
                  + "\t" + str(piS) + "\t" + str(piN) + "\t" + str(pi) \
-                 + "\t" + str(dendropyTheta) + "\t" + str(dendropyPi) + "\t" + str(strains) + "\n"
+                 + "\t" + str(dendropyTheta) + "\t" + str(dendropyPi) + "\t" + str(unfiltered_strains) \
+                 + "\t" + str(surviving_strains) + "\n"
         f1.write(outStr)
         f2.write(outStr)
 
