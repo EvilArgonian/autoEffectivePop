@@ -42,7 +42,7 @@ else:
     effPopSizeDendropyTh = "Unknown"
     effPopSizeDendropyPi = "Unknown"
 
-currDate = datetime.datetime.now().strftime("%b%d")
+currDate = datetime.datetime.now().strftime("%b-%d-%Y")
 
 
 with open("final_output/" + specName + "/Results.txt", "w") as f1:

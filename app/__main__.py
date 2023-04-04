@@ -22,18 +22,13 @@ def main():
     # Read arguments from command line
     args = parser.parse_args()
 
-    scriptCall = '../autoEffLaunch.sh ' # Add ploidy functionality here, as arg before input species. Edit autoEffLaunch appropriately!
+    scriptCall = '../autoEffLaunch.sh '  # Add ploidy functionality here, as arg before input species. Edit autoEffLaunch appropriately!
     for inSpec in args.input_species:
         scriptCall += inSpec + " "
     subprocess.run(['sh', scriptCall])
 
     print("Find your desired outputs in the final_output folder corresponding to the input species.")
     print("Alternatively, find the output values quickly in the consolidated_output file corresponding to the run date.")
-
-
-
-
-
 
 
 if __name__ == '__main__':
