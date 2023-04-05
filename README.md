@@ -44,7 +44,7 @@ BLAST filtering; data in temp/<SpeciesLevelFolder>/BLAST is first processed into
   - The data points are analyzed to obtain a sample size, mean, and standard error
   - The first hypothesis test poses the null hypothesis that each strain is acceptably dissimilar from each other.
   - The second hypothesis test poses the null hypothesis that each strain is acceptably similar to each other.
-  - ***UPDATE THIS README WITH FINALIZED FILTERING LOGIC***
+  - ***TO DO: UPDATE THIS README WITH FINALIZED FILTERING LOGIC***
   - Both tests are performed with an alpha of .0001, and the second test recalculates sample size, mean, and standard error after the filtering of too similar strains from the first test
   - Test one compares each 1v1 against a critical upper boundary; if it is higher than this value, it is too similar, and the first of the two strains is removed*.
     - *The first of the two strains is not removed if the second of the two was already removed.
