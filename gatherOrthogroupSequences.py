@@ -75,10 +75,8 @@ for strain in bigDictOfStrainDicts.keys():
     with open(nucSpeciesFolder + "/" + strain + "_index.txt", "r") as n:
         indexDict = {}
         for line in n.readlines():
-            # gene = line.split("\t")[0]
-            # index = line.split("\t")[1]
-            gene = line.split("\t#---#\t")[0]  # Testing better delimitation
-            index = line.split("\t#---#\t")[1]  # Testing better delimitation
+            gene = line.split("\t#---#\t")[0]  # Rigorously specific delimitation used
+            index = line.split("\t#---#\t")[1]
             indexDict.update({gene: index})
 
         file = strain + ".ffn"
@@ -110,12 +108,6 @@ for strain in bigDictOfStrainDicts.keys():
                 genesInGroup = orthogroupNums.get(orthogroup)
                 with open(outF + "/" + str(genesInGroup) + "_" + orthogroup + ".fa", "a+") as outFile:
                     outFile.write(outputStr)
-
-# Prints out a list of genes and their respective strains #Not needed if including strain name in gene print works
-# with open(speciesFolder + "/Gene_To_Strain.txt", "w") as geneMapFile:
-#    for strain in bigDictOfStrainDicts.keys():
-#        for gene in bigDictOfStrainDicts.get(strain):
-#            geneMapFile.write(gene + "\t" + strain + "\n")
 
 for badOg in errorOrthogroups:
     genesInGroup = orthogroupNums.get(badOg)

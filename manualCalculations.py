@@ -85,7 +85,7 @@ def buildNucDict(specName, file):
         limit_file.truncate(0)  # To clear the file for later appends
         limit_file.close()
     countLimit = 0
-    with open("muscle_output/" + specName + "/" + file, "r") as alignedFile:
+    with open("temp/" + specName + "/muscle_output/" + file, "r") as alignedFile:
         for line in alignedFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
@@ -637,7 +637,7 @@ def calcDendropy(nucDict, numStrains, file):
     seqLength = len(nucDict.values()[0])
 
     dnaMatrix = dendropy.DnaCharacterMatrix.get(
-        path="muscle_output/" + specName + "/" + file,
+        path="temp/" + specName + "/muscle_output/" + file,
         schema="fasta"
     )
 
@@ -675,7 +675,7 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                 with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
                     mutCalls.truncate(0)  # To clear the file for later appends
                 warnings = []
-                for file in os.listdir("muscle_output/" + specName + "/"):
+                for file in os.listdir("temp/" + specName + "/muscle_output/"):
                     nucDict = buildNucDict(specName, file)
                     # nucDict is a dictionary of sequence names mapped to actual sequences.
                     # the sequences are aligned coding sequences, thus equal length and divisible by 3

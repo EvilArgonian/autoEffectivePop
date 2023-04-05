@@ -5,7 +5,7 @@ import numpy
 from decimal import Decimal
 from scipy import stats
 
-# Goal: to filter out strains that are too similar, or too dissimilar, from other strains of ostenstibly the same species. Two hypothesis tests.
+# Goal: to filter out strains that are too similar, or too dissimilar, from other strains of ostensibly the same species. Two hypothesis tests.
 # Null hypothesis 1: A given strain is not too similar to another; it is distant enough to be a unique strain. Any given 1v1 data point of that strain versus another accepted strain is below (within) the critical upper boundary.
 # Alternate hypothesis 1: A given strain is too similar to another and thus likely to be the same strain as it. At least one given 1v1 data point of that strain versus another accepted strain is above (beyond) the critical upper boundary.
 # Null hypothesis 2: A given strain is not too dissimilar to the others; it is close enough to be a part of the same species. The average of 1v1 data points of that strain is above (within) the critical lower boundary.

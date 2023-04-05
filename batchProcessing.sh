@@ -20,7 +20,7 @@ countRuns=0
 countFails=0
 for specFolder in ${processSpecies[@]}; do
 	countRuns=$(( ${countRuns}+1 ))
-	echo "Species ${countRuns} running..."
+	echo "Species ${countRuns}: ${specFolder} running..."
 	sh autoEffLaunch.sh ${specFolder##*/} || ( echo "${specFolder##*/} failed to process." && countFails=$(( ${countFails}+1 )) )
 done
 

@@ -12,15 +12,13 @@ if not os.path.exists(inFile):
 seenList = []
 conflictList = []
 
-with open(indexFile, "w") as n:
-
+with open(indexFile, "w") as ind:
     conflicts = 0
-
-    with open(inFile, "r") as i:
+    with open(inFile, "r") as inp:
         geneName = ""
         lineIndex = -1
         countSeq = 0
-        for line in i.readlines():
+        for line in inp.readlines():
             lineIndex = lineIndex + 1
             line = line.strip()
             if line.startswith(">"):
@@ -31,7 +29,7 @@ with open(indexFile, "w") as n:
                     conflictList.append(geneName + "\t" + lineIndex + "\t" + line)
                 else:
                     seenList.append(geneName)
-                n.write(geneName + "\t#---#\t" + str(lineIndex) + "\n")
+                ind.write(geneName + "\t#---#\t" + str(lineIndex) + "\n")  # Rigorously specific delimitation applied
 
 if conflicts > 0:
     with open(errorFile, "w") as e:
@@ -40,8 +38,8 @@ if conflicts > 0:
             e.write(conflict)
     e.close()
 
-n.close()
-i.close()
+ind.close()
+inp.close()
 
 print("Completed indexing of " + inFile + " with " + str(conflicts) + " conflicts in " + str(countSeq) + " sequences.")
 

@@ -49,7 +49,6 @@ for specFolder in ${processSpecies[@]}; do
 		
 		
 		sh orthoFinding.sh ${specFolderTemp}
-		sh findingOrthogroups.sh ${specFolderTemp}
 		sh muscleAligning.sh ${specFolderTemp}
 		
 		mkdir -p final_output/${specLabel}

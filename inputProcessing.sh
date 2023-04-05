@@ -43,8 +43,8 @@ rm -rf temp/${specLabel}/Nucleotide
 rm -rf temp/${specLabel}/Error
 # rm -rf temp/${specLabel}/BLAST # Do not remove BLAST folder, to save time on future runs
 rm -rf temp/${specLabel}/Filtered
-rm -rf muscle_input/${specLabel}
-rm -rf muscle_output/${specLabel}
+rm -rf temp/${specLabel}/muscle_input/
+rm -rf temp/${specLabel}/muscle_output/
 rm -rf final_output/${specLabel}
 
 mkdir -p temp/${specLabel}/Nucleotide
