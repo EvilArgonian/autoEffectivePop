@@ -44,6 +44,7 @@ BLAST filtering; data in temp/<SpeciesLevelFolder>/BLAST is first processed into
   - The data points are analyzed to obtain a sample size, mean, and standard error
   - The first hypothesis test poses the null hypothesis that each strain is acceptably dissimilar from each other.
   - The second hypothesis test poses the null hypothesis that each strain is acceptably similar to each other.
+  - ***UPDATE THIS README WITH FINALIZED FILTERING LOGIC***
   - Both tests are performed with an alpha of .0001, and the second test recalculates sample size, mean, and standard error after the filtering of too similar strains from the first test
   - Test one compares each 1v1 against a critical upper boundary; if it is higher than this value, it is too similar, and the first of the two strains is removed*.
     - *The first of the two strains is not removed if the second of the two was already removed.
@@ -104,11 +105,10 @@ autoEffectivePop/blastFiltering.sh | (Performs actual BLASTing, then launches fi
 autoEffectivePop/blastFilteringLite.sh | (Performs actual BLASTing, then launches filterByIdentityLite.py for fast calculations, then filterByIdentity.py on remaining)
 autoEffectivePop/filterByIdentity.py | (Logic for filtering strains based on BLAST results.)
 autoEffectivePop/filterByIdentityLite.py | (Logic for filtering strains based on BLAST results using a faster method meant for many species)
-autoEffectivePop/orthofinding.sh | (Launches index.py for each strain, then runs Orthofinder, and finally launches gatherSingleCopyOrthogroups.py)
+autoEffectivePop/orthofinding.sh | (Launches index.py for each strain, Orthofinder, gatherSingleCopyOrthogroups.py, and gatherOrthogroupSequences.py)
 autoEffectivePop/getResultsFolder.py | (Logic for automating access to Orthofinder's results folders, which are named by date)
 autoEffectivePop/index.py | (Logic for storing references to each sequence in a strain by the sequence header location)
 autoEffectivePop/gatherSingleCopyOrthogroups.py | (Logic for determining all non-paralogous orthogroups via Orthofinder's orthogroups.tsv)
-autoEffectivePop/findingOrthogroups.sh | (Launches gatherOrthogroupSequences.py)
 autoEffectivePop/gatherOrthogroupSequences.py | (Logic for pulling and concatenating all sequences belonging to each orthogroup via the index file)
 autoEffectivePop/muscleAligning.sh | (Calls muscle for aligning each orthogroup file)
 autoEffectivePop/manualCalculations.py | (Logic for calculating Thetas and Pis, then averaging amongst same strain orthogroups, then final averaging)
@@ -125,11 +125,11 @@ autoEffectivePop/mutation\_rates.txt | (Basic text file containing species names
 Folder | Description
 -- | --
 autoEffectivePop/input/\<SpeciesLevelFolder\>/\<StrainLevelFolder\>/ | (Nearly all base input data, with the exception of mutation rate information, is placed in sorted folders in input)
-autoEffectivePop/temp/\<SpeciesLevelFolder\>/ | (Most internal processing steps use these folders and subfolders)
+autoEffectivePop/temp/\<SpeciesLevelFolder\>/ | (Internal processing steps use these folders and subfolders)
 autoEffectivePop/temp/\<SpeciesLevelFolder\>/BLAST/ | (Where input data is placed in preparation for BLAST step)
 autoEffectivePop/temp/\<SpeciesLevelFolder\>/Nucleotide/ | (Where surviving filtered BLASTed data is placed in preparation for Orthofinder step)
 autoEffectivePop/temp/\<SpeciesLevelFolder\>/Error/ | (Where error messages from various points in the process are placed)
 autoEffectivePop/temp/\<SpeciesLevelFolder\>/Filtered/ | (Where strains filtered for being too similar or dissimilar are placed)
-autoEffectivePop/muscle\_input/ | (Where gathered non-paralog orthogroup nucleotide sequences are placed in preparation for muscle step)
-autoEffectivePop/muscle\_output/ | (Where aligned sequences are placed in preparation for the Thetas/Pis calculation step)
+autoEffectivePop/temp/\<SpeciesLevelFolder\>/muscle\_input/ | (Where gathered non-paralog orthogroup nucleotide sequences are placed in preparation for muscle step)
+autoEffectivePop/temp/\<SpeciesLevelFolder\>/muscle\_output/ | (Where aligned sequences are placed in preparation for the Thetas/Pis calculation step)
 autoEffectivePop/final\_output/ | (Where final results are placed)
