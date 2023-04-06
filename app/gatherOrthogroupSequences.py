@@ -1,8 +1,6 @@
 import csv
 import os
-import re
 import sys
-from datetime import datetime
 
 nucSpeciesFolder = sys.argv[1]  # Folder where nucleotide sequences are found
 orthoFile = sys.argv[2]  # File containing reference list of genes in orthogroups

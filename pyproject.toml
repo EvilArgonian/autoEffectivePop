@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sung_lab_autoEffPop"
+version = "0.0.1"
+authors = [
+  { name="Perrin Mele", email="pmele@uncc.edu" },
+]
+description = "A pipeline for determining nucleotide diversity estimators of bacterial species."
+readme = "README.md"
+requires-python = ">=2.7.15"
+classifiers = [
+    "Programming Language :: Python :: 2",
+    "License :: ? :: ?",
+    "Operating System :: POSIX :: Linux",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/EvilArgonian/autoEffectivePop"
+"Bug Tracker" = "https://github.com/EvilArgonian/autoEffectivePop/issues"

@@ -1,11 +1,8 @@
 # file app/__main__.py
 
-import pkg_resources
 import argparse
 import subprocess
 
-
-# print(pkg_resources.resource_string('resources', 'myFile.txt')) # Resource reference
 
 def main():
     # Launch primary shell script with options here!
@@ -17,14 +14,14 @@ def main():
     parser.add_argument('input_species', metavar='N', nargs='+', help='a list of all species being input')
 
     # Adding Ploidy argument (defaults to 1; haploid)
-    parser.add_argument("-p", "--Ploidy", type=int, choices=[1, 2], help="Show Ploidy", default=1)
+    # parser.add_argument("-p", "--Ploidy", type=int, choices=[1, 2], help="Show Ploidy", default=1)
 
     # Read arguments from command line
     args = parser.parse_args()
 
-    scriptCall = '../autoEffLaunch.sh '  # Add ploidy functionality here, as arg before input species. Edit autoEffLaunch appropriately!
+    scriptCall = 'autoEffLaunch.sh '
     for inSpec in args.input_species:
-        scriptCall += inSpec + " "
+        scriptCall += inSpec + " " 
     subprocess.run(['sh', scriptCall])
 
     print("Find your desired outputs in the final_output folder corresponding to the input species.")
