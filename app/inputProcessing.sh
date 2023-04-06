@@ -9,6 +9,8 @@ false=0
 
 specFolder=${1}
 specLabel="${specFolder##*/}"
+specFolderTemp="../temp/"${specLabel}
+specFolderFinal="../final_output/"${specLabel}
 
 strainCount=0
 for strainFolder in $(find ${specFolder} -mindepth 1 -maxdepth 1 -type d); do
@@ -39,18 +41,18 @@ for strainFolder in $(find ${specFolder} -mindepth 1 -maxdepth 1 -type d); do
 	
 done
 
-rm -rf temp/${specLabel}/Nucleotide
-rm -rf temp/${specLabel}/Error
-# rm -rf temp/${specLabel}/BLAST # Do not remove BLAST folder, to save time on future runs
-rm -rf temp/${specLabel}/Filtered
-rm -rf temp/${specLabel}/muscle_input/
-rm -rf temp/${specLabel}/muscle_output/
-rm -rf final_output/${specLabel}
+rm -rf ${specFolderTemp}/Nucleotide
+rm -rf ${specFolderTemp}/Error
+# rm -rf ${specFolderTemp}/BLAST # Do not remove BLAST folder, to save time on future runs
+rm -rf ${specFolderTemp}/Filtered
+rm -rf ${specFolderTemp}/muscle_input/
+rm -rf ${specFolderTemp}/muscle_output/
+rm -rf ${specFolderFinal}
 
-mkdir -p temp/${specLabel}/Nucleotide
-mkdir -p temp/${specLabel}/Error
-mkdir -p temp/${specLabel}/BLAST
-mkdir -p temp/${specLabel}/Filtered
+mkdir -p ${specFolderTemp}/Nucleotide
+mkdir -p ${specFolderTemp}/Error
+mkdir -p ${specFolderTemp}/BLAST
+mkdir -p ${specFolderTemp}/Filtered
 
 if (( strainCount < 2 )); then
 	echo "Skipped ${specFolder}, as it had less than 2 strains. Strain count: ${strainCount}"
@@ -59,12 +61,12 @@ fi
 
 changeFlag=${true}
 echo "Testing if strains are identical in saved BLAST and in current input for ${specFolder}"
-if [[ -d "temp/${specLabel}/BLAST/" ]]; then # If BLAST directory exists (should always be true, as it is created above)...
-	if [ "$(ls -A temp/${specLabel}/BLAST/)" ]; then # If BLAST directory is not empty...
+if [[ -d "${specFolderTemp}/BLAST/" ]]; then # If BLAST directory exists (should always be true, as it is created above)...
+	if [ "$(ls -A ${specFolderTemp}/BLAST/)" ]; then # If BLAST directory is not empty...
 		# Perform test of identical strains
 		changeFlag=${false}
 		savedStrains=("Default")
-		for strainFolder in $(find temp/${specLabel}/BLAST/*.ffn); do
+		for strainFolder in $(find ${specFolderTemp}/BLAST/*.ffn); do
 			strainLabel="${strainFolder##*/}"
 			savedStrains+=("${strainLabel}")
 		done
@@ -92,8 +94,8 @@ if [[ -d "temp/${specLabel}/BLAST/" ]]; then # If BLAST directory exists (should
 fi
 
 if (( changeFlag )); then # Only update BLAST folder if there was a change
-	rm -rf temp/${specLabel}/BLAST
-	mkdir -p temp/${specLabel}/BLAST
+	rm -rf ${specFolderTemp}/BLAST
+	mkdir -p ${specFolderTemp}/BLAST
 	# Combine nucleotide files of a strain for single title, move to temp
 	for strainFolder in $(find ${specFolder} -mindepth 1 -maxdepth 1 -type d); do
 		strainLabel="${strainFolder##*/}"

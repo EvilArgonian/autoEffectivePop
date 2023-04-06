@@ -36,10 +36,6 @@ if conflicts > 0:
         e.write("Formatted Gene Name\tLine Index\tFull Gene Header")
         for conflict in conflictList:
             e.write(conflict)
-    e.close()
-
-ind.close()
-inp.close()
 
 print("Completed indexing of " + inFile + " with " + str(conflicts) + " conflicts in " + str(countSeq) + " sequences.")
 

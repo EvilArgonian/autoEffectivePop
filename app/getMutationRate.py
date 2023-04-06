@@ -1,10 +1,11 @@
 import sys
 
 species = sys.argv[1].strip()
+mutFile = "../mutation_rates.txt"
 
 mutRate = "Unknown"
 found = False
-with open("mutation_rates.txt", "r") as f:
+with open(mutFile, "r") as f:
     for line in f.readlines():
         if line.split("\t")[0].strip() == species:
             mutRate = line.split("\t")[1]

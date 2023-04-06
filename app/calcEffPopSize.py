@@ -23,6 +23,9 @@ surviving_strains = -1
 if len(sys.argv) > 12:
     surviving_strains = sys.argv[12]
 
+finalFolder = "../final_output/" + specName
+consolidatedFolder = "../consolidated_output/"
+
 if mutRate != "Unknown":
     effPopSizeThS = float(watsThetaS) / (2 * float(mutRate))
     effPopSizeThN = float(watsThetaN) / (2 * float(mutRate))
@@ -45,8 +48,8 @@ else:
 currDate = datetime.datetime.now().strftime("%b-%d-%Y")
 
 
-with open("final_output/" + specName + "/Results.txt", "w") as f1:
-    with open("consolidated_output/All_Results_" + currDate + ".txt", "a+") as f2:
+with open(finalFolder + "/Results.txt", "w") as f1:
+    with open(consolidatedFolder + "All_Results_" + currDate + ".txt", "a+") as f2:
         header = "Species\tNE (ThS)\tNE (ThN)\tNE (Th)\tNE (PiS)\tNE (PiN)\tNE (Pi)\tNE (DenTh)\tNE (DenPi)" \
                  "\tThetaS\tThetaN\tTheta\tPiS\tPiN\tPi\tDenTh\tDenPi\tUnfiltered Strains\tSurviving Strains\n"
         f1.write(header)

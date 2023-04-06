@@ -21,7 +21,7 @@ def main():
 
     scriptCall = 'autoEffLaunch.sh '
     for inSpec in args.input_species:
-        scriptCall += inSpec + " " 
+        scriptCall += inSpec + " "
     subprocess.run(['sh', scriptCall])
 
     print("Find your desired outputs in the final_output folder corresponding to the input species.")

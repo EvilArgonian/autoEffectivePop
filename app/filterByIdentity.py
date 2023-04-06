@@ -10,24 +10,27 @@ from scipy import stats
 # Alternate hypothesis 1: A given strain is too similar to another and thus likely to be the same strain as it. At least one given 1v1 data point of that strain versus another accepted strain is above (beyond) the critical upper boundary.
 # Null hypothesis 2: A given strain is not too dissimilar to the others; it is close enough to be a part of the same species. The average of 1v1 data points of that strain is above (within) the critical lower boundary.
 # Alternate hypothesis 2: A given strain is too dissimilar to the others and thus likely to be a unique species. The average of 1v1 data points of that strain is below (beyond) the critical lower boundary.
+
 specLabel = sys.argv[1]
+blastFolder = "../temp/" + specLabel + "/BLAST/"
+filterFolder = "../temp/" + specLabel + "/Filtered/"
+nucFolder = "../temp/" + specLabel + "/Nucleotide/"
+# blastFolder will contain the strain files in the form <strain>.ffn, and the BLAST comparisons in the form <strain1>_vs_<strain2>.txt
+
 confidence_deviation = float(2.0)  # Defaults to 2 standard deviations
 if len(sys.argv) > 1:
     confidence_deviation = float(sys.argv[2])
 
-folder = "temp/" + specLabel + "/BLAST/"
-# Folder will contain the strain files in the form <strain>.ffn, and the BLAST comparisons in the form <strain1>_vs_<strain2>.txt
-
-with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
+with open(filterFolder + "Filtration_Log.txt", "w") as logFile:
     avgIdentityData = {}  # This dict will record all observations of avgIdentity in the 1 on 1 BLASTs
     strains = []  # This list will record each strain name
     logFile.write("Beginning BLAST data collection for " + specLabel + "\n")
-    for filename in os.listdir(folder):  # For every file
+    for filename in os.listdir(blastFolder):  # For every file
         if "_vs_" in filename and filename.endswith(".txt"):  # Interprets identity from strain v strain BLAST
             thisVs = ".".join(filename.split(".")[0:len(filename.split(".")) - 1])  # This nonsense to allow for strain names with periods in them
             mismatches = 0
             length = 0
-            with open(folder + "/" + filename, "r") as i:
+            with open(blastFolder + "/" + filename, "r") as i:
                 for line in i.readlines():
                     mismatches += float(line.split("\t")[4])
                     length += float(line.split("\t")[3])
@@ -42,7 +45,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             strains.append(thisStrain)
 
     # Printing for testing
-    with open("temp/" + specLabel + "/Filtered/Statistics.txt", "w") as f:
+    with open(filterFolder + "Statistics.txt", "w") as f:
         dataCount = 0
         for versus in avgIdentityData.keys():
             dataCount += 1
@@ -75,8 +78,8 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
     if sampleSize == 1:  # One versus file, or just 2 strains
         twoStrainArr = avgIdentityData.keys()[0].split("_vs_")
         for strain in twoStrainArr:  # For each of the only 2 strains
-            source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
-            destination = "temp/" + specLabel + "/Nucleotide/"
+            source = blastFolder + strain + ".ffn"
+            destination = nucFolder
             shutil.copy(source, destination)
         print("2")  # Cannot do any statistical evaluation, so the strains are simply passed through
         sys.exit()
@@ -113,14 +116,14 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
 
     for strain in removed:
         strains.remove(strain)
-        source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
-        destination = "temp/" + specLabel + "/Filtered/"
+        source = blastFolder + strain + ".ffn"
+        destination = filterFolder
         try:
             shutil.copy(source, destination)
         except IOError as e:
             logFile.write("Strain copy to " + destination + " failed!" + "\n")
 
-    with open("temp/" + specLabel + "/Filtered/RemovalForDissimilarity.txt",
+    with open(filterFolder + "RemovalForDissimilarity.txt",
               "w") as f:
         f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(
             sampleStdDev) + "\tLower Bound: " + str(lowerBound) + "\n")
@@ -183,14 +186,14 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         for strain in removed:
             logFile.write("Enacting removal of " + strain + "\n")
             strains.remove(strain)
-            source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
-            destination = "temp/" + specLabel + "/Filtered/"
+            source = blastFolder + strain + ".ffn"
+            destination = filterFolder
             try:
                 shutil.copy(source, destination)
             except IOError as e:
                 logFile.write("Strain copy to " + destination + " failed!")
 
-        with open("temp/" + specLabel + "/Filtered/RemovalForSimilarity.txt", "w") as f:
+        with open(filterFolder + "RemovalForSimilarity.txt", "w") as f:
             f.write("Mean AvgIdentity: " + str(sampleMean) + "\tStandard Deviation: " + str(
                 sampleStdDev) + "\tUpper Bound: " + str(upperBound) + "\n")
             for item in removalInfo:
@@ -199,8 +202,8 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         logFile.write("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized (final): " + str(strains) + "\n")
         if len(strains) >= 2:  # Ceases calculations if less than 2 strains
             for strain in strains:  # For each finally remaining strain
-                source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
-                destination = "temp/" + specLabel + "/Nucleotide/"
+                source = blastFolder + strain + ".ffn"
+                destination = nucFolder
                 try:
                     shutil.copy(source, destination)
                 except IOError as e:

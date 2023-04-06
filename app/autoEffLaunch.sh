@@ -7,12 +7,12 @@ echo "Launching!"
 #Establish what species are being processed; $1 and further arguments should be species names matching those used as directory names in the input folder
 processSpecies=()
 if [ -z "${1+set}" ]; then 
-    for file in $(find input/ -mindepth 1 -maxdepth 1 -type d); do
+    for file in $(find ../input/ -mindepth 1 -maxdepth 1 -type d); do
 		processSpecies+=($file)
 	done
 else 
 	for arg in "$@"; do
-		processSpecies+=("input/"$arg)
+		processSpecies+=("../input/"$arg)
 	done
 fi
 
@@ -30,7 +30,7 @@ for specFolder in ${processSpecies[@]}; do
 		
 		sh inputProcessing.sh ${specFolder}
 		
-		specFolderTemp=temp/${specLabel}
+		specFolderTemp="../temp/"${specLabel}
 		
 		# This line should determine number of strains (pre-filtering)
 		echo "Finding number of unfiltered strains..."
@@ -51,7 +51,7 @@ for specFolder in ${processSpecies[@]}; do
 		sh orthoFinding.sh ${specFolderTemp}
 		sh muscleAligning.sh ${specFolderTemp}
 		
-		mkdir -p final_output/${specLabel}
+		mkdir -p "../final_output/"${specLabel}
 		readarray -d ',' -t calculations <<< $(echo $(python manualCalculations.py ${specLabel} ))
 		watsThetaS=${calculations[0]}
 		watsThetaN=${calculations[1]}
@@ -69,8 +69,8 @@ for specFolder in ${processSpecies[@]}; do
 		end_time=`date +%s`
 		runtime=$((end_time-start_time))
 		finished=`date +"%Y-%m-%d %T"`
-		echo -e "${specLabel} Process Time (Standard run): " > final_output/${specLabel}/Process_Time.txt
-		echo -e "Unfiltered Strains: ${unfiltered_strains}\tSurviving Strains: ${surviving_strains}\tRuntime: ${runtime} seconds\tFinished: ${finished}" >> final_output/${specLabel}/Process_Time.txt		
+		echo -e "${specLabel} Process Time (Standard run): " > "../final_output/"${specLabel}/Process_Time.txt
+		echo -e "Unfiltered Strains: ${unfiltered_strains}\tSurviving Strains: ${surviving_strains}\tRuntime: ${runtime} seconds\tFinished: ${finished}" >> "../final_output/"${specLabel}/Process_Time.txt		
 	
 	} || { # Catch
 		echo "Some kind of interrupting error occurred while processing ${specFolder##*/}"

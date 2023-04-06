@@ -5,6 +5,9 @@ import re
 import datetime
 
 specName = sys.argv[1]
+tempFolder = "../temp/" + specName
+finalFolder = "../final_output/" + specName
+consolidatedFolder = "../consolidated_output/"
 
 table = {
     # Other IUPAC codes with certain results commented for possible later integration
@@ -81,17 +84,17 @@ def buildNucDict(specName, file):
     nucDict = {}
     nucSeqTitle = ""
     nucSeqBuilder = ""
-    with open("final_output/" + specName + "/testLimit.txt", "w") as limit_file:
+    with open(finalFolder + "/testLimit.txt", "w") as limit_file:
         limit_file.truncate(0)  # To clear the file for later appends
         limit_file.close()
     countLimit = 0
-    with open("temp/" + specName + "/muscle_output/" + file, "r") as alignedFile:
+    with open(tempFolder + "/muscle_output/" + file, "r") as alignedFile:
         for line in alignedFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
                     nucDict.update({nucSeqTitle: nucSeqBuilder})
                     countLimit += 1
-                    with open("final_output/" + specName + "/testLimit.txt", "a") as limit_file:
+                    with open(finalFolder + "/testLimit.txt", "a") as limit_file:
                         limit_file.write(str(countLimit) + " - " + nucSeqTitle +"\n")
                         limit_file.close()
                 nucSeqTitle = line.strip()
@@ -140,7 +143,7 @@ def getConsensus(nucDict):
             # or highestNuc == 'S', should inclusion of other IUPAC codes be implemented
             GC_sum += 1
 
-    with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
+    with open(finalFolder + "/GC_values.txt", "a+") as gc_file:
         gc_file.write(str(float(GC_sum) / seqLength) + "\n")
 
     return consensus
@@ -195,7 +198,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
             break
     trailingGaps = max(gapLengths)
 
-    with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
+    with open(finalFolder + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
         # Tracking for mutations seen
         actualSynChanges = 0.0
         actualNonSynChanges = 0.0
@@ -637,7 +640,7 @@ def calcDendropy(nucDict, numStrains, file):
     seqLength = len(nucDict.values()[0])
 
     dnaMatrix = dendropy.DnaCharacterMatrix.get(
-        path="temp/" + specName + "/muscle_output/" + file,
+        path=tempFolder + "/muscle_output/" + file,
         schema="fasta"
     )
 
@@ -666,16 +669,16 @@ def calcDendropy(nucDict, numStrains, file):
     return outString
 
 
-with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
-    with open("final_output/" + specName + "/piValues.txt", "w") as f2:
-        with open("final_output/" + specName + "/dendropyValues.txt", "w") as f3:
-            with open("final_output/" + specName + "/consensusSeqs.txt", "w") as f4:
-                with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
+with open(finalFolder + "/wattersonsThetaValues.txt", "w") as f:
+    with open(finalFolder + "/piValues.txt", "w") as f2:
+        with open(finalFolder + "/dendropyValues.txt", "w") as f3:
+            with open(finalFolder + "/consensusSeqs.txt", "w") as f4:
+                with open(finalFolder + "/GC_values.txt", "a+") as gc_file:
                     gc_file.truncate(0)  # To clear the file for later appends
-                with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
+                with open(finalFolder + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
                     mutCalls.truncate(0)  # To clear the file for later appends
                 warnings = []
-                for file in os.listdir("temp/" + specName + "/muscle_output/"):
+                for file in os.listdir(tempFolder + "/muscle_output/"):
                     nucDict = buildNucDict(specName, file)
                     # nucDict is a dictionary of sequence names mapped to actual sequences.
                     # the sequences are aligned coding sequences, thus equal length and divisible by 3
@@ -695,13 +698,13 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                     f4.write(">" + file + "\n" + consensus + "\n")
 
 if len(warnings) > 0:
-    with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
+    with open(finalFolder + "/Warnings.txt", "w") as warn_file:
         warn_file.write(
             "File names did not all convey the number of strains; two-step averaging may be inaccurate if some and not all were conveyed. Files not conveyed:\n")
         for warning in warnings:
             warn_file.write(warning + "\n")
 
-with open("final_output/" + specName + "/GC_values.txt", "r+") as gc_file:
+with open(finalFolder + "/GC_values.txt", "r+") as gc_file:
     gc_sum = 0.0
     count_GCs = 0
     for line in gc_file.readlines():
@@ -713,8 +716,8 @@ with open("final_output/" + specName + "/GC_values.txt", "r+") as gc_file:
     else:
         avg_GC = gc_sum / count_GCs
     currDate = datetime.datetime.now().strftime("%b%d")
-    with open("consolidated_output/GC_Values_" + currDate + ".txt", "a+") as consGC:
-        with open("final_output/" + specName + "/GC_Content.txt", "w") as finGC:
+    with open(consolidatedFolder + "GC_Values_" + currDate + ".txt", "a+") as consGC:
+        with open(finalFolder + "/GC_Content.txt", "w") as finGC:
             finGC.write(specName + "\t" + str(avg_GC) + "\n")
             consGC.write(specName + "\t" + str(avg_GC) + "\n")
 

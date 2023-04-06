@@ -2,8 +2,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-specFolder=${1}
-specLabel="${specFolder##*/}"
+specFolderTemp=${1}
+specLabel="${specFolderTemp##*/}"
 
 # Writing boolean logic as arithmetic expressions for ease of use.
 true=1
@@ -13,12 +13,12 @@ false=0
 shouldSkip=${false}
 
 seenDatabases=("Default")
-for filename in ${specFolder}/BLAST/*.ffn.ndb; do
+for filename in ${specFolderTemp}/BLAST/*.ffn.ndb; do
 	titleWithoutFolder="${filename##*/}"
 	seenDatabases+=("${titleWithoutFolder}");
 done
 
-for filename in ${specFolder}/BLAST/*.ffn; do
+for filename in ${specFolderTemp}/BLAST/*.ffn; do
 	titleWithoutFolder="${filename##*/}"
 	title="${titleWithoutFolder%%.ffn*}"
 	if [[ ${title} == "*" ]]; then
@@ -41,21 +41,21 @@ fi
 
 seen=("Default")
 # BLAST each strain against each other
-for filename in ${specFolder}/BLAST/*.ffn; do
+for filename in ${specFolderTemp}/BLAST/*.ffn; do
 	titleWithoutFolder="${filename##*/}"
 	title="${titleWithoutFolder%%.ffn*}"
 	
-	for filename2 in ${specFolder}/BLAST/*.ffn; do
+	for filename2 in ${specFolderTemp}/BLAST/*.ffn; do
 		titleWithoutFolder2="${filename2##*/}"
 		title2="${titleWithoutFolder2%%.ffn*}"
 		if [[ ${title} != ${title2} && ! ${seen[@]} =~ "${title2}" ]]; then
-			redundancyCheck1=temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
-			redundancyCheck2=temp/${specLabel}/BLAST/${title2}_vs_${title}.txt
+			redundancyCheck1=${specFolderTemp}/BLAST/${title}_vs_${title2}.txt
+			redundancyCheck2=${specFolderTemp}/BLAST/${title2}_vs_${title}.txt
 			if [[ -f "$redundancyCheck1" || -f "$redundancyCheck2" ]]; then
 				echo "BLAST for ${title} and ${title2} already exists."
 			else
 				echo "BLASTing ${title} against ${title2}"
-				./ncbi-blast-2.10.1+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
+				./ncbi-blast-2.10.1+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> ${specFolderTemp}/BLAST/${title}_vs_${title2}.txt
 			fi
 		fi
 	done
@@ -68,9 +68,9 @@ finalSurvivingStrains=$(echo $(python filterByIdentity.py ${specLabel} 2))
 # Surviving unfiltered strains have been copied to temp/Nucleotide
 
 if (( finalSurvivingStrains == -1)); then
-	echo "${specFolder} was entirely filtered away!"
+	echo "${specFolderTemp} was entirely filtered away!"
 	exit 1
 else
-	echo "${specFolder} finished filtering with ${finalSurvivingStrains} surviving strains"
+	echo "${specFolderTemp} finished filtering with ${finalSurvivingStrains} surviving strains"
 fi
 
