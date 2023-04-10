@@ -54,6 +54,7 @@ mkdir -p ${specFolderTemp}/Error
 mkdir -p ${specFolderTemp}/BLAST
 mkdir -p ${specFolderTemp}/Filtered
 
+
 if (( strainCount < 2 )); then
 	echo "Skipped ${specFolder}, as it had less than 2 strains. Strain count: ${strainCount}"
 	continue

@@ -52,6 +52,7 @@ for specFolder in ${processSpecies[@]}; do
 		sh muscleAligning.sh ${specFolderTemp}
 		
 		mkdir -p "../final_output/"${specLabel}
+		mkdir -p "../consolidated_output"
 		readarray -d ',' -t calculations <<< $(echo $(python manualCalculations.py ${specLabel} ))
 		watsThetaS=${calculations[0]}
 		watsThetaN=${calculations[1]}
