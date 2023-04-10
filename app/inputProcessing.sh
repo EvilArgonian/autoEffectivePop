@@ -100,7 +100,7 @@ if (( changeFlag )); then # Only update BLAST folder if there was a change
 	for strainFolder in $(find ${specFolder} -mindepth 1 -maxdepth 1 -type d); do
 		strainLabel="${strainFolder##*/}"
 		strainLabel="${strainLabel%%.C*}" # This is for handling Winzipped compressed archives in the form C01, C02, etc
-		strainLabel="${strainLabel%%.N*}" # This is for handling NEKO files in the form .N # Just dump instead
+		strainLabel="${strainLabel%%.N*}" # This is for handling NEKO files in the form .N # Just dump instead?
 		countFFNs=0
 		for filename in ${strainFolder}/*.ffn; do
 			if [[ -f ${filename} ]]; then
