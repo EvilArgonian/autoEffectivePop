@@ -104,7 +104,7 @@ if (( changeFlag )); then # Only update BLAST folder if there was a change
 		countFFNs=0
 		for filename in ${strainFolder}/*.ffn; do
 			if [[ -f ${filename} ]]; then
-				cat ${filename} >> temp/${specLabel}/BLAST/${strainLabel}.ffn
+				cat ${filename} >> ${specFolderTemp}/BLAST/${strainLabel}.ffn
 				countFFNs=$(( ${countFFNs}+1 ))
 			fi
 		done
