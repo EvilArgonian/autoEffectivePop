@@ -8,7 +8,7 @@ if [ -z "${1+set}" ]; then
 else
 	a=("$@")
 	count=1
-	echo "$Input {count}"
+	echo "Input ${count}"
 	for spec in ${a[@]}; do
 		python fetchInput.py $spec
 		sh ${spec}_fetch.sh
