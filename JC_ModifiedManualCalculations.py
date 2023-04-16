@@ -365,7 +365,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
 
     # Calculate various statistics # 'float' everywhere because thanks python
     try:
-        nonMutCopies = nucDict.keys()[0].split("_")[-1]
+        nonMutCopies = int(nucDict.keys()[0].split("_")[-1])
     except Exception:
         nonMutCopies = 0
     harmonicNum = harmonic(numDictSeq + nonMutCopies)  # Harmonic number
