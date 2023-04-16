@@ -1,6 +1,5 @@
 import os
 import sys
-import dendropy
 import re
 import datetime
 from functools import lru_cache
@@ -10,24 +9,32 @@ specName = sys.argv[1]
 table = {
     # Other IUPAC codes with certain results commented for possible later integration
     # 'M' - START, '_' - STOP
-    "GCT": "A", "GCC": "A", "GCA": "A", "GCG": "A",  # "GCR": "A", "GCY": "A", "GCS": "A", "GCW": "A", "GCK": "A", "GCM": "A", "GCB": "A", "GCD": "A", "GCH": "A", "GCV": "A", "GCN": "A",
+    "GCT": "A", "GCC": "A", "GCA": "A", "GCG": "A",
+    # "GCR": "A", "GCY": "A", "GCS": "A", "GCW": "A", "GCK": "A", "GCM": "A", "GCB": "A", "GCD": "A", "GCH": "A", "GCV": "A", "GCN": "A",
     "TGT": "C", "TGC": "C",  # "TGY": "C",
     "GAT": "D", "GAC": "D",  # "GAY": "D",
     "GAA": "E", "GAG": "E",  # "GAR": "E",
     "TTT": "F", "TTC": "F",  # "TTY": "F",
-    "GGT": "G", "GGC": "G", "GGA": "G", "GGG": "G",  # "GGR": "G", "GGY": "G", "GGS": "G", "GGW": "G", "GGK": "G", "GGM": "G", "GGB": "G", "GGD": "G", "GGH": "G", "GGV": "G", "GGN": "G",
+    "GGT": "G", "GGC": "G", "GGA": "G", "GGG": "G",
+    # "GGR": "G", "GGY": "G", "GGS": "G", "GGW": "G", "GGK": "G", "GGM": "G", "GGB": "G", "GGD": "G", "GGH": "G", "GGV": "G", "GGN": "G",
     "CAT": "H", "CAC": "H",  # "CAY": "H",
     "ATA": "I", "ATT": "I", "ATC": "I",  # "ATY": "I", "ATW": "I", "ATM": "I", "ATH": "I",
     "AAA": "K", "AAG": "K",  # "AAR": "K",
-    "TTA": "L", "TTG": "L", "CTT": "L", "CTC": "L", "CTA": "L", "CTG": "L",  # "TTR": "L", "CTR": "L", "CTY": "L", "CTS": "L", "CTW": "L", "CTK": "L", "CTM": "L", "CTB": "L", "CTD": "L", "CTH": "L", "CTV": "L", "CTN": "L",
+    "TTA": "L", "TTG": "L", "CTT": "L", "CTC": "L", "CTA": "L", "CTG": "L",
+    # "TTR": "L", "CTR": "L", "CTY": "L", "CTS": "L", "CTW": "L", "CTK": "L", "CTM": "L", "CTB": "L", "CTD": "L", "CTH": "L", "CTV": "L", "CTN": "L",
     "ATG": "M",
     "AAT": "N", "AAC": "N",  # "AAY": "N",
-    "CCT": "P", "CCC": "P", "CCA": "P", "CCG": "P",  # "CCR": "P", "CCY": "P", "CCS": "P", "CCW": "P", "CCK": "P", "CCM": "P", "CCB": "P", "CCD": "P", "CCH": "P", "CCV": "P", "CCN": "P",
+    "CCT": "P", "CCC": "P", "CCA": "P", "CCG": "P",
+    # "CCR": "P", "CCY": "P", "CCS": "P", "CCW": "P", "CCK": "P", "CCM": "P", "CCB": "P", "CCD": "P", "CCH": "P", "CCV": "P", "CCN": "P",
     "CAA": "Q", "CAG": "Q",  # "CAR": "Q",
-    "CGT": "R", "CGC": "R", "CGA": "R", "CGG": "R", "AGA": "R", "AGG": "R",  # "CGR": "R", "CGY": "R", "CGS": "R", "CGW": "R", "CGK": "R", "CGM": "R", "CGB": "R", "CGD": "R", "CGH": "R", "CGV": "R", "CGN": "R", "AGR": "R",
-    "TCT": "S", "TCC": "S", "TCA": "S", "TCG": "S", "AGT": "S", "AGC": "S",  # "TCR": "S", "TCY": "S", "TCS": "S", "TCW": "S", "TCK": "S", "TCM": "S", "TCB": "S", "TCD": "S", "TCH": "S", "TCV": "S", "TCN": "S", "AGY": "S",
-    "ACT": "T", "ACC": "T", "ACA": "T", "ACG": "T",  # "ACR": "T", "ACY": "T", "ACS": "T", "ACW": "T", "ACK": "T", "ACM": "T", "ACB": "T", "ACD": "T", "ACH": "T", "ACV": "T", "ACN": "T",
-    "GTT": "V", "GTC": "V", "GTA": "V", "GTG": "V",  # "GTR": "V", "GTY": "V", "GTS": "V", "GTW": "V", "GTK": "V", "GTM": "V", "GTB": "V", "GTD": "V", "GTH": "V", "GTV": "V", "GTN": "V",
+    "CGT": "R", "CGC": "R", "CGA": "R", "CGG": "R", "AGA": "R", "AGG": "R",
+    # "CGR": "R", "CGY": "R", "CGS": "R", "CGW": "R", "CGK": "R", "CGM": "R", "CGB": "R", "CGD": "R", "CGH": "R", "CGV": "R", "CGN": "R", "AGR": "R",
+    "TCT": "S", "TCC": "S", "TCA": "S", "TCG": "S", "AGT": "S", "AGC": "S",
+    # "TCR": "S", "TCY": "S", "TCS": "S", "TCW": "S", "TCK": "S", "TCM": "S", "TCB": "S", "TCD": "S", "TCH": "S", "TCV": "S", "TCN": "S", "AGY": "S",
+    "ACT": "T", "ACC": "T", "ACA": "T", "ACG": "T",
+    # "ACR": "T", "ACY": "T", "ACS": "T", "ACW": "T", "ACK": "T", "ACM": "T", "ACB": "T", "ACD": "T", "ACH": "T", "ACV": "T", "ACN": "T",
+    "GTT": "V", "GTC": "V", "GTA": "V", "GTG": "V",
+    # "GTR": "V", "GTY": "V", "GTS": "V", "GTW": "V", "GTK": "V", "GTM": "V", "GTB": "V", "GTD": "V", "GTH": "V", "GTV": "V", "GTN": "V",
     "TGG": "W",
     "TAT": "Y", "TAC": "Y",  # "TAY": "Y",
     "TAA": "_", "TAG": "_", "TGA": "_"  # "TAR": "_"
@@ -61,7 +68,6 @@ synChances = {
 
 thetaByNumStrains = {}
 piByNumStrains = {}
-dendropyByNumStrains = {}
 
 
 class TestComplementLocationException(Exception):
@@ -79,72 +85,20 @@ class UnfoundLocationException(Exception):
 
 def buildNucDict(specName, file):
     # Building sequences for processing
-    nucDict = {}
+    nucDict = {}  # Index 0 is consensus
     nucSeqTitle = ""
     nucSeqBuilder = ""
-    with open("final_output/" + specName + "/testLimit.txt", "w") as limit_file:
-        limit_file.truncate(0)  # To clear the file for later appends
-        limit_file.close()
-    countLimit = 0
     with open("temp/" + specName + "/muscle_output/" + file, "r") as alignedFile:
         for line in alignedFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
                     nucDict.update({nucSeqTitle: nucSeqBuilder})
-                    countLimit += 1
-                    with open("final_output/" + specName + "/testLimit.txt", "a") as limit_file:
-                        limit_file.write(str(countLimit) + " - " + nucSeqTitle +"\n")
-                        limit_file.close()
                 nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
             else:
                 nucSeqBuilder += line.strip().upper()
         nucDict.update({nucSeqTitle: nucSeqBuilder})
     return nucDict
-
-
-def getConsensus(nucDict):
-    # Simple algorithm for determining consensus sequence; no fancy parameters involved
-    seqLength = len(nucDict.values()[0])
-    numSeq = len(nucDict.keys())
-    consensus = ""
-    GC_sum = 1
-    for pos in range(0, seqLength):
-        freqDict = {'A': 0, 'C': 0, 'G': 0, 'T': 0, '-': 0,  # Standard codes
-                    'R': 0, 'Y': 0, 'S': 0, 'W': 0, 'K': 0, 'M': 0, 'B': 0, 'D': 0, 'H': 0, 'V': 0, 'N': 0}
-        # Note that other IUPAC codes, while counted, are currently unused in any calculations
-        for i in range(0, numSeq):
-            nuc = (nucDict.values()[i][pos]).upper()
-            if nuc == '_' or nuc == '.':  # Corrective in case '_' or '.' is used to mark gaps instead of '-'
-                nuc = '-'
-            if nuc not in freqDict.keys():  # Encountered rarely.
-                continue
-            freqDict.update({nuc: freqDict.get(nuc) + 1})
-        # Favors A, C, G, T, _ in that order for breaking ties
-        highest = freqDict.get('A')
-        highestNuc = 'A'
-        if freqDict.get('C') > highest:
-            highest = freqDict.get('C')
-            highestNuc = 'C'
-        if freqDict.get('G') > highest:
-            highest = freqDict.get('G')
-            highestNuc = 'G'
-        if freqDict.get('T') > highest:
-            highest = freqDict.get('T')
-            highestNuc = 'T'
-        if freqDict.get('-') > highest:
-            highest = freqDict.get('-')
-            highestNuc = '-'
-        consensus += highestNuc
-
-        if highestNuc == 'G' or highestNuc == 'C':
-            # or highestNuc == 'S', should inclusion of other IUPAC codes be implemented
-            GC_sum += 1
-
-    with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
-        gc_file.write(str(float(GC_sum) / seqLength) + "\n")
-
-    return consensus
 
 
 def getComplement(nucStr):
@@ -174,15 +128,15 @@ def harmonic(n):
 
 def calcThetas(nucDict, numStrains, ancestralSeq):
     # Processing/counting for Watterson's Theta & Theta S values
-    numSeq = len(nucDict.keys())
+    numDictSeq = len(nucDict.keys())
     seqLength = len(nucDict.values()[0])
 
     # Create a pair of forward and backward facing loops to determine the longest leading/trailing gap sequences;
     # Remove all positions within these from any calculations (no changes counted, not counted against length)
-    gapLengths = [0.0] * numSeq  # Initialize counts of leading gaps
-    gapsEnded = [False] * numSeq  # Initialize flags for leading gap ends
+    gapLengths = [0.0] * numDictSeq  # Initialize counts of leading gaps
+    gapsEnded = [False] * numDictSeq  # Initialize flags for leading gap ends
     for pos in range(0, seqLength):
-        for seqIndex in range(0, numSeq):
+        for seqIndex in range(0, numDictSeq):
             if not gapsEnded[seqIndex]:
                 if nucDict.values()[seqIndex][pos] == "_" or nucDict.values()[seqIndex][pos] == "-":
                     gapLengths[seqIndex] += 1.0
@@ -192,10 +146,10 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
             break
     leadingGaps = max(gapLengths)
 
-    gapLengths = [0.0] * numSeq  # Initialize counts of trailing gaps
-    gapsEnded = [False] * numSeq  # Initialize flags for trailing gap ends
+    gapLengths = [0.0] * numDictSeq  # Initialize counts of trailing gaps
+    gapsEnded = [False] * numDictSeq  # Initialize flags for trailing gap ends
     for pos in range(seqLength - 1, -1, -1):
-        for seqIndex in range(0, numSeq):
+        for seqIndex in range(0, numDictSeq):
             if not gapsEnded[seqIndex]:
                 if nucDict.values()[seqIndex][pos] == "_" or nucDict.values()[seqIndex][pos] == "-":
                     gapLengths[seqIndex] += 1.0
@@ -222,7 +176,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
             if consensusCodon in synChances.keys():
                 potentialSynChanges += sum(synChances[consensusCodon])
                 potentialNonSynChanges += (3 - sum(synChances[consensusCodon]))
-            for seqIndex in range(0, numSeq):
+            for seqIndex in range(1, numDictSeq):
                 actualCodon = nucDict.values()[seqIndex][i:i + 3]
                 mutsInCodon = [0, 0, 0]
                 for pos in range(0, 3):
@@ -410,21 +364,25 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                         foundNonSynSite = 1.0  # Comment out if counting multiple in one column
 
     # Calculate various statistics # 'float' everywhere because thanks python
-    harmonic = sum([1.0 / float(i) for i in range(1, numSeq)])  # numSeq-1th harmonic number
+    try:
+        nonMutCopies = nucDict.keys()[0].split("_")[-1]
+    except Exception:
+        nonMutCopies = 0
+    harmonicNum = harmonic(numDictSeq + nonMutCopies)  # Harmonic number
     if potentialSynChanges == 0:
         watsThetaS = 0
     else:
-        watsThetaS = float(float(actualSynChanges) / harmonic) / potentialSynChanges
+        watsThetaS = float(float(actualSynChanges) / harmonicNum) / potentialSynChanges
 
     if potentialNonSynChanges == 0:
         watsThetaN = 0
     else:
-        watsThetaN = float(float(actualNonSynChanges) / harmonic) / potentialNonSynChanges
+        watsThetaN = float(float(actualNonSynChanges) / harmonicNum) / potentialNonSynChanges
 
     if (seqLength - (leadingGaps + trailingGaps)) == 0:
         watsTheta = 0
     else:
-        watsTheta = float(float(actualAllChanges) / harmonic) / (seqLength - (leadingGaps + trailingGaps))
+        watsTheta = float(float(actualAllChanges) / harmonicNum) / (seqLength - (leadingGaps + trailingGaps))
 
     # thetaByNumStrains is a dictionary containing all values needed to average watsTheta over all same-num-contributor orthogroups
     # It is organized as such:
@@ -450,13 +408,13 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
 
 
 def calcPis(nucDict, numStrains, ancestralSeq):
-    numSeq = len(nucDict.keys())
+    numDictSeq = len(nucDict.keys())
     seqLength = len(nucDict.values()[0])
 
     # All positions with gaps in any sequence are to be discounted
     gapsFound = [0] * seqLength
     for pos in range(0, seqLength):
-        for seqIndex in range(0, numSeq):
+        for seqIndex in range(0, numDictSeq):
             if nucDict.values()[seqIndex][pos] == "_" or nucDict.values()[seqIndex][pos] == "-":
                 gapsFound[pos] = 1
                 break
@@ -479,9 +437,9 @@ def calcPis(nucDict, numStrains, ancestralSeq):
     nonSynMutations = 0.0
     mutations = 0.0
 
-    for index1 in range(0, numSeq):
+    for index1 in range(0, numDictSeq):
         seq1 = nucDict.values()[index1]
-        for index2 in range(index1 + 1, numSeq):
+        for index2 in range(index1 + 1, numDictSeq):
             seq2 = nucDict.values()[index2]
             for i in range(0, seqLength, 3):
                 mutsInCodon = [0, 0, 0]
@@ -616,7 +574,12 @@ def calcPis(nucDict, numStrains, ancestralSeq):
                     if table[site1] != table[site2]:
                         nonSynMutations += 1.0
 
-    perComparison = float(1.0 / ((numSeq * (numSeq - 1)) / 2))  # 1 over the number of comparisons
+    try:
+        nonMutCopies = nucDict.keys()[0].split("_")[-1]
+    except Exception:
+        nonMutCopies = 0
+    totalSeq = numDictSeq + nonMutCopies
+    perComparison = float(1.0 / ((totalSeq * (totalSeq - 1)) / 2))  # 1 over the number of comparisons
     piS = float(perComparison * synMutations) / potentialSynSites
     piN = float(perComparison * nonSynMutations) / potentialNonSynSites
     pi = float(perComparison * mutations) / (seqLength - sum(gapsFound))
@@ -643,66 +606,32 @@ def calcPis(nucDict, numStrains, ancestralSeq):
     return outString
 
 
-def calcDendropy(nucDict, numStrains, file):
-    seqLength = len(nucDict.values()[0])
-
-    dnaMatrix = dendropy.DnaCharacterMatrix.get(
-        path="temp/" + specName + "/muscle_output/" + file,
-        schema="fasta"
-    )
-
-    dendropyTheta = dendropy.calculate.popgenstat.wattersons_theta(
-        dnaMatrix) / seqLength  # Dendropy does not appear to already divide by seqLength (Should I worry about leading/trailing gaps?)
-    dendropyPi = dendropy.calculate.popgenstat.nucleotide_diversity(dnaMatrix)  # / seqLength
-
-    # dendropyByNumStrains is a dictionary containing all values needed to average Dendropy Theta and Pi over all same-num-contributor orthogroups
-    # It is organized as such:
-    # Key = Number of contributing strains
-    # Value = List of three items:
-    # Item 0 = The cumulative value of each orthogroups' Dendropy Theta (for all orthogroups belonging to this key)
-    # Item 1 = The cumulative value of each orthogroups' Dendropy Pi  (for all orthogroups belonging to this key)
-    # Item 2 = The number of orthogroups seen belonging to this key (the number which the cumulative values are divided by)
-    if numStrains not in dendropyByNumStrains.keys():
-        dendropyByNumStrains.update(
-            {numStrains: [dendropyTheta, dendropyPi, 1]})  # Initialize the key:value for newly encountered key
-    else:
-        update_sumTheta = dendropyByNumStrains.get(numStrains)[0] + dendropyTheta
-        update_sumPi = dendropyByNumStrains.get(numStrains)[1] + dendropyPi
-        update_num = dendropyByNumStrains.get(numStrains)[2] + 1
-        dendropyByNumStrains.update({numStrains: [update_sumTheta, update_sumPi, update_num]})
-
-    outString = file.split(".")[0] + "\tDendropy Watterson's Theta: " + str(dendropyTheta) + "\tDendropy Pi: " + str(
-        dendropyPi) + "\n"
-    return outString
-
-
 with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
     with open("final_output/" + specName + "/piValues.txt", "w") as f2:
-        with open("final_output/" + specName + "/dendropyValues.txt", "w") as f3:
-            with open("final_output/" + specName + "/consensusSeqs.txt", "w") as f4:
-                with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
-                    gc_file.truncate(0)  # To clear the file for later appends
-                with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
-                    mutCalls.truncate(0)  # To clear the file for later appends
-                warnings = []
-                for file in os.listdir("temp/" + specName + "/muscle_output/"):
-                    nucDict = buildNucDict(specName, file)
-                    # nucDict is a dictionary of sequence names mapped to actual sequences.
-                    # the sequences are aligned coding sequences, thus equal length and divisible by 3
-                    if len(nucDict) < 2:
-                        continue
+        # f3 would have been dendropy, but this is not achievable without creating a full dna matrix of too many ancestral sequence copies
+        with open("final_output/" + specName + "/consensusSeqs.txt", "w") as f4:
+            with open("final_output/" + specName + "/GC_values.txt", "a+") as gc_file:
+                gc_file.truncate(0)  # To clear the file for later appends
+            with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
+                mutCalls.truncate(0)  # To clear the file for later appends
+            warnings = []
+            for file in os.listdir("modifiedAlignmentInput/" + specName + "/"):
+                nucDict = buildNucDict(specName, file)
+                # nucDict is a dictionary of sequence names mapped to actual sequences.
+                # the sequences are aligned coding sequences, thus equal length and divisible by 3
+                if len(nucDict) < 2:
+                    continue
 
-                    # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
-                    try:
-                        numStrains = int(file.split("_")[0])
-                    except Exception:
-                        warnings.append(file)
-                        numStrains = "-1"  # Indicates that strain number is not being considered as a factor
-                    consensus = getConsensus(nucDict)
-                    f.write(calcThetas(nucDict, numStrains, consensus))
-                    f2.write(calcPis(nucDict, numStrains, consensus))
-                    f3.write(calcDendropy(nucDict, numStrains, file))
-                    f4.write(">" + file + "\n" + consensus + "\n")
+                # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
+                try:
+                    numStrains = int(file.split("_")[0])
+                except Exception:
+                    warnings.append(file)
+                    numStrains = "-1"  # Indicates that strain number is not being considered as a factor
+                consensus = nucDict.values()[0]
+                f.write(calcThetas(nucDict, numStrains, consensus))
+                f2.write(calcPis(nucDict, numStrains, consensus))
+                f4.write(">" + file + "\n" + consensus + "\n")
 
 if len(warnings) > 0:
     with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
@@ -734,11 +663,8 @@ sumOfAllAvgTheta = 0.0
 sumOfAllAvgPiS = 0.0
 sumOfAllAvgPiN = 0.0
 sumOfAllAvgPi = 0.0
-sumOfAllAvgDendropyTheta = 0.0
-sumOfAllAvgDendropyPi = 0.0
 allCountThetas = 0  # These allCounts may (always?) be the same, but are listed distinctly in case not
 allCountPis = 0
-allCountDendropies = 0
 
 # xByNumStrains are dictionaries containing all values needed to average the stat x over all same-num-contributor orthogroups
 # It is organized as such:
@@ -773,16 +699,6 @@ for key in piByNumStrains.keys():
 
     allCountPis += 1
 
-for key in dendropyByNumStrains.keys():
-    # Acquires average pis of all groups with the same number of contributing strains (S for silent, N for non-silent, no mark for no regard)
-    valueDendropy = dendropyByNumStrains.get(key)
-    avgForNumDendropyTheta = float(valueDendropy[0]) / valueDendropy[2]
-    avgForNumDendropyPi = float(valueDendropy[1]) / valueDendropy[2]
-    sumOfAllAvgDendropyTheta += float(avgForNumDendropyTheta)
-    sumOfAllAvgDendropyPi += float(avgForNumDendropyPi)
-
-    allCountDendropies += 1
-
 # Acquires average of all the averages of groups with the same number of contributing strains (S for silent, N for non-silent, no mark for no regard)
 avgWatsThetaS = float(sumOfAllAvgThetaS) / allCountThetas if allCountThetas != 0 else -1
 avgWatsThetaN = float(sumOfAllAvgThetaN) / allCountThetas if allCountThetas != 0 else -1
@@ -790,9 +706,7 @@ avgWatsTheta = float(sumOfAllAvgTheta) / allCountThetas if allCountThetas != 0 e
 avgPiS = float(sumOfAllAvgPiS) / allCountPis if allCountPis != 0 else -1
 avgPiN = float(sumOfAllAvgPiN) / allCountPis if allCountPis != 0 else -1
 avgPi = float(sumOfAllAvgPi) / allCountPis if allCountPis != 0 else -1
-avgDendropyTheta = float(sumOfAllAvgDendropyTheta) / allCountDendropies if allCountDendropies != 0 else -1
-avgDendropyPi = float(sumOfAllAvgDendropyPi) / allCountDendropies if allCountDendropies != 0 else -1
 
 print(str(avgWatsThetaS) + "," + str(avgWatsThetaN) + "," + str(avgWatsTheta)
       + "," + str(avgPiS) + "," + str(avgPiN) + "," + str(avgPi)
-      + "," + str(avgDendropyTheta) + "," + str(avgDendropyPi))
+      + "," + str(-1) + "," + str(-1))
