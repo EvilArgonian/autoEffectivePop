@@ -163,7 +163,7 @@ def getComplement(nucStr):
     return outStr
 
 
-@lru_cache(maxsize=None)
+# @lru_cache(maxsize=None)
 def harmonic(n):
     if n <= 0:
         return -1  # Input should not be non-positive
