@@ -5,6 +5,7 @@ temp/*
 muscle_input/*
 muscle_output/*
 final_output/*
+modifiedAlignmentInput/*
 
 # Except Test Species...
 
