@@ -77,24 +77,16 @@ class UnfoundLocationException(Exception):
         super(Exception, self).__init__(self.message)
 
 
-def buildNucDict(specName, file):
+def buildNucDict(file):
     # Building sequences for processing
     nucDict = {}
     nucSeqTitle = ""
     nucSeqBuilder = ""
-    with open("final_output/" + specName + "/testLimit.txt", "w") as limit_file:
-        limit_file.truncate(0)  # To clear the file for later appends
-        limit_file.close()
-    countLimit = 0
-    with open("temp/" + specName + "/muscle_output/" + file, "r") as alignedFile:
+    with open(file, "r") as alignedFile:
         for line in alignedFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
                     nucDict.update({nucSeqTitle: nucSeqBuilder})
-                    countLimit += 1
-                    with open("final_output/" + specName + "/testLimit.txt", "a") as limit_file:
-                        limit_file.write(str(countLimit) + " - " + nucSeqTitle +"\n")
-                        limit_file.close()
                 nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
             else:
@@ -686,7 +678,8 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                     mutCalls.truncate(0)  # To clear the file for later appends
                 warnings = []
                 for file in os.listdir("temp/" + specName + "/muscle_output/"):
-                    nucDict = buildNucDict(specName, file)
+                    filePath = os.path.join("temp/" + specName + "/muscle_output/" + file)
+                    nucDict = buildNucDict(filePath)
                     # nucDict is a dictionary of sequence names mapped to actual sequences.
                     # the sequences are aligned coding sequences, thus equal length and divisible by 3
                     if len(nucDict) < 2:

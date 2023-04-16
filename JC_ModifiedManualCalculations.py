@@ -83,12 +83,12 @@ class UnfoundLocationException(Exception):
         super(Exception, self).__init__(self.message)
 
 
-def buildNucDict(specName, file):
+def buildNucDict(file):
     # Building sequences for processing
     nucDict = {}  # Index 0 is consensus
     nucSeqTitle = ""
     nucSeqBuilder = ""
-    with open("temp/" + specName + "/muscle_output/" + file, "r") as alignedFile:
+    with open(file, "r") as alignedFile:
         for line in alignedFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
@@ -616,7 +616,8 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                 mutCalls.truncate(0)  # To clear the file for later appends
             warnings = []
             for file in os.listdir("modifiedAlignmentInput/" + specName + "/"):
-                nucDict = buildNucDict(specName, file)
+                filePath = os.path.join("modifiedAlignmentInput/" + specName + "/" + file)
+                nucDict = buildNucDict(filePath)
                 # nucDict is a dictionary of sequence names mapped to actual sequences.
                 # the sequences are aligned coding sequences, thus equal length and divisible by 3
                 if len(nucDict) < 2:
