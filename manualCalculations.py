@@ -3,7 +3,7 @@ import sys
 import dendropy
 import re
 import datetime
-from functools import lru_cache
+# from functools import lru_cache
 
 specName = sys.argv[1]
 
