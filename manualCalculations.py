@@ -402,21 +402,22 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
                         foundNonSynSite = 1.0  # Comment out if counting multiple in one column
 
     # Calculate various statistics # 'float' everywhere because thanks python
-    harmonic = sum([1.0 / float(i) for i in range(1, numSeq)])  # numSeq-1th harmonic number
+    # harmonicNum = harmonic(numSeq)  # Harmonic number
+    harmonicNum = sum([1.0 / float(i) for i in range(1, numSeq)])  # numSeq-1th harmonic number
     if potentialSynChanges == 0:
         watsThetaS = 0
     else:
-        watsThetaS = float(float(actualSynChanges) / harmonic) / potentialSynChanges
+        watsThetaS = float(float(actualSynChanges) / harmonicNum) / potentialSynChanges
 
     if potentialNonSynChanges == 0:
         watsThetaN = 0
     else:
-        watsThetaN = float(float(actualNonSynChanges) / harmonic) / potentialNonSynChanges
+        watsThetaN = float(float(actualNonSynChanges) / harmonicNum) / potentialNonSynChanges
 
     if (seqLength - (leadingGaps + trailingGaps)) == 0:
         watsTheta = 0
     else:
-        watsTheta = float(float(actualAllChanges) / harmonic) / (seqLength - (leadingGaps + trailingGaps))
+        watsTheta = float(float(actualAllChanges) / harmonicNum) / (seqLength - (leadingGaps + trailingGaps))
 
     # thetaByNumStrains is a dictionary containing all values needed to average watsTheta over all same-num-contributor orthogroups
     # It is organized as such:

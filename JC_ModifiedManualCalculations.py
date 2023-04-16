@@ -368,7 +368,8 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
         nonMutCopies = int(nucDict.keys()[0].split("_")[-1])
     except Exception:
         nonMutCopies = 0
-    harmonicNum = harmonic(numDictSeq + nonMutCopies)  # Harmonic number
+    # harmonicNum = harmonic(numDictSeq + nonMutCopies)  # Harmonic number
+    harmonicNum = sum([1.0 / float(i) for i in range(1, numDictSeq + nonMutCopies)])  # numSeq-1th harmonic number
     if potentialSynChanges == 0:
         watsThetaS = 0
     else:
