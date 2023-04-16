@@ -13,6 +13,7 @@ if len(sys.argv) > 1:
             strainList = []
             speciesMuscleFolder = os.path.join(muscleOutFolder, speciesFolder)
             for muscleAlignment in os.listdir(speciesMuscleFolder):
+                print("Checking muscle alignment: " + muscleAlignment)
                 with open(os.path.join(speciesMuscleFolder, muscleAlignment), "r") as alignFile:
                     for line in alignFile.readlines():
                         if line.startswith(">"):
@@ -21,6 +22,7 @@ if len(sys.argv) > 1:
                                 strainName = existCheck.group(1)
                                 if strainName not in strainList:
                                     strainList.append(strainName)
+                                    print("Counted strain: " + strainName)
             if len(strainList) == 0:
                 print("No surviving strains found in " + speciesFolder)
             for strain in strainList:
