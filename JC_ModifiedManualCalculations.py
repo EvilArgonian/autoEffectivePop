@@ -576,7 +576,7 @@ def calcPis(nucDict, numStrains, ancestralSeq):
                         nonSynMutations += 1.0
 
     try:
-        nonMutCopies = nucDict.keys()[0].split("_")[-1]
+        nonMutCopies = int(nucDict.keys()[0].split("_")[-1])
     except Exception:
         nonMutCopies = 0
     totalSeq = numDictSeq + nonMutCopies
