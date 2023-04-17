@@ -7,11 +7,13 @@ muscleOutFolder = "muscle_output"
 
 if len(sys.argv) > 1:
     speciesFolder = sys.argv[1]
-    speciesPath = os.path.join(outputFolder, speciesFolder)
-    if os.path.isdir(speciesPath):
-        with open(speciesPath + "/SurvivingStrains.txt", "w") as strainFile:
+    speciesFinalPath = os.path.join(outputFolder, speciesFolder)
+    speciesTempPath = os.path.join("temp/", speciesFolder)
+    if os.path.isdir(speciesFinalPath):
+        with open(speciesFinalPath + "/SurvivingStrains.txt", "w") as strainFile:
             strainList = []
-            speciesMuscleFolder = os.path.join(muscleOutFolder, speciesFolder)
+            # speciesMuscleFolder = os.path.join(muscleOutFolder, speciesFolder)  # For old setup
+            speciesMuscleFolder = os.path.join(speciesTempPath, muscleOutFolder)
             for muscleAlignment in os.listdir(speciesMuscleFolder):
                 print("Checking muscle alignment: " + muscleAlignment)
                 with open(os.path.join(speciesMuscleFolder, muscleAlignment), "r") as alignFile:
@@ -34,11 +36,13 @@ if len(sys.argv) > 1:
 
 with open("speciesStrainTable.txt", "w") as tableFile:
     for speciesFolder in os.listdir(outputFolder):
-        speciesPath = os.path.join(outputFolder, speciesFolder)
-        if os.path.isdir(speciesPath):
-            with open(speciesPath + "/SurvivingStrains.txt", "w") as strainFile:
+        speciesFinalPath = os.path.join(outputFolder, speciesFolder)
+        speciesTempPath = os.path.join("temp/", speciesFolder)
+        if os.path.isdir(speciesFinalPath):
+            with open(speciesFinalPath + "/SurvivingStrains.txt", "w") as strainFile:
                 strainList = []
-                speciesMuscleFolder = os.path.join(muscleOutFolder, speciesFolder)
+                # speciesMuscleFolder = os.path.join(muscleOutFolder, speciesFolder)  # For old setup
+                speciesMuscleFolder = os.path.join(speciesTempPath, muscleOutFolder)
                 try:
                     for muscleAlignment in os.listdir(speciesMuscleFolder):
                         with open(os.path.join(speciesMuscleFolder, muscleAlignment), "r") as alignFile:
