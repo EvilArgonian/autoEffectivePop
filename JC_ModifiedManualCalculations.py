@@ -615,10 +615,14 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                 gc_file.truncate(0)  # To clear the file for later appends
             with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
                 mutCalls.truncate(0)  # To clear the file for later appends
+            with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                tracker.truncate(0)  # To clear the file for later appends
             warnings = []
             for file in os.listdir("modifiedAlignmentInput/" + specName + "/"):
-                filePath = os.path.join("modifiedAlignmentInput/" + specName + "/" + file)
+                filePath = os.path.join("modifiedAlignmentInput/", specName, file)
                 nucDict = buildNucDict(filePath)
+                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                    tracker.write("Processing " + file + " with nucDict of length " + str(len(nucDict)) + ". ")
                 # nucDict is a dictionary of sequence names mapped to actual sequences.
                 # the sequences are aligned coding sequences, thus equal length and divisible by 3
                 if len(nucDict) < 2:
@@ -634,6 +638,8 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                 f.write(calcThetas(nucDict, numStrains, consensus))
                 f2.write(calcPis(nucDict, numStrains, consensus))
                 f4.write(">" + file + "\n" + consensus + "\n")
+                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                    tracker.write(file + " processed.\n")
 
 if len(warnings) > 0:
     with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
