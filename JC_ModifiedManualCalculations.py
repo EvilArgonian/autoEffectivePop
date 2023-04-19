@@ -369,11 +369,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
     except Exception:
         nonMutCopies = 0
     # harmonicNum = harmonic(numDictSeq + nonMutCopies)  # Harmonic number
-    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-        tracker.write("Harmonic: ")
     harmonicNum = sum([1.0 / float(i) for i in range(1, numDictSeq + nonMutCopies)])  # numSeq-1th harmonic number
-    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-        tracker.write(str(harmonicNum) + ". ")
     if potentialSynChanges == 0:
         watsThetaS = 0
     else:
@@ -427,6 +423,9 @@ def calcPis(nucDict, numStrains, ancestralSeq):
         outString = "ERROR_ALL_GAPS_" + file.split(".")[0] + "\tPi S: NA" + "\tPi N: NA" + "\tPi: NA" + "\n"
         return outString
 
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write("Pis: Not all gaps. ")
+
     potentialSynSites = 0
     potentialNonSynSites = 0
     for i in range(0, seqLength, 3):
@@ -436,6 +435,9 @@ def calcPis(nucDict, numStrains, ancestralSeq):
         if consCodon in synChances.keys():
             potentialSynSites += sum(synChances[consCodon])
             potentialNonSynSites += (3 - sum(synChances[consCodon]))
+
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write("Pis: Potential sites found. ")
 
     # Processing/counting for Pi values
     synMutations = 0.0
@@ -583,6 +585,8 @@ def calcPis(nucDict, numStrains, ancestralSeq):
         nonMutCopies = int(nucDict.keys()[0].split("_")[-1])
     except Exception:
         nonMutCopies = 0
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write("Pis: Non-mutant copies: " + str(nonMutCopies) + ". ")
     totalSeq = numDictSeq + nonMutCopies
     perComparison = float(1.0 / ((totalSeq * (totalSeq - 1)) / 2))  # 1 over the number of comparisons
     piS = float(perComparison * synMutations) / potentialSynSites
