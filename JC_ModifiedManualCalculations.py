@@ -369,7 +369,11 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
     except Exception:
         nonMutCopies = 0
     # harmonicNum = harmonic(numDictSeq + nonMutCopies)  # Harmonic number
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write("Harmonic: ")
     harmonicNum = sum([1.0 / float(i) for i in range(1, numDictSeq + nonMutCopies)])  # numSeq-1th harmonic number
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write(str(harmonicNum) + ". ")
     if potentialSynChanges == 0:
         watsThetaS = 0
     else:
@@ -635,8 +639,14 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                     warnings.append(file)
                     numStrains = "-1"  # Indicates that strain number is not being considered as a factor
                 consensus = nucDict.values()[0]
+                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                    tracker.write("CP 1 (Strains). ")
                 f.write(calcThetas(nucDict, numStrains, consensus))
+                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                    tracker.write("CP 2 (Thetas). ")
                 f2.write(calcPis(nucDict, numStrains, consensus))
+                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                    tracker.write("CP 3 (Pis). ")
                 f4.write(">" + file + "\n" + consensus + "\n")
                 with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                     tracker.write(file + " processed.\n")
