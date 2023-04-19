@@ -638,18 +638,23 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                 except Exception:
                     warnings.append(file)
                     numStrains = "-1"  # Indicates that strain number is not being considered as a factor
-                consensus = nucDict.values()[0]
-                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                    tracker.write("CP 1 (Strains). ")
-                f.write(calcThetas(nucDict, numStrains, consensus))
-                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                    tracker.write("CP 2 (Thetas). ")
-                f2.write(calcPis(nucDict, numStrains, consensus))
-                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                    tracker.write("CP 3 (Pis). ")
-                f4.write(">" + file + "\n" + consensus + "\n")
-                with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                    tracker.write(file + " processed.\n")
+
+                try:
+                    consensus = nucDict.values()[0]
+                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                        tracker.write("CP 1 (Strains). ")
+                    f.write(calcThetas(nucDict, numStrains, consensus))
+                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                        tracker.write("CP 2 (Thetas). ")
+                    f2.write(calcPis(nucDict, numStrains, consensus))
+                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                        tracker.write("CP 3 (Pis). ")
+                    f4.write(">" + file + "\n" + consensus + "\n")
+                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                        tracker.write(file + " processed.\n")
+                except Exception:
+                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                        tracker.write("ERROR: " + file + " failed to process.\n")
 
 if len(warnings) > 0:
     with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
