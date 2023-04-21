@@ -164,7 +164,7 @@ def harmonic(n):
     return float(1 / n) + harmonic(n - 1)
 
 
-def calcThetas(nucDict, numStrains, ancestralSeq):
+def calcThetas(nucDict, numStrains, ancestralSeq, file):
     # Processing/counting for Watterson's Theta & Theta S values
     numSeq = len(nucDict.keys())
     seqLength = len(nucDict.values()[0])
@@ -442,7 +442,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
     return outString
 
 
-def calcPis(nucDict, numStrains, ancestralSeq):
+def calcPis(nucDict, numStrains, ancestralSeq, file):
     numSeq = len(nucDict.keys())
     seqLength = len(nucDict.values()[0])
 
@@ -678,25 +678,25 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                 with open("final_output/" + specName + "/" + specName + "_MutationCalls.txt", "a+") as mutCalls:
                     mutCalls.truncate(0)  # To clear the file for later appends
                 warnings = []
-                for file in os.listdir("temp/" + specName + "/muscle_output/"):
-                    filePath = os.path.join("temp/" + specName + "/muscle_output/" + file)
-                    nucDict = buildNucDict(filePath)
+                for ogFile in os.listdir("temp/" + specName + "/muscle_output/"):
+                    filePath = os.path.join("temp/" + specName + "/muscle_output/" + ogFile)
+                    currNucDict = buildNucDict(filePath)
                     # nucDict is a dictionary of sequence names mapped to actual sequences.
                     # the sequences are aligned coding sequences, thus equal length and divisible by 3
-                    if len(nucDict) < 2:
+                    if len(currNucDict) < 2:
                         continue
 
                     # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
                     try:
-                        numStrains = int(file.split("_")[0])
+                        currNumStrains = int(ogFile.split("_")[0])
                     except Exception:
-                        warnings.append(file)
-                        numStrains = "-1"  # Indicates that strain number is not being considered as a factor
-                    consensus = getConsensus(nucDict)
-                    f.write(calcThetas(nucDict, numStrains, consensus))
-                    f2.write(calcPis(nucDict, numStrains, consensus))
-                    f3.write(calcDendropy(nucDict, numStrains, file))
-                    f4.write(">" + file + "\n" + consensus + "\n")
+                        warnings.append(ogFile)
+                        currNumStrains = "-1"  # Indicates that strain number is not being considered as a factor
+                    currConsensus = getConsensus(currNucDict)
+                    f.write(calcThetas(currNucDict, currNumStrains, currConsensus, ogFile))
+                    f2.write(calcPis(currNucDict, currNumStrains, currConsensus, ogFile))
+                    f3.write(calcDendropy(currNucDict, currNumStrains, ogFile))
+                    f4.write(">" + ogFile + "\n" + currConsensus + "\n")
 
 if len(warnings) > 0:
     with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:

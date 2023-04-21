@@ -2,6 +2,7 @@ import os
 import sys
 import re
 import datetime
+
 # from functools import lru_cache
 
 specName = sys.argv[1]
@@ -126,7 +127,7 @@ def harmonic(n):
     return float(1 / n) + harmonic(n - 1)
 
 
-def calcThetas(nucDict, numStrains, ancestralSeq):
+def calcThetas(nucDict, numStrains, ancestralSeq, file):
     # Processing/counting for Watterson's Theta & Theta S values
     numDictSeq = len(nucDict.keys())
     seqLength = len(nucDict.values()[0])
@@ -408,7 +409,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq):
     return outString
 
 
-def calcPis(nucDict, numStrains, ancestralSeq):
+def calcPis(nucDict, numStrains, ancestralSeq, file):
     numDictSeq = len(nucDict.keys())
     seqLength = len(nucDict.values()[0])
 
@@ -601,8 +602,6 @@ def calcPis(nucDict, numStrains, ancestralSeq):
         piN = 0.0
     pi = float(perComparison * mutations) / (seqLength - sum(gapsFound))
 
-
-
     # piByNumStrains is a dictionary containing all values needed to average pi over all same-num-contributor orthogroups
     # It is organized as such:
     # Key = Number of contributing strains
@@ -636,39 +635,39 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
             with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                 tracker.truncate(0)  # To clear the file for later appends
             warnings = []
-            for file in os.listdir("modifiedAlignmentInput/" + specName + "/"):
-                filePath = os.path.join("modifiedAlignmentInput/", specName, file)
-                nucDict = buildNucDict(filePath)
+            for ogFile in os.listdir("modifiedAlignmentInput/" + specName + "/"):
+                filePath = os.path.join("modifiedAlignmentInput/", specName, ogFile)
+                currNucDict = buildNucDict(filePath)
                 with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                    tracker.write("Processing " + file + " with nucDict of length " + str(len(nucDict)) + ". ")
+                    tracker.write("Processing " + ogFile + " with nucDict of length " + str(len(nucDict)) + ". ")
                 # nucDict is a dictionary of sequence names mapped to actual sequences.
                 # the sequences are aligned coding sequences, thus equal length and divisible by 3
-                if len(nucDict) < 2:
+                if len(currNucDict) < 2:
                     continue
 
                 # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
                 try:
-                    numStrains = int(file.split("_")[0])
+                    currNumStrains = int(ogFile.split("_")[0])
                 except Exception:
-                    warnings.append(file)
-                    numStrains = "-1"  # Indicates that strain number is not being considered as a factor
+                    warnings.append(ogFile)
+                    currNumStrains = "-1"  # Indicates that strain number is not being considered as a factor
 
                 try:
-                    consensus = nucDict.values()[0]
+                    currConsensus = currNucDict.values()[0]
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                         tracker.write("CP 1 (Strains). ")
-                    f.write(calcThetas(nucDict, numStrains, consensus))
+                    f.write(calcThetas(currNucDict, currNumStrains, currConsensus, ogFile))
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                         tracker.write("CP 2 (Thetas). ")
-                    f2.write(calcPis(nucDict, numStrains, consensus))
+                    f2.write(calcPis(currNucDict, currNumStrains, currConsensus, ogFile))
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                         tracker.write("CP 3 (Pis). ")
-                    f4.write(">" + file + "\n" + consensus + "\n")
+                    f4.write(">" + ogFile + "\n" + currConsensus + "\n")
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                        tracker.write(file + " processed.\n")
+                        tracker.write(ogFile + " processed.\n")
                 except Exception:
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                        tracker.write("ERROR: " + file + " failed to process.\n")
+                        tracker.write("ERROR: " + ogFile + " failed to process.\n")
 
 if len(warnings) > 0:
     with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
