@@ -29,7 +29,7 @@ def main():
             if skipName:
                 skipName = False
                 continue
-            categories.append(elem)
+            categories.append(elem.strip())
 
         inFolder = os.path.join("../final_output/", species)
         inConsensusFile = os.path.join(inFolder, "consensusSeqs.txt")
