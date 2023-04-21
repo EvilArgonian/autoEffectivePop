@@ -39,7 +39,7 @@ def main():
                 if not os.path.exists(catFolder):
                     os.mkdir(catFolder)
                 outFolder = os.path.join(catFolder, species)
-                outConsensusFile = os.path.join(outFolder, species, ".txt")
+                outConsensusFile = os.path.join(outFolder, str(species + ".txt"))
                 if os.path.exists(outFolder):
                     if os.path.exists(outConsensusFile):
                         if args.force:
