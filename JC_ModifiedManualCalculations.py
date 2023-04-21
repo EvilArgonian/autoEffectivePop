@@ -394,7 +394,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
     # Item 1 = The cumulative value of each orthogroups' watsThetaN (for all orthogroups belonging to this key)
     # Item 2 = The cumulative value of each orthogroups' watsTheta (for all orthogroups belonging to this key)
     # Item 3 = The number of orthogroups seen belonging to this key (the number which the cumulative values are divided by)
-    if not numStrains in thetaByNumStrains.keys():
+    if numStrains not in thetaByNumStrains.keys():
         thetaByNumStrains.update(
             {numStrains: [watsThetaS, watsThetaN, watsTheta, 1]})  # Initialize the key:value for newly encountered key
     else:
