@@ -56,7 +56,7 @@ def main():
 
     with open("missingConsensus.txt", "w") as missingFile:
         for spec in missingConsensus:
-            missingFile.write(spec + "\n")
+            missingFile.write(spec + " ")
 
 
 if __name__ == '__main__':
