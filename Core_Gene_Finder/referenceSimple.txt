@@ -1,0 +1,1073 @@
+Acetobacter_tropicalis	Free Living	Not Pathogenic		
+Acidovorax_radicis	Not Free Living	Not Pathogenic	aerobe	
+Acetobacter_okinawensis	Free Living	Not Pathogenic		
+Micromonospora_aurantiaca	Free Living	Not Pathogenic		
+Marinobacter_adhaerens	Free Living	Not Pathogenic	aerobe	
+Acidiphilium_multivorum	Free Living	Not Pathogenic		
+Leuconostoc_citreum	Not Free Living	Pathogenic	microaerophile	
+Enterobacter_cloacae	Not Free Living	Pathogenic	aerobe	
+Clostridium_perfringens	Not Free Living	Pathogenic	anaerobe	
+Clostridium_sporogenes	Not Free Living	Infection	anaerobe	
+Adlercreutzia_equolifaciens	Not Free Living	Not Pathogenic	anaerobe	
+Vibrio_cholerae	Not Free Living	Infection	aerobe	
+Neisseria_cinerea	Not Free Living	Pathogenic	microaerophile	
+Actinomyces_oris	Not Free Living	Pathogenic	microaerophile	
+Klebsiella_pneumoniae	Not Free Living	Pathogenic	aerobe	
+Campylobacter_concisus	Not Free Living	Infection		
+Butyrivibrio_fibrisolvens	Not Free Living	Not Pathogenic	anaerobe	
+Leptospira_noguchii	Not Free Living	Not Pathogenic		
+Bacillus_velezensis	Not Free Living	Not Pathogenic		
+Chromohalobacter_salexigens	Free Living	Not Pathogenic		
+Herbaspirillum_huttiense	Free Living	Not Pathogenic	aerobe	
+Leptospira_meyeri	Not Free Living	Not Pathogenic		
+Pantoea_dispersa	Not Free Living	Pathogenic	aerobe	
+Acinetobacter_guillouiae	Not Free Living	Pathogenic	aerobe	
+Alistipes_shahii	Not Free Living	Pathogenic		
+Photobacterium_damselae	Not Free Living	Pathogenic		
+Prevotella_denticola	Not Free Living	Pathogenic		
+Teredinibacter_turnerae	Not Free Living	Not Pathogenic	aerobe	
+Myroides_marinus	Free Living	Not Pathogenic	aerobe	
+Acinetobacter_parvus	Not Free Living	Infection	microaerophile	
+Aeromonas_dhakensis	Not Free Living	Infection	aerobe	
+Acinetobacter_johnsonii	Not Free Living	Infection	aerobe	
+Listeria_ivanovii	Not Free Living	Infection		
+Edwardsiella_tarda	Not Free Living	Pathogenic		
+Dermatophilus_congolensis	Not Free Living	Infection	aerobe	
+Pantoea_ananatis	Not Free Living	Pathogenic		
+Providencia_alcalifaciens	Not Free Living	Pathogenic		
+Listeria_welshimeri	Not Free Living	Not Pathogenic		
+Nocardia_farcinica	Not Free Living	Pathogenic	microaerophile	
+Bordetella_trematum	Not Free Living	Infection	microaerophile	
+Dorea_longicatena	Not Free Living	Not Pathogenic		
+Eubacterium_ramulus	Not Free Living	Not Pathogenic	anaerobe	
+Bifidobacterium_dentium	Not Free Living	Infection	anaerobe	
+Bacillus_smithii	Not Free Living	Not Pathogenic	aerobe	
+Anaerococcus_hydrogenalis	Not Free Living	Pathogenic	anaerobe	
+Bacillus_timonensis	Not Free Living	Not Pathogenic		
+Prevotella_salivae	Not Free Living	Pathogenic	anaerobe	
+Odoribacter_splanchnicus	Not Free Living	Infection	anaerobe	
+Clostridium_saccharoperbutylacetonicum	Free Living	Not Pathogenic	anaerobe	
+Photobacterium_leiognathi	Not Free Living	Not Pathogenic		
+Neisseria_subflava	Not Free Living	Infection	microaerophile	
+Anoxybacillus_flavithermus	Free Living	Not Pathogenic		
+Enterococcus_gilvus	Not Free Living	Pathogenic	microaerophile	
+Campylobacter_ureolyticus	Not Free Living	Pathogenic	anaerobe	
+Bordetella_hinzii	Not Free Living	Pathogenic		
+Bartonella_henselae	Not Free Living	Infection	microaerophile	
+Exiguobacterium_indicum	Free Living	Not Pathogenic	aerobe	
+Bartonella_tribocorum	Not Free Living	Pathogenic		
+Blastopirellula_marina	Free Living	Not Pathogenic		
+Corynebacterium_jeikeium	Not Free Living	Infection	microaerophile	
+Enterococcus_asini	Not Free Living	Not Pathogenic	microaerophile	
+Listeria_marthii	Free Living	Not Pathogenic	microaerophile	
+Mycobacterium_avium	Not Free Living	Pathogenic	microaerophile	
+Corynebacterium_halotolerans	Free Living	Not Pathogenic	aerobe	
+Collimonas_fungivorans	Not Free Living	Not Pathogenic	aerobe	
+Acetobacter_aceti	Free Living	Not Pathogenic		
+Aeromonas_caviae	Not Free Living	Pathogenic	aerobe	
+Rothia_aeria	Not Free Living	Pathogenic	microaerophile	
+Peptoniphilus_lacrimalis	Not Free Living	Not Pathogenic	anaerobe	
+Acinetobacter_seifertii	Not Free Living	Infection		
+Actinoplanes_lobatus	Free Living	Not Pathogenic		
+Aggregatibacter_kilianii	Not Free Living	Infection	microaerophile	
+Amycolatopsis_bartoniae	Free Living	Not Pathogenic		
+Bacillus_haynesii	Free Living	Not Pathogenic	facultative anaerobe	
+Bacillus_sonorensis	Free Living	Not Pathogenic		
+Bifidobacterium_tissieri	Not Free Living	Not Pathogenic		
+Burkholderia_anthina	Not Free Living	Pathogenic	aerobe	
+Buttiauxella_agrestis	Not Free Living	Not Pathogenic		
+Campylobacter_peloridis	Not Free Living	Not Pathogenic	microaerophile	
+Citrobacter_werkmanii	Not Free Living	Not Pathogenic		
+Clostridium_haemolyticum	Not Free Living	Pathogenic	anaerobe	
+Corynebacterium_coyleae	Not Free Living	Infection	microaerophile	
+Dermabacter_hominis	Not Free Living	Pathogenic	microaerophile	
+Desulfobacter_hydrogenophilus	Free Living	Not Pathogenic	anaerobe	
+Fructilactobacillus_lindneri	Free Living	Not Pathogenic		
+Haematobacter_missouriensis	Not Free Living	Infection	microaerophile	
+Halomonas_hydrothermalis	Free Living	Not Pathogenic	facultative aerobe	
+Herbaspirillum_robiniae	Not Free Living	Not Pathogenic	aerobe	
+Actinobaculum_suis	Not Free Living	Pathogenic	anaerobe	
+Acutalibacter_muris	Not Free Living	Not Pathogenic	anaerobe	
+Allofrancisella_guangzhouensis	Free Living	Not Pathogenic	anaerobe	
+Amycolatopsis_keratiniphila	Free Living	Not Pathogenic		
+Bacillus_spizizenii	Not Free Living	Pathogenic		
+Bordetella_petrii	Not Free Living	Pathogenic	aerobe	
+Brenneria_salicis	Not Free Living	Pathogenic		
+Burkholderia_plantarii	Not Free Living	Pathogenic		
+Campylobacter_iguaniorum	Not Free Living	Not Pathogenic	microaerophile	
+Chryseobacterium_culicis	Not Free Living	Infection	aerobe	
+Clostridium_disporicum	Not Free Living	Not Pathogenic	anaerobe	
+Corallococcus_exiguus	Not Free Living	Not Pathogenic		
+Crateriforma_conspicua	Not Free Living	Not Pathogenic		
+Eisenbergiella_massiliensis	Not Free Living	Not Pathogenic		
+Faecalicatena_contorta	Not Free Living	Infection		
+Gimesia_maris	Free Living	Not Pathogenic		
+Halarcobacter_ebronensis	Not Free Living	Not Pathogenic		
+Halomonas_venusta	Free Living	Not Pathogenic		
+Kosakonia_cowanii	Not Free Living	Infection	aerobe	
+Acetobacter_pomorum	Free Living	Not Pathogenic	aerobe	
+Ignatzschineria_cameli	Not Free Living	Infection	aerobe	
+Modestobacter_marinus	Free Living	Not Pathogenic		
+Clostridium_argentinense	Not Free Living	Infection		
+Companilactobacillus_paralimentarius	Free Living	Not Pathogenic	anaerobe	
+Cutibacterium_granulosum	Not Free Living	Pathogenic	anaerobe	
+Enterobacter_sichuanensis	Not Free Living	Infection	facultative anaerobe	
+Flavobacterium_limi	Free Living	Not Pathogenic	aerobe	
+Furfurilactobacillus_rossiae	Free Living	Not Pathogenic	anaerobe	
+Halioglobus_japonicus	Free Living	Not Pathogenic	aerobe	
+Helicobacter_cholecystus	Not Free Living	Not Pathogenic		
+Parabacteroides_faecis	Not Free Living	Not Pathogenic	anaerobe	
+Vibrio_casei	Free Living	Not Pathogenic		
+Clostridium_algidicarnis	Free Living	Not Pathogenic	anaerobe	
+Legionella_moravica	Not Free Living	Pathogenic		
+Edwardsiella_ictaluri	Not Free Living	Pathogenic		
+Paracoccus_pantotrophus	Not Free Living	Not Pathogenic		
+Corynebacterium_propinquum	Not Free Living	Infection	microaerophile	
+Granulibacter_bethesdensis	Not Free Living	Pathogenic	obligate aerobe	
+Histophilus_somni	Not Free Living	Pathogenic	microaerophile	
+Haemophilus_aegyptius	Not Free Living	Infection	microaerophile	
+Klebsiella_oxytoca	Not Free Living	Pathogenic	aerobe	
+Fusobacterium_nucleatum	Not Free Living	Infection	anaerobe	
+Helicobacter_bizzozeronii	Not Free Living	Not Pathogenic	microaerophile	
+Curtobacterium_luteum	Not Free Living	Not Pathogenic		
+Corynebacterium_ammoniagenes	Not Free Living	Pathogenic	microaerophile	
+Dehalococcoides_mccartyi	Free Living	Not Pathogenic	anaerobe	
+Lactobacillus_amylovorus	Not Free Living	Infection	anaerobe	
+Lactobacillus_delbrueckii	Not Free Living	Infection	microaerophile	
+Kingella_negevensis	Not Free Living	Not Pathogenic	aerobe	
+Pantoea_stewartii	Not Free Living	Pathogenic		
+Paenibacillus_larvae	Not Free Living	Pathogenic	microaerophile	
+Paenibacillus_dendritiformis	Not Free Living	Not Pathogenic		
+Achromobacter_denitrificans	Not Free Living	Infection	aerobe	
+Actinobacillus_lignieresii	Not Free Living	Pathogenic	microaerophile	
+Adlercreutzia_caecimuris	Not Free Living	Infection	anaerobe	
+Alloscardovia_macacae	Not Free Living	Not Pathogenic	obligate anaerobe	
+Anaerobutyricum_hallii	Not Free Living	Not Pathogenic	anaerobe	
+Bifidobacterium_mongoliense	Free Living	Not Pathogenic	anaerobe	
+Bradyrhizobium_pachyrhizi	Not Free Living	Not Pathogenic	obligate aerobe	
+Burkholderia_paludis	Free Living	Not Pathogenic		
+Butyricimonas_paravirosa	Not Free Living	Not Pathogenic	anaerobe	
+Cellulosimicrobium_funkei	Not Free Living	Pathogenic	aerobe	
+Clostridioides_difficile	Not Free Living	Pathogenic	anaerobe	
+Comamonas_kerstersii	Not Free Living	Infection	aerobe	
+Corynebacterium_renale	Not Free Living	Pathogenic		
+Dermabacter_jinjuensis	Not Free Living	Pathogenic	anaerobe	
+Enterocloster_bolteae	Not Free Living	Pathogenic	anaerobe	
+Fructobacillus_tropaeoli	Not Free Living	Not Pathogenic	microaerophile	
+Haematospirillum_jordaniae	Not Free Living	Pathogenic	microaerophile	
+Halomonas_urumqiensis	Free Living	Not Pathogenic	aerobe	
+Jejuia_pallidilutea	Free Living	Not Pathogenic		
+Acinetobacter_gerneri	Free Living	Not Pathogenic		
+Acetobacter_pasteurianus	Not Free Living	Not Pathogenic		
+Francisella_hispaniensis	Not Free Living	Infection	aerobe	
+Halomonas_ventosae	Free Living	Not Pathogenic	aerobe	
+Helicobacter_heilmannii	Not Free Living	Pathogenic	microaerophile	
+Klebsiella_huaxiensis	Free Living	Not Pathogenic		
+Klebsiella_michiganensis	Not Free Living	Infection	aerobe	
+Kosakonia_pseudosacchari	Free Living	Not Pathogenic		
+Lachnospira_eligens	Not Free Living	Not Pathogenic		
+Lacticaseibacillus_saniviri	Not Free Living	Infection	microaerophile	
+Lacticaseibacillus_zeae	Not Free Living	Not Pathogenic		
+Lactobacillus_apis	Not Free Living	Not Pathogenic	microaerophile	
+Lactobacillus_paragasseri	Not Free Living	Pathogenic	facultative anaerobe	
+Legionella_feeleii	Not Free Living	Infection	microaerophile	
+Legionella_gratiana	Not Free Living	Pathogenic	microaerophile	
+Legionella_jordanis	Free Living	Not Pathogenic	microaerophile	
+Legionella_londiniensis	Free Living	Not Pathogenic		
+Legionella_quateirensis	Free Living	Not Pathogenic	microaerophile	
+Legionella_steigerwaltii	Not Free Living	Pathogenic	microaerophile	
+Legionella_waltersii	Free Living	Not Pathogenic	microaerophile	
+Lelliottia_nimipressuralis	Not Free Living	Pathogenic	aerobe	
+Lentilactobacillus_kefiri	Free Living	Not Pathogenic		
+Lentilactobacillus_parafarraginis	Free Living	Not Pathogenic	microaerophile	
+Leucobacter_chromiireducens	Not Free Living	Not Pathogenic		
+Leucobacter_luti	Free Living	Not Pathogenic		
+Levilactobacillus_namurensis	Not Free Living	Not Pathogenic	microaerophile	
+Ligilactobacillus_acidipiscis	Free Living	Not Pathogenic		
+Ligilactobacillus_agilis	Not Free Living	Not Pathogenic	anaerobe	
+Ligilactobacillus_animalis	Not Free Living	Infection	microaerophile	
+Ligilactobacillus_murinus	Not Free Living	Infection	microaerophile	
+Ligilactobacillus_pobuzihii	Free Living	Not Pathogenic	microaerophile	
+Ligilactobacillus_salivarius	Not Free Living	Infection	microaerophile	
+Liquorilactobacillus_vini	Free Living	Not Pathogenic		
+Listeria_booriae	Free Living	Not Pathogenic		
+Listeria_grandensis	Free Living	Not Pathogenic		
+Luteibacter_rhizovicinus	Not Free Living	Not Pathogenic		
+Lysinibacillus_xylanilyticus	Free Living	Not Pathogenic	aerobe	
+Mageeibacillus_indolicus	Not Free Living	Infection	anaerobe	
+Malaciobacter_mytili	Not Free Living	Not Pathogenic	microaerophile	
+Mammaliicoccus_sciuri	Not Free Living	Pathogenic	aerobe	
+Marinitenerispora_sediminis	Free Living	Not Pathogenic	aerobe	
+Marinomonas_gallaica	Not Free Living	Not Pathogenic	obligate aerobe	
+Metabacillus_litoralis	Free Living	Not Pathogenic	aerobe	
+Methylobacterium_indicum	Free Living	Not Pathogenic		
+Methylorubrum_extorquens	Not Free Living	Infection	aerobe	
+Microbacterium_endophyticum	Not Free Living	Not Pathogenic		
+Microbacterium_foliorum	Not Free Living	Not Pathogenic	aerobe	
+Microbacterium_hominis	Not Free Living	Infection	microaerophile	
+Microbacterium_hydrocarbonoxydans	Free Living	Not Pathogenic	aerobe	
+Microbacterium_paludicola	Free Living	Not Pathogenic	aerobe	
+Microbacterium_sediminis	Free Living	Not Pathogenic	aerobe	
+Microbispora_bryophytorum	Not Free Living	Not Pathogenic		
+Micrococcus_flavus	Free Living	Not Pathogenic	aerobe	
+Micrococcus_yunnanensis	Not Free Living	Not Pathogenic		
+Micromonospora_globispora	Free Living	Not Pathogenic		
+Moraxella_bovis	Not Free Living	Pathogenic	microaerophile	
+Moraxella_canis	Not Free Living	Pathogenic	microaerophile	
+Moraxella_caviae	Not Free Living	Not Pathogenic	microaerophile	
+Moraxella_ovis	Not Free Living	Pathogenic	microaerophile	
+Morganella_psychrotolerans	Not Free Living	Not Pathogenic	aerobe	
+Mycobacterium_celatum	Not Free Living	Pathogenic		
+Mycobacterium_haemophilum	Not Free Living	Pathogenic	aerobe	
+Mycobacterium_heckeshornense	Not Free Living	Infection		
+Mycobacterium_paraense	Not Free Living	Infection	microaerophile	
+Mycobacterium_paragordonae	Not Free Living	Not Pathogenic		
+Mycobacterium_persicum	Not Free Living	Infection		
+Mycobacterium_pseudoshottsii	Not Free Living	Pathogenic		
+Mycobacterium_riyadhense	Not Free Living	Pathogenic	microaerophile	
+Mycobacterium_simiae	Not Free Living	Pathogenic		
+Neisseria_animalis	Not Free Living	Not Pathogenic		
+Neisseria_dentiae	Not Free Living	Not Pathogenic	microaerophile	
+Neisseria_dumasiana	Not Free Living	Pathogenic	facultative anaerobe	
+Neisseria_zoodegmatis	Not Free Living	Infection	microaerophile	
+Neobacillus_cucumis	Not Free Living	Not Pathogenic	facultative anaerobe	
+Nocardia_donostiensis	Not Free Living	Infection		
+Nocardioides_salarius	Not Free Living	Not Pathogenic	aerobe	
+Oecophyllibacter_saccharovorans	Free Living	Not Pathogenic	aerobe	
+Paeniclostridium_sordellii	Not Free Living	Pathogenic	anaerobe	
+Paraburkholderia_mimosarum	Not Free Living	Not Pathogenic	aerobe	
+Empedobacter_brevis	Not Free Living	Infection		
+Paenibacillus_macerans	Not Free Living	Not Pathogenic		
+Pantoea_septica	Not Free Living	Infection	aerobe	
+Paraburkholderia_xenovorans	Not Free Living	Infection	aerobe	
+Oceanobacillus_picturae	Not Free Living	Infection	microaerophile	
+Paenibacillus_darwinianus	Free Living	Not Pathogenic		
+Paenibacillus_odorifer	Not Free Living	Not Pathogenic		
+Dickeya_zeae	Not Free Living	Pathogenic	facultative anaerobe	
+Nitrospirillum_amazonense	Not Free Living	Not Pathogenic		
+Nocardioides_luteus	Free Living	Not Pathogenic		
+Ochrobactrum_soli	Free Living	Not Pathogenic	aerobe	
+Paenibacillus_ihbetae	Free Living	Not Pathogenic		
+Pandoraea_fibrosis	Free Living	Not Pathogenic		
+Paraburkholderia_caribensis	Free Living	Not Pathogenic		
+Enterococcus_saccharolyticus	Not Free Living	Pathogenic	microaerophile	
+Pantoea_anthophila	Not Free Living	Pathogenic	facultative anaerobe	
+Paraburkholderia_kururiensis	Free Living	Not Pathogenic	aerobe	
+Acetobacter_persici	Free Living	Not Pathogenic		
+Erwinia_amylovora	Not Free Living	Pathogenic		
+Paracoccus_denitrificans	Free Living	Not Pathogenic	aerobe	
+Erysipelothrix_rhusiopathiae	Not Free Living	Infection	microaerophile	
+Exiguobacterium_acetylicum	Free Living	Not Pathogenic		
+Finegoldia_magna	Not Free Living	Infection	anaerobe	
+Pseudomonas_fulva	Not Free Living	Not Pathogenic	aerobe	
+Pseudomonas_taiwanensis	Free Living	Not Pathogenic	aerobe	
+Aliivibrio_logei	Not Free Living	Pathogenic	aerobe	
+Phocaeicola_vulgatus	Not Free Living	Pathogenic	anaerobe	
+Photobacterium_phosphoreum	Not Free Living	Not Pathogenic	aerobe	
+Prevotella_pectinovora	Not Free Living	Not Pathogenic		
+Pseudoalteromonas_lipolytica	Free Living	Not Pathogenic	aerobe	
+Pseudomonas_jessenii	Free Living	Not Pathogenic	aerobe	
+Pseudomonas_mucidolens	Free Living	Not Pathogenic	aerobe	
+Rhizobium_phaseoli	Free Living	Not Pathogenic		
+Geobacillus_kaustophilus	Free Living	Not Pathogenic	aerobe	
+Gordonia_amicalis	Free Living	Not Pathogenic	aerobe	
+Gordonia_polyisoprenivorans	Not Free Living	Not Pathogenic		
+Rahnella_victoriana	Not Free Living	Pathogenic		
+Helicobacter_suis	Not Free Living	Not Pathogenic	anaerobe	
+Ralstonia_syzygii	Not Free Living	Pathogenic		
+Hylemonella_gracilis	Free Living	Not Pathogenic		
+Enterococcus_durans	Not Free Living	Pathogenic	microaerophile	
+Hafnia_alvei	Not Free Living	Pathogenic	aerobe	
+Lactococcus_garvieae	Not Free Living	Pathogenic	microaerophile	
+Raoultella_planticola	Not Free Living	Pathogenic	aerobe	
+Legionella_geestiana	Free Living	Not Pathogenic	microaerophile	
+Leifsonia_aquatica	Not Free Living	Infection	obligate aerobe	
+Rhodococcus_ruber	Free Living	Infection		
+Psychrobacter_cryohalolentis	Free Living	Not Pathogenic	aerobe	
+Rathayibacter_rathayi	Not Free Living	Pathogenic		
+Marinilabilia_salmonicolor	Free Living	Not Pathogenic		
+Pseudomonas_parafulva	Not Free Living	Not Pathogenic		
+Rhodoluna_limnophila	Free Living	Not Pathogenic		
+Mesorhizobium_ciceri	Free Living	Not Pathogenic		
+Renibacterium_salmoninarum	Not Free Living	Pathogenic		
+Pseudomonas_poae	Not Free Living	Not Pathogenic	aerobe	
+Rhizobium_cellulosilyticum	Not Free Living	Not Pathogenic		
+Microbispora_rosea	Free Living	Not Pathogenic		
+Psychrobacter_namhaensis	Free Living	Not Pathogenic	anaerobe	
+Pseudoalteromonas_tetraodonis	Not Free Living	Pathogenic		
+Pseudomonas_luteola	Not Free Living	Infection	aerobe	
+Pseudomonas_yamanorum	Free Living	Not Pathogenic	aerobe	
+Acholeplasma_laidlawii	Not Free Living	Pathogenic		
+Priestia_megaterium	Not Free Living	Pathogenic	aerobe	
+Pseudofulvimonas_gallinarii	Not Free Living	Not Pathogenic	aerobe	
+Pseudomonas_kilonensis	Free Living	Not Pathogenic		
+Pseudoteredinibacter_isoporae	Not Free Living	Not Pathogenic		
+Photobacterium_aphoticum	Free Living	Not Pathogenic	aerobe	
+Pluralibacter_gergoviae	Not Free Living	Infection	aerobe	
+Providencia_heimbachae	Not Free Living	Pathogenic		
+Pseudomonas_ficuserectae	Not Free Living	Pathogenic		
+Pseudomonas_mendocina	Free Living	Not Pathogenic	aerobe	
+Psychrobacter_faecalis	Not Free Living	Infection	microaerophile	
+Pseudescherichia_vulneris	Not Free Living	Infection	aerobe	
+Pseudomonas_guariconensis	Free Living	Not Pathogenic	aerobe	
+Pseudomonas_proteolytica	Not Free Living	Not Pathogenic	aerobe	
+Rodentibacter_heylii	Not Free Living	Not Pathogenic		
+Pseudomonas_psychrophila	Free Living	Not Pathogenic	aerobe	
+Roseburia_faecis	Not Free Living	Not Pathogenic	anaerobe	
+Actinomyces_graevenitzii	Not Free Living	Infection	microaerophile	
+Afipia_felis	Not Free Living	Pathogenic	aerobe	
+Mycoplasma_mycoides	Not Free Living	Pathogenic		
+Achromobacter_piechaudii	Not Free Living	Infection	aerobe	
+Rhizobium_etli	Not Free Living	Not Pathogenic		
+Aerococcus_urinaeequi	Not Free Living	Not Pathogenic	microaerophile	
+Pseudomonas_moraviensis	Not Free Living	Not Pathogenic		
+Psychrobacter_frigidicola	Not Free Living	Not Pathogenic	aerobe	
+Psychrobacter_aquimaris	Free Living	Not Pathogenic	anaerobe	
+Aggregatibacter_segnis	Not Free Living	Infection	microaerophile	
+Roseomonas_gilardii	Not Free Living	Not Pathogenic		
+Caldibacillus_debilis	Not Free Living	Not Pathogenic		
+Parvimonas_micra	Not Free Living	Pathogenic	anaerobe	
+Pediococcus_acidilactici	Not Free Living	Pathogenic	microaerophile	
+Peribacillus_simplex	Free Living	Infection	microaerophile	
+Phaeobacter_inhibens	Not Free Living	Not Pathogenic		
+Phocaeicola_dorei	Not Free Living	Pathogenic	anaerobe	
+Phocaeicola_plebeius	Not Free Living	Not Pathogenic	anaerobe	
+Phocaeicola_sartorii	Not Free Living	Not Pathogenic	anaerobe	
+Photobacterium_kishitanii	Not Free Living	Not Pathogenic		
+Polynucleobacter_asymbioticus	Free Living	Not Pathogenic		
+Pseudoalteromonas_carrageenovora	Not Free Living	Not Pathogenic		
+Pseudomonas_lactis	Not Free Living	Not Pathogenic		
+Pseudomonas_rhodesiae	Not Free Living	Pathogenic	aerobe	
+Roseomonas_mucosa	Not Free Living	Infection	microaerophile	
+Alistipes_senegalensis	Not Free Living	Infection	anaerobe	
+Pyruvatibacter_mobilis	Not Free Living	Not Pathogenic	aerobe	
+Prevotella_veroralis	Not Free Living	Not Pathogenic	anaerobe	
+Staphylococcus_nepalensis	Not Free Living	Pathogenic	aerobe	
+Anaerotruncus_colihominis	Not Free Living	Infection	anaerobe	
+Sphingobacterium_spiritivorum	Free Living	Infection	aerobe	
+Streptococcus_iniae	Not Free Living	Infection	microaerophile	
+Acinetobacter_nosocomialis	Not Free Living	Infection	aerobe	
+Sphingobium_limneticum	Not Free Living	Not Pathogenic	aerobe	
+Streptomyces_atratus	Free Living	Not Pathogenic		
+Shewanella_putrefaciens	Not Free Living	Pathogenic	obligate aerobe	
+Sphingobium_xenophagum	Free Living	Not Pathogenic		
+Streptomyces_fradiae	Not Free Living	Infection		
+Citrobacter_youngae	Free Living	Not Pathogenic		
+Sphingobium_yanoikuyae	Not Free Living	Pathogenic	aerobe	
+Streptomyces_griseus	Not Free Living	Pathogenic		
+Elizabethkingia_meningoseptica	Not Free Living	Pathogenic	aerobe	
+Sporosarcina_ureae	Free Living	Not Pathogenic		
+Enterobacter_hormaechei	Not Free Living	Pathogenic	aerobe	
+Streptomyces_niveus	Not Free Living	Not Pathogenic		
+Enterococcus_casseliflavus	Not Free Living	Infection	microaerophile	
+Streptomyces_parvus	Free Living	Not Pathogenic		
+Staphylococcus_pseudoxylosus	Free Living	Not Pathogenic	facultative anaerobe	
+Photobacterium_profundum	Free Living	Not Pathogenic		
+Tardiphaga_robiniae	Not Free Living	Not Pathogenic	aerobe	
+Brevibacterium_casei	Not Free Living	Infection	microaerophile	
+Salinibacter_ruber	Free Living	Not Pathogenic		
+Shigella_dysenteriae	Free Living	Infection		
+Sphingomonas_carotinifaciens	Not Free Living	Not Pathogenic	obligate aerobe	
+Pseudomonas_fragi	Not Free Living	Infection	aerobe	
+Rhodococcus_globerulus	Free Living	Not Pathogenic		
+Rhodospirillum_rubrum	Free Living	Not Pathogenic	anaerobe	
+Roseovarius_indicus	Free Living	Not Pathogenic		
+Rubrivivax_benzoatilyticus	Free Living	Not Pathogenic		
+Ruminococcus_flavefaciens	Not Free Living	Not Pathogenic	anaerobe	
+Shewanella_xiamenensis	Not Free Living	Pathogenic	facultative anaerobe	
+Sphingomonas_endophytica	Not Free Living	Not Pathogenic	aerobe	
+Vagococcus_fluvialis	Not Free Living	Pathogenic	microaerophile	
+Rhodanobacter_thiooxydans	Free Living	Not Pathogenic	aerobe	
+Rhodobacter_capsulatus	Free Living	Not Pathogenic	anaerobe	
+Rhodoblastus_acidophilus	Not Free Living	Not Pathogenic	anaerobe	
+Rhodopirellula_baltica	Free Living	Not Pathogenic		
+Rhodovulum_sulfidophilum	Free Living	Not Pathogenic	anaerobe	
+Rothia_mucilaginosa	Not Free Living	Infection	microaerophile	
+Rubrivivax_gelatinosus	Free Living	Not Pathogenic	anaerobe	
+Salisediminibacterium_halotolerans	Free Living	Not Pathogenic	facultative anaerobe	
+Sinorhizobium_americanum	Not Free Living	Not Pathogenic		
+Staphylococcus_kloosii	Not Free Living	Not Pathogenic		
+Serratia_proteamaculans	Not Free Living	Infection	aerobe	
+Sphingobium_fuliginis	Not Free Living	Not Pathogenic		
+Staphylococcus_schleiferi	Not Free Living	Pathogenic	aerobe	
+Alistipes_indistinctus	Not Free Living	Not Pathogenic		
+Lysobacter_antibioticus	Free Living	Not Pathogenic		
+Vagococcus_lutrae	Not Free Living	Not Pathogenic	microaerophile	
+Gallibacterium_anatis	Not Free Living	Pathogenic	aerobe	
+Prevotella_melaninogenica	Not Free Living	Pathogenic	anaerobe	
+Serratia_odorifera	Not Free Living	Pathogenic		
+Shimwellia_blattae	Not Free Living	Not Pathogenic		
+Spiribacter_roseus	Free Living	Not Pathogenic	aerobe	
+Veillonella_dispar	Not Free Living	Pathogenic	anaerobe	
+Prevotella_copri	Not Free Living	Not Pathogenic		
+Promicromonospora_sukumoe	Free Living	Not Pathogenic		
+Achromobacter_xylosoxidans	Not Free Living	Infection	aerobe	
+Shewanella_baltica	Free Living	Not Pathogenic		
+Sphingobacterium_multivorum	Not Free Living	Infection	aerobe	
+Staphylococcus_microti	Not Free Living	Pathogenic	aerobe	
+Acidovorax_avenae	Not Free Living	Pathogenic		
+Acinetobacter_soli	Not Free Living	Infection	aerobe	
+Staphylococcus_simulans	Not Free Living	Pathogenic	aerobe	
+Pseudoalteromonas_citrea	Free Living	Not Pathogenic		
+Alicyclobacillus_acidocaldarius	Free Living	Not Pathogenic		
+Ruegeria_arenilitoris	Free Living	Not Pathogenic	aerobe	
+Schaalia_hyovaginalis	Not Free Living	Pathogenic	microaerophile	
+Sinirhodobacter_populi	Free Living	Not Pathogenic	aerobe	
+Staphylococcus_equorum	Not Free Living	Not Pathogenic	aerobe	
+Pseudoalteromonas_piscicida	Not Free Living	Pathogenic		
+Roseburia_inulinivorans	Not Free Living	Not Pathogenic		
+Rothia_nasimurium	Not Free Living	Not Pathogenic	microaerophile	
+Ruminococcus_albus	Not Free Living	Not Pathogenic	anaerobe	
+Schaalia_turicensis	Not Free Living	Infection	microaerophile	
+Shigella_flexneri	Not Free Living	Infection	aerobe	
+Sphingomonas_melonis	Not Free Living	Pathogenic		
+Staphylococcus_succinus	Not Free Living	Not Pathogenic		
+Prevotella_pallens	Not Free Living	Infection	anaerobe	
+Pseudomonas_avellanae	Not Free Living	Pathogenic		
+Sphingopyxis_macrogoltabida	Free Living	Not Pathogenic		
+Vibrio_aestuarianus	Not Free Living	Pathogenic		
+Anaerofustis_stercorihominis	Not Free Living	Not Pathogenic	anaerobe	
+Sphingopyxis_terrae	Free Living	Not Pathogenic		
+Stappia_indica	Free Living	Not Pathogenic		
+Acidaminococcus_fermentans	Not Free Living	Pathogenic		
+Vibrio_atlanticus	Not Free Living	Not Pathogenic		
+Acinetobacter_tjernbergiae	Free Living	Not Pathogenic	aerobe	
+Vibrio_azureus	Free Living	Not Pathogenic		
+Sutterella_wadsworthensis	Not Free Living	Infection	anaerobe	
+Bacillus_thuringiensis	Not Free Living	Pathogenic		
+Streptococcus_ruminantium	Not Free Living	Infection	aerobe	
+Streptomyces_vinaceus	Free Living	Not Pathogenic		
+Bartonella_taylorii	Not Free Living	Not Pathogenic		
+Alcaligenes_faecalis	Not Free Living	Pathogenic	aerobe	
+Vibrio_crassostreae	Not Free Living	Pathogenic		
+Bartonella_grahamii	Not Free Living	Not Pathogenic		
+Streptococcus_halichoeri	Not Free Living	Infection	microaerophile	
+Streptomyces_buecherae	Free Living	Not Pathogenic		
+Vibrio_fortis	Not Free Living	Pathogenic		
+Taylorella_asinigenitalis	Free Living	Not Pathogenic		
+Streptomyces_gardneri	Free Living	Not Pathogenic		
+Bacteroides_clarus	Not Free Living	Not Pathogenic	anaerobe	
+Taylorella_equigenitalis	Not Free Living	Pathogenic		
+Actinoalloteichus_cyanogriseus	Free Living	Not Pathogenic		
+Streptomyces_ipomoeae	Not Free Living	Not Pathogenic		
+Acidithiobacillus_caldus	Free Living	Not Pathogenic		
+Streptomyces_griseofuscus	Free Living	Not Pathogenic		
+Tenacibaculum_dicentrarchi	Not Free Living	Not Pathogenic	aerobe	
+Bacillus_cytotoxicus	Not Free Living	Pathogenic		
+Testudinibacter_aquarius	Not Free Living	Not Pathogenic	microaerophile	
+Mycobacterium_smegmatis	Not Free Living	Pathogenic		
+Streptomyces_californicus	Free Living	Not Pathogenic		
+Vibrio_furnissii	Not Free Living	Not Pathogenic		
+Akkermansia_muciniphila	Not Free Living	Not Pathogenic	anaerobe	
+Acidithiobacillus_thiooxidans	Free Living	Not Pathogenic		
+Streptomyces_leeuwenhoekii	Free Living	Not Pathogenic		
+Acinetobacter_bohemicus	Free Living	Not Pathogenic	aerobe	
+Streptomyces_lunaelactis	Free Living	Not Pathogenic		
+Anaerococcus_vaginalis	Not Free Living	Not Pathogenic	anaerobe	
+Streptomyces_viridochromogenes	Free Living	Not Pathogenic		
+Acinetobacter_venetianus	Not Free Living	Not Pathogenic	aerobe	
+Streptomyces_viridosporus	Free Living	Not Pathogenic	aerobe	
+Blautia_wexlerae	Not Free Living	Infection		
+Streptococcus_sobrinus	Not Free Living	Infection	microaerophile	
+Succinivibrio_dextrinosolvens	Not Free Living	Pathogenic	anaerobe	
+Obesumbacterium_proteus	Not Free Living	Not Pathogenic	aerobe	
+Streptococcus_parauberis	Not Free Living	Pathogenic	microaerophile	
+Streptomyces_olivaceus	Free Living	Not Pathogenic	aerobe	
+Acinetobacter_lwoffii	Not Free Living	Infection	aerobe	
+Thalassospira_profundimaris	Free Living	Not Pathogenic	anaerobe	
+Streptomyces_clavuligerus	Free Living	Not Pathogenic		
+Vibrio_metschnikovii	Not Free Living	Infection	aerobe	
+Acinetobacter_bouvetii	Free Living	Not Pathogenic	aerobe	
+Acidithiobacillus_ferrivorans	Free Living	Not Pathogenic		
+Acidithiobacillus_ferrooxidans	Free Living	Not Pathogenic		
+Vibrio_mimicus	Not Free Living	Infection		
+Bacillus_siamensis	Not Free Living	Not Pathogenic	facultative anaerobe	
+Streptomyces_collinus	Free Living	Not Pathogenic		
+Vibrio_panuliri	Not Free Living	Not Pathogenic		
+Streptococcus_cristatus	Not Free Living	Pathogenic	microaerophile	
+Streptomyces_antibioticus	Free Living	Not Pathogenic		
+Acinetobacter_radioresistens	Not Free Living	Infection	aerobe	
+Sulfitobacter_pontiacus	Free Living	Not Pathogenic	aerobe	
+Acinetobacter_ursingii	Not Free Living	Infection	aerobe	
+Stenotrophomonas_acidaminiphila	Not Free Living	Infection	aerobe	
+Streptomyces_acidiscabies	Not Free Living	Pathogenic		
+Sulfobacillus_thermosulfidooxidans	Free Living	Not Pathogenic		
+Acinetobacter_oleivorans	Not Free Living	Not Pathogenic	aerobe	
+Acinetobacter_gyllenbergii	Not Free Living	Infection	aerobe	
+Alcaligenes_aquatilis	Free Living	Not Pathogenic	anaerobe	
+Acidovorax_delafieldii	Not Free Living	Pathogenic		
+Acinetobacter_schindleri	Not Free Living	Infection	aerobe	
+Thermomonas_haemolytica	Free Living	Not Pathogenic		
+Acinetobacter_haemolyticus	Not Free Living	Not Pathogenic	aerobe	
+Streptomyces_anulatus	Not Free Living	Not Pathogenic		
+Thermosipho_africanus	Free Living	Not Pathogenic	anaerobe	
+Acinetobacter_indicus	Free Living	Not Pathogenic	aerobe	
+Parabacteroides_johnsonii	Not Free Living	Not Pathogenic	anaerobe	
+Streptococcus_agalactiae	Not Free Living	Pathogenic	microaerophile	
+Streptococcus_pneumoniae	Not Free Living	Pathogenic	microaerophile	
+Streptomyces_spinoverrucosus	Free Living	Not Pathogenic		
+Acinetobacter_junii	Not Free Living	Infection	aerobe	
+Thermosipho_melanesiensis	Not Free Living	Not Pathogenic	anaerobe	
+Actinomyces_naeslundii	Not Free Living	Pathogenic	microaerophile	
+Anaerostipes_hadrus	Not Free Living	Not Pathogenic		
+Lysinibacillus_sphaericus	Not Free Living	Pathogenic	aerobe	
+Weissella_ceti	Not Free Living	Not Pathogenic	microaerophile	
+Weissella_thailandensis	Not Free Living	Not Pathogenic	microaerophile	
+Xanthomonas_campestris	Not Free Living	Pathogenic		
+Xanthomonas_vesicatoria	Not Free Living	Pathogenic		
+Xenorhabdus_griffiniae	Not Free Living	Pathogenic		
+Fusobacterium_necrophorum	Not Free Living	Pathogenic	anaerobe	
+Acinetobacter_tandoii	Free Living	Not Pathogenic	aerobe	
+Leuconostoc_carnosum	Free Living	Not Pathogenic		
+Acinetobacter_bereziniae	Not Free Living	Pathogenic	aerobe	
+Burkholderia_dolosa	Not Free Living	Infection	aerobe	
+Escherichia_fergusonii	Not Free Living	Pathogenic	aerobe	
+Legionella_longbeachae	Not Free Living	Infection	microaerophile	
+Delftia_acidovorans	Not Free Living	Pathogenic	aerobe	
+Gardnerella_vaginalis	Not Free Living	Infection	anaerobe	
+Aerococcus_urinae	Not Free Living	Infection	microaerophile	
+Bacteroides_xylanisolvens	Not Free Living	Infection	anaerobe	
+Eikenella_corrodens	Not Free Living	Infection	anaerobe	
+Geobacillus_thermoleovorans	Free Living	Not Pathogenic		
+Neisseria_sicca	Not Free Living	Infection	microaerophile	
+Lactobacillus_amylolyticus	Free Living	Not Pathogenic	anaerobe	
+Halorhodospira_halophila	Free Living	Not Pathogenic	anaerobe	
+Nocardiopsis_alba	Not Free Living	Infection		
+Xanthomonas_euvesicatoria	Not Free Living	Pathogenic		
+Yersinia_kristensenii	Not Free Living	Not Pathogenic	aerobe	
+Bordetella_bronchiseptica	Not Free Living	Pathogenic	aerobe	
+Capnocytophaga_cynodegmi	Not Free Living	Pathogenic	microaerophile	
+Enterobacter_cancerogenus	Not Free Living	Infection	aerobe	
+Thermoanaerobacterium_thermosaccharolyticum	Not Free Living	Not Pathogenic	anaerobe	
+Thermus_tengchongensis	Free Living	Not Pathogenic	aerobe	
+Trabulsiella_odontotermitis	Not Free Living	Not Pathogenic		
+Trinickia_caryophylli	Not Free Living	Pathogenic		
+Varibaculum_cambriense	Not Free Living	Infection	anaerobe	
+Variibacter_gotjawalensis	Free Living	Not Pathogenic	aerobe	
+Variovorax_boronicumulans	Free Living	Not Pathogenic		
+Variovorax_guangxiensis	Not Free Living	Not Pathogenic		
+Veillonella_tobetsuensis	Not Free Living	Not Pathogenic	anaerobe	
+Vibrio_coralliilyticus	Not Free Living	Pathogenic		
+Vibrio_rotiferianus	Not Free Living	Not Pathogenic		
+Weeksella_virosa	Not Free Living	Pathogenic	microaerophile	
+Weissella_koreensis	Free Living	Not Pathogenic	anaerobe	
+Wohlfahrtiimonas_chitiniclastica	Not Free Living	Pathogenic		
+Xanthomonas_hortorum	Not Free Living	Pathogenic		
+Yersinia_aldovae	Not Free Living	Not Pathogenic		
+Arthrobacter_globiformis	Free Living	Not Pathogenic	obligate aerobe	
+Bacteroides_intestinalis	Not Free Living	Pathogenic	anaerobe	
+Bifidobacterium_choerinum	Not Free Living	Not Pathogenic	anaerobe	
+Chromobacterium_violaceum	Not Free Living	Pathogenic	aerobe	
+Leifsonia_xyli	Not Free Living	Pathogenic	microaerophile	
+Halomonas_alkaliantarctica	Free Living	Not Pathogenic		
+Enterococcus_gallinarum	Not Free Living	Pathogenic	microaerophile	
+Lactobacillus_helveticus	Free Living	Not Pathogenic	anaerobe	
+Leuconostoc_lactis	Not Free Living	Pathogenic	microaerophile	
+Haemophilus_pittmaniae	Not Free Living	Infection	microaerophile	
+Macrococcus_caseolyticus	Not Free Living	Pathogenic	aerobe	
+Kocuria_palustris	Free Living	Not Pathogenic	aerobe	
+Coprobacter_fastidiosus	Not Free Living	Infection	anaerobe	
+Helicobacter_bilis	Free Living	Not Pathogenic		
+Melissococcus_plutonius	Not Free Living	Pathogenic	anaerobe	
+Dickeya_dianthicola	Not Free Living	Pathogenic	facultative anaerobe	
+Xanthomonas_arboricola	Not Free Living	Pathogenic		
+Corynebacterium_accolens	Not Free Living	Infection	microaerophile	
+Helicobacter_mustelae	Free Living	Not Pathogenic	microaerophile	
+Olleya_marilimosa	Free Living	Not Pathogenic	aerobe	
+Acinetobacter_towneri	Free Living	Not Pathogenic		
+Burkholderia_multivorans	Not Free Living	Infection	aerobe	
+Campylobacter_coli	Not Free Living	Infection	microaerophile	
+Campylobacter_upsaliensis	Not Free Living	Infection	microaerophile	
+Clostridium_pasteurianum	Not Free Living	Not Pathogenic	anaerobe	
+Mesorhizobium_amorphae	Not Free Living	Not Pathogenic		
+Alistipes_putredinis	Not Free Living	Pathogenic	anaerobe	
+Clostridium_estertheticum	Free Living	Not Pathogenic	anaerobe	
+Porphyromonas_gingivalis	Not Free Living	Pathogenic	anaerobe	
+Aerococcus_viridans	Not Free Living	Pathogenic	microaerophile	
+Aeromonas_enteropelogenes	Not Free Living	Infection		
+Alicycliphilus_denitrificans	Free Living	Not Pathogenic	aerobe	
+Oceanobacillus_iheyensis	Free Living	Not Pathogenic		
+Barnesiella_intestinihominis	Not Free Living	Not Pathogenic	anaerobe	
+Acinetobacter_calcoaceticus	Free Living	Not Pathogenic	aerobe	
+Bartonella_vinsonii	Not Free Living	Not Pathogenic	microaerophile	
+Gemella_haemolysans	Not Free Living	Infection	microaerophile	
+Brachyspira_murdochii	Not Free Living	Pathogenic	anaerobe	
+Aliivibrio_fischeri	Free Living	Not Pathogenic		
+Photobacterium_angustum	Free Living	Not Pathogenic		
+Azonexus_hydrophilus	Free Living	Not Pathogenic	facultative aerobe	
+Paraprevotella_clara	Not Free Living	Infection	anaerobe	
+Bacteroides_uniformis	Not Free Living	Infection	anaerobe	
+Bhargavaea_cecembensis	Free Living	Not Pathogenic	aerobe	
+Bacillus_cereus	Not Free Living	Infection	aerobe	
+Alkalilimnicola_ehrlichii	Free Living	Not Pathogenic	facultative anaerobe	
+Bacteroides_pyogenes	Not Free Living	Pathogenic	anaerobe	
+Anaerostipes_caccae	Not Free Living	Infection	anaerobe	
+Anoxybacillus_kamchatkensis	Free Living	Not Pathogenic		
+Actinobacillus_pleuropneumoniae	Not Free Living	Pathogenic	microaerophile	
+Cellulophaga_baltica	Not Free Living	Not Pathogenic	aerobe	
+Neisseria_bacilliformis	Not Free Living	Infection	microaerophile	
+Bacillus_amyloliquefaciens	Free Living	Infection		
+Bacillus_methanolicus	Free Living	Not Pathogenic		
+Proteus_mirabilis	Not Free Living	Pathogenic	aerobe	
+Pseudomonas_fluorescens	Not Free Living	Pathogenic	aerobe	
+Actinomyces_urogenitalis	Not Free Living	Pathogenic	microaerophile	
+Blautia_hansenii	Not Free Living	Not Pathogenic	anaerobe	
+Oscillibacter_valericigenes	Not Free Living	Not Pathogenic	anaerobe	
+Anaerococcus_prevotii	Not Free Living	Infection	anaerobe	
+Arenibacter_algicola	Not Free Living	Not Pathogenic		
+Bacillus_infantis	Not Free Living	Pathogenic	aerobe	
+Bartonella_doshiae	Not Free Living	Pathogenic		
+Acinetobacter_wuhouensis	Not Free Living	Infection	aerobe	
+Alistipes_onderdonkii	Not Free Living	Pathogenic	anaerobe	
+Aeromonas_media	Not Free Living	Pathogenic		
+Aeromonas_salmonicida	Not Free Living	Pathogenic	aerobe	
+Aggregatibacter_aphrophilus	Not Free Living	Infection	microaerophile	
+Micrococcus_luteus	Free Living	Infection	aerobe	
+Burkholderia_territorii	Free Living	Not Pathogenic	aerobe	
+Nodularia_spumigena	Free Living	Not Pathogenic		
+Aeromonas_hydrophila	Not Free Living	Pathogenic	aerobe	
+Alistipes_finegoldii	Not Free Living	Pathogenic	anaerobe	
+Paenibacillus_lactis	Not Free Living	Not Pathogenic	aerobe	
+Eisenbergiella_tayi	Not Free Living	Pathogenic		
+Amycolatopsis_orientalis	Not Free Living	Pathogenic		
+Alistipes_timonensis	Not Free Living	Infection	anaerobe	
+Bacillus_toyonensis	Free Living	Not Pathogenic		
+Pelosinus_fermentans	Free Living	Not Pathogenic	anaerobe	
+Bacteroides_nordii	Not Free Living	Infection	anaerobe	
+Agrobacterium_larrymoorei	Free Living	Not Pathogenic		
+Oligella_urethralis	Not Free Living	Pathogenic	microaerophile	
+Actinomyces_johnsonii	Not Free Living	Infection	anaerobe	
+Actinomyces_viscosus	Not Free Living	Pathogenic	microaerophile	
+Bacillus_mycoides	Not Free Living	Not Pathogenic	facultative anaerobe	
+Clostridium_tetani	Not Free Living	Pathogenic	anaerobe	
+Microbacterium_testaceum	Not Free Living	Not Pathogenic	aerobe	
+Mycobacterium_kansasii	Not Free Living	Pathogenic		
+Pediococcus_claussenii	Free Living	Not Pathogenic	facultative anaerobe	
+Burkholderia_ambifaria	Not Free Living	Infection	aerobe	
+Alteromonas_macleodii	Free Living	Not Pathogenic		
+Carnobacterium_maltaromaticum	Not Free Living	Pathogenic	microaerophile	
+Chlorobium_phaeovibrioides	Free Living	Not Pathogenic	anaerobe	
+Clavibacter_michiganensis	Not Free Living	Pathogenic		
+Collinsella_aerofaciens	Not Free Living	Infection	anaerobe	
+Comamonas_testosteroni	Not Free Living	Pathogenic	aerobe	
+Corynebacterium_amycolatum	Not Free Living	Pathogenic	microaerophile	
+Corynebacterium_kroppenstedtii	Not Free Living	Pathogenic	microaerophile	
+Corynebacterium_tuberculostearicum	Not Free Living	Infection	microaerophile	
+Dyella_japonica	Free Living	Not Pathogenic		
+Elizabethkingia_anophelis	Not Free Living	Infection	aerobe	
+Enterococcus_avium	Not Free Living	Infection	microaerophile	
+Flavobacterium_branchiophilum	Not Free Living	Pathogenic		
+Loigolactobacillus_backii	Free Living	Not Pathogenic	microaerophile	
+Nocardia_gamkensis	Not Free Living	Pathogenic		
+Porphyromonas_gulae	Not Free Living	Pathogenic	anaerobe	
+Pseudoflavonifractor_capillosus	Not Free Living	Not Pathogenic	anaerobe	
+Bifidobacterium_thermophilum	Not Free Living	Not Pathogenic	anaerobe	
+Myroides_odoratus	Not Free Living	Infection		
+Brachyspira_pilosicoli	Not Free Living	Pathogenic		
+Neisseria_flavescens	Not Free Living	Infection		
+Legionella_pneumophila	Not Free Living	Infection	microaerophile	
+Magnetospirillum_gryphiswaldense	Free Living	Not Pathogenic	microaerophile	
+Neisseria_wadsworthii	Not Free Living	Pathogenic	microaerophile	
+Prevotella_bryantii	Not Free Living	Not Pathogenic	anaerobe	
+Pseudomonas_brassicacearum	Not Free Living	Not Pathogenic		
+Bibersteinia_trehalosi	Not Free Living	Pathogenic	microaerophile	
+Nocardia_asteroides	Not Free Living	Pathogenic	microaerophile	
+Nocardia_otitidiscaviarum	Not Free Living	Pathogenic		
+Campylobacter_curvus	Not Free Living	Infection	microaerophile	
+Paenibacillus_alvei	Not Free Living	Pathogenic	aerobe	
+Paenibacillus_durus	Free Living	Not Pathogenic	anaerobe	
+Prevotella_histicola	Not Free Living	Pathogenic	anaerobe	
+Streptococcus_suis	Not Free Living	Infection	microaerophile	
+Pantoea_agglomerans	Not Free Living	Infection	aerobe	
+Listeria_monocytogenes	Not Free Living	Infection	microaerophile	
+Mycobacterium_xenopi	Not Free Living	Pathogenic		
+Pantoea_vagans	Not Free Living	Pathogenic	facultative anaerobe	
+Acinetobacter_baumannii	Not Free Living	Infection	aerobe	
+Bradyrhizobium_yuanmingense	Free Living	Not Pathogenic		
+Parabacteroides_gordonii	Not Free Living	Infection	anaerobe	
+Exiguobacterium_aurantiacum	Not Free Living	Not Pathogenic	microaerophile	
+Gordonia_terrae	Not Free Living	Infection	microaerophile	
+Agathobaculum_butyriciproducens	Not Free Living	Not Pathogenic	obligate anaerobe	
+Massilia_timonae	Not Free Living	Pathogenic	aerobe	
+Photobacterium_halotolerans	Free Living	Not Pathogenic	facultative anaerobe	
+Proteus_hauseri	Not Free Living	Infection	aerobe	
+Paenibacillus_amylolyticus	Not Free Living	Infection	microaerophile	
+Bacteroides_fragilis	Not Free Living	Pathogenic	anaerobe	
+Brevundimonas_diminuta	Not Free Living	Pathogenic	aerobe	
+Megasphaera_elsdenii	Not Free Living	Pathogenic		
+Cellulophaga_lytica	Free Living	Not Pathogenic	aerobe	
+Clostridium_saccharobutylicum	Not Free Living	Not Pathogenic	anaerobe	
+Corynebacterium_diphtheriae	Not Free Living	Infection	microaerophile	
+Corynebacterium_pseudodiphtheriticum	Not Free Living	Infection	microaerophile	
+Dolosigranulum_pigrum	Not Free Living	Infection	microaerophile	
+Edwardsiella_piscicida	Not Free Living	Pathogenic	aerobe	
+Enterobacter_mori	Not Free Living	Pathogenic	facultative anaerobe	
+Faecalibacterium_prausnitzii	Not Free Living	Not Pathogenic		
+Helicobacter_pullorum	Not Free Living	Pathogenic	microaerophile	
+Leptotrichia_hofstadii	Not Free Living	Not Pathogenic	anaerobe	
+Nitrosomonas_eutropha	Free Living	Not Pathogenic		
+Prevotella_nigrescens	Not Free Living	Infection	anaerobe	
+Bifidobacterium_longum	Not Free Living	Infection	anaerobe	
+Leptospira_alexanderi	Not Free Living	Pathogenic		
+Methylomonas_methanica	Free Living	Not Pathogenic		
+Mycoplasma_leachii	Not Free Living	Pathogenic	aerobe	
+Bacillus_vallismortis	Not Free Living	Infection	aerobe	
+Pseudomonas_donghuensis	Free Living	Not Pathogenic		
+Eubacterium_ventriosum	Free Living	Not Pathogenic	anaerobe	
+Komagataeibacter_oboediens	Free Living	Not Pathogenic		
+Leptospira_santarosai	Not Free Living	Not Pathogenic		
+Mitsuokella_multacida	Not Free Living	Not Pathogenic	anaerobe	
+Neisseria_elongata	Not Free Living	Pathogenic	microaerophile	
+Pseudoalteromonas_rubra	Free Living	Not Pathogenic		
+Bacteroides_oleiciplenus	Not Free Living	Not Pathogenic	anaerobe	
+Prevotella_buccae	Not Free Living	Pathogenic	anaerobe	
+Bacillus_mojavensis	Free Living	Not Pathogenic		
+Bifidobacterium_tsurumiense	Not Free Living	Not Pathogenic	anaerobe	
+Lactobacillus_johnsonii	Not Free Living	Pathogenic	microaerophile	
+Paenibacillus_mucilaginosus	Free Living	Not Pathogenic	aerobe	
+Pseudoalteromonas_agarivorans	Not Free Living	Not Pathogenic		
+Bacillus_pseudomycoides	Free Living	Not Pathogenic		
+Mesorhizobium_loti	Not Free Living	Not Pathogenic		
+Prevotella_intermedia	Not Free Living	Pathogenic		
+Bacteroides_ovatus	Not Free Living	Infection	anaerobe	
+Listeria_seeligeri	Not Free Living	Pathogenic	aerobe	
+Pseudoalteromonas_ruthenica	Not Free Living	Not Pathogenic		
+Oblitimonas_alkaliphila	Not Free Living	Pathogenic	microaerophile	
+Burkholderia_gladioli	Not Free Living	Pathogenic	aerobe	
+Psychrobacter_alimentarius	Free Living	Not Pathogenic	aerobe	
+Capnocytophaga_ochracea	Not Free Living	Infection	anaerobe	
+Collinsella_intestinalis	Not Free Living	Not Pathogenic	anaerobe	
+Cupriavidus_basilensis	Free Living	Infection	aerobe	
+Dielma_fastidiosa	Not Free Living	Infection	anaerobe	
+Halanaerobium_saccharolyticum	Not Free Living	Not Pathogenic	anaerobe	
+Lactococcus_lactis	Not Free Living	Pathogenic	microaerophile	
+Olsenella_uli	Not Free Living	Not Pathogenic	obligate anaerobe	
+Propionibacterium_acidifaciens	Not Free Living	Pathogenic	anaerobe	
+Gordonibacter_pamelaeae	Not Free Living	Pathogenic		
+Legionella_sainthelensi	Not Free Living	Not Pathogenic	microaerophile	
+Myxococcus_xanthus	Not Free Living	Not Pathogenic		
+Pandoraea_pnomenusa	Not Free Living	Infection	aerobe	
+Burkholderia_stagnalis	Free Living	Not Pathogenic	aerobe	
+Brachybacterium_paraconglomeratum	Not Free Living	Not Pathogenic	aerobe	
+Cupriavidus_metallidurans	Free Living	Infection	aerobe	
+Corynebacterium_casei	Free Living	Not Pathogenic	facultative anaerobe	
+Dorea_formicigenerans	Not Free Living	Not Pathogenic		
+Desulfovibrio_piger	Not Free Living	Not Pathogenic		
+Dysgonomonas_mossii	Not Free Living	Pathogenic	anaerobe	
+Bartonella_quintana	Not Free Living	Not Pathogenic	microaerophile	
+Leuconostoc_gelidum	Not Free Living	Not Pathogenic	microaerophile	
+Helicobacter_cetorum	Not Free Living	Not Pathogenic	microaerophile	
+Bifidobacterium_adolescentis	Not Free Living	Pathogenic	anaerobe	
+Dickeya_dadantii	Not Free Living	Pathogenic	facultative anaerobe	
+Leuconostoc_mesenteroides	Not Free Living	Infection	microaerophile	
+Chlamydia_psittaci	Not Free Living	Infection		
+Clostridium_autoethanogenum	Not Free Living	Not Pathogenic	anaerobe	
+Cronobacter_dublinensis	Free Living	Not Pathogenic	facultative anaerobe	
+Haemophilus_haemolyticus	Not Free Living	Pathogenic	microaerophile	
+Neisseria_weaveri	Not Free Living	Infection	microaerophile	
+Parabacteroides_distasonis	Not Free Living	Infection	anaerobe	
+Brevundimonas_naejangsanensis	Free Living	Not Pathogenic	anaerobe	
+Chlamydia_pecorum	Not Free Living	Pathogenic		
+Coprococcus_eutactus	Not Free Living	Not Pathogenic		
+Fusobacterium_periodonticum	Not Free Living	Infection	anaerobe	
+Helicobacter_canis	Not Free Living	Infection	microaerophile	
+Pseudomonas_salomonii	Not Free Living	Pathogenic		
+Ornithobacterium_rhinotracheale	Not Free Living	Pathogenic		
+Burkholderia_glumae	Not Free Living	Pathogenic		
+Arcanobacterium_haemolyticum	Not Free Living	Pathogenic	microaerophile	
+Prevotella_oralis	Not Free Living	Pathogenic	anaerobe	
+Bacillus_atrophaeus	Not Free Living	Pathogenic	aerobe	
+Bacteroides_faecis	Not Free Living	Pathogenic	anaerobe	
+Caulobacter_vibrioides	Free Living	Not Pathogenic		
+Corynebacterium_ulcerans	Not Free Living	Pathogenic	microaerophile	
+Enterococcus_villorum	Not Free Living	Pathogenic		
+Gordonia_alkanivorans	Free Living	Not Pathogenic		
+Helicobacter_pylori	Not Free Living	Not Pathogenic		
+Porphyromonas_levii	Not Free Living	Pathogenic	anaerobe	
+Acetivibrio_clariflavus	Free Living	Not Pathogenic	anaerobe	
+Chthonomonas_calidirosea	Free Living	Not Pathogenic	aerobe	
+Cronobacter_malonaticus	Free Living	Not Pathogenic	facultative anaerobe	
+Gluconacetobacter_diazotrophicus	Not Free Living	Not Pathogenic		
+Herbaspirillum_seropedicae	Not Free Living	Not Pathogenic	aerobe	
+Legionella_anisa	Free Living	Not Pathogenic	microaerophile	
+Prevotella_buccalis	Not Free Living	Infection	anaerobe	
+Bacteroides_acidifaciens	Not Free Living	Not Pathogenic	anaerobe	
+Morganella_morganii	Not Free Living	Pathogenic	aerobe	
+Oenococcus_oeni	Not Free Living	Not Pathogenic		
+Propionibacterium_freudenreichii	Not Free Living	Infection	anaerobe	
+Bacteroides_caccae	Not Free Living	Infection	anaerobe	
+Alloscardovia_omnicolens	Not Free Living	Infection	microaerophile	
+Haemophilus_parainfluenzae	Not Free Living	Infection	microaerophile	
+Klebsiella_variicola	Not Free Living	Pathogenic	facultative anaerobe	
+Oxalobacter_formigenes	Not Free Living	Not Pathogenic	anaerobe	
+Bacteroides_cellulosilyticus	Not Free Living	Infection	microaerophile	
+Bergeyella_zoohelcum	Not Free Living	Infection	microaerophile	
+Nocardia_brasiliensis	Not Free Living	Pathogenic	microaerophile	
+Pseudoalteromonas_arctica	Free Living	Not Pathogenic	aerobe	
+Arthrobacter_crystallopoietes	Free Living	Not Pathogenic		
+Azospirillum_brasilense	Not Free Living	Not Pathogenic		
+Bifidobacterium_angulatum	Not Free Living	Not Pathogenic	anaerobe	
+Brevibacterium_linens	Not Free Living	Not Pathogenic		
+Bartonella_bacilliformis	Not Free Living	Not Pathogenic		
+Bacillus_subtilis	Not Free Living	Pathogenic	obligate aerobe	
+Bacillus_coahuilensis	Free Living	Not Pathogenic		
+Paenibacillus_elgii	Not Free Living	Not Pathogenic	facultative anaerobe	
+Aureimonas_ureilytica	Free Living	Not Pathogenic	anaerobe	
+Bifidobacterium_pseudolongum	Not Free Living	Not Pathogenic	anaerobe	
+Bacteroides_salyersiae	Not Free Living	Not Pathogenic		
+Eggerthella_lenta	Not Free Living	Pathogenic	anaerobe	
+Halomonas_boliviensis	Free Living	Not Pathogenic		
+Lachnospira_multipara	Not Free Living	Not Pathogenic	anaerobe	
+Mycobacterium_colombiense	Not Free Living	Infection		
+Parabacteroides_goldsteinii	Not Free Living	Infection	anaerobe	
+Burkholderia_pseudomallei	Not Free Living	Infection	aerobe	
+Pseudomonas_composti	Not Free Living	Not Pathogenic	aerobe	
+Burkholderia_thailandensis	Free Living	Not Pathogenic	aerobe	
+Bacteroides_stercoris	Not Free Living	Pathogenic		
+Leptospira_biflexa	Free Living	Not Pathogenic		
+Mycoplasma_capricolum	Not Free Living	Not Pathogenic		
+Cedecea_davisae	Free Living	Not Pathogenic		
+Clostridium_kluyveri	Free Living	Not Pathogenic	anaerobe	
+Lactobacillus_kefiranofaciens	Free Living	Not Pathogenic	anaerobe	
+Prevotella_oris	Free Living	Not Pathogenic	anaerobe	
+Cupriavidus_necator	Not Free Living	Not Pathogenic	aerobe	
+Bacteroides_finegoldii	Not Free Living	Infection	anaerobe	
+Bdellovibrio_bacteriovorus	Free Living	Not Pathogenic		
+Bifidobacterium_ruminantium	Not Free Living	Not Pathogenic	anaerobe	
+Campylobacter_jejuni	Not Free Living	Infection	microaerophile	
+Bacillus_licheniformis	Not Free Living	Pathogenic	aerobe	
+Mycobacterium_gordonae	Not Free Living	Pathogenic	microaerophile	
+Clostridium_beijerinckii	Not Free Living	Not Pathogenic	anaerobe	
+Bacteroides_caecimuris	Not Free Living	Not Pathogenic	anaerobe	
+Corynebacterium_pseudotuberculosis	Not Free Living	Infection	microaerophile	
+Desulfitobacterium_hafniense	Free Living	Not Pathogenic	anaerobe	
+Gordonia_paraffinivorans	Free Living	Not Pathogenic		
+Janthinobacterium_lividum	Free Living	Not Pathogenic	aerobe	
+Mobiluncus_curtisii	Not Free Living	Infection	anaerobe	
+Nocardia_transvalensis	Not Free Living	Infection		
+Pseudomonas_chlororaphis	Free Living	Not Pathogenic	aerobe	
+Mannheimia_haemolytica	Not Free Living	Pathogenic	microaerophile	
+Clostridium_tyrobutyricum	Not Free Living	Not Pathogenic	anaerobe	
+Corynebacterium_aurimucosum	Not Free Living	Pathogenic	microaerophile	
+Halomonas_titanicae	Free Living	Not Pathogenic	aerobe	
+Laribacter_hongkongensis	Not Free Living	Infection	microaerophile	
+Mycobacterium_marinum	Not Free Living	Infection	aerobe	
+Porphyromonas_macacae	Not Free Living	Pathogenic	anaerobe	
+Methylotenera_versatilis	Free Living	Not Pathogenic	facultative anaerobe	
+Neisseria_gonorrhoeae	Not Free Living	Infection	microaerophile	
+Holdemania_filiformis	Not Free Living	Not Pathogenic	anaerobe	
+Leptotrichia_trevisanii	Not Free Living	Pathogenic	anaerobe	
+Nocardiopsis_dassonvillei	Not Free Living	Infection	microaerophile	
+Avibacterium_paragallinarum	Not Free Living	Pathogenic	microaerophile	
+Blautia_producta	Not Free Living	Infection	obligate anaerobe	
+Prevotella_maculosa	Not Free Living	Pathogenic	anaerobe	
+Citrobacter_freundii	Not Free Living	Infection	aerobe	
+Bradyrhizobium_diazoefficiens	Not Free Living	Not Pathogenic	aerobe	
+Clostridium_botulinum	Not Free Living	Infection	obligate anaerobe	
+Corynebacterium_bovis	Not Free Living	Pathogenic	microaerophile	
+Desulfovibrio_desulfuricans	Not Free Living	Infection	anaerobe	
+Streptomyces_prasinus	Free Living	Not Pathogenic		
+Mobiluncus_mulieris	Not Free Living	Infection	obligate anaerobe	
+Flavobacterium_columnare	Not Free Living	Pathogenic		
+Leptotrichia_wadei	Not Free Living	Infection	anaerobe	
+Paenibacillus_pasadenensis	Free Living	Not Pathogenic		
+Burkholderia_lata	Free Living	Not Pathogenic	aerobe	
+Flavobacterium_johnsoniae	Not Free Living	Pathogenic		
+Holdemania_massiliensis	Not Free Living	Not Pathogenic		
+Plesiomonas_shigelloides	Not Free Living	Pathogenic	aerobe	
+Paraeggerthella_hongkongensis	Not Free Living	Infection		
+Pannonibacter_phragmitetus	Not Free Living	Infection	facultative anaerobe	
+Bilophila_wadsworthia	Not Free Living	Pathogenic	anaerobe	
+Lysinibacillus_boronitolerans	Free Living	Not Pathogenic		
+Brochothrix_thermosphacta	Free Living	Not Pathogenic	aerobe	
+Coprothermobacter_proteolyticus	Free Living	Not Pathogenic	anaerobe	
+Kosakonia_radicincitans	Not Free Living	Not Pathogenic	aerobe	
+Megamonas_funiformis	Not Free Living	Not Pathogenic		
+Prevotella_stercorea	Not Free Living	Not Pathogenic	anaerobe	
+Lactobacillus_kitasatonis	Not Free Living	Not Pathogenic		
+Bifidobacterium_asteroides	Not Free Living	Not Pathogenic	anaerobe	
+Gemella_morbillorum	Not Free Living	Infection	microaerophile	
+Pseudomonas_azotoformans	Not Free Living	Not Pathogenic	aerobe	
+Providencia_rettgeri	Not Free Living	Infection	aerobe	
+Helicobacter_cinaedi	Not Free Living	Pathogenic	microaerophile	
+Paraprevotella_xylaniphila	Not Free Living	Infection	anaerobe	
+Brevibacillus_brevis	Not Free Living	Pathogenic		
+Bifidobacterium_animalis	Not Free Living	Infection	anaerobe	
+Brevibacillus_laterosporus	Not Free Living	Pathogenic		
+Nitrosospira_multiformis	Free Living	Not Pathogenic		
+Bifidobacterium_bifidum	Not Free Living	Infection	anaerobe	
+Bradyrhizobium_elkanii	Free Living	Infection	aerobe	
+Bifidobacterium_breve	Not Free Living	Pathogenic	microaerophile	
+Ligilactobacillus_equi	Not Free Living	Not Pathogenic	microaerophile	
+Meiothermus_ruber	Free Living	Not Pathogenic		
+Campylobacter_lari	Not Free Living	Infection	microaerophile	
+Burkholderia_cenocepacia	Not Free Living	Infection	aerobe	
+Bradyrhizobium_liaoningense	Free Living	Not Pathogenic		
+Corynebacterium_urealyticum	Not Free Living	Pathogenic	microaerophile	
+Enterococcus_cecorum	Not Free Living	Pathogenic	microaerophile	
+Haemophilus_paraphrohaemolyticus	Not Free Living	Infection	microaerophile	
+Leptospira_weilii	Not Free Living	Not Pathogenic		
+Bifidobacterium_pseudocatenulatum	Not Free Living	Infection	anaerobe	
+Bradyrhizobium_japonicum	Free Living	Not Pathogenic		
+Blastococcus_saxobsidens	Free Living	Not Pathogenic	aerobe	
+Bacillus_pumilus	Not Free Living	Pathogenic	microaerophile	
+Capnocytophaga_sputigena	Not Free Living	Infection	microaerophile	
+Cellulosimicrobium_cellulans	Not Free Living	Pathogenic	microaerophile	
+Chlamydia_trachomatis	Not Free Living	Infection		
+Chryseobacterium_gleum	Not Free Living	Infection		
+Conchiformibius_steedae	Not Free Living	Not Pathogenic		
+Cronobacter_muytjensii	Free Living	Not Pathogenic	aerobe	
+Fructobacillus_fructosus	Free Living	Not Pathogenic	aerobe	
+Leuconostoc_inhae	Free Living	Not Pathogenic	anaerobe	
+Phaeobacter_gallaeciensis	Not Free Living	Not Pathogenic		
+Citrobacter_koseri	Not Free Living	Infection	aerobe	
+Methylobacter_tundripaludum	Free Living	Not Pathogenic	aerobe	
+Bacteroides_thetaiotaomicron	Not Free Living	Infection	anaerobe	
+Halomonas_elongata	Free Living	Not Pathogenic		
+Lactobacillus_gallinarum	Not Free Living	Not Pathogenic		
+Methylocystis_rosea	Free Living	Not Pathogenic		
+Clostridium_ljungdahlii	Not Free Living	Not Pathogenic	anaerobe	
+Collinsella_tanakaei	Not Free Living	Not Pathogenic		
+Deinococcus_ficus	Not Free Living	Not Pathogenic	aerobe	
+Erythrobacter_litoralis	Not Free Living	Not Pathogenic	aerobe	
+Prevotella_corporis	Not Free Living	Infection	anaerobe	
+Streptococcus_salivarius	Not Free Living	Infection	microaerophile	
+Kandleria_vitulina	Not Free Living	Not Pathogenic	anaerobe	
+Pectobacterium_atrosepticum	Not Free Living	Pathogenic		
+Catenibacterium_mitsuokai	Not Free Living	Not Pathogenic	anaerobe	
+Corynebacterium_glutamicum	Free Living	Not Pathogenic		
+Microbacterium_laevaniformans	Not Free Living	Infection	aerobe	
+Pseudomonas_agarici	Not Free Living	Pathogenic		
+Chryseobacterium_haifense	Not Free Living	Not Pathogenic	aerobe	
+Cellulomonas_fimi	Free Living	Not Pathogenic	aerobe	
+Pseudomonas_corrugata	Not Free Living	Pathogenic		
+Corynebacterium_variabile	Free Living	Not Pathogenic		
+Eggerthia_catenaformis	Not Free Living	Pathogenic	anaerobe	
+Flavonifractor_plautii	Not Free Living	Infection	anaerobe	
+Idiomarina_loihiensis	Free Living	Not Pathogenic		
+Lysinibacillus_fusiformis	Not Free Living	Not Pathogenic	microaerophile	
+Brachyspira_hyodysenteriae	Not Free Living	Pathogenic	anaerobe	
+Erwinia_billingiae	Not Free Living	Pathogenic	aerobe	
+Gluconobacter_frateurii	Free Living	Not Pathogenic		
+Lactobacillus_gasseri	Not Free Living	Pathogenic	microaerophile	
+Streptococcus_equi	Not Free Living	Pathogenic	microaerophile	
+Inquilinus_limosus	Not Free Living	Pathogenic	aerobe	
+Paenibacillus_peoriae	Free Living	Not Pathogenic		
+Butyricicoccus_pullicaecorum	Not Free Living	Not Pathogenic	anaerobe	
+Campylobacter_rectus	Not Free Living	Infection	anaerobe	
+Paenibacillus_terrae	Not Free Living	Not Pathogenic		
+Citrobacter_rodentium	Not Free Living	Pathogenic		
+Porphyromonas_cangingivalis	Not Free Living	Pathogenic	anaerobe	
+Clostridium_butyricum	Not Free Living	Infection	anaerobe	
+Clostridium_senegalense	Not Free Living	Infection	anaerobe	
+Neisseria_meningitidis	Not Free Living	Infection	microaerophile	
+Aggregatibacter_actinomycetemcomitans	Not Free Living	Pathogenic	microaerophile	
+Prevotella_timonensis	Not Free Living	Pathogenic	anaerobe	
+Butyricimonas_virosa	Not Free Living	Not Pathogenic	anaerobe	
+Parascardovia_denticolens	Not Free Living	Pathogenic	anaerobe	
+Helicobacter_felis	Free Living	Not Pathogenic		
+Providencia_rustigianii	Not Free Living	Infection		
+Corallococcus_coralloides	Not Free Living	Not Pathogenic		
+Campylobacter_showae	Not Free Living	Pathogenic	anaerobe	
+Kocuria_rhizophila	Free Living	Not Pathogenic	aerobe	
+Megamonas_hypermegale	Not Free Living	Not Pathogenic	anaerobe	
+Burkholderia_cepacia	Not Free Living	Pathogenic	aerobe	
+Pseudomonas_aeruginosa	Not Free Living	Pathogenic	aerobe	
+Burkholderia_pyrrocinia	Free Living	Not Pathogenic	aerobe	
+Burkholderia_ubonensis	Not Free Living	Pathogenic	aerobe	
+Enterococcus_mundtii	Not Free Living	Pathogenic	microaerophile	
+Gemella_sanguinis	Not Free Living	Infection	microaerophile	
+Oligella_ureolytica	Not Free Living	Pathogenic	microaerophile	
+Pseudoalteromonas_undina	Free Living	Not Pathogenic		
+Francisella_philomiragia	Not Free Living	Not Pathogenic		
+Capnocytophaga_canimorsus	Not Free Living	Pathogenic	microaerophile	
+Cardiobacterium_valvarum	Not Free Living	Infection	microaerophile	
+Chitinophaga_pinensis	Not Free Living	Not Pathogenic		
+Cronobacter_sakazakii	Not Free Living	Infection	aerobe	
+Clostridium_paraputrificum	Not Free Living	Infection		
+Corynebacterium_striatum	Not Free Living	Infection	microaerophile	
+Exiguobacterium_undae	Free Living	Not Pathogenic	aerobe	
+Gordonia_rubripertincta	Free Living	Infection		
+Desulfovibrio_vulgaris	Not Free Living	Not Pathogenic	anaerobe	
+Nocardia_cerradoensis	Free Living	Not Pathogenic		
+Leuconostoc_pseudomesenteroides	Not Free Living	Pathogenic	microaerophile	
+Methyloversatilis_universalis	Free Living	Not Pathogenic	aerobe	
+Gluconobacter_thailandicus	Free Living	Not Pathogenic		
+Neisseria_mucosa	Not Free Living	Infection	microaerophile	
+Geobacillus_thermodenitrificans	Free Living	Not Pathogenic	aerobe	
+Photorhabdus_luminescens	Not Free Living	Pathogenic		
+Listeria_fleischmannii	Not Free Living	Not Pathogenic		
+Parabacteroides_merdae	Not Free Living	Pathogenic	anaerobe	
+Leptospira_kmetyi	Free Living	Not Pathogenic		
+Microbacterium_paraoxydans	Not Free Living	Pathogenic	microaerophile	
+Isoptericola_variabilis	Not Free Living	Not Pathogenic		
+Facklamia_hominis	Not Free Living	Infection	microaerophile	
+Kingella_kingae	Not Free Living	Infection	microaerophile	
+Intestinibacter_bartlettii	Not Free Living	Not Pathogenic	anaerobe	
+Parasutterella_excrementihominis	Not Free Living	Not Pathogenic	anaerobe	
+Enterovibrio_norvegicus	Not Free Living	Not Pathogenic	aerobe	
+Colwellia_psychrerythraea	Not Free Living	Not Pathogenic		
+Corynebacterium_glucuronolyticum	Not Free Living	Infection	microaerophile	
+Helicobacter_fennelliae	Not Free Living	Infection		
+Micrococcus_aloeverae	Not Free Living	Not Pathogenic		
+Geobacter_sulfurreducens	Not Free Living	Not Pathogenic	anaerobe	
+Moorella_thermoacetica	Not Free Living	Not Pathogenic	anaerobe	
+Enterococcus_faecalis	Not Free Living	Infection	microaerophile	
+Lactobacillus_crispatus	Not Free Living	Infection	microaerophile	
+Mannheimia_granulomatis	Not Free Living	Pathogenic	microaerophile	
+Prevotella_amnii	Not Free Living	Pathogenic	anaerobe	
+Cardiobacterium_hominis	Not Free Living	Infection	microaerophile	
+Corynebacterium_matruchotii	Not Free Living	Infection	aerobe	
+Grimontia_hollisae	Not Free Living	Not Pathogenic		
+Kingella_denitrificans	Not Free Living	Infection	microaerophile	
+Lonsdalea_quercina	Not Free Living	Pathogenic	aerobe	
+Pectobacterium_carotovorum	Not Free Living	Pathogenic		
+Methylobacterium_radiotolerans	Free Living	Not Pathogenic	aerobe	
+Pseudomonas_caricapapayae	Not Free Living	Pathogenic		
+Caldanaerobacter_subterraneus	Free Living	Not Pathogenic	anaerobe	
+Curtobacterium_flaccumfaciens	Not Free Living	Pathogenic	microaerophile	
+Enterobacter_asburiae	Not Free Living	Infection		
+Halobacillus_halophilus	Free Living	Not Pathogenic		
+Lachnoanaerobaculum_saburreum	Not Free Living	Pathogenic	anaerobe	
+Gluconobacter_oxydans	Not Free Living	Not Pathogenic	aerobe	
+Clostridium_novyi	Not Free Living	Infection	anaerobe	
+Fervidobacterium_pennivorans	Free Living	Not Pathogenic	anaerobe	
+Geobacillus_thermocatenulatus	Free Living	Not Pathogenic		
+Martelella_mediterranea	Free Living	Not Pathogenic	aerobe	
+Escherichia_albertii	Not Free Living	Pathogenic		
+Enterococcus_raffinosus	Not Free Living	Infection	microaerophile	
+Fusobacterium_gonidiaformans	Not Free Living	Infection	anaerobe	
+Streptococcus_gordonii	Not Free Living	Infection	microaerophile	
+Flavobacterium_psychrophilum	Not Free Living	Pathogenic		
+Cupriavidus_taiwanensis	Not Free Living	Pathogenic	aerobe	
+Fusobacterium_mortiferum	Not Free Living	Not Pathogenic		
+Megamonas_rupellensis	Not Free Living	Not Pathogenic	anaerobe	
+Listeria_innocua	Free Living	Not Pathogenic	aerobe	
+Listeria_grayi	Not Free Living	Not Pathogenic	aerobe	
+Meiothermus_taiwanensis	Free Living	Not Pathogenic		
+Photorhabdus_temperata	Not Free Living	Pathogenic		
+Peptoniphilus_harei	Free Living	Not Pathogenic	anaerobe	
+Providencia_stuartii	Not Free Living	Infection		
+Pseudomonas_entomophila	Not Free Living	Pathogenic	aerobe	
+Prevotella_baroniae	Not Free Living	Infection	anaerobe	
+Prevotella_disiens	Not Free Living	Infection	anaerobe	
+Staphylococcus_epidermidis	Not Free Living	Pathogenic	microaerophile	
+Pseudacidovorax_intermedius	Not Free Living	Not Pathogenic	facultative aerobe	
+Pseudoalteromonas_luteoviolacea	Free Living	Not Pathogenic		
+Pseudomonas_amygdali	Not Free Living	Pathogenic	aerobe	
+Pseudomonas_extremaustralis	Not Free Living	Not Pathogenic		
+Pseudoalteromonas_flavipulchra	Free Living	Not Pathogenic		
+Pseudobutyrivibrio_ruminis	Not Free Living	Not Pathogenic	anaerobe	
+Pseudomonas_alcaligenes	Not Free Living	Infection	obligate aerobe	
+Mycobacterium_intracellulare	Not Free Living	Pathogenic	microaerophile	
+Myroides_odoratimimus	Not Free Living	Infection	aerobe	
+Neisseria_polysaccharea	Not Free Living	Infection		
+Nitratireductor_aquibiodomus	Free Living	Not Pathogenic	facultative aerobe	
+Cereibacter_sphaeroides	Free Living	Not Pathogenic	anaerobe	
+Nocardia_abscessus	Not Free Living	Infection		
+Nocardia_cyriacigeorgica	Not Free Living	Infection	microaerophile	
+Paenibacillus_polymyxa	Free Living	Not Pathogenic		
+Peptostreptococcus_anaerobius	Not Free Living	Pathogenic	anaerobe	
+Staphylococcus_aureus	Not Free Living	Pathogenic	aerobe	
+Escherichia_coli	Not Free Living	Pathogenic	aerobe	
+

@@ -35,7 +35,10 @@ def main():
         inConsensusFile = os.path.join(inFolder, "consensusSeqs.txt")
         if os.path.exists(inConsensusFile):
             for category in categories:
-                outFolder = os.path.join("consensus_input", category, species)
+                catFolder = os.path.join("consensus_input", category)
+                if not os.path.exists(catFolder):
+                    os.mkdir(catFolder)
+                outFolder = os.path.join(catFolder, species)
                 outConsensusFile = os.path.join(outFolder, species, ".txt")
                 if os.path.exists(outFolder):
                     if os.path.exists(outConsensusFile):

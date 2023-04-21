@@ -1,0 +1,1073 @@
+Acetobacter_tropicalis	Free Living	Not Pathogenic	Mid GC
+Acidovorax_radicis	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acetobacter_okinawensis	Free Living	Not Pathogenic	Mid GC
+Micromonospora_aurantiaca	Free Living	Not Pathogenic	High GC
+Marinobacter_adhaerens	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acidiphilium_multivorum	Free Living	Not Pathogenic	Mid GC
+Leuconostoc_citreum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Enterobacter_cloacae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Clostridium_perfringens	Not Free Living	Pathogenic	obligate anaerobe	Low GC
+Clostridium_sporogenes	Not Free Living	Infection	obligate anaerobe	Low GC
+Adlercreutzia_equolifaciens	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Vibrio_cholerae	Not Free Living	Infection	obligate aerobe	Mid GC
+Neisseria_cinerea	Not Free Living	Pathogenic	microaerophile	Mid GC
+Actinomyces_oris	Not Free Living	Pathogenic	microaerophile	Mid GC
+Klebsiella_pneumoniae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Campylobacter_concisus	Not Free Living	Infection	Mid GC
+Butyrivibrio_fibrisolvens	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Leptospira_noguchii	Not Free Living	Not Pathogenic	Mid GC
+Bacillus_velezensis	Not Free Living	Not Pathogenic	Mid GC
+Chromohalobacter_salexigens	Free Living	Not Pathogenic	Mid GC
+Herbaspirillum_huttiense	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Leptospira_meyeri	Not Free Living	Not Pathogenic	Mid GC
+Pantoea_dispersa	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Acinetobacter_guillouiae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Alistipes_shahii	Not Free Living	Pathogenic	Mid GC
+Photobacterium_damselae	Not Free Living	Pathogenic	Mid GC
+Prevotella_denticola	Not Free Living	Pathogenic	Mid GC
+Teredinibacter_turnerae	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Myroides_marinus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acinetobacter_parvus	Not Free Living	Infection	microaerophile	Mid GC
+Aeromonas_dhakensis	Not Free Living	Infection	obligate aerobe	Mid GC
+Acinetobacter_johnsonii	Not Free Living	Infection	obligate aerobe	Mid GC
+Listeria_ivanovii	Not Free Living	Infection	Mid GC
+Edwardsiella_tarda	Not Free Living	Pathogenic	Mid GC
+Dermatophilus_congolensis	Not Free Living	Infection	obligate aerobe	Mid GC
+Pantoea_ananatis	Not Free Living	Pathogenic	Mid GC
+Providencia_alcalifaciens	Not Free Living	Pathogenic	Mid GC
+Listeria_welshimeri	Not Free Living	Not Pathogenic	Mid GC
+Nocardia_farcinica	Not Free Living	Pathogenic	microaerophile	Mid GC
+Bordetella_trematum	Not Free Living	Infection	microaerophile	Mid GC
+Dorea_longicatena	Not Free Living	Not Pathogenic	Mid GC
+Eubacterium_ramulus	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bifidobacterium_dentium	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bacillus_smithii	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Anaerococcus_hydrogenalis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Bacillus_timonensis	Not Free Living	Not Pathogenic	Mid GC
+Prevotella_salivae	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Odoribacter_splanchnicus	Not Free Living	Infection	obligate anaerobe	Mid GC
+Clostridium_saccharoperbutylacetonicum	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Photobacterium_leiognathi	Not Free Living	Not Pathogenic	Mid GC
+Neisseria_subflava	Not Free Living	Infection	microaerophile	Mid GC
+Anoxybacillus_flavithermus	Free Living	Not Pathogenic	Mid GC
+Enterococcus_gilvus	Not Free Living	Pathogenic	microaerophile	Mid GC
+Campylobacter_ureolyticus	Not Free Living	Pathogenic	obligate anaerobe	Low GC
+Bordetella_hinzii	Not Free Living	Pathogenic	Mid GC
+Bartonella_henselae	Not Free Living	Infection	microaerophile	Mid GC
+Exiguobacterium_indicum	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bartonella_tribocorum	Not Free Living	Pathogenic	Mid GC
+Blastopirellula_marina	Free Living	Not Pathogenic	Mid GC
+Corynebacterium_jeikeium	Not Free Living	Infection	microaerophile	Mid GC
+Enterococcus_asini	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Listeria_marthii	Free Living	Not Pathogenic	microaerophile	Mid GC
+Mycobacterium_avium	Not Free Living	Pathogenic	microaerophile	Mid GC
+Corynebacterium_halotolerans	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Collimonas_fungivorans	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acetobacter_aceti	Free Living	Not Pathogenic	Mid GC
+Aeromonas_caviae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Rothia_aeria	Not Free Living	Pathogenic	microaerophile	Mid GC
+Peptoniphilus_lacrimalis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Acinetobacter_seifertii	Not Free Living	Infection	Mid GC
+Actinoplanes_lobatus	Free Living	Not Pathogenic	Mid GC
+Aggregatibacter_kilianii	Not Free Living	Infection	microaerophile	Mid GC
+Amycolatopsis_bartoniae	Free Living	Not Pathogenic	Mid GC
+Bacillus_haynesii	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Bacillus_sonorensis	Free Living	Not Pathogenic	Mid GC
+Bifidobacterium_tissieri	Not Free Living	Not Pathogenic	Mid GC
+Burkholderia_anthina	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Buttiauxella_agrestis	Not Free Living	Not Pathogenic	Mid GC
+Campylobacter_peloridis	Not Free Living	Not Pathogenic	microaerophile	Low GC
+Citrobacter_werkmanii	Not Free Living	Not Pathogenic	Mid GC
+Clostridium_haemolyticum	Not Free Living	Pathogenic	obligate anaerobe	Low GC
+Corynebacterium_coyleae	Not Free Living	Infection	microaerophile	Mid GC
+Dermabacter_hominis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Desulfobacter_hydrogenophilus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Fructilactobacillus_lindneri	Free Living	Not Pathogenic	Mid GC
+Haematobacter_missouriensis	Not Free Living	Infection	microaerophile	Mid GC
+Halomonas_hydrothermalis	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Herbaspirillum_robiniae	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Actinobaculum_suis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Acutalibacter_muris	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Allofrancisella_guangzhouensis	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Amycolatopsis_keratiniphila	Free Living	Not Pathogenic	Mid GC
+Bacillus_spizizenii	Not Free Living	Pathogenic	Mid GC
+Bordetella_petrii	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Brenneria_salicis	Not Free Living	Pathogenic	Mid GC
+Burkholderia_plantarii	Not Free Living	Pathogenic	Mid GC
+Campylobacter_iguaniorum	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Chryseobacterium_culicis	Not Free Living	Infection	obligate aerobe	Mid GC
+Clostridium_disporicum	Not Free Living	Not Pathogenic	obligate anaerobe	Low GC
+Corallococcus_exiguus	Not Free Living	Not Pathogenic	Mid GC
+Crateriforma_conspicua	Not Free Living	Not Pathogenic	Mid GC
+Eisenbergiella_massiliensis	Not Free Living	Not Pathogenic	Mid GC
+Faecalicatena_contorta	Not Free Living	Infection	Mid GC
+Gimesia_maris	Free Living	Not Pathogenic	Mid GC
+Halarcobacter_ebronensis	Not Free Living	Not Pathogenic	Low GC
+Halomonas_venusta	Free Living	Not Pathogenic	Mid GC
+Kosakonia_cowanii	Not Free Living	Infection	obligate aerobe	Mid GC
+Acetobacter_pomorum	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Ignatzschineria_cameli	Not Free Living	Infection	obligate aerobe	Mid GC
+Modestobacter_marinus	Free Living	Not Pathogenic	High GC
+Clostridium_argentinense	Not Free Living	Infection	Mid GC
+Companilactobacillus_paralimentarius	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Cutibacterium_granulosum	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Enterobacter_sichuanensis	Not Free Living	Infection	facultative anaerobe	Mid GC
+Flavobacterium_limi	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Furfurilactobacillus_rossiae	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Halioglobus_japonicus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Helicobacter_cholecystus	Not Free Living	Not Pathogenic	Mid GC
+Parabacteroides_faecis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Vibrio_casei	Free Living	Not Pathogenic	Mid GC
+Clostridium_algidicarnis	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Legionella_moravica	Not Free Living	Pathogenic	Mid GC
+Edwardsiella_ictaluri	Not Free Living	Pathogenic	Mid GC
+Paracoccus_pantotrophus	Not Free Living	Not Pathogenic	Mid GC
+Corynebacterium_propinquum	Not Free Living	Infection	microaerophile	Mid GC
+Granulibacter_bethesdensis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Histophilus_somni	Not Free Living	Pathogenic	microaerophile	Mid GC
+Haemophilus_aegyptius	Not Free Living	Infection	microaerophile	Mid GC
+Klebsiella_oxytoca	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Fusobacterium_nucleatum	Not Free Living	Infection	obligate anaerobe	Low GC
+Helicobacter_bizzozeronii	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Curtobacterium_luteum	Not Free Living	Not Pathogenic	Mid GC
+Corynebacterium_ammoniagenes	Not Free Living	Pathogenic	microaerophile	Mid GC
+Dehalococcoides_mccartyi	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Lactobacillus_amylovorus	Not Free Living	Infection	obligate anaerobe	Mid GC
+Lactobacillus_delbrueckii	Not Free Living	Infection	microaerophile	Mid GC
+Kingella_negevensis	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pantoea_stewartii	Not Free Living	Pathogenic	Mid GC
+Paenibacillus_larvae	Not Free Living	Pathogenic	microaerophile	Mid GC
+Paenibacillus_dendritiformis	Not Free Living	Not Pathogenic	Mid GC
+Achromobacter_denitrificans	Not Free Living	Infection	obligate aerobe	Mid GC
+Actinobacillus_lignieresii	Not Free Living	Pathogenic	microaerophile	Mid GC
+Adlercreutzia_caecimuris	Not Free Living	Infection	obligate anaerobe	Mid GC
+Alloscardovia_macacae	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Anaerobutyricum_hallii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bifidobacterium_mongoliense	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bradyrhizobium_pachyrhizi	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Burkholderia_paludis	Free Living	Not Pathogenic	Mid GC
+Butyricimonas_paravirosa	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Cellulosimicrobium_funkei	Not Free Living	Pathogenic	obligate aerobe	High GC
+Clostridioides_difficile	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Comamonas_kerstersii	Not Free Living	Infection	obligate aerobe	Mid GC
+Corynebacterium_renale	Not Free Living	Pathogenic	Mid GC
+Dermabacter_jinjuensis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Enterocloster_bolteae	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Fructobacillus_tropaeoli	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Haematospirillum_jordaniae	Not Free Living	Pathogenic	microaerophile	Mid GC
+Halomonas_urumqiensis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Jejuia_pallidilutea	Free Living	Not Pathogenic	Mid GC
+Acinetobacter_gerneri	Free Living	Not Pathogenic	Mid GC
+Acetobacter_pasteurianus	Not Free Living	Not Pathogenic	Mid GC
+Francisella_hispaniensis	Not Free Living	Infection	obligate aerobe	Mid GC
+Halomonas_ventosae	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Helicobacter_heilmannii	Not Free Living	Pathogenic	microaerophile	Mid GC
+Klebsiella_huaxiensis	Free Living	Not Pathogenic	Mid GC
+Klebsiella_michiganensis	Not Free Living	Infection	obligate aerobe	Mid GC
+Kosakonia_pseudosacchari	Free Living	Not Pathogenic	Mid GC
+Lachnospira_eligens	Not Free Living	Not Pathogenic	Mid GC
+Lacticaseibacillus_saniviri	Not Free Living	Infection	microaerophile	Mid GC
+Lacticaseibacillus_zeae	Not Free Living	Not Pathogenic	Mid GC
+Lactobacillus_apis	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Lactobacillus_paragasseri	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Legionella_feeleii	Not Free Living	Infection	microaerophile	Mid GC
+Legionella_gratiana	Not Free Living	Pathogenic	microaerophile	Mid GC
+Legionella_jordanis	Free Living	Not Pathogenic	microaerophile	Mid GC
+Legionella_londiniensis	Free Living	Not Pathogenic	Mid GC
+Legionella_quateirensis	Free Living	Not Pathogenic	microaerophile	Mid GC
+Legionella_steigerwaltii	Not Free Living	Pathogenic	microaerophile	Mid GC
+Legionella_waltersii	Free Living	Not Pathogenic	microaerophile	Mid GC
+Lelliottia_nimipressuralis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Lentilactobacillus_kefiri	Free Living	Not Pathogenic	Mid GC
+Lentilactobacillus_parafarraginis	Free Living	Not Pathogenic	microaerophile	Mid GC
+Leucobacter_chromiireducens	Not Free Living	Not Pathogenic	Mid GC
+Leucobacter_luti	Free Living	Not Pathogenic	Mid GC
+Levilactobacillus_namurensis	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Ligilactobacillus_acidipiscis	Free Living	Not Pathogenic	Mid GC
+Ligilactobacillus_agilis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Ligilactobacillus_animalis	Not Free Living	Infection	microaerophile	Mid GC
+Ligilactobacillus_murinus	Not Free Living	Infection	microaerophile	Mid GC
+Ligilactobacillus_pobuzihii	Free Living	Not Pathogenic	microaerophile	Mid GC
+Ligilactobacillus_salivarius	Not Free Living	Infection	microaerophile	Mid GC
+Liquorilactobacillus_vini	Free Living	Not Pathogenic	Mid GC
+Listeria_booriae	Free Living	Not Pathogenic	Mid GC
+Listeria_grandensis	Free Living	Not Pathogenic	Mid GC
+Luteibacter_rhizovicinus	Not Free Living	Not Pathogenic	Mid GC
+Lysinibacillus_xylanilyticus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Mageeibacillus_indolicus	Not Free Living	Infection	obligate anaerobe	Mid GC
+Malaciobacter_mytili	Not Free Living	Not Pathogenic	microaerophile	Low GC
+Mammaliicoccus_sciuri	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Marinitenerispora_sediminis	Free Living	Not Pathogenic	obligate aerobe	High GC
+Marinomonas_gallaica	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Metabacillus_litoralis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Methylobacterium_indicum	Free Living	Not Pathogenic	Mid GC
+Methylorubrum_extorquens	Not Free Living	Infection	obligate aerobe	Mid GC
+Microbacterium_endophyticum	Not Free Living	Not Pathogenic	Mid GC
+Microbacterium_foliorum	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Microbacterium_hominis	Not Free Living	Infection	microaerophile	Mid GC
+Microbacterium_hydrocarbonoxydans	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Microbacterium_paludicola	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Microbacterium_sediminis	Free Living	Not Pathogenic	obligate aerobe	High GC
+Microbispora_bryophytorum	Not Free Living	Not Pathogenic	Mid GC
+Micrococcus_flavus	Free Living	Not Pathogenic	obligate aerobe	High GC
+Micrococcus_yunnanensis	Not Free Living	Not Pathogenic	High GC
+Micromonospora_globispora	Free Living	Not Pathogenic	Mid GC
+Moraxella_bovis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Moraxella_canis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Moraxella_caviae	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Moraxella_ovis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Morganella_psychrotolerans	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Mycobacterium_celatum	Not Free Living	Pathogenic	Mid GC
+Mycobacterium_haemophilum	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Mycobacterium_heckeshornense	Not Free Living	Infection	Mid GC
+Mycobacterium_paraense	Not Free Living	Infection	microaerophile	Mid GC
+Mycobacterium_paragordonae	Not Free Living	Not Pathogenic	Mid GC
+Mycobacterium_persicum	Not Free Living	Infection	Mid GC
+Mycobacterium_pseudoshottsii	Not Free Living	Pathogenic	Mid GC
+Mycobacterium_riyadhense	Not Free Living	Pathogenic	microaerophile	Mid GC
+Mycobacterium_simiae	Not Free Living	Pathogenic	Mid GC
+Neisseria_animalis	Not Free Living	Not Pathogenic	Mid GC
+Neisseria_dentiae	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Neisseria_dumasiana	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Neisseria_zoodegmatis	Not Free Living	Infection	microaerophile	Mid GC
+Neobacillus_cucumis	Not Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Nocardia_donostiensis	Not Free Living	Infection	Mid GC
+Nocardioides_salarius	Not Free Living	Not Pathogenic	obligate aerobe	High GC
+Oecophyllibacter_saccharovorans	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Paeniclostridium_sordellii	Not Free Living	Pathogenic	obligate anaerobe	Low GC
+Paraburkholderia_mimosarum	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Empedobacter_brevis	Not Free Living	Infection	Mid GC
+Paenibacillus_macerans	Not Free Living	Not Pathogenic	Mid GC
+Pantoea_septica	Not Free Living	Infection	obligate aerobe	Mid GC
+Paraburkholderia_xenovorans	Not Free Living	Infection	obligate aerobe	Mid GC
+Oceanobacillus_picturae	Not Free Living	Infection	microaerophile	Mid GC
+Paenibacillus_darwinianus	Free Living	Not Pathogenic	Mid GC
+Paenibacillus_odorifer	Not Free Living	Not Pathogenic	Mid GC
+Dickeya_zeae	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Nitrospirillum_amazonense	Not Free Living	Not Pathogenic	Mid GC
+Nocardioides_luteus	Free Living	Not Pathogenic	Mid GC
+Ochrobactrum_soli	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Paenibacillus_ihbetae	Free Living	Not Pathogenic	Mid GC
+Pandoraea_fibrosis	Free Living	Not Pathogenic	Mid GC
+Paraburkholderia_caribensis	Free Living	Not Pathogenic	Mid GC
+Enterococcus_saccharolyticus	Not Free Living	Pathogenic	microaerophile	Mid GC
+Pantoea_anthophila	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Paraburkholderia_kururiensis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acetobacter_persici	Free Living	Not Pathogenic	Mid GC
+Erwinia_amylovora	Not Free Living	Pathogenic	Mid GC
+Paracoccus_denitrificans	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Erysipelothrix_rhusiopathiae	Not Free Living	Infection	microaerophile	Mid GC
+Exiguobacterium_acetylicum	Free Living	Not Pathogenic	Mid GC
+Finegoldia_magna	Not Free Living	Infection	obligate anaerobe	Mid GC
+Pseudomonas_fulva	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_taiwanensis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Aliivibrio_logei	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Phocaeicola_vulgatus	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Photobacterium_phosphoreum	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Prevotella_pectinovora	Not Free Living	Not Pathogenic	Mid GC
+Pseudoalteromonas_lipolytica	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_jessenii	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_mucidolens	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Rhizobium_phaseoli	Free Living	Not Pathogenic	Mid GC
+Geobacillus_kaustophilus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Gordonia_amicalis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Gordonia_polyisoprenivorans	Not Free Living	Not Pathogenic	Mid GC
+Rahnella_victoriana	Not Free Living	Pathogenic	Mid GC
+Helicobacter_suis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Ralstonia_syzygii	Not Free Living	Pathogenic	Mid GC
+Hylemonella_gracilis	Free Living	Not Pathogenic	Mid GC
+Enterococcus_durans	Not Free Living	Pathogenic	microaerophile	Mid GC
+Hafnia_alvei	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Lactococcus_garvieae	Not Free Living	Pathogenic	microaerophile	Mid GC
+Raoultella_planticola	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Legionella_geestiana	Free Living	Not Pathogenic	microaerophile	Mid GC
+Leifsonia_aquatica	Not Free Living	Infection	obligate aerobe	Mid GC
+Rhodococcus_ruber	Free Living	Infection	Mid GC
+Psychrobacter_cryohalolentis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Rathayibacter_rathayi	Not Free Living	Pathogenic	Mid GC
+Marinilabilia_salmonicolor	Free Living	Not Pathogenic	Mid GC
+Pseudomonas_parafulva	Not Free Living	Not Pathogenic	Mid GC
+Rhodoluna_limnophila	Free Living	Not Pathogenic	Mid GC
+Mesorhizobium_ciceri	Free Living	Not Pathogenic	Mid GC
+Renibacterium_salmoninarum	Not Free Living	Pathogenic	Mid GC
+Pseudomonas_poae	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Rhizobium_cellulosilyticum	Not Free Living	Not Pathogenic	Mid GC
+Microbispora_rosea	Free Living	Not Pathogenic	Mid GC
+Psychrobacter_namhaensis	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Pseudoalteromonas_tetraodonis	Not Free Living	Pathogenic	Mid GC
+Pseudomonas_luteola	Not Free Living	Infection	obligate aerobe	Mid GC
+Pseudomonas_yamanorum	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acholeplasma_laidlawii	Not Free Living	Pathogenic	Mid GC
+Priestia_megaterium	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Pseudofulvimonas_gallinarii	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_kilonensis	Free Living	Not Pathogenic	Mid GC
+Pseudoteredinibacter_isoporae	Not Free Living	Not Pathogenic	Mid GC
+Photobacterium_aphoticum	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pluralibacter_gergoviae	Not Free Living	Infection	obligate aerobe	Mid GC
+Providencia_heimbachae	Not Free Living	Pathogenic	Mid GC
+Pseudomonas_ficuserectae	Not Free Living	Pathogenic	Mid GC
+Pseudomonas_mendocina	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Psychrobacter_faecalis	Not Free Living	Infection	microaerophile	Mid GC
+Pseudescherichia_vulneris	Not Free Living	Infection	obligate aerobe	Mid GC
+Pseudomonas_guariconensis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_proteolytica	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Rodentibacter_heylii	Not Free Living	Not Pathogenic	Mid GC
+Pseudomonas_psychrophila	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Roseburia_faecis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Actinomyces_graevenitzii	Not Free Living	Infection	microaerophile	Mid GC
+Afipia_felis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Mycoplasma_mycoides	Not Free Living	Pathogenic	Low GC
+Achromobacter_piechaudii	Not Free Living	Infection	obligate aerobe	Mid GC
+Rhizobium_etli	Not Free Living	Not Pathogenic	Mid GC
+Aerococcus_urinaeequi	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Pseudomonas_moraviensis	Not Free Living	Not Pathogenic	Mid GC
+Psychrobacter_frigidicola	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Psychrobacter_aquimaris	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Aggregatibacter_segnis	Not Free Living	Infection	microaerophile	Mid GC
+Roseomonas_gilardii	Not Free Living	Not Pathogenic	Mid GC
+Caldibacillus_debilis	Not Free Living	Not Pathogenic	Mid GC
+Parvimonas_micra	Not Free Living	Pathogenic	obligate anaerobe	Low GC
+Pediococcus_acidilactici	Not Free Living	Pathogenic	microaerophile	Mid GC
+Peribacillus_simplex	Free Living	Infection	microaerophile	Mid GC
+Phaeobacter_inhibens	Not Free Living	Not Pathogenic	Mid GC
+Phocaeicola_dorei	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Phocaeicola_plebeius	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Phocaeicola_sartorii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Photobacterium_kishitanii	Not Free Living	Not Pathogenic	Mid GC
+Polynucleobacter_asymbioticus	Free Living	Not Pathogenic	Mid GC
+Pseudoalteromonas_carrageenovora	Not Free Living	Not Pathogenic	Mid GC
+Pseudomonas_lactis	Not Free Living	Not Pathogenic	Mid GC
+Pseudomonas_rhodesiae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Roseomonas_mucosa	Not Free Living	Infection	microaerophile	Mid GC
+Alistipes_senegalensis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Pyruvatibacter_mobilis	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Prevotella_veroralis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Staphylococcus_nepalensis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Anaerotruncus_colihominis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Sphingobacterium_spiritivorum	Free Living	Infection	obligate aerobe	Mid GC
+Streptococcus_iniae	Not Free Living	Infection	microaerophile	Mid GC
+Acinetobacter_nosocomialis	Not Free Living	Infection	obligate aerobe	Mid GC
+Sphingobium_limneticum	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Streptomyces_atratus	Free Living	Not Pathogenic	Mid GC
+Shewanella_putrefaciens	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Sphingobium_xenophagum	Free Living	Not Pathogenic	Mid GC
+Streptomyces_fradiae	Not Free Living	Infection	Mid GC
+Citrobacter_youngae	Free Living	Not Pathogenic	Mid GC
+Sphingobium_yanoikuyae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Streptomyces_griseus	Not Free Living	Pathogenic	Mid GC
+Elizabethkingia_meningoseptica	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Sporosarcina_ureae	Free Living	Not Pathogenic	Mid GC
+Enterobacter_hormaechei	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Streptomyces_niveus	Not Free Living	Not Pathogenic	Mid GC
+Enterococcus_casseliflavus	Not Free Living	Infection	microaerophile	Mid GC
+Streptomyces_parvus	Free Living	Not Pathogenic	Mid GC
+Staphylococcus_pseudoxylosus	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Photobacterium_profundum	Free Living	Not Pathogenic	Mid GC
+Tardiphaga_robiniae	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Brevibacterium_casei	Not Free Living	Infection	microaerophile	Mid GC
+Salinibacter_ruber	Free Living	Not Pathogenic	Mid GC
+Shigella_dysenteriae	Free Living	Infection	Mid GC
+Sphingomonas_carotinifaciens	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_fragi	Not Free Living	Infection	obligate aerobe	Mid GC
+Rhodococcus_globerulus	Free Living	Not Pathogenic	Mid GC
+Rhodospirillum_rubrum	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Roseovarius_indicus	Free Living	Not Pathogenic	Mid GC
+Rubrivivax_benzoatilyticus	Free Living	Not Pathogenic	Mid GC
+Ruminococcus_flavefaciens	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Shewanella_xiamenensis	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Sphingomonas_endophytica	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Vagococcus_fluvialis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Rhodanobacter_thiooxydans	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Rhodobacter_capsulatus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Rhodoblastus_acidophilus	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Rhodopirellula_baltica	Free Living	Not Pathogenic	Mid GC
+Rhodovulum_sulfidophilum	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Rothia_mucilaginosa	Not Free Living	Infection	microaerophile	Mid GC
+Rubrivivax_gelatinosus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Salisediminibacterium_halotolerans	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Sinorhizobium_americanum	Not Free Living	Not Pathogenic	Mid GC
+Staphylococcus_kloosii	Not Free Living	Not Pathogenic	Mid GC
+Serratia_proteamaculans	Not Free Living	Infection	obligate aerobe	Mid GC
+Sphingobium_fuliginis	Not Free Living	Not Pathogenic	Mid GC
+Staphylococcus_schleiferi	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Alistipes_indistinctus	Not Free Living	Not Pathogenic	Mid GC
+Lysobacter_antibioticus	Free Living	Not Pathogenic	Mid GC
+Vagococcus_lutrae	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Gallibacterium_anatis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Prevotella_melaninogenica	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Serratia_odorifera	Not Free Living	Pathogenic	Mid GC
+Shimwellia_blattae	Not Free Living	Not Pathogenic	Mid GC
+Spiribacter_roseus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Veillonella_dispar	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Prevotella_copri	Not Free Living	Not Pathogenic	Mid GC
+Promicromonospora_sukumoe	Free Living	Not Pathogenic	High GC
+Achromobacter_xylosoxidans	Not Free Living	Infection	obligate aerobe	Mid GC
+Shewanella_baltica	Free Living	Not Pathogenic	Mid GC
+Sphingobacterium_multivorum	Not Free Living	Infection	obligate aerobe	Mid GC
+Staphylococcus_microti	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Acidovorax_avenae	Not Free Living	Pathogenic	Mid GC
+Acinetobacter_soli	Not Free Living	Infection	obligate aerobe	Mid GC
+Staphylococcus_simulans	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Pseudoalteromonas_citrea	Free Living	Not Pathogenic	Mid GC
+Alicyclobacillus_acidocaldarius	Free Living	Not Pathogenic	Mid GC
+Ruegeria_arenilitoris	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Schaalia_hyovaginalis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Sinirhodobacter_populi	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Staphylococcus_equorum	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pseudoalteromonas_piscicida	Not Free Living	Pathogenic	Mid GC
+Roseburia_inulinivorans	Not Free Living	Not Pathogenic	Mid GC
+Rothia_nasimurium	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Ruminococcus_albus	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Schaalia_turicensis	Not Free Living	Infection	microaerophile	Mid GC
+Shigella_flexneri	Not Free Living	Infection	obligate aerobe	Mid GC
+Sphingomonas_melonis	Not Free Living	Pathogenic	Mid GC
+Staphylococcus_succinus	Not Free Living	Not Pathogenic	Mid GC
+Prevotella_pallens	Not Free Living	Infection	obligate anaerobe	Mid GC
+Pseudomonas_avellanae	Not Free Living	Pathogenic	Mid GC
+Sphingopyxis_macrogoltabida	Free Living	Not Pathogenic	Mid GC
+Vibrio_aestuarianus	Not Free Living	Pathogenic	Mid GC
+Anaerofustis_stercorihominis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Sphingopyxis_terrae	Free Living	Not Pathogenic	Mid GC
+Stappia_indica	Free Living	Not Pathogenic	Mid GC
+Acidaminococcus_fermentans	Not Free Living	Pathogenic	Mid GC
+Vibrio_atlanticus	Not Free Living	Not Pathogenic	Mid GC
+Acinetobacter_tjernbergiae	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Vibrio_azureus	Free Living	Not Pathogenic	Mid GC
+Sutterella_wadsworthensis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bacillus_thuringiensis	Not Free Living	Pathogenic	Mid GC
+Streptococcus_ruminantium	Not Free Living	Infection	obligate aerobe	Mid GC
+Streptomyces_vinaceus	Free Living	Not Pathogenic	High GC
+Bartonella_taylorii	Not Free Living	Not Pathogenic	Mid GC
+Alcaligenes_faecalis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Vibrio_crassostreae	Not Free Living	Pathogenic	Mid GC
+Bartonella_grahamii	Not Free Living	Not Pathogenic	Mid GC
+Streptococcus_halichoeri	Not Free Living	Infection	microaerophile	Mid GC
+Streptomyces_buecherae	Free Living	Not Pathogenic	Mid GC
+Vibrio_fortis	Not Free Living	Pathogenic	Mid GC
+Taylorella_asinigenitalis	Free Living	Not Pathogenic	Mid GC
+Streptomyces_gardneri	Free Living	Not Pathogenic	Mid GC
+Bacteroides_clarus	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Taylorella_equigenitalis	Not Free Living	Pathogenic	Mid GC
+Actinoalloteichus_cyanogriseus	Free Living	Not Pathogenic	High GC
+Streptomyces_ipomoeae	Not Free Living	Not Pathogenic	Mid GC
+Acidithiobacillus_caldus	Free Living	Not Pathogenic	Mid GC
+Streptomyces_griseofuscus	Free Living	Not Pathogenic	High GC
+Tenacibaculum_dicentrarchi	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bacillus_cytotoxicus	Not Free Living	Pathogenic	Mid GC
+Testudinibacter_aquarius	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Mycobacterium_smegmatis	Not Free Living	Pathogenic	Mid GC
+Streptomyces_californicus	Free Living	Not Pathogenic	High GC
+Vibrio_furnissii	Not Free Living	Not Pathogenic	Mid GC
+Akkermansia_muciniphila	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Acidithiobacillus_thiooxidans	Free Living	Not Pathogenic	Mid GC
+Streptomyces_leeuwenhoekii	Free Living	Not Pathogenic	High GC
+Acinetobacter_bohemicus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Streptomyces_lunaelactis	Free Living	Not Pathogenic	Mid GC
+Anaerococcus_vaginalis	Not Free Living	Not Pathogenic	obligate anaerobe	Low GC
+Streptomyces_viridochromogenes	Free Living	Not Pathogenic	Mid GC
+Acinetobacter_venetianus	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Streptomyces_viridosporus	Free Living	Not Pathogenic	obligate aerobe	High GC
+Blautia_wexlerae	Not Free Living	Infection	Mid GC
+Streptococcus_sobrinus	Not Free Living	Infection	microaerophile	Mid GC
+Succinivibrio_dextrinosolvens	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Obesumbacterium_proteus	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Streptococcus_parauberis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Streptomyces_olivaceus	Free Living	Not Pathogenic	obligate aerobe	High GC
+Acinetobacter_lwoffii	Not Free Living	Infection	obligate aerobe	Mid GC
+Thalassospira_profundimaris	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Streptomyces_clavuligerus	Free Living	Not Pathogenic	Mid GC
+Vibrio_metschnikovii	Not Free Living	Infection	obligate aerobe	Mid GC
+Acinetobacter_bouvetii	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acidithiobacillus_ferrivorans	Free Living	Not Pathogenic	Mid GC
+Acidithiobacillus_ferrooxidans	Free Living	Not Pathogenic	Mid GC
+Vibrio_mimicus	Not Free Living	Infection	Mid GC
+Bacillus_siamensis	Not Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Streptomyces_collinus	Free Living	Not Pathogenic	High GC
+Vibrio_panuliri	Not Free Living	Not Pathogenic	Mid GC
+Streptococcus_cristatus	Not Free Living	Pathogenic	microaerophile	Mid GC
+Streptomyces_antibioticus	Free Living	Not Pathogenic	Mid GC
+Acinetobacter_radioresistens	Not Free Living	Infection	obligate aerobe	Mid GC
+Sulfitobacter_pontiacus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acinetobacter_ursingii	Not Free Living	Infection	obligate aerobe	Mid GC
+Stenotrophomonas_acidaminiphila	Not Free Living	Infection	obligate aerobe	Mid GC
+Streptomyces_acidiscabies	Not Free Living	Pathogenic	Mid GC
+Sulfobacillus_thermosulfidooxidans	Free Living	Not Pathogenic	Mid GC
+Acinetobacter_oleivorans	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acinetobacter_gyllenbergii	Not Free Living	Infection	obligate aerobe	Mid GC
+Alcaligenes_aquatilis	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Acidovorax_delafieldii	Not Free Living	Pathogenic	Mid GC
+Acinetobacter_schindleri	Not Free Living	Infection	obligate aerobe	Mid GC
+Thermomonas_haemolytica	Free Living	Not Pathogenic	Mid GC
+Acinetobacter_haemolyticus	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Streptomyces_anulatus	Not Free Living	Not Pathogenic	Mid GC
+Thermosipho_africanus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Acinetobacter_indicus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Parabacteroides_johnsonii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Streptococcus_agalactiae	Not Free Living	Pathogenic	microaerophile	Mid GC
+Streptococcus_pneumoniae	Not Free Living	Pathogenic	microaerophile	Mid GC
+Streptomyces_spinoverrucosus	Free Living	Not Pathogenic	Mid GC
+Acinetobacter_junii	Not Free Living	Infection	obligate aerobe	Mid GC
+Thermosipho_melanesiensis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Actinomyces_naeslundii	Not Free Living	Pathogenic	microaerophile	Mid GC
+Anaerostipes_hadrus	Not Free Living	Not Pathogenic	Mid GC
+Lysinibacillus_sphaericus	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Weissella_ceti	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Weissella_thailandensis	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Xanthomonas_campestris	Not Free Living	Pathogenic	Mid GC
+Xanthomonas_vesicatoria	Not Free Living	Pathogenic	Mid GC
+Xenorhabdus_griffiniae	Not Free Living	Pathogenic	Mid GC
+Fusobacterium_necrophorum	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Acinetobacter_tandoii	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Leuconostoc_carnosum	Free Living	Not Pathogenic	Mid GC
+Acinetobacter_bereziniae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Burkholderia_dolosa	Not Free Living	Infection	obligate aerobe	Mid GC
+Escherichia_fergusonii	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Legionella_longbeachae	Not Free Living	Infection	microaerophile	Mid GC
+Delftia_acidovorans	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Gardnerella_vaginalis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Aerococcus_urinae	Not Free Living	Infection	microaerophile	Mid GC
+Bacteroides_xylanisolvens	Not Free Living	Infection	obligate anaerobe	Mid GC
+Eikenella_corrodens	Not Free Living	Infection	obligate anaerobe	Mid GC
+Geobacillus_thermoleovorans	Free Living	Not Pathogenic	Mid GC
+Neisseria_sicca	Not Free Living	Infection	microaerophile	Mid GC
+Lactobacillus_amylolyticus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Halorhodospira_halophila	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Nocardiopsis_alba	Not Free Living	Infection	Mid GC
+Xanthomonas_euvesicatoria	Not Free Living	Pathogenic	Mid GC
+Yersinia_kristensenii	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bordetella_bronchiseptica	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Capnocytophaga_cynodegmi	Not Free Living	Pathogenic	microaerophile	Mid GC
+Enterobacter_cancerogenus	Not Free Living	Infection	obligate aerobe	Mid GC
+Thermoanaerobacterium_thermosaccharolyticum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Thermus_tengchongensis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Trabulsiella_odontotermitis	Not Free Living	Not Pathogenic	Mid GC
+Trinickia_caryophylli	Not Free Living	Pathogenic	Mid GC
+Varibaculum_cambriense	Not Free Living	Infection	obligate anaerobe	Mid GC
+Variibacter_gotjawalensis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Variovorax_boronicumulans	Free Living	Not Pathogenic	Mid GC
+Variovorax_guangxiensis	Not Free Living	Not Pathogenic	Mid GC
+Veillonella_tobetsuensis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Vibrio_coralliilyticus	Not Free Living	Pathogenic	Mid GC
+Vibrio_rotiferianus	Not Free Living	Not Pathogenic	Mid GC
+Weeksella_virosa	Not Free Living	Pathogenic	microaerophile	Mid GC
+Weissella_koreensis	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Wohlfahrtiimonas_chitiniclastica	Not Free Living	Pathogenic	Mid GC
+Xanthomonas_hortorum	Not Free Living	Pathogenic	Mid GC
+Yersinia_aldovae	Not Free Living	Not Pathogenic	Mid GC
+Arthrobacter_globiformis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bacteroides_intestinalis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Bifidobacterium_choerinum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Chromobacterium_violaceum	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Leifsonia_xyli	Not Free Living	Pathogenic	microaerophile	Mid GC
+Halomonas_alkaliantarctica	Free Living	Not Pathogenic	Mid GC
+Enterococcus_gallinarum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Lactobacillus_helveticus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Leuconostoc_lactis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Haemophilus_pittmaniae	Not Free Living	Infection	microaerophile	Mid GC
+Macrococcus_caseolyticus	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Kocuria_palustris	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Coprobacter_fastidiosus	Not Free Living	Infection	obligate anaerobe	Mid GC
+Helicobacter_bilis	Free Living	Not Pathogenic	Mid GC
+Melissococcus_plutonius	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Dickeya_dianthicola	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Xanthomonas_arboricola	Not Free Living	Pathogenic	Mid GC
+Corynebacterium_accolens	Not Free Living	Infection	microaerophile	Mid GC
+Helicobacter_mustelae	Free Living	Not Pathogenic	microaerophile	Mid GC
+Olleya_marilimosa	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Acinetobacter_towneri	Free Living	Not Pathogenic	Mid GC
+Burkholderia_multivorans	Not Free Living	Infection	obligate aerobe	Mid GC
+Campylobacter_coli	Not Free Living	Infection	microaerophile	Low GC
+Campylobacter_upsaliensis	Not Free Living	Infection	microaerophile	Mid GC
+Clostridium_pasteurianum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Mesorhizobium_amorphae	Not Free Living	Not Pathogenic	Mid GC
+Alistipes_putredinis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Clostridium_estertheticum	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Porphyromonas_gingivalis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Aerococcus_viridans	Not Free Living	Pathogenic	microaerophile	Mid GC
+Aeromonas_enteropelogenes	Not Free Living	Infection	Mid GC
+Alicycliphilus_denitrificans	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Oceanobacillus_iheyensis	Free Living	Not Pathogenic	Mid GC
+Barnesiella_intestinihominis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Acinetobacter_calcoaceticus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bartonella_vinsonii	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Gemella_haemolysans	Not Free Living	Infection	microaerophile	Mid GC
+Brachyspira_murdochii	Not Free Living	Pathogenic	obligate anaerobe	Low GC
+Aliivibrio_fischeri	Free Living	Not Pathogenic	Mid GC
+Photobacterium_angustum	Free Living	Not Pathogenic	Mid GC
+Azonexus_hydrophilus	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Paraprevotella_clara	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bacteroides_uniformis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bhargavaea_cecembensis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bacillus_cereus	Not Free Living	Infection	obligate aerobe	Mid GC
+Alkalilimnicola_ehrlichii	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Bacteroides_pyogenes	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Anaerostipes_caccae	Not Free Living	Infection	obligate anaerobe	Mid GC
+Anoxybacillus_kamchatkensis	Free Living	Not Pathogenic	Mid GC
+Actinobacillus_pleuropneumoniae	Not Free Living	Pathogenic	microaerophile	Mid GC
+Cellulophaga_baltica	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Neisseria_bacilliformis	Not Free Living	Infection	microaerophile	Mid GC
+Bacillus_amyloliquefaciens	Free Living	Infection	Mid GC
+Bacillus_methanolicus	Free Living	Not Pathogenic	Mid GC
+Proteus_mirabilis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_fluorescens	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Actinomyces_urogenitalis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Blautia_hansenii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Oscillibacter_valericigenes	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Anaerococcus_prevotii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Arenibacter_algicola	Not Free Living	Not Pathogenic	Mid GC
+Bacillus_infantis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Bartonella_doshiae	Not Free Living	Pathogenic	Mid GC
+Acinetobacter_wuhouensis	Not Free Living	Infection	obligate aerobe	Mid GC
+Alistipes_onderdonkii	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Aeromonas_media	Not Free Living	Pathogenic	Mid GC
+Aeromonas_salmonicida	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Aggregatibacter_aphrophilus	Not Free Living	Infection	microaerophile	Mid GC
+Micrococcus_luteus	Free Living	Infection	obligate aerobe	Mid GC
+Burkholderia_territorii	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Nodularia_spumigena	Free Living	Not Pathogenic	Mid GC
+Aeromonas_hydrophila	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Alistipes_finegoldii	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Paenibacillus_lactis	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Eisenbergiella_tayi	Not Free Living	Pathogenic	Mid GC
+Amycolatopsis_orientalis	Not Free Living	Pathogenic	Mid GC
+Alistipes_timonensis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bacillus_toyonensis	Free Living	Not Pathogenic	Mid GC
+Pelosinus_fermentans	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bacteroides_nordii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Agrobacterium_larrymoorei	Free Living	Not Pathogenic	Mid GC
+Oligella_urethralis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Actinomyces_johnsonii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Actinomyces_viscosus	Not Free Living	Pathogenic	microaerophile	Mid GC
+Bacillus_mycoides	Not Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Clostridium_tetani	Not Free Living	Pathogenic	obligate anaerobe	Low GC
+Microbacterium_testaceum	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Mycobacterium_kansasii	Not Free Living	Pathogenic	Mid GC
+Pediococcus_claussenii	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Burkholderia_ambifaria	Not Free Living	Infection	obligate aerobe	Mid GC
+Alteromonas_macleodii	Free Living	Not Pathogenic	Mid GC
+Carnobacterium_maltaromaticum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Chlorobium_phaeovibrioides	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Clavibacter_michiganensis	Not Free Living	Pathogenic	Mid GC
+Collinsella_aerofaciens	Not Free Living	Infection	obligate anaerobe	Mid GC
+Comamonas_testosteroni	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Corynebacterium_amycolatum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Corynebacterium_kroppenstedtii	Not Free Living	Pathogenic	microaerophile	Mid GC
+Corynebacterium_tuberculostearicum	Not Free Living	Infection	microaerophile	Mid GC
+Dyella_japonica	Free Living	Not Pathogenic	Mid GC
+Elizabethkingia_anophelis	Not Free Living	Infection	obligate aerobe	Mid GC
+Enterococcus_avium	Not Free Living	Infection	microaerophile	Mid GC
+Flavobacterium_branchiophilum	Not Free Living	Pathogenic	Mid GC
+Loigolactobacillus_backii	Free Living	Not Pathogenic	microaerophile	Mid GC
+Nocardia_gamkensis	Not Free Living	Pathogenic	Mid GC
+Porphyromonas_gulae	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Pseudoflavonifractor_capillosus	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bifidobacterium_thermophilum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Myroides_odoratus	Not Free Living	Infection	Mid GC
+Brachyspira_pilosicoli	Not Free Living	Pathogenic	Low GC
+Neisseria_flavescens	Not Free Living	Infection	Mid GC
+Legionella_pneumophila	Not Free Living	Infection	microaerophile	Mid GC
+Magnetospirillum_gryphiswaldense	Free Living	Not Pathogenic	microaerophile	Mid GC
+Neisseria_wadsworthii	Not Free Living	Pathogenic	microaerophile	Mid GC
+Prevotella_bryantii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Pseudomonas_brassicacearum	Not Free Living	Not Pathogenic	Mid GC
+Bibersteinia_trehalosi	Not Free Living	Pathogenic	microaerophile	Mid GC
+Nocardia_asteroides	Not Free Living	Pathogenic	microaerophile	Mid GC
+Nocardia_otitidiscaviarum	Not Free Living	Pathogenic	Mid GC
+Campylobacter_curvus	Not Free Living	Infection	microaerophile	Mid GC
+Paenibacillus_alvei	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Paenibacillus_durus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Prevotella_histicola	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Streptococcus_suis	Not Free Living	Infection	microaerophile	Mid GC
+Pantoea_agglomerans	Not Free Living	Infection	obligate aerobe	Mid GC
+Listeria_monocytogenes	Not Free Living	Infection	microaerophile	Mid GC
+Mycobacterium_xenopi	Not Free Living	Pathogenic	Mid GC
+Pantoea_vagans	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Acinetobacter_baumannii	Not Free Living	Infection	obligate aerobe	Mid GC
+Bradyrhizobium_yuanmingense	Free Living	Not Pathogenic	Mid GC
+Parabacteroides_gordonii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Exiguobacterium_aurantiacum	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Gordonia_terrae	Not Free Living	Infection	microaerophile	Mid GC
+Agathobaculum_butyriciproducens	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Massilia_timonae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Photobacterium_halotolerans	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Proteus_hauseri	Not Free Living	Infection	obligate aerobe	Mid GC
+Paenibacillus_amylolyticus	Not Free Living	Infection	microaerophile	Mid GC
+Bacteroides_fragilis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Brevundimonas_diminuta	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Megasphaera_elsdenii	Not Free Living	Pathogenic	Mid GC
+Cellulophaga_lytica	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Clostridium_saccharobutylicum	Not Free Living	Not Pathogenic	obligate anaerobe	Low GC
+Corynebacterium_diphtheriae	Not Free Living	Infection	microaerophile	Mid GC
+Corynebacterium_pseudodiphtheriticum	Not Free Living	Infection	microaerophile	Mid GC
+Dolosigranulum_pigrum	Not Free Living	Infection	microaerophile	Mid GC
+Edwardsiella_piscicida	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Enterobacter_mori	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Faecalibacterium_prausnitzii	Not Free Living	Not Pathogenic	Mid GC
+Helicobacter_pullorum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Leptotrichia_hofstadii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Nitrosomonas_eutropha	Free Living	Not Pathogenic	Mid GC
+Prevotella_nigrescens	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bifidobacterium_longum	Not Free Living	Infection	obligate anaerobe	Mid GC
+Leptospira_alexanderi	Not Free Living	Pathogenic	Mid GC
+Methylomonas_methanica	Free Living	Not Pathogenic	Mid GC
+Mycoplasma_leachii	Not Free Living	Pathogenic	obligate aerobe	Low GC
+Bacillus_vallismortis	Not Free Living	Infection	obligate aerobe	Mid GC
+Pseudomonas_donghuensis	Free Living	Not Pathogenic	Mid GC
+Eubacterium_ventriosum	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Komagataeibacter_oboediens	Free Living	Not Pathogenic	Mid GC
+Leptospira_santarosai	Not Free Living	Not Pathogenic	Mid GC
+Mitsuokella_multacida	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Neisseria_elongata	Not Free Living	Pathogenic	microaerophile	Mid GC
+Pseudoalteromonas_rubra	Free Living	Not Pathogenic	Mid GC
+Bacteroides_oleiciplenus	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Prevotella_buccae	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Bacillus_mojavensis	Free Living	Not Pathogenic	Mid GC
+Bifidobacterium_tsurumiense	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Lactobacillus_johnsonii	Not Free Living	Pathogenic	microaerophile	Mid GC
+Paenibacillus_mucilaginosus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Pseudoalteromonas_agarivorans	Not Free Living	Not Pathogenic	Mid GC
+Bacillus_pseudomycoides	Free Living	Not Pathogenic	Mid GC
+Mesorhizobium_loti	Not Free Living	Not Pathogenic	Mid GC
+Prevotella_intermedia	Not Free Living	Pathogenic	Mid GC
+Bacteroides_ovatus	Not Free Living	Infection	obligate anaerobe	Mid GC
+Listeria_seeligeri	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Pseudoalteromonas_ruthenica	Not Free Living	Not Pathogenic	Mid GC
+Oblitimonas_alkaliphila	Not Free Living	Pathogenic	microaerophile	Mid GC
+Burkholderia_gladioli	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Psychrobacter_alimentarius	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Capnocytophaga_ochracea	Not Free Living	Infection	obligate anaerobe	Mid GC
+Collinsella_intestinalis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Cupriavidus_basilensis	Free Living	Infection	obligate aerobe	Mid GC
+Dielma_fastidiosa	Not Free Living	Infection	obligate anaerobe	Mid GC
+Halanaerobium_saccharolyticum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Lactococcus_lactis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Olsenella_uli	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Propionibacterium_acidifaciens	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Gordonibacter_pamelaeae	Not Free Living	Pathogenic	Mid GC
+Legionella_sainthelensi	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Myxococcus_xanthus	Not Free Living	Not Pathogenic	Mid GC
+Pandoraea_pnomenusa	Not Free Living	Infection	obligate aerobe	Mid GC
+Burkholderia_stagnalis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Brachybacterium_paraconglomeratum	Not Free Living	Not Pathogenic	obligate aerobe	High GC
+Cupriavidus_metallidurans	Free Living	Infection	obligate aerobe	Mid GC
+Corynebacterium_casei	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Dorea_formicigenerans	Not Free Living	Not Pathogenic	Mid GC
+Desulfovibrio_piger	Not Free Living	Not Pathogenic	Mid GC
+Dysgonomonas_mossii	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Bartonella_quintana	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Leuconostoc_gelidum	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Helicobacter_cetorum	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Bifidobacterium_adolescentis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Dickeya_dadantii	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Leuconostoc_mesenteroides	Not Free Living	Infection	microaerophile	Mid GC
+Chlamydia_psittaci	Not Free Living	Infection	Mid GC
+Clostridium_autoethanogenum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Cronobacter_dublinensis	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Haemophilus_haemolyticus	Not Free Living	Pathogenic	microaerophile	Mid GC
+Neisseria_weaveri	Not Free Living	Infection	microaerophile	Mid GC
+Parabacteroides_distasonis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Brevundimonas_naejangsanensis	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Chlamydia_pecorum	Not Free Living	Pathogenic	Mid GC
+Coprococcus_eutactus	Not Free Living	Not Pathogenic	Mid GC
+Fusobacterium_periodonticum	Not Free Living	Infection	obligate anaerobe	Low GC
+Helicobacter_canis	Not Free Living	Infection	microaerophile	Mid GC
+Pseudomonas_salomonii	Not Free Living	Pathogenic	Mid GC
+Ornithobacterium_rhinotracheale	Not Free Living	Pathogenic	Mid GC
+Burkholderia_glumae	Not Free Living	Pathogenic	Mid GC
+Arcanobacterium_haemolyticum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Prevotella_oralis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Bacillus_atrophaeus	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Bacteroides_faecis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Caulobacter_vibrioides	Free Living	Not Pathogenic	Mid GC
+Corynebacterium_ulcerans	Not Free Living	Pathogenic	microaerophile	Mid GC
+Enterococcus_villorum	Not Free Living	Pathogenic	Mid GC
+Gordonia_alkanivorans	Free Living	Not Pathogenic	Mid GC
+Helicobacter_pylori	Not Free Living	Not Pathogenic	Mid GC
+Porphyromonas_levii	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Acetivibrio_clariflavus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Chthonomonas_calidirosea	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Cronobacter_malonaticus	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Gluconacetobacter_diazotrophicus	Not Free Living	Not Pathogenic	Mid GC
+Herbaspirillum_seropedicae	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Legionella_anisa	Free Living	Not Pathogenic	microaerophile	Mid GC
+Prevotella_buccalis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bacteroides_acidifaciens	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Morganella_morganii	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Oenococcus_oeni	Not Free Living	Not Pathogenic	Mid GC
+Propionibacterium_freudenreichii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bacteroides_caccae	Not Free Living	Infection	obligate anaerobe	Mid GC
+Alloscardovia_omnicolens	Not Free Living	Infection	microaerophile	Mid GC
+Haemophilus_parainfluenzae	Not Free Living	Infection	microaerophile	Mid GC
+Klebsiella_variicola	Not Free Living	Pathogenic	facultative anaerobe	Mid GC
+Oxalobacter_formigenes	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bacteroides_cellulosilyticus	Not Free Living	Infection	microaerophile	Mid GC
+Bergeyella_zoohelcum	Not Free Living	Infection	microaerophile	Mid GC
+Nocardia_brasiliensis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Pseudoalteromonas_arctica	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Arthrobacter_crystallopoietes	Free Living	Not Pathogenic	Mid GC
+Azospirillum_brasilense	Not Free Living	Not Pathogenic	Mid GC
+Bifidobacterium_angulatum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Brevibacterium_linens	Not Free Living	Not Pathogenic	Mid GC
+Bartonella_bacilliformis	Not Free Living	Not Pathogenic	Mid GC
+Bacillus_subtilis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Bacillus_coahuilensis	Free Living	Not Pathogenic	Mid GC
+Paenibacillus_elgii	Not Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Aureimonas_ureilytica	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bifidobacterium_pseudolongum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bacteroides_salyersiae	Not Free Living	Not Pathogenic	Mid GC
+Eggerthella_lenta	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Halomonas_boliviensis	Free Living	Not Pathogenic	Mid GC
+Lachnospira_multipara	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Mycobacterium_colombiense	Not Free Living	Infection	Mid GC
+Parabacteroides_goldsteinii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Burkholderia_pseudomallei	Not Free Living	Infection	obligate aerobe	Mid GC
+Pseudomonas_composti	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Burkholderia_thailandensis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bacteroides_stercoris	Not Free Living	Pathogenic	Mid GC
+Leptospira_biflexa	Free Living	Not Pathogenic	Mid GC
+Mycoplasma_capricolum	Not Free Living	Not Pathogenic	Low GC
+Cedecea_davisae	Free Living	Not Pathogenic	Mid GC
+Clostridium_kluyveri	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Lactobacillus_kefiranofaciens	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Prevotella_oris	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Cupriavidus_necator	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bacteroides_finegoldii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bdellovibrio_bacteriovorus	Free Living	Not Pathogenic	Mid GC
+Bifidobacterium_ruminantium	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Campylobacter_jejuni	Not Free Living	Infection	microaerophile	Low GC
+Bacillus_licheniformis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Mycobacterium_gordonae	Not Free Living	Pathogenic	microaerophile	Mid GC
+Clostridium_beijerinckii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Bacteroides_caecimuris	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Corynebacterium_pseudotuberculosis	Not Free Living	Infection	microaerophile	Mid GC
+Desulfitobacterium_hafniense	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Gordonia_paraffinivorans	Free Living	Not Pathogenic	Mid GC
+Janthinobacterium_lividum	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Mobiluncus_curtisii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Nocardia_transvalensis	Not Free Living	Infection	Mid GC
+Pseudomonas_chlororaphis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Mannheimia_haemolytica	Not Free Living	Pathogenic	microaerophile	Mid GC
+Clostridium_tyrobutyricum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Corynebacterium_aurimucosum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Halomonas_titanicae	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Laribacter_hongkongensis	Not Free Living	Infection	microaerophile	Mid GC
+Mycobacterium_marinum	Not Free Living	Infection	obligate aerobe	Mid GC
+Porphyromonas_macacae	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Methylotenera_versatilis	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Neisseria_gonorrhoeae	Not Free Living	Infection	microaerophile	Mid GC
+Holdemania_filiformis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Leptotrichia_trevisanii	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Nocardiopsis_dassonvillei	Not Free Living	Infection	microaerophile	High GC
+Avibacterium_paragallinarum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Blautia_producta	Not Free Living	Infection	obligate anaerobe	Mid GC
+Prevotella_maculosa	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Citrobacter_freundii	Not Free Living	Infection	obligate aerobe	Mid GC
+Bradyrhizobium_diazoefficiens	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Clostridium_botulinum	Not Free Living	Infection	obligate anaerobe	Low GC
+Corynebacterium_bovis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Desulfovibrio_desulfuricans	Not Free Living	Infection	obligate anaerobe	Mid GC
+Streptomyces_prasinus	Free Living	Not Pathogenic	High GC
+Mobiluncus_mulieris	Not Free Living	Infection	obligate anaerobe	Mid GC
+Flavobacterium_columnare	Not Free Living	Pathogenic	Mid GC
+Leptotrichia_wadei	Not Free Living	Infection	obligate anaerobe	Mid GC
+Paenibacillus_pasadenensis	Free Living	Not Pathogenic	Mid GC
+Burkholderia_lata	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Flavobacterium_johnsoniae	Not Free Living	Pathogenic	Mid GC
+Holdemania_massiliensis	Not Free Living	Not Pathogenic	Mid GC
+Plesiomonas_shigelloides	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Paraeggerthella_hongkongensis	Not Free Living	Infection	Mid GC
+Pannonibacter_phragmitetus	Not Free Living	Infection	facultative anaerobe	Mid GC
+Bilophila_wadsworthia	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Lysinibacillus_boronitolerans	Free Living	Not Pathogenic	Mid GC
+Brochothrix_thermosphacta	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Coprothermobacter_proteolyticus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Kosakonia_radicincitans	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Megamonas_funiformis	Not Free Living	Not Pathogenic	Mid GC
+Prevotella_stercorea	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Lactobacillus_kitasatonis	Not Free Living	Not Pathogenic	Mid GC
+Bifidobacterium_asteroides	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Gemella_morbillorum	Not Free Living	Infection	microaerophile	Mid GC
+Pseudomonas_azotoformans	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Providencia_rettgeri	Not Free Living	Infection	obligate aerobe	Mid GC
+Helicobacter_cinaedi	Not Free Living	Pathogenic	microaerophile	Mid GC
+Paraprevotella_xylaniphila	Not Free Living	Infection	obligate anaerobe	Mid GC
+Brevibacillus_brevis	Not Free Living	Pathogenic	Mid GC
+Bifidobacterium_animalis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Brevibacillus_laterosporus	Not Free Living	Pathogenic	Mid GC
+Nitrosospira_multiformis	Free Living	Not Pathogenic	Mid GC
+Bifidobacterium_bifidum	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bradyrhizobium_elkanii	Free Living	Infection	obligate aerobe	Mid GC
+Bifidobacterium_breve	Not Free Living	Pathogenic	microaerophile	Mid GC
+Ligilactobacillus_equi	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Meiothermus_ruber	Free Living	Not Pathogenic	Mid GC
+Campylobacter_lari	Not Free Living	Infection	microaerophile	Low GC
+Burkholderia_cenocepacia	Not Free Living	Infection	obligate aerobe	Mid GC
+Bradyrhizobium_liaoningense	Free Living	Not Pathogenic	Mid GC
+Corynebacterium_urealyticum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Enterococcus_cecorum	Not Free Living	Pathogenic	microaerophile	Mid GC
+Haemophilus_paraphrohaemolyticus	Not Free Living	Infection	microaerophile	Mid GC
+Leptospira_weilii	Not Free Living	Not Pathogenic	Mid GC
+Bifidobacterium_pseudocatenulatum	Not Free Living	Infection	obligate anaerobe	Mid GC
+Bradyrhizobium_japonicum	Free Living	Not Pathogenic	Mid GC
+Blastococcus_saxobsidens	Free Living	Not Pathogenic	obligate aerobe	High GC
+Bacillus_pumilus	Not Free Living	Pathogenic	microaerophile	Mid GC
+Capnocytophaga_sputigena	Not Free Living	Infection	microaerophile	Mid GC
+Cellulosimicrobium_cellulans	Not Free Living	Pathogenic	microaerophile	High GC
+Chlamydia_trachomatis	Not Free Living	Infection	Mid GC
+Chryseobacterium_gleum	Not Free Living	Infection	Mid GC
+Conchiformibius_steedae	Not Free Living	Not Pathogenic	Mid GC
+Cronobacter_muytjensii	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Fructobacillus_fructosus	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Leuconostoc_inhae	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Phaeobacter_gallaeciensis	Not Free Living	Not Pathogenic	Mid GC
+Citrobacter_koseri	Not Free Living	Infection	obligate aerobe	Mid GC
+Methylobacter_tundripaludum	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Bacteroides_thetaiotaomicron	Not Free Living	Infection	obligate anaerobe	Mid GC
+Halomonas_elongata	Free Living	Not Pathogenic	Mid GC
+Lactobacillus_gallinarum	Not Free Living	Not Pathogenic	Mid GC
+Methylocystis_rosea	Free Living	Not Pathogenic	Mid GC
+Clostridium_ljungdahlii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Collinsella_tanakaei	Not Free Living	Not Pathogenic	Mid GC
+Deinococcus_ficus	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Erythrobacter_litoralis	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Prevotella_corporis	Not Free Living	Infection	obligate anaerobe	Mid GC
+Streptococcus_salivarius	Not Free Living	Infection	microaerophile	Mid GC
+Kandleria_vitulina	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Pectobacterium_atrosepticum	Not Free Living	Pathogenic	Mid GC
+Catenibacterium_mitsuokai	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Corynebacterium_glutamicum	Free Living	Not Pathogenic	Mid GC
+Microbacterium_laevaniformans	Not Free Living	Infection	obligate aerobe	Mid GC
+Pseudomonas_agarici	Not Free Living	Pathogenic	Mid GC
+Chryseobacterium_haifense	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Cellulomonas_fimi	Free Living	Not Pathogenic	obligate aerobe	High GC
+Pseudomonas_corrugata	Not Free Living	Pathogenic	Mid GC
+Corynebacterium_variabile	Free Living	Not Pathogenic	Mid GC
+Eggerthia_catenaformis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Flavonifractor_plautii	Not Free Living	Infection	obligate anaerobe	Mid GC
+Idiomarina_loihiensis	Free Living	Not Pathogenic	Mid GC
+Lysinibacillus_fusiformis	Not Free Living	Not Pathogenic	microaerophile	Mid GC
+Brachyspira_hyodysenteriae	Not Free Living	Pathogenic	obligate anaerobe	Low GC
+Erwinia_billingiae	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Gluconobacter_frateurii	Free Living	Not Pathogenic	Mid GC
+Lactobacillus_gasseri	Not Free Living	Pathogenic	microaerophile	Mid GC
+Streptococcus_equi	Not Free Living	Pathogenic	microaerophile	Mid GC
+Inquilinus_limosus	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Paenibacillus_peoriae	Free Living	Not Pathogenic	Mid GC
+Butyricicoccus_pullicaecorum	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Campylobacter_rectus	Not Free Living	Infection	obligate anaerobe	Mid GC
+Paenibacillus_terrae	Not Free Living	Not Pathogenic	Mid GC
+Citrobacter_rodentium	Not Free Living	Pathogenic	Mid GC
+Porphyromonas_cangingivalis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Clostridium_butyricum	Not Free Living	Infection	obligate anaerobe	Low GC
+Clostridium_senegalense	Not Free Living	Infection	obligate anaerobe	Low GC
+Neisseria_meningitidis	Not Free Living	Infection	microaerophile	Mid GC
+Aggregatibacter_actinomycetemcomitans	Not Free Living	Pathogenic	microaerophile	Mid GC
+Prevotella_timonensis	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Butyricimonas_virosa	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Parascardovia_denticolens	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Helicobacter_felis	Free Living	Not Pathogenic	Mid GC
+Providencia_rustigianii	Not Free Living	Infection	Mid GC
+Corallococcus_coralloides	Not Free Living	Not Pathogenic	Mid GC
+Campylobacter_showae	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Kocuria_rhizophila	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Megamonas_hypermegale	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Burkholderia_cepacia	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_aeruginosa	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Burkholderia_pyrrocinia	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Burkholderia_ubonensis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Enterococcus_mundtii	Not Free Living	Pathogenic	microaerophile	Mid GC
+Gemella_sanguinis	Not Free Living	Infection	microaerophile	Mid GC
+Oligella_ureolytica	Not Free Living	Pathogenic	microaerophile	Mid GC
+Pseudoalteromonas_undina	Free Living	Not Pathogenic	Mid GC
+Francisella_philomiragia	Not Free Living	Not Pathogenic	Mid GC
+Capnocytophaga_canimorsus	Not Free Living	Pathogenic	microaerophile	Mid GC
+Cardiobacterium_valvarum	Not Free Living	Infection	microaerophile	Mid GC
+Chitinophaga_pinensis	Not Free Living	Not Pathogenic	Mid GC
+Cronobacter_sakazakii	Not Free Living	Infection	obligate aerobe	Mid GC
+Clostridium_paraputrificum	Not Free Living	Infection	Mid GC
+Corynebacterium_striatum	Not Free Living	Infection	microaerophile	Mid GC
+Exiguobacterium_undae	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Gordonia_rubripertincta	Free Living	Infection	Mid GC
+Desulfovibrio_vulgaris	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Nocardia_cerradoensis	Free Living	Not Pathogenic	Mid GC
+Leuconostoc_pseudomesenteroides	Not Free Living	Pathogenic	microaerophile	Mid GC
+Methyloversatilis_universalis	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Gluconobacter_thailandicus	Free Living	Not Pathogenic	Mid GC
+Neisseria_mucosa	Not Free Living	Infection	microaerophile	Mid GC
+Geobacillus_thermodenitrificans	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Photorhabdus_luminescens	Not Free Living	Pathogenic	Mid GC
+Listeria_fleischmannii	Not Free Living	Not Pathogenic	Mid GC
+Parabacteroides_merdae	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Leptospira_kmetyi	Free Living	Not Pathogenic	Mid GC
+Microbacterium_paraoxydans	Not Free Living	Pathogenic	microaerophile	Mid GC
+Isoptericola_variabilis	Not Free Living	Not Pathogenic	High GC
+Facklamia_hominis	Not Free Living	Infection	microaerophile	Mid GC
+Kingella_kingae	Not Free Living	Infection	microaerophile	Mid GC
+Intestinibacter_bartlettii	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Parasutterella_excrementihominis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Enterovibrio_norvegicus	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Colwellia_psychrerythraea	Not Free Living	Not Pathogenic	Mid GC
+Corynebacterium_glucuronolyticum	Not Free Living	Infection	microaerophile	Mid GC
+Helicobacter_fennelliae	Not Free Living	Infection	Mid GC
+Micrococcus_aloeverae	Not Free Living	Not Pathogenic	High GC
+Geobacter_sulfurreducens	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Moorella_thermoacetica	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Enterococcus_faecalis	Not Free Living	Infection	microaerophile	Mid GC
+Lactobacillus_crispatus	Not Free Living	Infection	microaerophile	Mid GC
+Mannheimia_granulomatis	Not Free Living	Pathogenic	microaerophile	Mid GC
+Prevotella_amnii	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Cardiobacterium_hominis	Not Free Living	Infection	microaerophile	Mid GC
+Corynebacterium_matruchotii	Not Free Living	Infection	obligate aerobe	Mid GC
+Grimontia_hollisae	Not Free Living	Not Pathogenic	Mid GC
+Kingella_denitrificans	Not Free Living	Infection	microaerophile	Mid GC
+Lonsdalea_quercina	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Pectobacterium_carotovorum	Not Free Living	Pathogenic	Mid GC
+Methylobacterium_radiotolerans	Free Living	Not Pathogenic	obligate aerobe	High GC
+Pseudomonas_caricapapayae	Not Free Living	Pathogenic	Mid GC
+Caldanaerobacter_subterraneus	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Curtobacterium_flaccumfaciens	Not Free Living	Pathogenic	microaerophile	Mid GC
+Enterobacter_asburiae	Not Free Living	Infection	Mid GC
+Halobacillus_halophilus	Free Living	Not Pathogenic	Mid GC
+Lachnoanaerobaculum_saburreum	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Gluconobacter_oxydans	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Clostridium_novyi	Not Free Living	Infection	obligate anaerobe	Low GC
+Fervidobacterium_pennivorans	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Geobacillus_thermocatenulatus	Free Living	Not Pathogenic	Mid GC
+Martelella_mediterranea	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Escherichia_albertii	Not Free Living	Pathogenic	Mid GC
+Enterococcus_raffinosus	Not Free Living	Infection	microaerophile	Mid GC
+Fusobacterium_gonidiaformans	Not Free Living	Infection	obligate anaerobe	Mid GC
+Streptococcus_gordonii	Not Free Living	Infection	microaerophile	Mid GC
+Flavobacterium_psychrophilum	Not Free Living	Pathogenic	Mid GC
+Cupriavidus_taiwanensis	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Fusobacterium_mortiferum	Not Free Living	Not Pathogenic	Low GC
+Megamonas_rupellensis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Listeria_innocua	Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Listeria_grayi	Not Free Living	Not Pathogenic	obligate aerobe	Mid GC
+Meiothermus_taiwanensis	Free Living	Not Pathogenic	Mid GC
+Photorhabdus_temperata	Not Free Living	Pathogenic	Mid GC
+Peptoniphilus_harei	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Providencia_stuartii	Not Free Living	Infection	Mid GC
+Pseudomonas_entomophila	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Prevotella_baroniae	Not Free Living	Infection	obligate anaerobe	Mid GC
+Prevotella_disiens	Not Free Living	Infection	obligate anaerobe	Mid GC
+Staphylococcus_epidermidis	Not Free Living	Pathogenic	microaerophile	Low GC
+Pseudacidovorax_intermedius	Not Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Pseudoalteromonas_luteoviolacea	Free Living	Not Pathogenic	Mid GC
+Pseudomonas_amygdali	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Pseudomonas_extremaustralis	Not Free Living	Not Pathogenic	Mid GC
+Pseudoalteromonas_flavipulchra	Free Living	Not Pathogenic	Mid GC
+Pseudobutyrivibrio_ruminis	Not Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Pseudomonas_alcaligenes	Not Free Living	Infection	obligate aerobe	Mid GC
+Mycobacterium_intracellulare	Not Free Living	Pathogenic	microaerophile	Mid GC
+Myroides_odoratimimus	Not Free Living	Infection	obligate aerobe	Mid GC
+Neisseria_polysaccharea	Not Free Living	Infection	Mid GC
+Nitratireductor_aquibiodomus	Free Living	Not Pathogenic	facultative anaerobe	Mid GC
+Cereibacter_sphaeroides	Free Living	Not Pathogenic	obligate anaerobe	Mid GC
+Nocardia_abscessus	Not Free Living	Infection	Mid GC
+Nocardia_cyriacigeorgica	Not Free Living	Infection	microaerophile	Mid GC
+Paenibacillus_polymyxa	Free Living	Not Pathogenic	Mid GC
+Peptostreptococcus_anaerobius	Not Free Living	Pathogenic	obligate anaerobe	Mid GC
+Staphylococcus_aureus	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+Escherichia_coli	Not Free Living	Pathogenic	obligate aerobe	Mid GC
+
