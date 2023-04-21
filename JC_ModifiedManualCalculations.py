@@ -585,13 +585,23 @@ def calcPis(nucDict, numStrains, ancestralSeq):
         nonMutCopies = int(nucDict.keys()[0].split("_")[-1])
     except Exception:
         nonMutCopies = 0
-    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-        tracker.write("Pis: Non-mutant copies: " + str(nonMutCopies) + ". ")
     totalSeq = numDictSeq + nonMutCopies
     perComparison = float(1.0 / ((totalSeq * (totalSeq - 1)) / 2))  # 1 over the number of comparisons
-    piS = float(perComparison * synMutations) / potentialSynSites
-    piN = float(perComparison * nonSynMutations) / potentialNonSynSites
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write("Pis: Per-comparison: " + str(perComparison) + ". ")
+        tracker.write("Pis: Potential Syn: " + str(potentialSynSites) + ". ")
+        tracker.write("Pis: Potential NonSyn: " + str(potentialNonSynSites) + ". ")
+    try:
+        piS = float(perComparison * synMutations) / potentialSynSites
+    except Exception:
+        piS = 0.0
+    try:
+        piN = float(perComparison * nonSynMutations) / potentialNonSynSites
+    except Exception:
+        piN = 0.0
     pi = float(perComparison * mutations) / (seqLength - sum(gapsFound))
+
+
 
     # piByNumStrains is a dictionary containing all values needed to average pi over all same-num-contributor orthogroups
     # It is organized as such:
