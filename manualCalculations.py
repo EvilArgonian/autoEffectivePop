@@ -3,6 +3,7 @@ import sys
 import dendropy
 import re
 import datetime
+
 # from functools import lru_cache
 
 specName = sys.argv[1]
@@ -10,24 +11,32 @@ specName = sys.argv[1]
 table = {
     # Other IUPAC codes with certain results commented for possible later integration
     # 'M' - START, '_' - STOP
-    "GCT": "A", "GCC": "A", "GCA": "A", "GCG": "A",  # "GCR": "A", "GCY": "A", "GCS": "A", "GCW": "A", "GCK": "A", "GCM": "A", "GCB": "A", "GCD": "A", "GCH": "A", "GCV": "A", "GCN": "A",
+    "GCT": "A", "GCC": "A", "GCA": "A", "GCG": "A",
+    # "GCR": "A", "GCY": "A", "GCS": "A", "GCW": "A", "GCK": "A", "GCM": "A", "GCB": "A", "GCD": "A", "GCH": "A", "GCV": "A", "GCN": "A",
     "TGT": "C", "TGC": "C",  # "TGY": "C",
     "GAT": "D", "GAC": "D",  # "GAY": "D",
     "GAA": "E", "GAG": "E",  # "GAR": "E",
     "TTT": "F", "TTC": "F",  # "TTY": "F",
-    "GGT": "G", "GGC": "G", "GGA": "G", "GGG": "G",  # "GGR": "G", "GGY": "G", "GGS": "G", "GGW": "G", "GGK": "G", "GGM": "G", "GGB": "G", "GGD": "G", "GGH": "G", "GGV": "G", "GGN": "G",
+    "GGT": "G", "GGC": "G", "GGA": "G", "GGG": "G",
+    # "GGR": "G", "GGY": "G", "GGS": "G", "GGW": "G", "GGK": "G", "GGM": "G", "GGB": "G", "GGD": "G", "GGH": "G", "GGV": "G", "GGN": "G",
     "CAT": "H", "CAC": "H",  # "CAY": "H",
     "ATA": "I", "ATT": "I", "ATC": "I",  # "ATY": "I", "ATW": "I", "ATM": "I", "ATH": "I",
     "AAA": "K", "AAG": "K",  # "AAR": "K",
-    "TTA": "L", "TTG": "L", "CTT": "L", "CTC": "L", "CTA": "L", "CTG": "L",  # "TTR": "L", "CTR": "L", "CTY": "L", "CTS": "L", "CTW": "L", "CTK": "L", "CTM": "L", "CTB": "L", "CTD": "L", "CTH": "L", "CTV": "L", "CTN": "L",
+    "TTA": "L", "TTG": "L", "CTT": "L", "CTC": "L", "CTA": "L", "CTG": "L",
+    # "TTR": "L", "CTR": "L", "CTY": "L", "CTS": "L", "CTW": "L", "CTK": "L", "CTM": "L", "CTB": "L", "CTD": "L", "CTH": "L", "CTV": "L", "CTN": "L",
     "ATG": "M",
     "AAT": "N", "AAC": "N",  # "AAY": "N",
-    "CCT": "P", "CCC": "P", "CCA": "P", "CCG": "P",  # "CCR": "P", "CCY": "P", "CCS": "P", "CCW": "P", "CCK": "P", "CCM": "P", "CCB": "P", "CCD": "P", "CCH": "P", "CCV": "P", "CCN": "P",
+    "CCT": "P", "CCC": "P", "CCA": "P", "CCG": "P",
+    # "CCR": "P", "CCY": "P", "CCS": "P", "CCW": "P", "CCK": "P", "CCM": "P", "CCB": "P", "CCD": "P", "CCH": "P", "CCV": "P", "CCN": "P",
     "CAA": "Q", "CAG": "Q",  # "CAR": "Q",
-    "CGT": "R", "CGC": "R", "CGA": "R", "CGG": "R", "AGA": "R", "AGG": "R",  # "CGR": "R", "CGY": "R", "CGS": "R", "CGW": "R", "CGK": "R", "CGM": "R", "CGB": "R", "CGD": "R", "CGH": "R", "CGV": "R", "CGN": "R", "AGR": "R",
-    "TCT": "S", "TCC": "S", "TCA": "S", "TCG": "S", "AGT": "S", "AGC": "S",  # "TCR": "S", "TCY": "S", "TCS": "S", "TCW": "S", "TCK": "S", "TCM": "S", "TCB": "S", "TCD": "S", "TCH": "S", "TCV": "S", "TCN": "S", "AGY": "S",
-    "ACT": "T", "ACC": "T", "ACA": "T", "ACG": "T",  # "ACR": "T", "ACY": "T", "ACS": "T", "ACW": "T", "ACK": "T", "ACM": "T", "ACB": "T", "ACD": "T", "ACH": "T", "ACV": "T", "ACN": "T",
-    "GTT": "V", "GTC": "V", "GTA": "V", "GTG": "V",  # "GTR": "V", "GTY": "V", "GTS": "V", "GTW": "V", "GTK": "V", "GTM": "V", "GTB": "V", "GTD": "V", "GTH": "V", "GTV": "V", "GTN": "V",
+    "CGT": "R", "CGC": "R", "CGA": "R", "CGG": "R", "AGA": "R", "AGG": "R",
+    # "CGR": "R", "CGY": "R", "CGS": "R", "CGW": "R", "CGK": "R", "CGM": "R", "CGB": "R", "CGD": "R", "CGH": "R", "CGV": "R", "CGN": "R", "AGR": "R",
+    "TCT": "S", "TCC": "S", "TCA": "S", "TCG": "S", "AGT": "S", "AGC": "S",
+    # "TCR": "S", "TCY": "S", "TCS": "S", "TCW": "S", "TCK": "S", "TCM": "S", "TCB": "S", "TCD": "S", "TCH": "S", "TCV": "S", "TCN": "S", "AGY": "S",
+    "ACT": "T", "ACC": "T", "ACA": "T", "ACG": "T",
+    # "ACR": "T", "ACY": "T", "ACS": "T", "ACW": "T", "ACK": "T", "ACM": "T", "ACB": "T", "ACD": "T", "ACH": "T", "ACV": "T", "ACN": "T",
+    "GTT": "V", "GTC": "V", "GTA": "V", "GTG": "V",
+    # "GTR": "V", "GTY": "V", "GTS": "V", "GTW": "V", "GTK": "V", "GTM": "V", "GTB": "V", "GTD": "V", "GTH": "V", "GTV": "V", "GTN": "V",
     "TGG": "W",
     "TAT": "Y", "TAC": "Y",  # "TAY": "Y",
     "TAA": "_", "TAG": "_", "TGA": "_"  # "TAR": "_"
@@ -427,7 +436,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
     # Item 1 = The cumulative value of each orthogroups' watsThetaN (for all orthogroups belonging to this key)
     # Item 2 = The cumulative value of each orthogroups' watsTheta (for all orthogroups belonging to this key)
     # Item 3 = The number of orthogroups seen belonging to this key (the number which the cumulative values are divided by)
-    if not numStrains in thetaByNumStrains.keys():
+    if numStrains not in thetaByNumStrains.keys():
         thetaByNumStrains.update(
             {numStrains: [watsThetaS, watsThetaN, watsTheta, 1]})  # Initialize the key:value for newly encountered key
     else:
