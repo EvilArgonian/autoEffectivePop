@@ -31,11 +31,11 @@ def main():
                 continue
             categories.append(elem)
 
-        inFolder = os.path("../final_output/", species)
+        inFolder = os.path.join("../final_output/", species)
         inConsensusFile = os.path.join(inFolder, "consensusSeqs.txt")
         if os.path.exists(inConsensusFile):
             for category in categories:
-                outFolder = os.path("consensus_input", category, species)
+                outFolder = os.path.join("consensus_input", category, species)
                 outConsensusFile = os.path.join(outFolder, species, ".txt")
                 if os.path.exists(outFolder):
                     if os.path.exists(outConsensusFile):
