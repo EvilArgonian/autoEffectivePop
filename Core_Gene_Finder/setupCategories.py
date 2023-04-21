@@ -11,7 +11,7 @@ def main():
     parser.add_argument('category_reference', type=argparse.FileType('r'),
                         help='Reference text file that indicates the categories each species belongs to. The format of each line should be the species name followed by each category it belongs to, tab-delimited.')
     # Adding force argument as
-    parser.add_argument('-f', '--Force', action='store_true',
+    parser.add_argument('-f', '--force', action='store_true',
                         help='Flag to indicate that the setup should clear and rewrite the input.')
     # Read arguments from command line
     args = parser.parse_args()
