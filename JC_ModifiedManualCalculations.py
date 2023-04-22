@@ -631,6 +631,9 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
         update_num = piByNumStrains.get(numStrains)[3] + 1
         piByNumStrains.update({numStrains: [update_sumPiS, update_sumPiN, update_sumPi, update_num]})
 
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write("Pis: Past piByNumStrains update. ")
+
     outString = file.split(".")[0] + "\tPi S: " + str(piS) + "\tPi N: " + str(piN) + "\tPi: " + str(pi) + "\n"
     return outString
 
