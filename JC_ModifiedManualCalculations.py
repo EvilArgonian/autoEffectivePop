@@ -653,7 +653,7 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                 filePath = os.path.join("modifiedAlignmentInput/", specName, ogFile)
                 currNucDict = buildNucDict(filePath)
                 with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                    tracker.write("Processing " + ogFile + " with nucDict of length " + str(len(nucDict)) + ". ")
+                    tracker.write("Processing " + ogFile + " with nucDict of length " + str(len(currNucDict)) + ". ")
                 # nucDict is a dictionary of sequence names mapped to actual sequences.
                 # the sequences are aligned coding sequences, thus equal length and divisible by 3
                 if len(currNucDict) < 2:
