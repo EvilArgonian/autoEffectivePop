@@ -512,63 +512,63 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
 
                     totSynFound = 0.0
                     totNonSynFound = 0.0
-                    if table[site1] == table[
-                        inBetween12_1]:  # Compare consensus to between possibility part 1 of paths 1 and 2 [Weight = 2]
+                    # Compare consensus to between possibility part 1 of paths 1 and 2 [Weight = 2]
+                    if table[site1] == table[inBetween12_1]:
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween12_1] == table[
-                        inBetween13_2]:  # Compare between possibility part 1 of path 1 to part 2 of path 1
+                    # Compare between possibility part 1 of path 1 to part 2 of path 1
+                    if table[inBetween12_1] == table[inBetween13_2]:
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween13_2] == table[
-                        site2]:  # Compare between possibility part 2 of paths 1 and 3 to actual [Weight = 2]
+                    # Compare between possibility part 2 of paths 1 and 3 to actual [Weight = 2]
+                    if table[inBetween13_2] == table[site2]:
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween12_1] == table[
-                        inBetween25_2]:  # Compare between possibility part 1 of path 2 to part 2 of path 2
+                    # Compare between possibility part 1 of path 2 to part 2 of path 2
+                    if table[inBetween12_1] == table[inBetween25_2]:
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween25_2] == table[
-                        site2]:  # Compare between possibility part 2 of paths 2 and 5 to actual [Weight = 2]
+                    # Compare between possibility part 2 of paths 2 and 5 to actual [Weight = 2]
+                    if table[inBetween25_2] == table[site2]:
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[site1] == table[
-                        inBetween34_1]:  # Compare consensus to between possibility part 1 of paths 3 and 4 [Weight = 2]
+                    # Compare consensus to between possibility part 1 of paths 3 and 4 [Weight = 2]
+                    if table[site1] == table[inBetween34_1]:
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween34_1] == table[
-                        inBetween13_2]:  # Compare between possibility part 1 of path 3 to part 2 of path 3
+                    # Compare between possibility part 1 of path 3 to part 2 of path 3
+                    if table[inBetween34_1] == table[inBetween13_2]:
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween34_1] == table[
-                        inBetween46_2]:  # Compare between possibility part 1 of path 4 to part 2 of path 4
+                    # Compare between possibility part 1 of path 4 to part 2 of path 4
+                    if table[inBetween34_1] == table[inBetween46_2]:
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween46_2] == table[
-                        site2]:  # Compare between possibility part 2 of paths 4 and 6 to actual [Weight = 2]
+                    # Compare between possibility part 2 of paths 4 and 6 to actual [Weight = 2]
+                    if table[inBetween46_2] == table[site2]:
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[site1] == table[
-                        inBetween56_1]:  # Compare consensus to between possibility part 1 of paths 5 and 6 [Weight = 2]
+                    # Compare consensus to between possibility part 1 of paths 5 and 6 [Weight = 2]
+                    if table[site1] == table[inBetween56_1]:
                         totSynFound += 2.0
                     else:
                         totNonSynFound += 2.0
-                    if table[inBetween56_1] == table[
-                        inBetween25_2]:  # Compare between possibility part 1 of path 5 to part 2 of path 5
+                    # Compare between possibility part 1 of path 5 to part 2 of path 5
+                    if table[inBetween56_1] == table[inBetween25_2]:
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
-                    if table[inBetween56_1] == table[
-                        inBetween46_2]:  # Compare between possibility part 1 of path 6 to part 2 of path 6
+                    # Compare between possibility part 1 of path 6 to part 2 of path 6
+                    if table[inBetween56_1] == table[inBetween46_2]:
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
