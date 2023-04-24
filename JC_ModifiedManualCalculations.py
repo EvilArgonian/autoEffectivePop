@@ -446,11 +446,13 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
     mutations = 0.0
 
     seeOnlyOnce = True
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write("\nRemaining indices: ")
 
     for index1 in range(0, numDictSeq):
         seq1 = nucDict.values()[index1]
         with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-            tracker.write("\nRemaining indices: " + str(numDictSeq - (index1)) + ". ")
+            tracker.write(str(numDictSeq - (index1)) + ".\t")
         for index2 in range(index1 + 1, numDictSeq):
             seq2 = nucDict.values()[index2]
             for i in range(0, seqLength, 3):
