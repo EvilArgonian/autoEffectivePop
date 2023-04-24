@@ -445,14 +445,22 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
     nonSynMutations = 0.0
     mutations = 0.0
 
+    seeOnlyOnce = True
+
     for index1 in range(0, numDictSeq):
         seq1 = nucDict.values()[index1]
+        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+            tracker.write("\nSeq 1: " + str(seq1) + "\t")
         for index2 in range(index1 + 1, numDictSeq):
             seq2 = nucDict.values()[index2]
+            with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                tracker.write("Seq 2: " + str(seq2) + "\t")
             for i in range(0, seqLength, 3):
                 mutsInCodon = [0, 0, 0]
                 for pos in range(0, 3):
                     if i + pos >= seqLength:
+                        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                            tracker.write("Non-perfect coding sequence. ")
                         continue  # At end of loop with remainder (shouldn't occur in perfect coding sequences)
                     if gapsFound[i + pos] == 1:  # Prevents counting any positions with gaps in any sequence
                         continue
@@ -460,6 +468,8 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                         mutations += 1  # Increases if mutation occurred
                         mutsInCodon[pos] = 1
                 if i + 3 > seqLength:
+                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                        tracker.write("Non-perfect coding sequence flag 2. ")
                     continue  # At end of loop with remainder (shouldn't occur in perfect coding sequences)
                 site1 = seq1[i:i + 3]
                 site2 = seq2[i:i + 3]
@@ -467,6 +477,9 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                     continue
 
                 if sum(mutsInCodon) == 3:  # This gets ridiculous fast...
+                    if seeOnlyOnce:
+                        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                            tracker.write("3 Mut codon:" + str(site1) + " " + str(site2) + ". ")
                     inBetween12_1 = site1[0] + site2[1:]  # Ttt
                     inBetween13_2 = site1[0:2] + site2[2]  # TTt
                     inBetween25_2 = site1[0] + site2[1] + site1[2]  # TtT
@@ -536,6 +549,11 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                         totSynFound += 1.0
                     else:
                         totNonSynFound += 1.0
+
+                    if seeOnlyOnce:
+                        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+                            tracker.write("Syn/Non-Syn found (before division: " + str(totSynFound) + " " + str(totNonSynFound) + " ")
+                        seeOnlyOnce = False
 
                     # Determine if actual weightings exceed any others found in this codon column and update if so
                     # Division by 6 for the 6 possible paths
