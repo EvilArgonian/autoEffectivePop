@@ -9,7 +9,7 @@ if not os.path.exists(specFolder):
     print("Species not found in All category!")
     exit(1)
 if not os.path.exists(outFolder):
-    print("Creating Individual_Seqs folder for "  + species)
+    print("Creating Individual_Seqs folder for " + species + " as " + outFolder)
     os.mkdir(outFolder)
     with open(os.path.join(specFolder, species, ".txt"), "r") as consensusFile:
         nucSeqTitle = ""
