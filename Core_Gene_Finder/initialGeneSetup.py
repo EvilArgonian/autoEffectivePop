@@ -1,31 +1,35 @@
 import os
 import sys
 
-species = sys.argv[1]
+category = sys.argv[1]
+species = sys.argv[2]
+runNum = sys.argv[3]
 specFolder = os.path.join("categories/All/", species)
-outFolder = os.path.join(specFolder, "Individual_Seqs")
+outFolder = os.path.join("core_genes", category, "Run_" + str(runNum), "Genes")
 
 if not os.path.exists(specFolder):
     print("Species not found in All category!")
     exit(1)
 if not os.path.exists(outFolder):
-    print("Creating Individual_Seqs folder for " + species + " as " + outFolder)
+    print("Creating Genes folder for run as " + outFolder)
     os.mkdir(outFolder)
     with open(specFolder + "/" + species + ".txt", "r") as consensusFile:
         nucSeqTitle = ""
         nucSeqBuilder = ""
+        geneNum = 0
         for line in consensusFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
-                    with open(outFolder + "/" + nucSeqTitle, "w") as outFile:
-                        outFile.write(">" + nucSeqTitle + "\n")
+                    with open(outFolder + "/Gene_" + geneNum, "w") as outFile:
+                        outFile.write(nucSeqTitle + "\n")
                         outFile.write(nucSeqBuilder)
-                nucSeqTitle = line.strip()[1:]
+                nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
+                geneNum += 1
             else:
                 nucSeqBuilder += line.strip().upper()
         with open(outFolder + "/" + nucSeqTitle, "w") as outFile:
             outFile.write(">" + nucSeqTitle + "\n")
             outFile.write(nucSeqBuilder)
 else:
-    print("Species consensus sequences already split.")
+    print("Genes folder already exists.")
