@@ -11,20 +11,20 @@ if not os.path.exists(specFolder):
 if not os.path.exists(outFolder):
     print("Creating Individual_Seqs folder for " + species + " as " + outFolder)
     os.mkdir(outFolder)
-    with open(specFolder + species + ".txt", "r") as consensusFile:
+    with open(specFolder + "/" + species + ".txt", "r") as consensusFile:
         nucSeqTitle = ""
         nucSeqBuilder = ""
         for line in consensusFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
-                    with open(outFolder + nucSeqTitle + ".fa", "w") as outFile:
+                    with open(outFolder + "/" + nucSeqTitle + ".fa", "w") as outFile:
                         outFile.write(nucSeqTitle + "\n")
                         outFile.write(nucSeqBuilder)
                 nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
             else:
                 nucSeqBuilder += line.strip().upper()
-        with open(outFolder + nucSeqTitle + ".fa", "w") as outFile:
+        with open(outFolder + "/" + nucSeqTitle + ".fa", "w") as outFile:
             outFile.write(nucSeqTitle + "\n")
             outFile.write(nucSeqBuilder)
 else:
