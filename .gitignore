@@ -6,6 +6,7 @@ muscle_input/*
 muscle_output/*
 final_output/*
 modifiedAlignmentInput/*
+Core_Gene_Finder/consensus_input/*
 
 # Except Test Species...
 
@@ -14,6 +15,7 @@ modifiedAlignmentInput/*
 !muscle_input/Test_Species*
 !muscle_output/Test_Species*
 !final_output/Test_Species*
+!Core_Gene_Finder/consensus_input/Test_Species/*
 
 # Also ignore these non-integral files (most likely should be cleaned up eventually)
 

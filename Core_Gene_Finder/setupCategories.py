@@ -35,6 +35,7 @@ def main():
         inConsensusFile = os.path.join(inFolder, "consensusSeqs.txt")
         if os.path.exists(inConsensusFile):
             for category in categories:
+                category = category.title().replace(" ", "_")
                 catFolder = os.path.join("consensus_input", category)
                 if not os.path.exists(catFolder):
                     os.mkdir(catFolder)
