@@ -17,14 +17,14 @@ if not os.path.exists(outFolder):
         for line in consensusFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
-                    with open(outFolder + "/" + nucSeqTitle + ".fa", "w") as outFile:
+                    with open(outFolder + "/" + nucSeqTitle, "w") as outFile:
                         outFile.write(nucSeqTitle + "\n")
                         outFile.write(nucSeqBuilder)
-                nucSeqTitle = line.strip()
+                nucSeqTitle = line.strip()[1:]
                 nucSeqBuilder = ""
             else:
                 nucSeqBuilder += line.strip().upper()
-        with open(outFolder + "/" + nucSeqTitle + ".fa", "w") as outFile:
+        with open(outFolder + "/" + nucSeqTitle, "w") as outFile:
             outFile.write(nucSeqTitle + "\n")
             outFile.write(nucSeqBuilder)
 else:
