@@ -16,8 +16,8 @@ def main():
     # Read arguments from command line
     args = parser.parse_args()
 
-    if not os.path.exists("consensus_input/"):
-        os.mkdir("consensus_input/")
+    if not os.path.exists("categories/"):
+        os.mkdir("categories/")
 
     missingConsensus = []
     for line in args.category_reference.readlines():
@@ -36,7 +36,7 @@ def main():
         if os.path.exists(inConsensusFile):
             for category in categories:
                 category = category.title().replace(" ", "_")
-                catFolder = os.path.join("consensus_input", category)
+                catFolder = os.path.join("categories", category)
                 if not os.path.exists(catFolder):
                     os.mkdir(catFolder)
                 outFolder = os.path.join(catFolder, species)

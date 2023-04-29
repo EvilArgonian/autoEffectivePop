@@ -2,15 +2,17 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-category=${1} # The name of the category being processed, as it appears in consensus_input
+category=${1} # The name of the category being processed, as it appears in categories directory
 repeatRuns=${2} # The amount of repeat runs to perform, of which the genes that are selected in each of these runs will be considered valid
 
 
 echo "Launching Core Gene Finding for ${category}!"
 
 catSpecies=()
-for file in $(find consensus_input/${category} -mindepth 1 -maxdepth 1 -type d); do
-	catSpecies+=(${file})
+for specFile in $(find categories/${category} -mindepth 1 -maxdepth 1 -type d); do
+	specFileWithoutFolder="${specFile##*/}"
+	spec="${specFileWithoutFolder%%.txt*}"
+	catSpecies+=(${spec})
 done
 
 catSize=${#catSpecies[@]}
@@ -21,22 +23,23 @@ for randomIndex in $(shuf --input-range=0-$(( ${#catSpecies[*]} - 1 )) -n ${rand
 	randomSet+=(${catSpecies[${randomIndex}]})
 done
 
-# Determine what databases already exist
+# Determine what databases already exist (NOTE: All databases are stored in the 'All' category, not other categories, to remove redundancy
 seenDatabases=("Default")
-for filename in consensus_input/${category}/*.ndb; do
-	titleWithoutFolder="${filename##*/}"
-	seenDatabases+=("${titleWithoutFolder}");
+for spec in ${randomSet[@]}; do
+	if [[ -f category/All/${spec}/${spec}.ndb ]]; then
+		seenDatabases+=("${spec}");
+	fi
 done
 
 # Create any other databases 
 for spec in ${randomSet[@]}; do
-	if [[ ! ${seenDatabases[@]} =~ "${title}.ffn.ndb" ]]; then
-		echo "Making database for ${titleWithoutFolder}"
-		../ncbi-blast-2.10.1+/bin/makeblastdb -in consensus_input/${category}/${spec}/${spec}.txt -out ${spec}/ -dbtype nucl
+	if [[ ! ${seenDatabases[@]} =~ "${spec}" ]]; then
+		echo "Making database for ${spec}"
+		../ncbi-blast-2.10.1+/bin/makeblastdb -in categories/${category}/${spec}/${spec}.txt -out categories/All/${spec}/${spec} -dbtype nucl
+		python splitConsensus.py ${spec}
 	else
-		echo "Database for ${titleWithoutFolder} already exists."
+		echo "Database for ${spec} already exists."
 	fi
-	../ncbi-blast-2.10.1+/bin/makeblastdb -in consensus_input/${category}/${spec}/${spec}.txt -out ${spec}/ -dbtype nucl
 done
 
 for indexA in {0..$((randomSize-1))}; do 
