@@ -451,10 +451,18 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
 
     for index1 in range(0, numDictSeq):
         seq1 = nucDict.values()[index1]
+        try:
+            multiplier1 = 1 + int(nucDict.keys()[index1].split("_")[-1])
+        except Exception:
+            multiplier1 = 1
         with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
             tracker.write(str(numDictSeq - index1) + ".\t")
         for index2 in range(index1 + 1, numDictSeq):
             seq2 = nucDict.values()[index2]
+            try:
+                multiplier2 = 1 + int(nucDict.keys()[index2].split("_")[-1])
+            except Exception:
+                multiplier2 = 1
             for i in range(0, seqLength, 3):
                 mutsInCodon = [0, 0, 0]
                 for pos in range(0, 3):
@@ -465,7 +473,7 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                     if gapsFound[i + pos] == 1:  # Prevents counting any positions with gaps in any sequence
                         continue
                     if seq1[i + pos] != seq2[i + pos]:  # If base pair at pos differs from other...
-                        mutations += 1  # Increases if mutation occurred
+                        mutations += (1 * multiplier1 * multiplier2)  # Increases if mutation occurred
                         mutsInCodon[pos] = 1
                 if i + 3 > seqLength:
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
@@ -557,8 +565,8 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
 
                     # Determine if actual weightings exceed any others found in this codon column and update if so
                     # Division by 6 for the 6 possible paths
-                    synMutations += (totSynFound / 6.0)
-                    nonSynMutations += (totNonSynFound / 6.0)
+                    synMutations += ((totSynFound / 6.0) * multiplier1 * multiplier2)
+                    nonSynMutations += ((totNonSynFound / 6.0) * multiplier1 * multiplier2)
 
                 elif sum(mutsInCodon) == 2:
                     mutPos1 = -1
@@ -591,17 +599,17 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
 
                     # Determine if actual weightings exceed any others found in this codon column and update if so
                     # Division by 2 for the 2 possible paths
-                    synMutations += (totSynFound / 2.0)
-                    nonSynMutations += (totNonSynFound / 2.0)
+                    synMutations += ((totSynFound / 2.0) * multiplier1 * multiplier2)
+                    nonSynMutations += ((totNonSynFound / 2.0) * multiplier1 * multiplier2)
 
                 elif sum(mutsInCodon) == 1:
                     if table[site1] == table[site2]:
-                        synMutations += 1.0
+                        synMutations += (1.0 * multiplier1 * multiplier2)
                     if table[site1] != table[site2]:
-                        nonSynMutations += 1.0
+                        nonSynMutations += (1.0 * multiplier1 * multiplier2)
 
     try:
-        nonMutCopies = int(nucDict.keys()[0].split("_")[-1])
+        nonMutCopies = int(nucDict.keys()[0].split("_")[-2])
     except Exception:
         nonMutCopies = 0
     totalSeq = float(numDictSeq + nonMutCopies)
