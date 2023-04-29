@@ -3,7 +3,7 @@ import sys
 
 species = sys.argv[1]
 specFolder = os.path.join("categories/All/", species)
-outFolder = os.path.join(specFolder, "/Individual_Seqs")
+outFolder = os.path.join(specFolder, "Individual_Seqs")
 
 if not os.path.exists(specFolder):
     print("Species not found in All category!")
