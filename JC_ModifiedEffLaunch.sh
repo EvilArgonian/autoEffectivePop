@@ -41,13 +41,13 @@ for specFolder in ${processSpecies[@]}; do
 		mutRate=$(echo $(python getMutationRate.py ${specLabel}))
 		
 		echo watsThetaS: ${watsThetaS} watsThetaN: ${watsThetaN} watsTheta: ${watsTheta} piS: ${piS} piN: ${piN} pi: ${pi} dendropyTheta: ${dendropyTheta} dendropyPi: ${dendropyPi} mutRate: ${mutRate} specLabel: ${specLabel} unfilteredStrains: ${unfiltered_strains} survivingStrains: ${surviving_strains}
-		python calcEffPopSize.py ${watsThetaS} ${watsThetaN} ${watsTheta} ${piS} ${piN} ${pi} ${dendropyTheta} ${dendropyPi} ${mutRate} ${specLabel} ${unfiltered_strains} ${surviving_strains}
+		python calcEffPopSize.py ${watsThetaS} ${watsThetaN} ${watsTheta} ${piS} ${piN} ${pi} ${dendropyTheta} ${dendropyPi} ${mutRate} ${specLabel}
 		
 		end_time=`date +%s`
 		runtime=$((end_time-start_time))
 		finished=`date +"%Y-%m-%d %T"`
 		echo -e "${specLabel} Process Time (Standard run): " > final_output/${specLabel}/Process_Time.txt
-		echo -e "Unfiltered Strains: ${unfiltered_strains}\tSurviving Strains: ${surviving_strains}\tRuntime: ${runtime} seconds\tFinished: ${finished}" >> final_output/${specLabel}/Process_Time.txt		
+		echo -e "Runtime: ${runtime} seconds\tFinished: ${finished}" >> final_output/${specLabel}/Process_Time.txt		
 	
 	} || { # Catch
 		echo "Some kind of interrupting error occurred while processing ${specFolder##*/}"
