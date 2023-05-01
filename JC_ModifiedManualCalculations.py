@@ -386,6 +386,14 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
     else:
         watsTheta = float(float(actualAllChanges) / harmonicNum) / (seqLength - (leadingGaps + trailingGaps))
 
+    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+        tracker.write("Thetas: Harmonic Number: " + str(harmonicNum) + ". ")
+        tracker.write("Potential Syn: " + str(potentialSynChanges) + ". ")
+        tracker.write("Potential NonSyn: " + str(potentialNonSynChanges) + ". ")
+        tracker.write("Actual Syn: " + str(actualSynChanges) + ". ")
+        tracker.write("Actual NonSyn: " + str(actualNonSynChanges) + ". ")
+        tracker.write("Actual Mutations: " + str(actualAllChanges) + ". ")
+
     # thetaByNumStrains is a dictionary containing all values needed to average watsTheta over all same-num-contributor orthogroups
     # It is organized as such:
     # Key = Number of contributing strains
@@ -424,9 +432,6 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
         outString = "ERROR_ALL_GAPS_" + file.split(".")[0] + "\tPi S: NA" + "\tPi N: NA" + "\tPi: NA" + "\n"
         return outString
 
-    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-        tracker.write("Pis: Not all gaps. ")
-
     potentialSynSites = 0
     potentialNonSynSites = 0
     for i in range(0, seqLength, 3):
@@ -437,17 +442,10 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
             potentialSynSites += sum(synChances[consCodon])
             potentialNonSynSites += (3 - sum(synChances[consCodon]))
 
-    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-        tracker.write("Pis: Potential sites found. ")
-
     # Processing/counting for Pi values
     synMutations = 0.0
     nonSynMutations = 0.0
     mutations = 0.0
-
-    seeOnlyOnce = True
-    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-        tracker.write("\nRemaining indices: ")
 
     for index1 in range(0, numDictSeq):
         seq1 = nucDict.values()[index1]
@@ -455,8 +453,6 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
             multiplier1 = 1 + int(nucDict.keys()[index1].split("_")[-1])
         except Exception:
             multiplier1 = 1
-        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-            tracker.write(str(numDictSeq - index1) + ".\t")
         for index2 in range(index1 + 1, numDictSeq):
             seq2 = nucDict.values()[index2]
             try:
@@ -485,9 +481,6 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                     continue
 
                 if sum(mutsInCodon) == 3:  # This gets ridiculous fast...
-                    if seeOnlyOnce:
-                        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                            tracker.write("3 Mut codon:" + str(site1) + " " + str(site2) + ". ")
                     inBetween12_1 = site1[0] + site2[1:]  # Ttt
                     inBetween13_2 = site1[0:2] + site2[2]  # TTt
                     inBetween25_2 = site1[0] + site2[1] + site1[2]  # TtT
@@ -558,11 +551,6 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                     else:
                         totNonSynFound += 1.0
 
-                    if seeOnlyOnce:
-                        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                            tracker.write("Syn/Non-Syn found (before division: " + str(totSynFound) + " " + str(totNonSynFound) + " ")
-                        seeOnlyOnce = False
-
                     # Determine if actual weightings exceed any others found in this codon column and update if so
                     # Division by 6 for the 6 possible paths
                     synMutations += ((totSynFound / 6.0) * multiplier1 * multiplier2)
@@ -613,8 +601,6 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
     except Exception:
         nonMutCopies = 0
     totalSeq = float(numDictSeq + nonMutCopies)
-    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-        tracker.write("Pis: Total Seq: " + str(totalSeq) + ". ")
     try:
         perComparison = float(1.0 / ((totalSeq * (totalSeq - 1.0)) / 2.0))  # 1 over the number of comparisons
     except Exception:
@@ -626,9 +612,12 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
         with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
             tracker.write("Pis: Multi-Line Per Comparison succeeded. ")
     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-        tracker.write("Pis: Per-comparison: " + str(perComparison) + ". ")
-        tracker.write("Pis: Potential Syn: " + str(potentialSynSites) + ". ")
-        tracker.write("Pis: Potential NonSyn: " + str(potentialNonSynSites) + ". ")
+        tracker.write("\nPis: Per-comparison: " + str(perComparison) + ". ")
+        tracker.write("Potential Syn: " + str(potentialSynSites) + ". ")
+        tracker.write("Potential NonSyn: " + str(potentialNonSynSites) + ". ")
+        tracker.write("Actual Syn: " + str(synMutations) + ". ")
+        tracker.write("Actual NonSyn: " + str(nonSynMutations) + ". ")
+        tracker.write("Actual Mutations: " + str(mutations) + ". ")
     try:
         piS = float(perComparison * synMutations) / potentialSynSites
     except Exception:
@@ -694,14 +683,8 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
 
                 try:
                     currConsensus = currNucDict.values()[0]
-                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                        tracker.write("CP 1 (Strains). ")
                     f.write(calcThetas(currNucDict, currNumStrains, currConsensus, ogFile))
-                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                        tracker.write("CP 2 (Thetas). ")
                     f2.write(calcPis(currNucDict, currNumStrains, currConsensus, ogFile))
-                    with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                        tracker.write("CP 3 (Pis). ")
                     f4.write(">" + ogFile + "\n" + currConsensus + "\n")
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                         tracker.write(ogFile + " processed.\n")
