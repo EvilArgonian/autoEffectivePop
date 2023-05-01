@@ -40,7 +40,7 @@ for specFolder in ${processSpecies[@]}; do
 		dendropyPi=${calculations[7]}
 		mutRate=$(echo $(python getMutationRate.py ${specLabel}))
 		
-		echo watsThetaS: ${watsThetaS} watsThetaN: ${watsThetaN} watsTheta: ${watsTheta} piS: ${piS} piN: ${piN} pi: ${pi} dendropyTheta: ${dendropyTheta} dendropyPi: ${dendropyPi} mutRate: ${mutRate} specLabel: ${specLabel} unfilteredStrains: ${unfiltered_strains} survivingStrains: ${surviving_strains}
+		echo watsThetaS: ${watsThetaS} watsThetaN: ${watsThetaN} watsTheta: ${watsTheta} piS: ${piS} piN: ${piN} pi: ${pi} dendropyTheta: ${dendropyTheta} dendropyPi: ${dendropyPi} mutRate: ${mutRate} specLabel: ${specLabel}
 		python calcEffPopSize.py ${watsThetaS} ${watsThetaN} ${watsTheta} ${piS} ${piN} ${pi} ${dendropyTheta} ${dendropyPi} ${mutRate} ${specLabel}
 		
 		end_time=`date +%s`
