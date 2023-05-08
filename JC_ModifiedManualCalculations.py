@@ -601,16 +601,8 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
     except Exception:
         nonMutCopies = 0
     totalSeq = float(numDictSeq + nonMutCopies)
-    try:
-        perComparison = float(1.0 / ((totalSeq * (totalSeq - 1.0)) / 2.0))  # 1 over the number of comparisons
-    except Exception:
-        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-            tracker.write("Pis: Single Line Per Comparison failed. ")
-        part1 = (totalSeq * (totalSeq - 1))
-        part2 = float(part1) / 2.0
-        perComparison = 1.0 / part2
-        with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-            tracker.write("Pis: Multi-Line Per Comparison succeeded. ")
+    # perComparison = float(1.0 / ((totalSeq * (totalSeq - 1.0)) / 2.0))  # 1 over the number of theoretical comparisons
+    perComparison = float(1.0 / ((numDictSeq * (numDictSeq - 1.0)) / 2.0))  # 1 over the number of comparisons
     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
         tracker.write("\nPis: Per-comparison: " + str(perComparison) + ". ")
         tracker.write("Potential Syn: " + str(potentialSynSites) + ". ")
