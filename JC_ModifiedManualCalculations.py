@@ -602,7 +602,8 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
         nonMutCopies = 0
     totalSeq = float(numDictSeq + nonMutCopies)
     # perComparison = float(1.0 / ((totalSeq * (totalSeq - 1.0)) / 2.0))  # 1 over the number of theoretical comparisons
-    perComparison = float(1.0 / ((numDictSeq * (numDictSeq - 1.0)) / 2.0))  # 1 over the number of comparisons
+    # perComparison = float(1.0 / ((numDictSeq * (numDictSeq - 1.0)) / 2.0))  # 1 over the number of comparisons
+    perComparison = (2.0 * totalSeq) / (totalSeq-1)  # Normalizer
     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
         tracker.write("\nPis: Per-comparison: " + str(perComparison) + ". ")
         tracker.write("Potential Syn: " + str(potentialSynSites) + ". ")
