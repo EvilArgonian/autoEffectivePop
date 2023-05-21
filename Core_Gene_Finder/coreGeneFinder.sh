@@ -20,7 +20,7 @@ echo "Preparing BLAST databases for whole category."
 # Determine what databases already exist (NOTE: All databases are stored in the 'All' category, not other categories, to remove redundancy
 seenDatabases=("Default")
 for spec in ${catSpecies[@]}; do
-	if [[ -f category/All/${spec}/${spec}.ndb ]]; then
+	if [[ -f categories/All/${spec}/${spec}.ndb ]]; then
 		seenDatabases+=("${spec}");
 	fi
 done
@@ -44,7 +44,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	mkdir core_genes/${category}/Run_${runNum}
 	
 	randomSet=()
-	for randomIndex in $(shuf --input-range=0-$(( #catSpecies[@] - 1 )) -n randomSize); do
+	for randomIndex in $(shuf --input-range=0-(#catSpecies[@] - 1) -n randomSize); do
 		echo "Random index: ${randomIndex}"
 		randomSet+=(${catSpecies[${randomIndex}]})
 	done
