@@ -46,7 +46,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		randomSet+=(${catSpecies[${randomIndex}]})
 	done
 	
-	cat ${randomSet[@]} > core_genes/${category}/Run_${runNum}/randomSpecies.txt
+	echo ${randomSet[@]} > core_genes/${category}/Run_${runNum}/randomSpecies.txt
 
 	# Acquire the initial list of genes from first species, which will be filtered down with each comparison to other species without a sufficient match
 	# Note that these genes don't yet have real names; they are labeled arbitrarily
@@ -86,7 +86,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		echo "No core genes survived!"
 	else
 		echo "${#remainingGenes[@]} survived."
-		cat ${passedGenes[@]} > core_genes/${category}/Run_${runNum}/Passed_Genes.txt
+		echo ${passedGenes[@]} > core_genes/${category}/Run_${runNum}/Passed_Genes.txt
 	fi
 done
 
