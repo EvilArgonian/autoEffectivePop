@@ -45,7 +45,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	
 	randomSet=()
 	indexLimit=$(( ${#catSpecies[@]} - 1 ))
-	for randomIndex in $(shuf -i 0-indexLimit -n 1); do
+	for randomIndex in $(shuf -i 0-${indexLimit} -n 1); do
 		echo "Random index: ${randomIndex}"
 		randomSet+=(${catSpecies[${randomIndex}]})
 	done
