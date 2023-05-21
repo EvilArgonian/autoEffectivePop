@@ -79,7 +79,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 			geneFile=core_genes/${category}/Run_${runNum}/Genes/${gene}
 			blastOutFile=${blastOutFolder}/${gene}_vs_${speciesIndex}.txt
 			echo "BLASTing ${geneFile} against ${species} database"
-			../ncbi-blast-2.10.1+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile} 2>/dev/null
+			../ncbi-blast-2.10.1+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile} # 2>/dev/null
 			passFlag=$(echo $(python passGene.py ${blastOutFile} ${geneFile} ${matchE_Threshold}))
 			if [[ ${passFlag}=="Passed!" ]]; then
 				passedGenes+=(${gene})
