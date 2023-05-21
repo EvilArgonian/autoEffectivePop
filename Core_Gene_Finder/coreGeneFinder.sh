@@ -64,7 +64,11 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	
 	
 	blastOutFolder="core_genes/${category}/Run_${runNum}/BLASTs"
+	failOutFolder="core_genes/${category}/Run_${runNum}/Fails"
+	rm -rf ${blastOutFolder}
+	rm -rf ${failOutFolder}
 	mkdir ${blastOutFolder}
+	mkdir ${failOutFolder}
 	# For each other species...
 	for (( speciesIndex=1; speciesIndex<=$((randomSize-1)); speciesIndex++ )); do
 		species=(${randomSet[${speciesIndex}]})
@@ -74,11 +78,13 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		for gene in ${remainingGenes[@]}; do
 			geneFile=core_genes/${category}/Run_${runNum}/Genes/${gene}
 			blastOutFile=${blastOutFolder}/${gene}_vs_${speciesIndex}.txt
+			echo "BLASTing ${geneFile} against ${species} database"
 			../ncbi-blast-2.10.1+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile} 2>/dev/null
 			passFlag=$(echo $(python passGene.py ${blastOutFile} ${geneFile} ${matchE_Threshold}))
 			if [[ ${passFlag}=="Passed!" ]]; then
 				passedGenes+=(${gene})
 			else
+				cp ${geneFile} ${failOutFolder}
 				echo "${gene} ${passFlag}"
 			fi
 		done
