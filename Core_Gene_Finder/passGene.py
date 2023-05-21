@@ -18,18 +18,10 @@ with open(blastFile, "r") as b:
             stored_e_val = e_val
             # stored_line = line
 
-
-if length == 0:
-    print("Failed! Error: Length of 0.")
-    os.rename(geneFile, "FAILED_" + geneFile)
-    exit()
-else:
-    avg_identity = float((length - mismatches)/length)
-
 if stored_e_val <= e_threshold:
     # Do I need to add the matched gene into the query for future runs here?
     # ANSWER: Currently assuming a match of A to B and a match of A to C sufficiently proves a match of B to C
     print("Passed!")
 else:
     os.rename(geneFile, "FAILED_" + geneFile)
-    print("Failed! Similarity below threshold: " + str(avg_identity) + "<" + str(threshold))
+    print("Failed! E-value above threshold: " + str(stored_e_val) + ">" + str(e_threshold))
