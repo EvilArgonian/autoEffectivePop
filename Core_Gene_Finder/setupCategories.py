@@ -71,7 +71,7 @@ def main():
                     os.mkdir(outFolder)
                 # Copy and rename to species name, losing hyphens
                 with open(inConsensusFile, "r") as inF:
-                    with open(outConsensusFile) as outF:
+                    with open(outConsensusFile, "w") as outF:
                         for copyLine in inF.readlines():
                             if not copyLine.startswith(">"):
                                 outF.write(copyLine.replace("-", ""))
