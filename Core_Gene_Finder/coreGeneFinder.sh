@@ -24,6 +24,8 @@ for spec in ${catSpecies[@]}; do
 		seenDatabases+=("${spec}");
 	fi
 done
+echo "Testing Line: ${#seenDatabases[@]}"
+echo "& ${seenDatabases[0]}"
 
 # Create any other databases 
 for spec in ${catSpecies[@]}; do
@@ -42,8 +44,8 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	mkdir core_genes/${category}/Run_${runNum}
 	
 	randomSet=()
-	echo "${#catSpecies[@]}"
-	for randomIndex in $(shuf --input-range=0-$(( ${#catSpecies[@]} - 1 )) -n ${randomSize}); do
+	for randomIndex in $(shuf --input-range=0-$(( #catSpecies[@] - 1 )) -n randomSize); do
+		echo "Random index: ${randomIndex}"
 		randomSet+=(${catSpecies[${randomIndex}]})
 	done
 	if [ ${#randomSet[@]} -eq 0 ]; then
