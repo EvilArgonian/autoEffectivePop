@@ -20,7 +20,7 @@ if not os.path.exists(outFolder):
         for line in consensusFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
-                    with open(outFolder + "/Gene_" + geneNum, "w") as outFile:
+                    with open(outFolder + "/Gene_" + str(geneNum), "w") as outFile:
                         outFile.write(nucSeqTitle + "\n")
                         outFile.write(nucSeqBuilder)
                 nucSeqTitle = line.strip()
