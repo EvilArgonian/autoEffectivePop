@@ -67,7 +67,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	# For each other species...
 	for (( speciesIndex=1; speciesIndex<=$((randomSize-1)); speciesIndex++ )); do
 		species=(${randomSet[${speciesIndex}]})
-		database = "categories/All/${species}/${species}"
+		database="categories/All/${species}/${species}"
 		# For each remaining Gene...
 		passedGenes=()
 		for gene in ${remainingGenes[@]}; do
