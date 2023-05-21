@@ -59,7 +59,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	for geneFile in $(find core_genes/${category}/Run_${runNum}/Genes/ -mindepth 1 -maxdepth 1 -type f); do
 		geneFileWithoutFolder="${geneFile##*/}"
 		gene="${geneFileWithoutFolder%%.txt*}"
-		remainingGenes+=${gene}
+		remainingGenes+=(${gene})
 	done
 	
 	
@@ -76,7 +76,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 			./ncbi-blast-2.10.1+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile}
 			passFlag=$(echo $(python passGene.py ${blastOutFile} ${geneFile} ${matchE_Threshold}))
 			if (( passFlag == "Passed!")); then
-				passedGenes+=${gene}
+				passedGenes+=(${gene})
 			else
 				echo "${gene} ${passFlag}"
 			fi
