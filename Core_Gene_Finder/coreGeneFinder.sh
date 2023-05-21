@@ -44,7 +44,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	mkdir core_genes/${category}/Run_${runNum}
 	
 	randomSet=()
-	indexLimit=$((#catSpecies[@] - 1))
+	indexLimit=$(( ${#catSpecies[@]} - 1 ))
 	for randomIndex in $(shuf -i 0-indexLimit -n 1); do
 		echo "Random index: ${randomIndex}"
 		randomSet+=(${catSpecies[${randomIndex}]})
