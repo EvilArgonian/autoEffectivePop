@@ -4,7 +4,7 @@ IFS=$'\n\t'
 
 category=${1} # The name of the category being processed, as it appears in categories directory
 repeatRuns=${2} # The amount of repeat runs to perform, of which the genes that are selected in each of these runs will be considered valid
-matchThreshold=${3} # During BLAST evaluations, the similarity threshold that must be beaten to count as a match and thus keep the gene in the core set. A decimal between 0 and 1, such as '0.9'
+matchE_Threshold=${3} # During BLAST evaluations, the e_val threshold that must be beaten (lower is more matching) to count as a match and thus keep the gene in the core set. A decimal between 0 and 1, such as '0.1'
 
 echo "Launching Core Gene Finding for ${category}!"
 catSpecies=()
@@ -69,8 +69,8 @@ for runNum in {1..${repeatRuns}}; do
 		for gene in ${remainingGenes[@]}; do
 			geneFile=core_genes/${category}/Run_${runNum}/Genes/${gene}
 			blastOutFile=${blastOutFolder}/${gene}_vs_${speciesIndex}.txt
-			./ncbi-blast-2.10.1+/bin/tblastx -task megablast -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile}
-			passFlag=$(echo $(python passGene.py ${blastOutFile} ${geneFile} ${matchThreshold}))
+			./ncbi-blast-2.10.1+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile}
+			passFlag=$(echo $(python passGene.py ${blastOutFile} ${geneFile} ${matchE_Threshold}))
 			if (( passFlag == "Passed!")); then
 				passedGenes+=${gene}
 			else
@@ -86,6 +86,7 @@ for runNum in {1..${repeatRuns}}; do
 		echo "No core genes survived!"
 	else
 		echo "${#remainingGenes[@]} survived."
+		cat ${passedGenes[@]} > core_genes/${category}/Run_${runNum}/Passed_Genes.txt
 	fi
 done
 
