@@ -23,5 +23,4 @@ if stored_e_val <= e_threshold:
     # ANSWER: Currently assuming a match of A to B and a match of A to C sufficiently proves a match of B to C
     print("Passed!")
 else:
-    os.rename(geneFile, "FAILED_" + geneFile)
     print("Failed! E-value above threshold: " + str(stored_e_val) + ">" + str(e_threshold))
