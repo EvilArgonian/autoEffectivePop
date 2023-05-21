@@ -17,7 +17,7 @@ with open(blastFile, "r") as b:
         if e_val < stored_e_val:
             stored_e_val = e_val
             # stored_line = line
-            
+
 
 if length == 0:
     print("Failed! Error: Length of 0.")

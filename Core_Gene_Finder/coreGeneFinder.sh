@@ -14,7 +14,7 @@ for specFile in $(find categories/${category} -mindepth 1 -maxdepth 1 -type d); 
 		catSpecies+=(${spec})
 	done
 catSize=${#catSpecies[@]}
-randomSize = $((catSize * (9/10))) # 90% of initial size, rounded down
+randomSize=$((catSize * (9/10))) # 90% of initial size, rounded down
 echo "${catSize} species in the category; random ${randomSize} in each run."
 echo "Preparing BLAST databases for whole category."
 # Determine what databases already exist (NOTE: All databases are stored in the 'All' category, not other categories, to remove redundancy
