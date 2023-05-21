@@ -41,7 +41,7 @@ for runNum in {1..${repeatRuns}}; do
 	echo "Launching run ${runNum} out of ${repeatRuns}!"
 	mkdir core_genes/${category}/Run_${runNum}
 	
-	randomSet = ()
+	randomSet=()
 	for randomIndex in $(shuf --input-range=0-$(( ${#catSpecies[*]} - 1 )) -n ${randomSize}); do
 		randomSet+=(${catSpecies[${randomIndex}]})
 	done
