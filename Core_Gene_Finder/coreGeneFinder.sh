@@ -64,6 +64,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	
 	
 	blastOutFolder="core_genes/${category}/Run_${runNum}/BLASTs"
+	mkdir ${blastOutFolder}
 	# For each other species...
 	for (( speciesIndex=1; speciesIndex<=$((randomSize-1)); speciesIndex++ )); do
 		species=(${randomSet[${speciesIndex}]})
