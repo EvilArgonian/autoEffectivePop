@@ -13,11 +13,30 @@ def main():
     # Adding force argument as
     parser.add_argument('-f', '--force', action='store_true',
                         help='Flag to indicate that the setup should clear and rewrite the input.')
+    # Adding dehyphenate argument as
+    parser.add_argument('-dh', '--dehyphenate', action='store_true',
+                        help='Flag to indicate using the secondary function to remove all hyphens from already otherwise setup categories.')
     # Read arguments from command line
     args = parser.parse_args()
 
     if not os.path.exists("categories/"):
         os.mkdir("categories/")
+
+    if args.dehyphenate:
+        for category in os.listdir("categories/"):
+            for species in os.listdir(os.path.join("categories/", category)):
+                for fileName in os.listdir(os.path.join("categories/", category, species)):
+                    if fileName.endswith(".txt"):
+                        with open(os.path.join("categories/", category, species, fileName), "w+") as f:
+                            replaceStr = ""
+                            for line in f.readlines():
+                                if not line.startswith(">"):
+                                    replaceStr += line.replace("-", "")
+                                else:
+                                    replaceStr += line
+                            f.truncate(0)
+                            f.write(replaceStr)
+        exit()
 
     missingConsensus = []
     for line in args.category_reference.readlines():
