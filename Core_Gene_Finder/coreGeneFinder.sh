@@ -37,7 +37,7 @@ done
 
 rm -rf core_genes/${category}/
 mkdir core_genes/${category}/
-for runNum in {1..${repeatRuns}}; do
+for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	echo "Launching run ${runNum} out of ${repeatRuns}!"
 	mkdir core_genes/${category}/Run_${runNum}
 	
@@ -61,7 +61,7 @@ for runNum in {1..${repeatRuns}}; do
 	
 	blastOutFolder = "core_genes/${category}/Run_${runNum}/BLASTs/"
 	# For each other species...
-	for speciesIndex in {1..$((randomSize-1))}; do 
+	for (( speciesIndex=1; speciesIndex<=$((randomSize-1)); speciesIndex++ )); do
 		species=(${randomSet[${speciesIndex}]})
 		database = "categories/All/${species}/${species}"
 		# For each remaining Gene...
