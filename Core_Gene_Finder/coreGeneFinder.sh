@@ -42,11 +42,15 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	mkdir core_genes/${category}/Run_${runNum}
 	
 	randomSet=()
-	for randomIndex in $(shuf --input-range=0-$(( ${#catSpecies[*]} - 1 )) -n ${randomSize}); do
+	echo "${#catSpecies[@]}"
+	for randomIndex in $(shuf --input-range=0-$(( ${#catSpecies[@]} - 1 )) -n ${randomSize}); do
 		randomSet+=(${catSpecies[${randomIndex}]})
 	done
+	if [ ${#randomSet[@]} -eq 0 ]; then
+		echo "Random Set acquisition failed!"
+	fi
 	
-	echo ${randomSet[@]} > core_genes/${category}/Run_${runNum}/randomSpecies.txt
+	cat ${randomSet[@]} > core_genes/${category}/Run_${runNum}/randomSpecies.txt
 
 	# Acquire the initial list of genes from first species, which will be filtered down with each comparison to other species without a sufficient match
 	# Note that these genes don't yet have real names; they are labeled arbitrarily
@@ -86,7 +90,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		echo "No core genes survived!"
 	else
 		echo "${#remainingGenes[@]} survived."
-		echo ${passedGenes[@]} > core_genes/${category}/Run_${runNum}/Passed_Genes.txt
+		cat ${passedGenes[@]} > core_genes/${category}/Run_${runNum}/Passed_Genes.txt
 	fi
 done
 
