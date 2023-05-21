@@ -24,8 +24,6 @@ for spec in ${catSpecies[@]}; do
 		seenDatabases+=("${spec}");
 	fi
 done
-echo "Testing Line: ${#seenDatabases[@]}"
-echo "& ${seenDatabases[0]}"
 
 # Create any other databases 
 for spec in ${catSpecies[@]}; do
@@ -46,7 +44,6 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	randomSet=()
 	indexLimit=$(( ${#catSpecies[@]} - 1 ))
 	for randomIndex in $(shuf -i 0-${indexLimit} -n ${randomSize}); do
-		echo "Random index: ${randomIndex}"
 		randomSet+=(${catSpecies[${randomIndex}]})
 	done
 	if [ ${#randomSet[@]} -eq 0 ]; then
