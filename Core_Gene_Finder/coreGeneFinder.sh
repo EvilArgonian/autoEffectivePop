@@ -63,7 +63,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	done
 	
 	
-	blastOutFolder = "core_genes/${category}/Run_${runNum}/BLASTs/"
+	blastOutFolder="core_genes/${category}/Run_${runNum}/BLASTs/"
 	# For each other species...
 	for (( speciesIndex=1; speciesIndex<=$((randomSize-1)); speciesIndex++ )); do
 		species=(${randomSet[${speciesIndex}]})
