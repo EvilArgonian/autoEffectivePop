@@ -677,7 +677,7 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                 try:
                     currConsensus = currNucDict.values()[0]
                     f.write(calcThetas(currNucDict, currNumStrains, currConsensus, ogFile))
-                    f2.write(calcPis(currNucDict, currNumStrains, currConsensus, ogFile))
+                    # f2.write(calcPis(currNucDict, currNumStrains, currConsensus, ogFile))
                     f4.write(">" + ogFile + "\n" + currConsensus + "\n")
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                         tracker.write(ogFile + " processed.\n")
