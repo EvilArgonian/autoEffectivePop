@@ -55,13 +55,6 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	# Acquire the initial list of genes from first species, which will be filtered down with each comparison to other species without a sufficient match
 	# Note that these genes don't yet have real names; they are labeled arbitrarily
 	python initialGeneSetup.py ${category} ${randomSet[0]} ${runNum}
-	remainingGenes=()
-	for geneFile in $(find core_genes/${category}/Run_${runNum}/Genes/ -mindepth 1 -maxdepth 1 -type f); do
-		geneFileWithoutFolder="${geneFile##*/}"
-		gene="${geneFileWithoutFolder%%.txt*}"
-		remainingGenes+=(${gene})
-	done
-	
 	
 	blastOutFolder="core_genes/${category}/Run_${runNum}/BLASTs"
 	failOutFolder="core_genes/${category}/Run_${runNum}/Fails"
@@ -69,6 +62,17 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	rm -rf ${failOutFolder}
 	mkdir ${blastOutFolder}
 	mkdir ${failOutFolder}
+	
+	remainingGenes=()
+	for geneFile in $(find core_genes/${category}/Run_${runNum}/Genes/ -mindepth 1 -maxdepth 1 -type f); do
+		geneFileWithoutFolder="${geneFile##*/}"
+		arbitraryGene="${geneFileWithoutFolder%%.txt*}"
+		blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
+		../ncbi-blast-2.10.1+/bin/blastx -query ${geneFile} -db nr -remote -outfmt 6 -num_alignments 1 >>  ${blastOutFile}
+		gene=$(echo $(python establishGeneName.py ${geneFile} ${blastOutFile}))
+		remainingGenes+=(${gene})
+	done
+	
 	# For each other species...
 	for (( speciesIndex=1; speciesIndex<=$((randomSize-1)); speciesIndex++ )); do
 		species=(${randomSet[${speciesIndex}]})
@@ -77,10 +81,10 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		passedGenes=()
 		for gene in ${remainingGenes[@]}; do
 			geneFile=core_genes/${category}/Run_${runNum}/Genes/${gene}
-			blastOutFile=${blastOutFolder}/${gene}_vs_${speciesIndex}.txt
-			echo "BLASTing ${geneFile} against ${species} database"
-			../ncbi-blast-2.10.1+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile} # 2>/dev/null
-			passFlag=$(echo $(python passGene.py ${blastOutFile} ${geneFile} ${matchE_Threshold}))
+			blastOutFile=${blastOutFolder}/${gene}_vs_${species}.txt
+			# echo "BLASTing ${geneFile} against ${species} database"
+			../ncbi-blast-2.10.1+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile} 2>/dev/null
+			passFlag=$(echo $(python passGene.py ${geneFile} ${blastOutFile} ${matchE_Threshold}))
 			if [[ ${passFlag}=="Passed!" ]]; then
 				passedGenes+=(${gene})
 			else
@@ -98,7 +102,8 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	else
 		echo "${#remainingGenes[@]} survived."
 		echo ${passedGenes[@]} > core_genes/${category}/Run_${runNum}/Passed_Genes.txt
+		# Possibly tweak output here to non-arbitrarily name the
 	fi
 done
 
-# Logic for comparing runs goes here
+# Run Comparison

@@ -1,12 +1,11 @@
 import sys
-import os
 
-blastFile = sys.argv[1]
-geneFile = sys.argv[2]
+geneFile = sys.argv[1]
+blastFile = sys.argv[2]
 e_threshold = float(sys.argv[3])
 
-mismatches = 0
-length = 0
+# mismatches = 0
+# length = 0
 with open(blastFile, "r") as b:
     stored_e_val = 99999.0
     # stored_line = ""
