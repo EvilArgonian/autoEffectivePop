@@ -69,6 +69,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		arbitraryGene="${geneFileWithoutFolder%%.txt*}"
 		blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
 		../ncbi-blast-2.10.1+/bin/blastx -query ${geneFile} -db nr -remote -outfmt 6 -num_alignments 1 >>  ${blastOutFile}
+		# Need sleep here? What frequency of attempts to query NCBI won't trigger lockout?
 		gene=$(echo $(python establishGeneName.py ${geneFile} ${blastOutFile}))
 		remainingGenes+=(${gene})
 	done
@@ -101,9 +102,9 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		echo "No core genes survived!"
 	else
 		echo "${#remainingGenes[@]} survived."
-		echo ${passedGenes[@]} > core_genes/${category}/Run_${runNum}/Passed_Genes.txt
-		# Possibly tweak output here to non-arbitrarily name the
+		printf '%s\n' "${passedGenes[@]}" > core_genes/${category}/Run_${runNum}/Passed_Genes.txt
 	fi
 done
 
 # Run Comparison
+python findSharedCoreGenes.py ${category} core_genes/${category}/Core_Genes.txt
