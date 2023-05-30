@@ -69,7 +69,6 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		arbitraryGene="${geneFileWithoutFolder%%.txt*}"
 		blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
 		../ncbi-blast-2.10.1+/bin/blastx -query ${geneFile} -db /home/blastdb/nr -outfmt 6 -num_alignments 1 >>  ${blastOutFile} # -remote?
-		sleep 1
 		# What frequency of attempts to query NCBI is appropriate?
 		gene=$(echo $(python establishGeneName.py ${geneFile} ${blastOutFile}))
 		remainingGenes+=(${gene})
