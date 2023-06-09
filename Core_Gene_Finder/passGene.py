@@ -2,7 +2,11 @@ import sys
 
 geneFile = sys.argv[1]
 blastFile = sys.argv[2]
-e_threshold = float(sys.argv[3])
+try:
+    e_threshold = float(sys.argv[3])
+except Exception:
+    # e_threshold = 0.1 # Defaults to 0.1
+    print("Failed! E-value threshold not parsed correctly.")
 
 # mismatches = 0
 # length = 0
