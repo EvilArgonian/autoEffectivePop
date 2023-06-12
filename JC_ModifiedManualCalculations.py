@@ -192,10 +192,10 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
                     if consensusCodon[pos] != actualCodon[pos]:
                         mutsInCodon[pos] = 1
                         try:
-                            strainName = re.search("\[strain=(.+?)\]", nucDict.keys()[seqIndex]).group(1)
+                            strainName = re.search("\[strain=(.+?)\]", list(nucDict.keys())[seqIndex]).group(1)
                         except Exception:
                             strainName = "Strain Name Not Found"
-                        geneName = nucDict.keys()[seqIndex].split(" ")[0]
+                        geneName = list(nucDict.keys())[seqIndex].split(" ")[0]
                         if synCheck:
                             # Technically could be inaccurate in codons with 2 or 3 mutations; minor difference.
                             synStatus = "S" if table[consensusCodon] == table[actualCodon] else "N"
@@ -208,7 +208,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
                         twoRight = "END" if i + pos + 2 >= seqLength - trailingGaps else ancestralSeq[i + pos + 2]
                         adjPos = "InSeq_" + str(i + pos)
                         try:
-                            actualPos = re.search("\[location=(.+?)\]", nucDict.keys()[seqIndex]).group(1)
+                            actualPos = re.search("\[location=(.+?)\]", list(nucDict.keys())[seqIndex]).group(1)
                             if "complement" in actualPos:
                                 twoLeft = getComplement(twoLeft)
                                 oneLeft = getComplement(oneLeft)
@@ -366,7 +366,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
 
     # Calculate various statistics # 'float' everywhere because thanks python
     try:
-        nonMutCopies = int(nucDict.keys()[0].split("_")[-3])
+        nonMutCopies = int(list(nucDict.keys())[0].split("_")[-3])
     except Exception:
         nonMutCopies = 0
     # harmonicNum = harmonic(numDictSeq + nonMutCopies)  # Harmonic number
@@ -450,13 +450,13 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
     for index1 in range(0, numDictSeq):
         seq1 = nucDict.values()[index1]
         try:
-            multiplier1 = 1 + int(nucDict.keys()[index1].split("_")[-1])
+            multiplier1 = 1 + int(list(nucDict.keys())[index1].split("_")[-1])
         except Exception:
             multiplier1 = 1
         for index2 in range(index1 + 1, numDictSeq):
             seq2 = nucDict.values()[index2]
             try:
-                multiplier2 = 1 + int(nucDict.keys()[index2].split("_")[-1])
+                multiplier2 = 1 + int(list(nucDict.keys())[index2].split("_")[-1])
             except Exception:
                 multiplier2 = 1
             for i in range(0, seqLength, 3):
@@ -597,7 +597,7 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                         nonSynMutations += (1.0 * multiplier1 * multiplier2)
 
     try:
-        nonMutCopies = int(nucDict.keys()[0].split("_")[-3])
+        nonMutCopies = int(list(nucDict.keys())[0].split("_")[-3])
     except Exception:
         nonMutCopies = 0
     totalSeq = float(numDictSeq + nonMutCopies)
