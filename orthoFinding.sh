@@ -17,16 +17,23 @@ for filename in $(find temp/${specLabel}/Nucleotide -mindepth 1 -maxdepth 1 -typ
 done
 
 rm -rf ${resultsFolder}
+
+echo "Running Orthofinder"
+
 # Run Orthofinder
 ./OrthoFinder/orthofinder -f temp/${specLabel}/Nucleotide -og -d -S blast_nucl -A muscle -M msa
 mv ${resultsFolder} temp/${specLabel}/Nucleotide/OrthoFinder/Results
 resultsFolder="temp/${specLabel}/Nucleotide/OrthoFinder/Results"
+
+echo "Gathering Single Copy Orthogroup Headers"
 
 # Interpret non-paralogous (single-copy) orthogroups from Orthofinder results
 python gatherSingleCopyOrthogroups.py ${resultsFolder} temp/${specLabel}/Nucleotide/single_copy_og.txt
 
 # Removal of orthofinder files once completed
 rm -rf temp/${specLabel}/Nucleotide/Orthofinder
+
+echo "Gathering Orthogroup Sequences"
 
 # Build Orthogroup files from ungrouped sequence files
 mkdir -p temp/${specLabel}/muscle_input/
