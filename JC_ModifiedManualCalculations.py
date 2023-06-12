@@ -681,9 +681,10 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                     f4.write(">" + ogFile + "\n" + currConsensus + "\n")
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                         tracker.write(ogFile + " processed.\n")
-                except Exception:
+                except Exception as e:
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                         tracker.write("ERROR: " + ogFile + " failed to process.\n")
+                        tracker.write(e)
 
 if len(warnings) > 0:
     with open("final_output/" + specName + "/Warnings.txt", "w") as warn_file:
