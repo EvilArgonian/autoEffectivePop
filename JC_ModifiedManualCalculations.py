@@ -366,7 +366,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
 
     # Calculate various statistics # 'float' everywhere because thanks python
     try:
-        nonMutCopies = int(nucDict.keys()[0].split("_")[-2])
+        nonMutCopies = int(nucDict.keys()[0].split("_")[-3])
     except Exception:
         nonMutCopies = 0
     # harmonicNum = harmonic(numDictSeq + nonMutCopies)  # Harmonic number
@@ -597,7 +597,7 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                         nonSynMutations += (1.0 * multiplier1 * multiplier2)
 
     try:
-        nonMutCopies = int(nucDict.keys()[0].split("_")[-2])
+        nonMutCopies = int(nucDict.keys()[0].split("_")[-3])
     except Exception:
         nonMutCopies = 0
     totalSeq = float(numDictSeq + nonMutCopies)
