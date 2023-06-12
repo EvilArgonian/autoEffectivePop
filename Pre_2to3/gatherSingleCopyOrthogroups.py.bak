@@ -17,7 +17,7 @@ for line in paralogFile:
             break
     if linePasses:
         numNonParalogs += 1
-        print(("Found " + str(numNonParalogs) + " single-copy orthogroups so far, out of " + str(numLines) + " lines."))
+        print("Found " + str(numNonParalogs) + " single-copy orthogroups so far, out of " + str(numLines) + " lines.")
         nonParalogs.append(line)
 
 with open(outFile, 'w') as f:

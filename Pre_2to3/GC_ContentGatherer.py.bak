@@ -10,9 +10,9 @@ with open("GatheredGC_Content.txt", "w+") as outFile:
             if os.path.isdir(speciesFolder):
                 gcFile = os.path.join(speciesFolder, "GC_Content.txt")
                 if os.path.isfile(gcFile):
-                    print(("Found " + gcFile))
+                    print("Found " + gcFile)
                     with open(gcFile, "r") as readFile:
                         outFile.write(readFile.readlines()[0])
                 else:
-                    print(("Did not find " + gcFile))
+                    print("Did not find " + gcFile)
                     badOutFile.write(filename + "\n")

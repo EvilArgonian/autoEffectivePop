@@ -28,5 +28,5 @@ with open("All_Successful_Results.txt", "w") as outFile:
             else:
                 countFails += 1
 
-print(("Successes: " + str(countSuccesses) + "\nFails: " + str(countFails) + "\nFailure Rate: " + str(countFails / float(countSuccesses + countFails))))
+print("Successes: " + str(countSuccesses) + "\nFails: " + str(countFails) + "\nFailure Rate: " + str(countFails / float(countSuccesses + countFails)))
 

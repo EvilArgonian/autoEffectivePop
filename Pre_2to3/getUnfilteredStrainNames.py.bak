@@ -16,12 +16,12 @@ if len(sys.argv) > 1:
                 if os.path.isdir(os.path.join(speciesInputFolder, strainFolder)):
                     strainList.append(strainFolder)
             if len(strainList) == 0:
-                print(("No unfiltered input strains found in " + speciesFolder))
+                print("No unfiltered input strains found in " + speciesFolder)
             for strain in strainList:
                 strainFile.write(strain + "\n")
-            print(("Unfiltered strains found in " + speciesFolder + ": " + str(len(strainList))))
+            print("Unfiltered strains found in " + speciesFolder + ": " + str(len(strainList)))
     else:
-        print(("Unrecognized species folder: " + speciesFolder))
+        print("Unrecognized species folder: " + speciesFolder)
     exit(0)
 
 with open("speciesUnfilteredStrainTable.txt", "w") as tableFile:
@@ -36,7 +36,7 @@ with open("speciesUnfilteredStrainTable.txt", "w") as tableFile:
                         if os.path.isdir(os.path.join(speciesInputFolder, strainFolder)):
                             strainList.append(strainFolder)
                     if len(strainList) == 0:
-                        print(("No unfiltered input strains found in " + speciesFolder))
+                        print("No unfiltered input strains found in " + speciesFolder)
                         continue
                     for strain in strainList:
                         strainFile.write(strain + "\n")
@@ -49,5 +49,5 @@ with open("speciesUnfilteredStrainTable.txt", "w") as tableFile:
                             lessEq400.write(speciesFolder + "\t" + str(len(strainList)) + "\n")
                 except Exception:
                     continue
-        print(("Completed searching " + speciesFolder))
+        print("Completed searching " + speciesFolder)
 print("All done!")

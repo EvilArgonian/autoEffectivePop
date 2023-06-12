@@ -6,7 +6,7 @@ indexFile = sys.argv[2]
 errorFile = sys.argv[3]
 
 if not os.path.exists(inFile):
-    print(("No translatable files for given input: " + inFile))
+    print("No translatable files for given input: " + inFile)
     sys.exit()
 
 seenList = []
@@ -41,5 +41,5 @@ if conflicts > 0:
 ind.close()
 inp.close()
 
-print(("Completed indexing of " + inFile + " with " + str(conflicts) + " conflicts in " + str(countSeq) + " sequences."))
+print("Completed indexing of " + inFile + " with " + str(conflicts) + " conflicts in " + str(countSeq) + " sequences.")
 

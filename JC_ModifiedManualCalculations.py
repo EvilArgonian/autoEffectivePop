@@ -129,8 +129,8 @@ def harmonic(n):
 
 def calcThetas(nucDict, numStrains, ancestralSeq, file):
     # Processing/counting for Watterson's Theta & Theta S values
-    numDictSeq = len(nucDict.keys())
-    seqLength = len(nucDict.values()[0])
+    numDictSeq = len(list(nucDict.keys()))
+    seqLength = len(list(nucDict.values())[0])
 
     # Create a pair of forward and backward facing loops to determine the longest leading/trailing gap sequences;
     # Remove all positions within these from any calculations (no changes counted, not counted against length)
@@ -139,7 +139,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
     for pos in range(0, seqLength):
         for seqIndex in range(0, numDictSeq):
             if not gapsEnded[seqIndex]:
-                if nucDict.values()[seqIndex][pos] == "_" or nucDict.values()[seqIndex][pos] == "-":
+                if list(nucDict.values())[seqIndex][pos] == "_" or list(nucDict.values())[seqIndex][pos] == "-":
                     gapLengths[seqIndex] += 1.0
                 else:
                     gapsEnded[seqIndex] = True
@@ -152,7 +152,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
     for pos in range(seqLength - 1, -1, -1):
         for seqIndex in range(0, numDictSeq):
             if not gapsEnded[seqIndex]:
-                if nucDict.values()[seqIndex][pos] == "_" or nucDict.values()[seqIndex][pos] == "-":
+                if list(nucDict.values())[seqIndex][pos] == "_" or list(nucDict.values())[seqIndex][pos] == "-":
                     gapLengths[seqIndex] += 1.0
                 else:
                     gapsEnded[seqIndex] = True
@@ -174,16 +174,16 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
             foundSynSite = 0.0
             foundNonSynSite = 0.0
             foundSegSite = [False, False, False]
-            if consensusCodon in synChances.keys():
+            if consensusCodon in list(synChances.keys()):
                 potentialSynChanges += sum(synChances[consensusCodon])
                 potentialNonSynChanges += (3 - sum(synChances[consensusCodon]))
             for seqIndex in range(1, numDictSeq):
-                actualCodon = nucDict.values()[seqIndex][i:i + 3]
+                actualCodon = list(nucDict.values())[seqIndex][i:i + 3]
                 mutsInCodon = [0, 0, 0]
                 for pos in range(0, 3):
                     if i + pos < leadingGaps or i + pos >= seqLength - trailingGaps:
                         continue  # Ignore positions within the leading and trailing gap sections
-                    if consensusCodon not in table.keys() or actualCodon not in table.keys():
+                    if consensusCodon not in list(table.keys()) or actualCodon not in list(table.keys()):
                         synCheck = False
                     else:
                         synCheck = True
@@ -224,18 +224,18 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
                             except ValueError:
                                 adjPos = "Err " + actualPos + "+" + str(i + pos)
                             callOutput = specName + ", " + strainName + ", " + geneName + ", " + synStatus + ", " + adjPos + ", " + twoLeft + ", " + oneLeft + ", " + middle + ", " + \
-                                         nucDict.values()[seqIndex][i + pos] + ", " + oneRight + ", " + twoRight + "\n"
+                                         list(nucDict.values())[seqIndex][i + pos] + ", " + oneRight + ", " + twoRight + "\n"
                             mutCalls.write(callOutput)
                         except Exception:
                             callOutput = specName + ", " + strainName + ", " + geneName + ", " + synStatus + ", " + adjPos + ", " + twoLeft + ", " + oneLeft + ", " + middle + ", " + \
-                                         nucDict.values()[seqIndex][i + pos] + ", " + oneRight + ", " + twoRight + "\n"
+                                         list(nucDict.values())[seqIndex][i + pos] + ", " + oneRight + ", " + twoRight + "\n"
                             mutCalls.write(callOutput)
                         if not foundSegSite[pos]:
                             actualAllChanges += 1
                             foundSegSite[pos] = True  # Comment out if counting multiple in one column
                 if i < leadingGaps or i >= seqLength - trailingGaps:
                     continue  # Ignore positions within the leading and trailing gap sections
-                if consensusCodon not in table.keys() or actualCodon not in table.keys():
+                if consensusCodon not in list(table.keys()) or actualCodon not in list(table.keys()):
                     continue
                 if sum(mutsInCodon) == 3:  # This gets ridiculous fast...
                     inBetween12_1 = actualCodon[0] + consensusCodon[1:]  # Ttt
@@ -402,7 +402,7 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
     # Item 1 = The cumulative value of each orthogroups' watsThetaN (for all orthogroups belonging to this key)
     # Item 2 = The cumulative value of each orthogroups' watsTheta (for all orthogroups belonging to this key)
     # Item 3 = The number of orthogroups seen belonging to this key (the number which the cumulative values are divided by)
-    if numStrains not in thetaByNumStrains.keys():
+    if numStrains not in list(thetaByNumStrains.keys()):
         thetaByNumStrains.update(
             {numStrains: [watsThetaS, watsThetaN, watsTheta, 1]})  # Initialize the key:value for newly encountered key
     else:
@@ -418,14 +418,14 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
 
 
 def calcPis(nucDict, numStrains, ancestralSeq, file):
-    numDictSeq = len(nucDict.keys())
-    seqLength = len(nucDict.values()[0])
+    numDictSeq = len(list(nucDict.keys()))
+    seqLength = len(list(nucDict.values())[0])
 
     # All positions with gaps in any sequence are to be discounted
     gapsFound = [0] * seqLength
     for pos in range(0, seqLength):
         for seqIndex in range(0, numDictSeq):
-            if nucDict.values()[seqIndex][pos] == "_" or nucDict.values()[seqIndex][pos] == "-":
+            if list(nucDict.values())[seqIndex][pos] == "_" or list(nucDict.values())[seqIndex][pos] == "-":
                 gapsFound[pos] = 1
                 break
     if all(gapsFound):
@@ -438,7 +438,7 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
         if i + 3 > seqLength:
             continue  # At end of loop with remainder (shouldn't occur in perfect coding sequences)
         consCodon = ancestralSeq[i:i + 3]
-        if consCodon in synChances.keys():
+        if consCodon in list(synChances.keys()):
             potentialSynSites += sum(synChances[consCodon])
             potentialNonSynSites += (3 - sum(synChances[consCodon]))
 
@@ -448,13 +448,13 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
     mutations = 0.0
 
     for index1 in range(0, numDictSeq):
-        seq1 = nucDict.values()[index1]
+        seq1 = list(nucDict.values())[index1]
         try:
             multiplier1 = 1 + int(list(nucDict.keys())[index1].split("_")[-1])
         except Exception:
             multiplier1 = 1
         for index2 in range(index1 + 1, numDictSeq):
-            seq2 = nucDict.values()[index2]
+            seq2 = list(nucDict.values())[index2]
             try:
                 multiplier2 = 1 + int(list(nucDict.keys())[index2].split("_")[-1])
             except Exception:
@@ -477,7 +477,7 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
                     continue  # At end of loop with remainder (shouldn't occur in perfect coding sequences)
                 site1 = seq1[i:i + 3]
                 site2 = seq2[i:i + 3]
-                if site1 not in table.keys() or site2 not in table.keys():
+                if site1 not in list(table.keys()) or site2 not in list(table.keys()):
                     continue
 
                 if sum(mutsInCodon) == 3:  # This gets ridiculous fast...
@@ -629,7 +629,7 @@ def calcPis(nucDict, numStrains, ancestralSeq, file):
     # Item 1 = The cumulative value of each orthogroups' piN (for all orthogroups belonging to this key)
     # Item 2 = The cumulative value of each orthogroups' pi (for all orthogroups belonging to this key)
     # Item 3 = The number of orthogroups seen belonging to this key (the number which the cumulative values are divided by)
-    if numStrains not in piByNumStrains.keys():
+    if numStrains not in list(piByNumStrains.keys()):
         piByNumStrains.update(
             {numStrains: [float(piS), float(piN), float(pi), 1]})  # Initialize the key:value for newly encountered key
     else:
@@ -675,7 +675,7 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                     currNumStrains = "-1"  # Indicates that strain number is not being considered as a factor
 
                 try:
-                    currConsensus = currNucDict.values()[0]
+                    currConsensus = list(currNucDict.values())[0]
                     f.write(calcThetas(currNucDict, currNumStrains, currConsensus, ogFile))
                     # f2.write(calcPis(currNucDict, currNumStrains, currConsensus, ogFile))
                     f4.write(">" + ogFile + "\n" + currConsensus + "\n")
@@ -728,7 +728,7 @@ allCountPis = 0
 # Item 2 = The cumulative value of each orthogroups' x (for all orthogroups belonging to this key)
 # Item 3 = The number of orthogroups seen belonging to this key (the number which the cumulative values are divided by)
 
-for key in thetaByNumStrains.keys():
+for key in list(thetaByNumStrains.keys()):
     # Acquires average thetas of all groups with the same number of contributing strains (S for silent, N for non-silent, no mark for no regard)
     valueTheta = thetaByNumStrains.get(key)
     avgForNumThetaS = float(valueTheta[0]) / valueTheta[3]
@@ -740,7 +740,7 @@ for key in thetaByNumStrains.keys():
 
     allCountThetas += 1
 
-for key in piByNumStrains.keys():
+for key in list(piByNumStrains.keys()):
     # Acquires average pis of all groups with the same number of contributing strains (S for silent, N for non-silent, no mark for no regard)
     valuePi = piByNumStrains.get(key)
     avgForNumPiS = float(valuePi[0]) / valuePi[3]
@@ -760,6 +760,6 @@ avgPiS = float(sumOfAllAvgPiS) / allCountPis if allCountPis != 0 else -1
 avgPiN = float(sumOfAllAvgPiN) / allCountPis if allCountPis != 0 else -1
 avgPi = float(sumOfAllAvgPi) / allCountPis if allCountPis != 0 else -1
 
-print(str(avgWatsThetaS) + "," + str(avgWatsThetaN) + "," + str(avgWatsTheta)
+print((str(avgWatsThetaS) + "," + str(avgWatsThetaN) + "," + str(avgWatsTheta)
       + "," + str(avgPiS) + "," + str(avgPiN) + "," + str(avgPi)
-      + "," + str(-1) + "," + str(-1))
+      + "," + str(-1) + "," + str(-1)))

@@ -62,8 +62,8 @@ with open("final_output/" + specName + "/Results.txt", "w") as f1:
         f1.write(outStr)
         f2.write(outStr)
 
-print((specName + " calculations complete! Effective Population Size " +
+print(specName + " calculations complete! Effective Population Size " +
       "(Using ThetaS): " + str(effPopSizeThS) + "\t(Using ThetaN): " + str(effPopSizeThN) + "\t(Using Theta): " + str(effPopSizeTh)
       + "\t(Using PiS): " + str(effPopSizePiS) + "\t(Using PiN): " + str(effPopSizePiN) + "\t(Using Pi): " + str(effPopSizePi)
-      + "\t(Using DendropyTheta):" + str(effPopSizeDendropyTh) + "\t(Using DendropyPi):" + str(effPopSizeDendropyPi)))
+      + "\t(Using DendropyTheta):" + str(effPopSizeDendropyTh) + "\t(Using DendropyPi):" + str(effPopSizeDendropyPi))
 

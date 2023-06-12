@@ -9,7 +9,7 @@ for folder in os.listdir("muscle_output/"):
         success = False
 
     if success:
-        print((str(folder) + " completed."))
+        print(str(folder) + " completed.")
     else:
-        print(("Move failed for " + str(folder)))
+        print("Move failed for " + str(folder))
 

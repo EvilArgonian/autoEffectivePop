@@ -63,7 +63,7 @@ for line in singleCopyOrthogroups:
 
 errorCount = 0
 errorOrthogroups = []
-for strain in list(bigDictOfStrainDicts.keys()):
+for strain in bigDictOfStrainDicts.keys():
     if strain == "":
         print("ERROR: Empty-String Strain")
         errorCount += 1
@@ -85,7 +85,7 @@ for strain in list(bigDictOfStrainDicts.keys()):
         with open(nucSpeciesFolder + "/" + file, "r") as f:
             geneArr = f.readlines()
             numLines = len(geneArr)
-        for gene in list(bigDictOfStrainDicts.get(strain).keys()):
+        for gene in bigDictOfStrainDicts.get(strain).keys():
             orthogroup = bigDictOfStrainDicts.get(strain).get(gene)
             geneFormat2 = gene.replace("_", ":", 1)  # One format changed a '_' to a ':'?
             if gene in indexDict:
@@ -96,7 +96,7 @@ for strain in list(bigDictOfStrainDicts.keys()):
                 errorCount += 1
                 indexInStrainFile = -1
                 errorOrthogroups.append(orthogroup)
-                print(("ERROR: Gene index not found (" + gene + " / " + geneFormat2 + ")"))
+                print("ERROR: Gene index not found (" + gene + " / " + geneFormat2 + ")")
             # Copy the original nucleotide gene
             if indexInStrainFile > -1:
                 outputStr = geneArr[indexInStrainFile].strip() + " [strain=" + strain + "]\n"
@@ -113,9 +113,9 @@ for badOg in errorOrthogroups:
     genesInGroup = orthogroupNums.get(badOg)
     if os.path.exists(str(genesInGroup) + "_" + badOg + ".fa"):
         os.remove(str(genesInGroup) + "_" + badOg + ".fa")
-        print(("Removing " + str(genesInGroup) + "_" + badOg + ".fa due to at least one erroneous gene finding."))
+        print("Removing " + str(genesInGroup) + "_" + badOg + ".fa due to at least one erroneous gene finding.")
     else:
-        print(("Orthogroup with unrecognized gene (check gene name formatting for inconsistencies) unused: " + badOg))
+        print("Orthogroup with unrecognized gene (check gene name formatting for inconsistencies) unused: " + badOg)
 
-print(("Gathering of orthogroup sequences complete! Errors: " + str(errorCount)))
+print("Gathering of orthogroup sequences complete! Errors: " + str(errorCount))
 

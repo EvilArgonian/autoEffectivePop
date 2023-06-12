@@ -23,4 +23,4 @@ with open("final_output/" + folder + "/wattersonsThetaValues.txt", "w") as f:
         f.write(outString)
 
 avgWatsTheta = float(sumTheta)/countTheta
-print(str(avgWatsTheta))
+print str(avgWatsTheta)

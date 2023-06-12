@@ -10,7 +10,7 @@ with open("GatheredResults.txt", "w+") as outFile:
                 if os.path.isdir(speciesFolder):
                     resultsFile = os.path.join(speciesFolder, "Results.txt")
                     if os.path.isfile(resultsFile):
-                        print(("Found " + resultsFile))
+                        print("Found " + resultsFile)
                         with open(resultsFile, "r") as readFile:
                             lines = readFile.readlines()
                             if lines[0].startswith("Species"):
@@ -18,5 +18,5 @@ with open("GatheredResults.txt", "w+") as outFile:
                             else:
                                 outFile.write(lines[0])
                     else:
-                        print(("Did not find " + resultsFile))
+                        print("Did not find " + resultsFile)
                         badOutFile.write(filename + "\n")

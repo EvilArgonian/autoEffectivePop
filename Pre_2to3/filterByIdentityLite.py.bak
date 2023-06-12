@@ -62,16 +62,16 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
 
     # Outputting for testing
     with open("temp/" + specLabel + "/Filtered/Statistics_Lite.txt", "a+") as f:
-        for versus in list(avgIdentityData.keys()):
+        for versus in avgIdentityData.keys():
             f.write(versus + "\t" + str(avgIdentityData[versus]) + "\n")
 
     logFile.write(str(len(strains)) + " strains recognized: " + str(strains) + "\n")
 
     # Evaluate the mean, sd, sample size, etc
-    sampleSize = len(list(avgIdentityData.values()))
-    sampleMean = Decimal(numpy.mean(list(avgIdentityData.values())))
-    sampleStdDev = Decimal(stats.tstd(list(avgIdentityData.values())))
-    sampleStdError = Decimal(stats.tsem(list(avgIdentityData.values())))
+    sampleSize = len(avgIdentityData.values())
+    sampleMean = Decimal(numpy.mean(avgIdentityData.values()))
+    sampleStdDev = Decimal(stats.tstd(avgIdentityData.values()))
+    sampleStdError = Decimal(stats.tsem(avgIdentityData.values()))
 
     logFile.write("Sample statistics:" + "\n")
     logFile.write("Sample Size: " + str(sampleSize) + "\n")
@@ -80,13 +80,13 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
     logFile.write("Sample Standard Error: " + str(sampleStdError) + "\n")
 
     print("Sample statistics:")
-    print(("Sample Size: " + str(sampleSize)))
-    print(("Sample Mean: " + str(sampleMean)))
-    print(("Sample Standard Deviation: " + str(sampleStdDev)))
-    print(("Sample Standard Error: " + str(sampleStdError)))
+    print("Sample Size: " + str(sampleSize))
+    print("Sample Mean: " + str(sampleMean))
+    print("Sample Standard Deviation: " + str(sampleStdDev))
+    print("Sample Standard Error: " + str(sampleStdError))
 
     if sampleSize == 1:  # One versus file, or just 2 strains
-        twoStrainArr = list(avgIdentityData.keys())[0].split("_vs_")
+        twoStrainArr = avgIdentityData.keys()[0].split("_vs_")
         for strain in twoStrainArr:  # For each of the only 2 strains
             source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
             destination = "temp/" + specLabel + "/Nucleotide/"
@@ -111,7 +111,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
     for strain in strains:  # For each strain
         if strain in removed:
             continue  # If the strain was already flagged for removal, ignore
-        for versus in list(avgIdentityData.keys()):  # For each...
+        for versus in avgIdentityData.keys():  # For each...
             twoStrainArr = versus.split("_vs_")
             if strain in twoStrainArr and currStrain in twoStrainArr:  # ...appearance of the strain in a 1v1 comparison
                 testValue = Decimal(avgIdentityData[versus])
@@ -146,7 +146,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
             try:
                 shutil.move(source, destination)
             except IOError as e:
-                print(("Strain move to " + destination + " failed!"))
+                print("Strain move to " + destination + " failed!")
                 logFile.write("Strain move to " + destination + " failed!")
             removedStrains.write(strain + "\n")
 
@@ -166,5 +166,5 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
     with open("temp/" + specLabel + "/Filtered/Output.txt", "w") as outFile:
         outFile.write(",".join(strains))
 
-print(("Total strains removed: " + str(len(removed))))
-print(("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized: " + str(strains)))
+print("Total strains removed: " + str(len(removed)))
+print("Remaining " + str(len(strains)) + " " + specLabel + " strains recognized: " + str(strains))

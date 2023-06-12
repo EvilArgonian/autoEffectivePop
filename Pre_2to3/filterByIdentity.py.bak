@@ -44,7 +44,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
     # Printing for testing
     with open("temp/" + specLabel + "/Filtered/Statistics.txt", "w") as f:
         dataCount = 0
-        for versus in list(avgIdentityData.keys()):
+        for versus in avgIdentityData.keys():
             dataCount += 1
             twoStrainArr = versus.split("_vs_")
             if len(twoStrainArr) != 2:
@@ -53,17 +53,17 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
             f.write(versus + " > ")
             if twoStrainArr[0] not in strains or twoStrainArr[1] not in strains:
                 avgIdentityData.pop(versus)
-                logFile.write(str(dataCount) + " of " + str(len(list(avgIdentityData.keys()))) + "- BLAST data involving unused strain discarded: " + versus + "\n")
+                logFile.write(str(dataCount) + " of " + str(len(avgIdentityData.keys())) + "- BLAST data involving unused strain discarded: " + versus + "\n")
             else:
-                f.write(str(dataCount) + " of " + str(len(list(avgIdentityData.keys()))) + "- " + versus + "\t" + str(avgIdentityData[versus]) + "\n")
+                f.write(str(dataCount) + " of " + str(len(avgIdentityData.keys())) + "- " + versus + "\t" + str(avgIdentityData[versus]) + "\n")
 
     logFile.write(str(len(strains)) + " strains recognized: " + str(strains) + "\n")
 
     # Evaluate the mean, sd, sample size, etc
-    sampleSize = len(list(avgIdentityData.values()))
-    sampleMean = Decimal(numpy.mean(list(avgIdentityData.values())))
-    sampleStdDev = Decimal(stats.tstd(list(avgIdentityData.values())))
-    sampleStdError = Decimal(stats.tsem(list(avgIdentityData.values())))
+    sampleSize = len(avgIdentityData.values())
+    sampleMean = Decimal(numpy.mean(avgIdentityData.values()))
+    sampleStdDev = Decimal(stats.tstd(avgIdentityData.values()))
+    sampleStdError = Decimal(stats.tsem(avgIdentityData.values()))
     sampleVariance = sampleStdDev * sampleStdDev
 
     logFile.write("Sample statistics:" + "\n")
@@ -73,7 +73,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
     logFile.write("Sample Standard Error: " + str(sampleStdError) + "\n")
 
     if sampleSize == 1:  # One versus file, or just 2 strains
-        twoStrainArr = list(avgIdentityData.keys())[0].split("_vs_")
+        twoStrainArr = avgIdentityData.keys()[0].split("_vs_")
         for strain in twoStrainArr:  # For each of the only 2 strains
             source = "temp/" + specLabel + "/BLAST/" + strain + ".ffn"
             destination = "temp/" + specLabel + "/Nucleotide/"
@@ -92,7 +92,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
     removalInfo = []
     for strain in strains:  # For each strain
         strainData = []
-        for versus in list(avgIdentityData.keys()):  # For each 1v1 that compares 2 surviving strains
+        for versus in avgIdentityData.keys():  # For each 1v1 that compares 2 surviving strains
             twoStrainArr = versus.split("_vs_")
             if strain in twoStrainArr:
                 strainData.append(Decimal(avgIdentityData[versus]))
@@ -132,15 +132,15 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
 
     if len(strains) >= 3:  # Ceases calculations if less than 3 strains
         remaining = {}  # For reanalyzing remaining data
-        for versus in list(avgIdentityData.keys()):
+        for versus in avgIdentityData.keys():
             twoStrainArr = versus.split("_vs_")
             if twoStrainArr[0] in strains and twoStrainArr[1] in strains:
                 remaining.update({versus: avgIdentityData[versus]})
 
-        sampleSize = len(list(remaining.values()))
-        sampleMean = Decimal(numpy.mean(list(remaining.values())))
-        sampleStdDev = Decimal(stats.tstd(list(remaining.values())))
-        sampleStdError = Decimal(stats.tsem(list(remaining.values())))
+        sampleSize = len(remaining.values())
+        sampleMean = Decimal(numpy.mean(remaining.values()))
+        sampleStdDev = Decimal(stats.tstd(remaining.values()))
+        sampleStdError = Decimal(stats.tsem(remaining.values()))
         sampleVariance = sampleStdDev * sampleStdDev
 
         logFile.write("Sample statistics:" + "\n")
@@ -164,7 +164,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         for strain in strains:  # For each strain
             if strain in removed:
                 continue  # If the strain was already flagged for similarity, ignore
-            for versus in list(remaining.keys()):  # For each...
+            for versus in remaining.keys():  # For each...
                 twoStrainArr = versus.split("_vs_")
                 if strain in twoStrainArr:  # ...appearance of the strain in a 1v1 comparison
                     testValue = Decimal(remaining[versus])
@@ -205,7 +205,7 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
                     shutil.copy(source, destination)
                 except IOError as e:
                     logFile.write("Strain copy to " + destination + " failed!" + "\n")
-            print((len(strains)))  # Marks that not too many species were filtered
+            print(len(strains))  # Marks that not too many species were filtered
         else:
             logFile.write("Not enough strains surviving final filtration of " + specLabel + "\n")
             print("-1")  # Marks that too many species were filtered

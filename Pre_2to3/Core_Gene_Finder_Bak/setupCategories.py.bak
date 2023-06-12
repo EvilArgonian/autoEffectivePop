@@ -65,7 +65,7 @@ def main():
                         if args.force:
                             os.remove(outConsensusFile)
                         else:
-                            print((species + " already has input in category " + category + "; Skipping."))
+                            print(species + " already has input in category " + category + "; Skipping.")
                             continue
                 else:
                     os.mkdir(outFolder)
@@ -79,7 +79,7 @@ def main():
                                 outF.write(copyLine)
         else:
             missingConsensus.append(species)
-            print((species + " did not have an associated consensus file!"))
+            print(species + " did not have an associated consensus file!")
 
     with open("missingConsensus.txt", "w") as missingFile:
         for spec in missingConsensus:
