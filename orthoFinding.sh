@@ -17,7 +17,7 @@ for filename in $(find temp/${specLabel}/Nucleotide -mindepth 1 -maxdepth 1 -typ
 done
 
 rm -rf ${resultsFolder}
-# Run Orthofinder on protein data
+# Run Orthofinder
 ./OrthoFinder/orthofinder -f temp/${specLabel}/Nucleotide -og -d -S blast_nucl -A muscle -M msa
 mv ${resultsFolder} temp/${specLabel}/Nucleotide/OrthoFinder/Results
 resultsFolder="temp/${specLabel}/Nucleotide/OrthoFinder/Results"
