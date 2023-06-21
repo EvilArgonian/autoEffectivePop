@@ -56,8 +56,8 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	# Note that these genes don't yet have real names; they are labeled arbitrarily
 	python initialGeneSetup.py ${category} ${randomSet[0]} ${runNum}
 	
-	blastOutFolder="core_genes/${category}/Run_${runNum}/BLASTs"
-	failOutFolder="core_genes/${category}/Run_${runNum}/Fails"
+	blastOutFolder="core_genes/${category}/Run_${runNum}/BLASTs/"
+	failOutFolder="core_genes/${category}/Run_${runNum}/Fails/"
 	rm -rf ${blastOutFolder}
 	rm -rf ${failOutFolder}
 	mkdir ${blastOutFolder}
