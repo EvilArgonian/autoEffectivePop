@@ -18,7 +18,7 @@ fi
 
 echo "Input Processing: ${processInput[@]}"
 
-outFolder = "modifiedAlignmentInput/"
+outFolder="modifiedAlignmentInput/"
 
 processCount=0
 for inputFolder in ${processInput[@]}; do
