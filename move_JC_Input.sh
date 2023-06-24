@@ -26,7 +26,7 @@ for inputFolder in ${processInput[@]}; do
 		inputLabel="${inputFolder##*/}"
 		
 		processCount=$(( ${processCount}+1 ))
-		echo "Processing input for Species ${processCount}: ${inputLabel}"
+		echo "Processing input for Species ${processCount}: ${inputFolder}"
 		
 		for geneFolder in $(find ${inputFolder}/ -mindepth 1 -maxdepth 1 -type d); do
 			echo "Found ${geneFolder}"
