@@ -29,12 +29,13 @@ for inputFolder in ${processInput[@]}; do
 		echo "Processing input for Species ${processCount}: ${inputLabel}"
 		
 		for geneFolder in $(find ${inputFolder} -mindepth 1 -maxdepth 1 -type d); do
+			mkdir ${outFolder}/${inputLabel}/
 			cp ${geneFolder} ${outFolder}/${inputLabel}/
 		done
 		
 		if [[ -f "${outFolder}/${inputLabel}/ORF1a_collapsed_mutation_fastas.fa" ]]; then #Check if it contains gene ORF1a, which is contained within ORF1ab, and must be processed separately to avoid counting the sites doubly
-			mkdir "${outFolder}/${inputLabel}_1a/"
-			mv "${outFolder}/${inputLabel}/ORF1a_collapsed_mutation_fastas.fa" "${outFolder}/${inputLabel}_1a/"
+			mkdir ${outFolder}/${inputLabel}_1a/
+			mv ${outFolder}/${inputLabel}/ORF1a_collapsed_mutation_fastas.fa" "${outFolder}/${inputLabel}_1a/
 		fi
 	} || { # Catch
 		echo "Some kind of interrupting error occurred while processing ${inputFolder##*/}"
