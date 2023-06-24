@@ -28,7 +28,7 @@ for inputFolder in ${processInput[@]}; do
 		processCount=$(( ${processCount}+1 ))
 		echo "Processing input for Species ${processCount}: ${inputFolder}"
 		
-		for geneFolder in $(find ${inputFolder}/ -mindepth 1 -maxdepth 1 -type d); do
+		for geneFolder in $(find ${inputFolder}/ -mindepth 1 -maxdepth 1 -type f); do
 			echo "Found ${geneFolder}"
 			mkdir ${outFolder}/${inputLabel}/
 			cp ${geneFolder} ${outFolder}/${inputLabel}/
