@@ -30,7 +30,7 @@ for filename in ${specFolder}/BLAST/*.ffn; do
 	fi
 	if [[ ! ${seenDatabases[@]} =~ "${title}.ffn.ndb" ]]; then
 		echo "Making database for ${titleWithoutFolder}"
-		./ncbi-blast-2.10.1+/bin/makeblastdb -in ${filename} -dbtype nucl
+		./ncbi-blast-2.14.0+/bin/makeblastdb -in ${filename} -dbtype nucl
 	else
 		echo "Database for ${titleWithoutFolder} already exists."
 	fi
@@ -77,7 +77,7 @@ while (( elemsUnseen > 0 )); do
 				echo "BLAST for ${title} and ${title2} already exists."
 			else
 				echo "BLASTing ${title} against ${title2}"
-				./ncbi-blast-2.10.1+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
+				./ncbi-blast-2.14.0+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
 			fi
 		fi
 	done
@@ -148,7 +148,7 @@ if (( numRemainingStrains < 400 )); then
 				echo "Title: ${title} - Title 2: ${title2}"
 				if [[ ${title} != ${title2} && ! ${seen[@]} =~ "${title}" && ! ${seen[@]} =~ "${title2}" ]]; then
 					echo "BLASTing ${title} against ${title2}"
-					./ncbi-blast-2.10.1+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
+					./ncbi-blast-2.14.0+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
 				fi
 			done
 			seen+=("${title}")

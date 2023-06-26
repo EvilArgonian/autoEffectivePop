@@ -55,7 +55,7 @@ for filename in ${specFolder}/BLAST/*.ffn; do
 				echo "BLAST for ${title} and ${title2} already exists."
 			else
 				echo "BLASTing ${title} against ${title2}"
-				./ncbi-blast-2.10.1+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
+				./ncbi-blast-2.14.0+/bin/blastn -task megablast -num_threads 4 -db ${filename} -query ${filename2} -outfmt 6 -num_alignments 1 >> temp/${specLabel}/BLAST/${title}_vs_${title2}.txt
 			fi
 		fi
 	done

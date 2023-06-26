@@ -29,7 +29,7 @@ done
 for spec in ${catSpecies[@]}; do
 	if [[ ! ${seenDatabases[@]} =~ "${spec}" ]]; then
 		echo "Making database for ${spec}"
-		../ncbi-blast-2.10.1+/bin/makeblastdb -in categories/${category}/${spec}/${spec}.txt -out categories/All/${spec}/${spec} -dbtype nucl
+		../ncbi-blast-2.14.0+/bin/makeblastdb -in categories/${category}/${spec}/${spec}.txt -out categories/All/${spec}/${spec} -dbtype nucl
 	else
 		echo "Database for ${spec} already exists."
 	fi
@@ -69,7 +69,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		arbitraryGene="${geneFileWithoutFolder%%.txt*}"
 		blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
 		{ #Try
-			../ncbi-blast-2.10.1+/bin/blastx -query ${geneFile} -db "/home/blastdb/nr" -num_alignments 1 >>  ${blastOutFile}
+			../ncbi-blast-2.14.0+/bin/blastx -query ${geneFile} -db "/home/blastdb/nr" -num_alignments 1 >>  ${blastOutFile}
 			# What frequency of attempts to query NCBI is appropriate?
 			gene=$(echo $(python establishGeneName.py ${geneFile} ${blastOutFile}))
 			remainingGenes+=(${gene})
@@ -89,7 +89,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 			geneFile=core_genes/${category}/Run_${runNum}/Genes/${gene}
 			blastOutFile=${blastOutFolder}/${gene}_vs_${species}.txt
 			# echo "BLASTing ${geneFile} against ${species} database"
-			../ncbi-blast-2.10.1+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile} 2>/dev/null
+			../ncbi-blast-2.14.0+/bin/tblastx -num_threads 4 -db ${database} -query ${geneFile} -outfmt 6 -num_alignments 1 >> ${blastOutFile} 2>/dev/null
 			passFlag=$(echo $(python passGene.py ${geneFile} ${blastOutFile} ${matchE_Threshold}))
 			if [[ ${passFlag}=="Passed!" ]]; then
 				passedGenes+=(${gene})
