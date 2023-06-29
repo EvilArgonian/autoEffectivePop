@@ -19,6 +19,7 @@ fi
 echo "Input Processing: ${processInput[@]}"
 
 outTable="JC_Out_Table.txt"
+stageFolder="modifiedAlignmentInput"
 
 echo -e "Source\tGene\tTheta N\tTheta S\tTheta\n" > ${outTable}
 
@@ -32,7 +33,7 @@ for inputFolder in ${processInput[@]}; do
 		
 		python gather_JC_Output.py ${inputLabel} ${outTable}
 		
-		if [[ -f "${inputFolder}/ORF1a_collapsed_mutation_fastas.fa" ]]; then #Check if it contains gene ORF1a, which is contained within ORF1ab, and must be processed separately to avoid counting the sites doubly
+		if [[ -f "${stageFolder}/${inputLabel}/ORF1a_collapsed_mutation_fastas.fa" ]]; then #Check if it contains gene ORF1a, which is contained within ORF1ab, and must be processed separately to avoid counting the sites doubly
 			python gather_JC_Output.py ${inputLabel}_1a ${outTable}
 		fi
 	} || { # Catch
