@@ -15,6 +15,6 @@ if os.path.exists(readFile):
             cleanLine = cleanLine.replace(" Watterson's Theta N: ", "")
             cleanLine = cleanLine.replace(" Watterson's Theta: ", "")
 
-            with open(outFile, "w") as of:
+            with open(outFile, "a") as of:
                 of.write(specName + "\t" + cleanLine + "\n")
     print("Done with " + specName)
