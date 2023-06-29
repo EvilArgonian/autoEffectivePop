@@ -32,7 +32,7 @@ for inputFolder in ${processInput[@]}; do
 		
 		python gather_JC_Output.py ${inputLabel} ${outTable}
 		
-		if [[ -f "${outFolder}/${inputLabel}/ORF1a_collapsed_mutation_fastas.fa" ]]; then #Check if it contains gene ORF1a, which is contained within ORF1ab, and must be processed separately to avoid counting the sites doubly
+		if [[ -f "${inputFolder}/ORF1a_collapsed_mutation_fastas.fa" ]]; then #Check if it contains gene ORF1a, which is contained within ORF1ab, and must be processed separately to avoid counting the sites doubly
 			python gather_JC_Output.py ${inputLabel}_1a ${outTable}
 		fi
 	} || { # Catch
