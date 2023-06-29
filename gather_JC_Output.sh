@@ -29,11 +29,11 @@ for inputFolder in ${processInput[@]}; do
 		inputLabel="${inputFolder##*/}"
 		
 		processCount=$(( ${processCount}+1 ))
-		echo "Gathering output for Species ${processCount}: ${inputLabel}"
 		
 		python gather_JC_Output.py ${inputLabel} ${outTable}
 		
 		if [[ -f "${stageFolder}/${inputLabel}/ORF1a_collapsed_mutation_fastas.fa" ]]; then #Check if it contains gene ORF1a, which is contained within ORF1ab, and must be processed separately to avoid counting the sites doubly
+			echo "Found ORF1a for: ${inputLabel}"
 			python gather_JC_Output.py ${inputLabel}_1a ${outTable}
 		fi
 	} || { # Catch
