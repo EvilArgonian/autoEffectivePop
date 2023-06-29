@@ -19,7 +19,8 @@ fi
 echo "Input Processing: ${processInput[@]}"
 
 outTable="JC_Out_Table.txt"
-touch ${outTable}
+
+echo -e "Source\tGene\tTheta N\tTheta S\tTheta\n" > ${outTable}
 
 processCount=0
 for inputFolder in ${processInput[@]}; do
