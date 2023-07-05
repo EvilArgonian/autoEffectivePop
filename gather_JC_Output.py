@@ -23,6 +23,6 @@ if os.path.exists(readFile):
                     wN = line.split("\t")[10].strip()
                     wA = line.split("\t")[10].strip()
 
-                    of.write(specName + "\t" + "Overall" + "\t" + wS + "\t" + wN + "\t" + wA)
+                    of.write(specName + "\t" + "Overall" + "\t" + wS + "\t" + wN + "\t" + wA + "\n")
                     break
     print("Done with " + specName)
