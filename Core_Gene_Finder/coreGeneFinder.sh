@@ -64,7 +64,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	mkdir ${failOutFolder}
 	
 	remainingGenes=()
-	for geneFile in $(find core_genes/${category}/Run_${runNum}/Genes/ -mindepth 1 -maxdepth 1 -type f); do
+	for geneFile in $(find core_genes/${category}/Run_${runNum}/Genes/ -mindepth 1 -maxdepth 1 -type f); do # Move non-arbitrary naming to end of a run
 		geneFileWithoutFolder="${geneFile##*/}"
 		arbitraryGene="${geneFileWithoutFolder%%.txt*}"
 		blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
