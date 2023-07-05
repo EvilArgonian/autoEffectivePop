@@ -17,9 +17,9 @@ if os.path.exists(readFile):
 
                 of.write(specName + "\t" + cleanLine)
         with open(readOverallFile, "r") as rof:
-            wS = rof.readlines()[1].split("\t")[9].trim()
-            wN = rof.readlines()[1].split("\t")[10].trim()
-            wA = rof.readlines()[1].split("\t")[10].trim()
+            wS = rof.readlines()[1].split("\t")[9].strip()
+            wN = rof.readlines()[1].split("\t")[10].strip()
+            wA = rof.readlines()[1].split("\t")[10].strip()
 
             of.write(specName + "\t" + "Overall" + "\t" + wS + "\t" + wN + "\t" + wA)
     print("Done with " + specName)
