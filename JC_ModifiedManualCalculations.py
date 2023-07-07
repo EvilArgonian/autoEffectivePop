@@ -664,9 +664,6 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
                     tracker.write("Processing " + ogFile + " with nucDict of length " + str(len(currNucDict)) + ". ")
                 # nucDict is a dictionary of sequence names mapped to actual sequences.
                 # the sequences are aligned coding sequences, thus equal length and divisible by 3
-                if len(currNucDict) < 2:
-                    continue
-
                 # Number of contributing strains is indicated by first num before _ in file name (e.g. 3_OG0000123.fa has 3 contributing strains)
                 try:
                     currNumStrains = int(ogFile.split("_")[0])
@@ -676,11 +673,12 @@ with open("final_output/" + specName + "/wattersonsThetaValues.txt", "w") as f:
 
                 try:
                     currConsensus = list(currNucDict.values())[0]
-                    f.write(calcThetas(currNucDict, currNumStrains, currConsensus, ogFile))
+                    thisTheta = calcThetas(currNucDict, currNumStrains, currConsensus, ogFile)
+                    f.write(thisTheta)
                     # f2.write(calcPis(currNucDict, currNumStrains, currConsensus, ogFile))
                     f4.write(">" + ogFile + "\n" + currConsensus + "\n")
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-                        tracker.write(ogFile + " processed.\n")
+                        tracker.write(ogFile + " processed with theta " + str(thisTheta) + ".\n")
                 except Exception as e:
                     with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
                         tracker.write("ERROR: " + ogFile + " failed to process.\n")
@@ -739,6 +737,9 @@ for key in list(thetaByNumStrains.keys()):
     sumOfAllAvgTheta += float(avgForNumTheta)
 
     allCountThetas += 1
+
+with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
+    tracker.write(specName + " average step 1 theta: " + str(sumOfAllAvgTheta) + "with allCountThetas of ." + str(allCountThetas) + "\n")
 
 for key in list(piByNumStrains.keys()):
     # Acquires average pis of all groups with the same number of contributing strains (S for silent, N for non-silent, no mark for no regard)
