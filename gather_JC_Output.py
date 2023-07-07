@@ -21,7 +21,7 @@ if os.path.exists(readFile):
                 if line.startswith(specName):
                     wS = line.split("\t")[9].strip()
                     wN = line.split("\t")[10].strip()
-                    wA = line.split("\t")[10].strip()
+                    wA = line.split("\t")[11].strip()
 
                     of.write(specName + "\t" + "Overall" + "\t" + wS + "\t" + wN + "\t" + wA + "\n")
                     break

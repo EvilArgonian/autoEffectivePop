@@ -739,7 +739,7 @@ for key in list(thetaByNumStrains.keys()):
     allCountThetas += 1
 
 with open("final_output/" + specName + "/" + specName + "_ModifiedTracker.txt", "a+") as tracker:
-    tracker.write(specName + " average step 1 theta: " + str(sumOfAllAvgTheta) + "with allCountThetas of ." + str(allCountThetas) + "\n")
+    tracker.write(specName + " average step 1 theta: " + str(sumOfAllAvgTheta) + " with allCountThetas of ." + str(allCountThetas) + "\n")
 
 for key in list(piByNumStrains.keys()):
     # Acquires average pis of all groups with the same number of contributing strains (S for silent, N for non-silent, no mark for no regard)
