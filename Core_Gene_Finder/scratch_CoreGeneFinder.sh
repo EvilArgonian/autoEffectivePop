@@ -69,7 +69,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	renameQuery=core_genes/${category}/Run_${runNum}/massRename.txt
 	blastOutFile=${blastOutFolder}/Mass_Rename.txt
 	
-	cat core_genes/${category}/Run_${runNum}/Genes/Gene_*.txt >> ${renameQuery}
+	for f in core_genes/${category}/Run_${runNum}/Genes/Gene_*.txt; do (cat "${f}"; echo) >> ${renameQuery}; done
 	echo "Created ${renameQuery}"	
 	../ncbi-blast-2.14.0+/bin/blastx -query ${renameQuery} -db "/home/blastdb/nr" -num_alignments 1 >>  ${blastOutFile}
 	
