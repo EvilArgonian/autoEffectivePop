@@ -67,7 +67,7 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	
 	#Concatenate contents of core_genes/${category}/Run_${runNum}/Genes/ to run against nr database as whole entity
 	renameQuery=core_genes/${category}/Run_${runNum}/massRename.txt
-	blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
+	blastOutFile=${blastOutFolder}/Mass_Rename.txt
 	
 	cat core_genes/${category}/Run_${runNum}/Genes/Gene_*.txt >> ${renameQuery}
 	echo "Created ${renameQuery}"	
