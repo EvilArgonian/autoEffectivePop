@@ -21,7 +21,7 @@ if not os.path.exists(outFolder):
             if line.startswith(">"):
                 if nucSeqTitle != "":
                     with open(outFolder + "/Gene_" + str(geneNum) + ".txt", "w") as outFile:
-                        outFile.write(nucSeqTitle + "\n")
+                        outFile.write(nucSeqTitle + " [Gene_" + str(geneNum) + "]\n")
                         outFile.write(nucSeqBuilder)
                 nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
