@@ -23,5 +23,11 @@ echo "Species Processing: ${processSpecies[@]}"
 
 processCount=0
 for specFolder in ${processSpecies[@]}; do
-	python tuanOrthogroupPull.py ${specFolder}
+	specLabel="${specFolder##*/}"
+		
+	processCount=$(( ${processCount}+1 ))
+	echo "Processing input for Species ${processCount}: ${specLabel}"
+	
+	python tuanOrthogroupPull.py ${specLabel}
+	echo 
 done

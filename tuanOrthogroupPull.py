@@ -6,7 +6,7 @@ muscleInFolder = os.path.join("temp/", species, "muscle_input")
 outFile = os.path.join("AgroRhizoTemp", species, ".txt")
 
 if not os.path.exists(muscleInFolder):
-    print("Species mn!")
+    print("Species muscle input folder not found!")
     exit(1)
 
 noLocationCount = 0
