@@ -3,6 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 specFolder=${1}
+keepOldData=${2}
 specLabel="${specFolder##*/}"
 
 # Run muscle alignment on nucleotide orthogroups
@@ -14,4 +15,6 @@ for filename in ${specFolder}/muscle_input/*; do
 done
 
 # Removal of muscle input once muscle output has been acquired
-rm -rf ${specFolder}/muscle_input/
+if ! (( keepOldData )); then
+	rm -rf ${specFolder}/muscle_input/
+fi

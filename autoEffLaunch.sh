@@ -2,6 +2,9 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+true=1
+false=0
+
 echo "Launching!"
 
 #Establish what species are being processed; $1 and further arguments should be species names matching those used as directory names in the input folder
@@ -49,7 +52,7 @@ for specFolder in ${processSpecies[@]}; do
 		
 		
 		sh orthoFinding.sh ${specFolderTemp}
-		sh muscleAligning.sh ${specFolderTemp}
+		sh muscleAligning.sh ${specFolderTemp} ${true}
 		
 		mkdir -p final_output/${specLabel}
 		readarray -d ',' -t calculations <<< $(echo $(python manualCalculations.py ${specLabel} ))
