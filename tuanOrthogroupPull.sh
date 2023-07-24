@@ -23,11 +23,17 @@ echo "Species Processing: ${processSpecies[@]}"
 
 processCount=0
 for specFolder in ${processSpecies[@]}; do
-	specLabel="${specFolder##*/}"
+	{ # Try		
+		specLabel="${specFolder##*/}"
+			
+		processCount=$(( ${processCount}+1 ))
+		echo "Processing input for Species ${processCount}: ${specLabel}"
 		
-	processCount=$(( ${processCount}+1 ))
-	echo "Processing input for Species ${processCount}: ${specLabel}"
-	
-	python tuanOrthogroupPull.py ${specLabel}
-	echo 
+		python tuanOrthogroupPull.py ${specLabel}
+		echo
+	} || { # Catch
+		echo "Some kind of interrupting error occurred while processing ${specFolder##*/}"
+	}	
 done
+
+	
