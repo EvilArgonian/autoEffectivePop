@@ -51,7 +51,7 @@ for specFolder in ${processSpecies[@]}; do
 		surviving_strains=$(find ${specFolderTemp}/Nucleotide/ -mindepth 1 -maxdepth 1 -type f -name '*.ffn' -printf x | wc -c)
 		
 		
-		sh orthoFinding.sh ${specFolderTemp}
+		sh orthoFinding.sh ${specFolderTemp} ${false}
 		sh muscleAligning.sh ${specFolderTemp} ${true}
 		
 		mkdir -p final_output/${specLabel}

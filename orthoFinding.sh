@@ -3,6 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 specFolder=${1}
+keepOldData=${2}
 specLabel="${specFolder##*/}"
 
 resultsFolder=$(echo $(python getResultsFolder.py temp/${specLabel}/Nucleotide))
@@ -33,4 +34,6 @@ mkdir -p temp/${specLabel}/muscle_input/
 python gatherOrthogroupSequences.py temp/${specLabel}/Nucleotide temp/${specLabel}/Nucleotide/single_copy_og.txt temp/${specLabel}/muscle_input/
 
 # Removal of old Nucleotide files once muscle input has already been acquired
-rm -rf temp/${specLabel}/Nucleotide/ 
+if ! (( keepOldData )); then
+	rm -rf temp/${specLabel}/Nucleotide/ 
+fi
