@@ -18,7 +18,7 @@ with open(outFile, "w") as o:
         orthogroupCount += 1
         with open(file, "r") as orthogroupFile:
             for line in orthogroupFile.readlines():
-                if line.startswith(">")
+                if line.startswith(">"):
                     allHeaderCount += 1
                     o.write(line.strip() + "\n")
                     if "location" not in line:
