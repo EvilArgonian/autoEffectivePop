@@ -3,7 +3,7 @@ import sys
 
 species = sys.argv[1]
 muscleInFolder = os.path.join("temp/", species, "muscle_input")
-outFile = os.path.join("AgroRhizoTemp", species, ".txt")
+outFile = os.path.join("AgroRhizoTemp", species + ".txt")
 
 if not os.path.exists(muscleInFolder):
     print("Species muscle input folder not found!")
