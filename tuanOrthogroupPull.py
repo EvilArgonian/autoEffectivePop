@@ -20,7 +20,7 @@ with open(outFile, "w") as o:
             for line in orthogroupFile.readlines():
                 if line.startswith(">"):
                     allHeaderCount += 1
-                    o.write(line.strip() + "\n")
+                    o.write(str(file) + "\t" + line.strip() + "\n")
                     if "location" not in line:
                         noLocationCount += 1
                         print(str(noLocationCount) + " - " + line.split()[1] + " did not contain a location.")
