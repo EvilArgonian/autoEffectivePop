@@ -16,7 +16,7 @@ orthogroupCount = 0
 with open(outFile, "w") as o:
     for file in os.listdir(muscleInFolder):
         orthogroupCount += 1
-        with open(file, "r") as orthogroupFile:
+        with open(os.path.join(muscleInFolder, file), "r") as orthogroupFile:
             for line in orthogroupFile.readlines():
                 if line.startswith(">"):
                     allHeaderCount += 1
