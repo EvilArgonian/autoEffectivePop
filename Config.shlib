@@ -1,0 +1,11 @@
+config_read_file() {
+    (grep -E "^${2}=" -m 1 "${1}" 2>/dev/null || echo "VAR=__UNDEFINED__") | head -n 1 | cut -d '=' -f 2-;
+}
+
+config_get() {
+    setting="$(config_read_file Config.cfg "${1}")";
+    if [ "${setting}" = "__UNDEFINED__" ]; then
+        setting="$(config_read_file Default_Config.cfg  "${1}")";
+    fi
+    printf -- "%s" "${setting}";
+}

@@ -2,10 +2,14 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+source Config.shlib
+
 true=1
 false=0
 
-skipFiltering=${true}
+skipFiltering=$(config_get Skip_Filtering)
+keepPreOrthofinding=$(config_get Keep_Pre_Orthogroup_Files)
+keepMuscleInput=$(config_get Keep_Unaligned_Files)
 
 echo "Launching!"
 
@@ -61,8 +65,8 @@ for specFolder in ${processSpecies[@]}; do
 		surviving_strains=$(find ${specFolderTemp}/Nucleotide/ -mindepth 1 -maxdepth 1 -type f -name '*.ffn' -printf x | wc -c)
 		
 		
-		sh orthoFinding.sh ${specFolderTemp} ${false}
-		sh muscleAligning.sh ${specFolderTemp} ${true}
+		sh orthoFinding.sh ${specFolderTemp} ${keepPreOrthofinding}
+		sh muscleAligning.sh ${specFolderTemp} ${keepMuscleInput}
 		
 		mkdir -p final_output/${specLabel}
 		readarray -d ',' -t calculations <<< $(echo $(python manualCalculations.py ${specLabel} ))
