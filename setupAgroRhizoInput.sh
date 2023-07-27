@@ -14,5 +14,7 @@ for file in $(find ${importFolder} -mindepth 1 -maxdepth 1); do
 	codingSeqs=${label}/ncbi_dataset/data/GCA_*/cds_from_genomic.fna
 	mkdir ${specFolder}/${label}
 	cp ${codingSeqs} ${specFolder}/${label}/
+	
+	echo "${label} had been set up."
 done
 
