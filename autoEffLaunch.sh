@@ -10,6 +10,7 @@ false=0
 skipFiltering=$(config_get Skip_Filtering)
 keepPreOrthofinding=$(config_get Keep_Pre_Orthogroup_Files)
 keepMuscleInput=$(config_get Keep_Unaligned_Files)
+liteFilterThreshold=$(config_get Lite_Filter_Threshold)
 
 echo "Launching!"
 
@@ -50,7 +51,7 @@ for specFolder in ${processSpecies[@]}; do
 				cp ${skipFilterFile} ${specFolderTemp}/Nucleotide/
 			done
 		else
-			if (( unfiltered_strains > 400 )); then
+			if (( unfiltered_strains > liteFilterThreshold )); then
 				echo "High strain count recognized; optimizing for time using blastFilteringLite."
 				sh blastFilteringLite.sh ${specFolderTemp}
 			elif (( unfiltered_strains < 3 )); then
