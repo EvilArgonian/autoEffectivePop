@@ -29,6 +29,14 @@ for strainFolder in $(find ${specFolder} -mindepth 1 -maxdepth 1 -type d); do
 			rm ${filename}
 		fi
 	done
+	for filename in ${strainFolder}/*.fna; do # Mostly redundant in typical use, but this loop helps manual input setup.
+		if [[ -f ${filename} ]]; then
+			titleWithoutFolder="${filename##*/}"
+			title="${titleWithoutFolder%%.fna*}"
+			mv -f ${strainFolder}/${title}.fna ${strainFolder}/${title}.ffn # Marking as ffn for later processing. Does this break anything? Doesn't seem to.
+			rm ${filename}
+		fi
+	done	
 	for filename in ${strainFolder}/*.gbff.gz; do
 		if [[ -f ${filename} ]]; then
 			rm ${filename} # Eliminates unneeded file.
