@@ -15,7 +15,7 @@ for file in $(find ${importFolder} -mindepth 1 -maxdepth 1); do
 	zipLabel="${file##*/}"
 	label="${zipLabel%%.zip*}"
 	
-	rmdir -rf ${specFolder}/${label}
+	rm -rf ${specFolder}/${label}
 	mkdir ${specFolder}/${label}
 	
 	weGotIt=${false}
