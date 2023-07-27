@@ -28,7 +28,7 @@ for file in $(find ${importFolder} -mindepth 1 -maxdepth 1); do
 		fi
 	done
 	if ! ((weGotIt)); then
-		for file in $(find ${unzipFolder}/${label}/ncbi_dataset/data/GCF_*/ -mindepth 1 -maxdepth 1); do
+		for cdsFile in $(find ${unzipFolder}/${label}/ncbi_dataset/data/GCF_*/ -mindepth 1 -maxdepth 1); do
 			if [[ "${cdsFile}" == *cds_from_genomic.fna ]]; then
 				cp ${cdsFile} ${specFolder}/${label}/
 				echo "${label} setup from GCF."
