@@ -5,6 +5,8 @@ IFS=$'\n\t'
 true=1
 false=0
 
+skipFiltering=${true}
+
 echo "Launching!"
 
 #Establish what species are being processed; $1 and further arguments should be species names matching those used as directory names in the input folder
@@ -38,16 +40,24 @@ for specFolder in ${processSpecies[@]}; do
 		# This line should determine number of strains (pre-filtering)
 		echo "Finding number of unfiltered strains..."
 		unfiltered_strains=$(find ${specFolderTemp}/BLAST/ -mindepth 1 -maxdepth 1 -type f -name '*.ffn' -printf x | wc -c)
-		if (( unfiltered_strains > 400 )); then
-			echo "High strain count recognized; optimizing for time using blastFilteringLite."
-			sh blastFilteringLite.sh ${specFolderTemp}
-		elif (( unfiltered_strains < 3 )); then
-			echo "Low strain count recognized; no calculations to perform."
-			continue
+		
+		if (( skipFiltering )); then
+			for skipFilterFile in $(find ${specFolderTemp}/BLAST/ -mindepth 1 -maxdepth 1 -type f); do
+				cp ${skipFilterFile} ${specFolderTemp}/Nucleotide/
+			done
 		else
-			echo "Normal blast filtering beginning."
-			sh blastFiltering.sh ${specFolderTemp}
+			if (( unfiltered_strains > 400 )); then
+				echo "High strain count recognized; optimizing for time using blastFilteringLite."
+				sh blastFilteringLite.sh ${specFolderTemp}
+			elif (( unfiltered_strains < 3 )); then
+				echo "Low strain count recognized; no calculations to perform."
+				continue
+			else
+				echo "Normal blast filtering beginning."
+				sh blastFiltering.sh ${specFolderTemp}
+			fi
 		fi
+		
 		surviving_strains=$(find ${specFolderTemp}/Nucleotide/ -mindepth 1 -maxdepth 1 -type f -name '*.ffn' -printf x | wc -c)
 		
 		
