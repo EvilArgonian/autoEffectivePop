@@ -12,17 +12,20 @@ for file in $(find ${importFolder} -mindepth 1 -maxdepth 1); do
 	label="${zipLabel%%.zip*}"
 
 	unzip ${file} -d ${importFolder}/${label}
+	mkdir ${specFolder}/${label}
 	
 	if [[ -f ${label}/ncbi_dataset/data/GCA_*/cds_from_genomic.fna ]]; then
 		codingSeqs=${label}/ncbi_dataset/data/GCA_*/cds_from_genomic.fna
-		echo "${label} is being used from GCA."
+		cp ${codingSeqs} ${specFolder}/${label}/
+		echo "${label} setup from GCA."
 	elif [[ -f ${label}/ncbi_dataset/data/GCF_*/cds_from_genomic.fna ]]; then
 		codingSeqs=${label}/ncbi_dataset/data/GCA_*/cds_from_genomic.fna
-		echo "${label} is being used from GCF."
+		cp ${codingSeqs} ${specFolder}/${label}/
+		echo "${label} setup from GCF."
 	fi
 	
-	mkdir ${specFolder}/${label}
-	cp ${codingSeqs} ${specFolder}/${label}/
+	
+	
 	
 done
 
