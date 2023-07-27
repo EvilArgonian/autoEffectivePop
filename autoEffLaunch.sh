@@ -2,15 +2,26 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-source Config.shlib
+# For reading settings from the Config.
+config_read_file() {
+    (grep -E "^${2}=" -m 1 "${1}" 2>/dev/null || echo "VAR=__UNDEFINED__") | head -n 1 | cut -d '=' -f 2-;
+}
+
+config_get() {
+    setting="$(config_read_file Config.cfg "${1}")";
+    if [ "${setting}" = "__UNDEFINED__" ]; then
+        setting="$(config_read_file Default_Config.cfg  "${1}")";
+    fi
+    printf -- "%s" "${setting}";
+}
 
 true=1
 false=0
 
-skipFiltering=$(config_get Skip_Filtering)
-keepPreOrthofinding=$(config_get Keep_Pre_Orthogroup_Files)
-keepMuscleInput=$(config_get Keep_Unaligned_Files)
-liteFilterThreshold=$(config_get Lite_Filter_Threshold)
+skipFiltering="$(config_get Skip_Filtering)"
+keepPreOrthofinding="$(config_get Keep_Pre_Orthogroup_Files)"
+keepMuscleInput="$(config_get Keep_Unaligned_Files)"
+liteFilterThreshold="$(config_get Lite_Filter_Threshold)"
 
 echo "Launching!"
 
