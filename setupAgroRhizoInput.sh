@@ -26,7 +26,7 @@ for file in $(find ${importFolder} -mindepth 1 -maxdepth 1); do
 			break
 		fi
 	done
-	if ! (weGotIt); then
+	if ! ((weGotIt)); then
 		for file in $(find ${unzipFolder}/${label}/ncbi_dataset/data/GCF_*/ -mindepth 1 -maxdepth 1); do
 			if [[ "${cdsFile}" == *cds_from_genomic.fna ]]; then
 				cp ${cdsFile} ${specFolder}/${label}/
@@ -37,7 +37,7 @@ for file in $(find ${importFolder} -mindepth 1 -maxdepth 1); do
 		done
 	fi
 	
-	if ! (weGotIt); then
+	if ! ((weGotIt)); then
 		echo "${label} did not locate a cds_from_genomic"
 	fi
 done
