@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 specFolder="input/RhizobiumAgrobacterium_Group"
-importFolder="../AgroRhizoGroup/"
+importFolder="../AgroRhizoGroup"
 
 echo "Beginning moving of AgroRhizo Input."
 
@@ -23,9 +23,6 @@ for file in $(find ${importFolder} -mindepth 1 -maxdepth 1); do
 		cp ${codingSeqs} ${specFolder}/${label}/
 		echo "${label} setup from GCF."
 	fi
-	
-	
-	
 	
 done
 
