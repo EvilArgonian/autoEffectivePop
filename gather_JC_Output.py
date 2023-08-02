@@ -14,6 +14,12 @@ if os.path.exists(readFile):
                 cleanLine = cleanLine.replace("Watterson's Theta S: ", "")
                 cleanLine = cleanLine.replace("Watterson's Theta N: ", "")
                 cleanLine = cleanLine.replace("Watterson's Theta: ", "")
+                cleanLine = cleanLine.replace("Potential Syn: ", "")
+                cleanLine = cleanLine.replace("Potential NonSyn: ", "")
+                cleanLine = cleanLine.replace("Potential All: ", "")
+                cleanLine = cleanLine.replace("Actual Syn: ", "")
+                cleanLine = cleanLine.replace("Actual NonSyn: ", "")
+                cleanLine = cleanLine.replace("Actual All: ", "")
 
                 of.write(specName + "\t" + cleanLine)
         with open(readOverallFile, "r") as rof:

@@ -412,8 +412,16 @@ def calcThetas(nucDict, numStrains, ancestralSeq, file):
         update_num = thetaByNumStrains.get(numStrains)[3] + 1
         thetaByNumStrains.update({numStrains: [update_sumThetaS, update_sumThetaN, update_sumTheta, update_num]})
 
-    outString = file.split(".")[0] + "\tWatterson's Theta S: " + str(watsThetaS) + "\tWatterson's Theta N: " + str(
-        watsThetaN) + "\tWatterson's Theta: " + str(watsTheta) + "\n"
+    outString = file.split(".")[0] + "\tWatterson's Theta S: " + str(watsThetaS) \
+                + "\tWatterson's Theta N: " + str(watsThetaN) \
+                + "\tWatterson's Theta: " + str(watsTheta) \
+                + "\tPotential Syn: " + str(potentialSynChanges) \
+                + "\tPotential NonSyn: " + str(potentialNonSynChanges) \
+                + "\tPotential All: " + str((seqLength - (leadingGaps + trailingGaps))) \
+                + "\tActual Syn: " + str(actualSynChanges) \
+                + "\tActual NonSyn: " + str(actualNonSynChanges) \
+                + "\tActual All: " + str(actualAllChanges) \
+                + "\n"
     return outString
 
 

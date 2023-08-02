@@ -21,7 +21,7 @@ echo "Input Processing: ${processInput[@]}"
 outTable="JC_Out_Table.txt"
 stageFolder="modifiedAlignmentInput"
 
-echo -e "Source\tGene\tTheta S\tTheta N\tTheta" > ${outTable}
+echo -e "Source\tGene\tTheta S\tTheta N\tTheta\tPot. Syn\tPot. NonSyn\tPot. All\tAct. Syn\t Act.NonSyn\tAct. All" > ${outTable}
 
 processCount=0
 for inputFolder in ${processInput[@]}; do
