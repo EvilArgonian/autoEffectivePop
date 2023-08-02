@@ -11,9 +11,20 @@ from scipy import stats
 # Null hypothesis 2: A given strain is not too dissimilar to the others; it is close enough to be a part of the same species. The average of 1v1 data points of that strain is above (within) the critical lower boundary.
 # Alternate hypothesis 2: A given strain is too dissimilar to the others and thus likely to be a unique species. The average of 1v1 data points of that strain is below (beyond) the critical lower boundary.
 specLabel = sys.argv[1]
-confidence_deviation = float(2.0)  # Defaults to 2 standard deviations
+relLowerbound = float(2.0)
+absLowerbound = Decimal(0.0)
+relUpperbound = float(2.0)
+absUpperbound = Decimal(0.995)
 if len(sys.argv) > 1:
-    confidence_deviation = float(sys.argv[2])
+    relLowerbound = float(sys.argv[2])
+if len(sys.argv) > 2:
+    absLowerbound = Decimal(sys.argv[3])
+if len(sys.argv) > 3:
+    relUpperbound = float(sys.argv[4])
+if len(sys.argv) > 4:
+    absUpperbound = Decimal(sys.argv[5])
+
+
 
 folder = "temp/" + specLabel + "/BLAST/"
 # Folder will contain the strain files in the form <strain>.ffn, and the BLAST comparisons in the form <strain1>_vs_<strain2>.txt
@@ -81,8 +92,10 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         print("2")  # Cannot do any statistical evaluation, so the strains are simply passed through
         sys.exit()
 
-    boundDiff = Decimal(confidence_deviation) * sampleStdDev  # confidence_deviation defaults to 2
+    boundDiff = Decimal(relLowerbound) * sampleStdDev
     lowerBound = Decimal(sampleMean - boundDiff)
+    if lowerBound < absLowerbound:
+        lowerBound = absLowerbound
 
     logFile.write("Lowerbound of " + specLabel + " determined to be: " + str(lowerBound) + "\n")
 
@@ -149,9 +162,10 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log.txt", "w") as logFile:
         logFile.write("Sample Standard Deviation: " + str(sampleStdDev) + "\n")
         logFile.write("Sample Standard Error: " + str(sampleStdError) + "\n")
 
-        boundDiff = Decimal(confidence_deviation) * sampleStdDev  # confidence_deviation defaults to 2
+        boundDiff = Decimal(relUpperbound) * sampleStdDev
         upperBound = Decimal(sampleMean + boundDiff)
-        upperBound = Decimal(.995)  # HARD CUTOFF USED; REMOVE THIS TO RETURN TO StdDev # Definitely add something here to improve configurability...
+        if upperBound > absUpperbound:
+            upperBound = absUpperbound
         if upperBound >= 1:
             logFile.write("Upperbound of " + specLabel + " determined to be: " + str(upperBound) + ", which is greater than 1. Upperbound set instead to .999\n")
             upperbound = Decimal(.999)

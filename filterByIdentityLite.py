@@ -13,17 +13,21 @@ from scipy import stats
 print("Beginning a lite filtering round... ")
 
 specLabel = sys.argv[1]
-with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as logFile:
-    confidence = 2.0  # Defaults to 2 standard deviations
-    currStrain = sys.argv[2]
-    if len(sys.argv) > 2:
-        confidence = float(sys.argv[3])
-        logFile.write("Confidence provided: " + str(confidence) + " standard deviations from the mean\n")
-    hardCut = .995  # Using default of .995; return to None to remove
-    if len(sys.argv) > 3:
-        hardCut = Decimal(sys.argv[4])
-        logFile.write("Hard Upperbound provided: " + str(hardCut) + "\n")
+currStrain = sys.argv[2]
+relLowerbound = float(2.0)
+absLowerbound = Decimal(0.0)
+relUpperbound = float(2.0)
+absUpperbound = Decimal(0.995)
+if len(sys.argv) > 2:
+    relLowerbound = float(sys.argv[3])
+if len(sys.argv) > 3:
+    absLowerbound = Decimal(sys.argv[4])
+if len(sys.argv) > 4:
+    relUpperbound = float(sys.argv[5])
+if len(sys.argv) > 5:
+    absUpperbound = Decimal(sys.argv[6])
 
+with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as logFile:
     folder = "temp/" + specLabel + "/BLAST/"
     # Folder will contain the strain files in the form <strain>.ffn, and the BLAST comparisons in the form <strain1>_vs_<strain2>.txt
 
@@ -96,12 +100,16 @@ with open("temp/" + specLabel + "/Filtered/Filtration_Log_Lite.txt", "a+") as lo
             outFile.write(" ".join(strains))
         sys.exit()
 
-    boundDiff = Decimal(2 * sampleStdDev)
+    boundDiff = Decimal(relLowerbound * sampleStdDev)
     lowerBound = Decimal(sampleMean - boundDiff)
-    if (not hardCut) or (hardCut and Decimal(sampleMean + boundDiff) < hardCut):
-        upperBound = Decimal(sampleMean + boundDiff)
-    else:
-        upperBound = hardCut
+    if lowerBound < absLowerbound:
+        lowerBound = absLowerbound
+
+    boundDiff = Decimal(relUpperbound * sampleStdDev)
+    upperBound = Decimal(sampleMean + boundDiff)
+    if upperBound > absUpperbound:
+        upperBound = absUpperbound
+
     logFile.write("Lowerbound of " + specLabel + " set to be: " + str(lowerBound) + "\n")
     logFile.write("Upperbound of " + specLabel + " set to be: " + str(upperBound) + "\n")
 

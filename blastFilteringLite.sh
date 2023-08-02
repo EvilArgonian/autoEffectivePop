@@ -2,6 +2,24 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+# For reading settings from the Config.
+config_read_file() {
+    (grep -E "^${2}=" -m 1 "${1}" 2>/dev/null || echo "VAR=__UNDEFINED__") | head -n 1 | cut -d '=' -f 2-;
+}
+
+config_get() {
+    setting="$(config_read_file Config.cfg "${1}")";
+    if [ "${setting}" = "__UNDEFINED__" ]; then
+        setting="$(config_read_file Default_Config.cfg  "${1}")";
+    fi
+    printf -- "%s" "${setting}";
+}
+
+relLowerbound="$(config_get Std_Rel_Lowerbound)"
+absLowerbound="$(config_get Std_Abs_Lowerbound)"
+relUpperbound="$(config_get Std_Rel_Upperbound)"
+absUpperbound="$(config_get Std_Abs_Upperbound)"
+
 specFolder=${1}
 specLabel="${specFolder##*/}"
 
@@ -84,7 +102,7 @@ while (( elemsUnseen > 0 )); do
 	strains=()
 	elemsUnseen=0
 	seen+=("${title}")
-	python filterByIdentityLite.py ${specLabel} ${title} "2" ".995"
+	python filterByIdentityLite.py ${specLabel} ${title} ${relLowerbound} ${absLowerbound} ${relUpperbound} ${absUpperbound}
 	# IFS=$','
 	readarray -d ',' -t remStrains < "${specFolder}/Filtered/Output.txt"
 	echo "Remaining strains: ${remStrains[@]}"
