@@ -24,6 +24,7 @@ if not os.path.exists(outFolder):
                 if nucSeqTitle != "":
                     nonArbitraryReference = os.path.join("../temp", species, "muscle_output", nucSeqTitle[1:])
                     if os.path.exists(nonArbitraryReference):
+                        print("Beginning search of proteins for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                         with open(nonArbitraryReference, "r") as refFile:
                             nameDeterminer = {}
                             foundAny = False
