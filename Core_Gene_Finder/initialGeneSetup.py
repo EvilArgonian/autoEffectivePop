@@ -45,7 +45,7 @@ if not os.path.exists(outFolder):
                                     highestCountName = list(nameDeterminer.keys())[0]
                                     print("Comparing possible gene names for orthogroup " + nucSeqTitle[1:] + " of species " + str(species) + ":")
                                     for key in list(nameDeterminer.keys()):
-                                        print("\t" + key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
+                                        print("\t" + key + "\t- found in " + str(nameDeterminer.get(key)) + " sequence headers.")
                                         if nameDeterminer.get(key) > nameDeterminer.get(highestCountName):
                                             highestCountName = key
                                     name = highestCountName.replace(" ", "_").replace("/", "-")
