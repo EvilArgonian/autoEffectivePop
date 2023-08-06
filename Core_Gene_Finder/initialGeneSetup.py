@@ -46,7 +46,7 @@ if not os.path.exists(outFolder):
                                     print(key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
                                     if nameDeterminer.get(key) > nameDeterminer.get(highestCountName):
                                         highestCountName = key
-                                name = highestCountName.replace(" ", "_")
+                                name = highestCountName.replace(" ", "_").replace("/", "-")
                             else:
                                 failCount += 1
                                 print("No [protein=X] tags identified in orthogroup " + nucSeqTitle[1:])
