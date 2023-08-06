@@ -66,17 +66,19 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	remainingGenes=()
 	for geneFile in $(find core_genes/${category}/Run_${runNum}/Genes/ -mindepth 1 -maxdepth 1 -type f); do # Move non-arbitrary naming to end of a run; adjust to use seq headers from original data
 		geneFileWithoutFolder="${geneFile##*/}"
-		arbitraryGene="${geneFileWithoutFolder%%.txt*}"
-		blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
-		{ #Try
-			../ncbi-blast-2.14.0+/bin/blastx -query ${geneFile} -db "/home/blastdb/nr" -num_alignments 1 >>  ${blastOutFile}
-			# What frequency of attempts to query NCBI is appropriate?
-			gene=$(echo $(python establishGeneName.py ${geneFile} ${blastOutFile}))
-			remainingGenes+=(${gene})
-		} || { # Catch
-			remainingGenes+=(${arbitraryGene})
-			echo "Gene renaming of ${geneFile} failed. "
-		}
+		gene="${geneFileWithoutFolder%%.txt*}"
+		remainingGenes+=(${gene})
+		
+		# blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
+		# { #Try
+			# ../ncbi-blast-2.14.0+/bin/blastx -query ${geneFile} -db "/home/blastdb/nr" -num_alignments 1 >>  ${blastOutFile}
+			# # What frequency of attempts to query NCBI is appropriate?
+			# gene=$(echo $(python establishGeneName.py ${geneFile} ${blastOutFile}))
+			# remainingGenes+=(${gene})
+		# } || { # Catch
+			# remainingGenes+=(${arbitraryGene})
+			# echo "Gene renaming of ${geneFile} failed. "
+		# }
 	done
 	
 	# For each other species...

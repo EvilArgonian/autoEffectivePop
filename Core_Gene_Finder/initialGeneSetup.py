@@ -20,8 +20,39 @@ if not os.path.exists(outFolder):
         for line in consensusFile:
             if line.startswith(">"):
                 if nucSeqTitle != "":
-                    with open(outFolder + "/Gene_" + str(geneNum) + ".txt", "w") as outFile:
-                        outFile.write(nucSeqTitle + " [Gene_" + str(geneNum) + "]\n")
+                    nonArbitraryReference = os.path.join("../temp", species, "muscle_output", nucSeqTitle[1:])
+                    if os.path.exists(nonArbitraryReference):
+                        with open(nonArbitraryReference, "r") as refFile:
+                            nameDeterminer = {}
+                            foundAny = False
+                            for refLine in refFile:
+                                if refLine.startswith(">") and "[protein=" in refLine:
+                                    for term in refLine.split():
+                                        subStrStart = term.find("[protein=")
+                                        subStrEnd = term.find("]")
+                                        if subStrStart >= 0:
+                                            foundAny = True
+                                            possName = term[subStrStart + 9:subStrEnd]
+                                            if possName not in list(nameDeterminer.keys()):
+                                                nameDeterminer.update(possName, 1)
+                                            else:
+                                                nameDeterminer.update(possName, nameDeterminer.get(possName) + 1)
+                            if foundAny:
+                                highestCountName = nameDeterminer.keys()[0]
+                                print("Comparing possible gene names:")
+                                for key in list(nameDeterminer.keys()):
+                                    print(key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
+                                    if nameDeterminer.get(key) > nameDeterminer.get(highestCountName):
+                                        highestCountName = key
+                                name = highestCountName.replace(" ", "_")
+                            else:
+                                print("No [protein=X] tags identified in orthogroup " + nucSeqTitle[1:])
+                                name = "Arbitrary_Gene_" + str(geneNum)
+                    else:
+                        print("No muscle output files found for orthogroup " + nucSeqTitle[1:])
+                        name = "Arbitrary_Gene_" + str(geneNum)
+                    with open(outFolder + "/" + name + ".txt", "w") as outFile:
+                        outFile.write(nucSeqTitle + " [" + name + "]\n")
                         outFile.write(nucSeqBuilder)
                 nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
