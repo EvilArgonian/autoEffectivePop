@@ -40,7 +40,7 @@ if not os.path.exists(outFolder):
                                             else:
                                                 nameDeterminer.update({possName: nameDeterminer.get(possName) + 1})
                             if foundAny:
-                                highestCountName = nameDeterminer.keys()[0]
+                                highestCountName = list(nameDeterminer.keys())[0]
                                 print("Comparing possible gene names:")
                                 for key in list(nameDeterminer.keys()):
                                     print(key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
