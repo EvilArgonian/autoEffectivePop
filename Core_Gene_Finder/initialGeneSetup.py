@@ -24,7 +24,6 @@ if not os.path.exists(outFolder):
                 if nucSeqTitle != "":
                     nonArbitraryReference = os.path.join("../temp", species, "muscle_output", nucSeqTitle[1:])
                     if os.path.exists(nonArbitraryReference):
-                        print("Beginning search of proteins for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                         with open(nonArbitraryReference, "r") as refFile:
                             nameDeterminer = {}
                             foundAny = False
@@ -44,7 +43,7 @@ if not os.path.exists(outFolder):
                                     name = list(nameDeterminer.keys())[0].replace(" ", "_").replace("/", "-")
                                 else:
                                     highestCountName = list(nameDeterminer.keys())[0]
-                                    print("Comparing possible gene names:")
+                                    print("Comparing possible gene names for orthogroup " + nucSeqTitle[1:] + " of species " + str(species) + ":")
                                     for key in list(nameDeterminer.keys()):
                                         print("\t" + key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
                                         if nameDeterminer.get(key) > nameDeterminer.get(highestCountName):
@@ -52,13 +51,13 @@ if not os.path.exists(outFolder):
                                     name = highestCountName.replace(" ", "_").replace("/", "-")
                             else:
                                 failCount += 1
-                                print("No [protein=X] tags identified in orthogroup " + nucSeqTitle[1:])
+                                print("No [protein=X] tags identified in orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                                 with open(failFile, "a") as fFile:
                                     fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo [protein=X] tags")
                                 name = "Arbitrary_Gene_" + str(geneNum)
                     else:
                         failCount += 1
-                        print("No muscle output files found for orthogroup " + nucSeqTitle[1:])
+                        print("No muscle output files found for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                         with open(failFile, "a") as fFile:
                             fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo muscle_output")
                         name = "Arbitrary_Gene_" + str(geneNum)
