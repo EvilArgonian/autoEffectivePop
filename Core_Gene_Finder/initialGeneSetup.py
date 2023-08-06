@@ -61,7 +61,7 @@ if not os.path.exists(outFolder):
                         with open(failFile, "a") as fFile:
                             fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo muscle_output")
                         name = "Arbitrary_Gene_" + str(geneNum)
-                    with open(outFolder + "/" + name + ".fa", "w") as outFile:
+                    with open(outFolder + "/" + name + ".txt", "w") as outFile:
                         outFile.write(nucSeqTitle + " [" + name + "]\n")
                         outFile.write(nucSeqBuilder)
                 nucSeqTitle = line.strip()
