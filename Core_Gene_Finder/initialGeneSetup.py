@@ -36,9 +36,9 @@ if not os.path.exists(outFolder):
                                             foundAny = True
                                             possName = term[subStrStart + 9:subStrEnd]
                                             if possName not in list(nameDeterminer.keys()):
-                                                nameDeterminer.update(possName, 1)
+                                                nameDeterminer.update({possName: 1})
                                             else:
-                                                nameDeterminer.update(possName, nameDeterminer.get(possName) + 1)
+                                                nameDeterminer.update({possName: nameDeterminer.get(possName) + 1})
                             if foundAny:
                                 highestCountName = nameDeterminer.keys()[0]
                                 print("Comparing possible gene names:")
