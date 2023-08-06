@@ -6,6 +6,8 @@ species = sys.argv[2]
 runNum = sys.argv[3]
 specFolder = os.path.join("categories/All/", species)
 outFolder = os.path.join("core_genes", category, "Run_" + str(runNum), "Genes")
+failFile = os.path.join("core_genes", category, "Run_" + str(runNum), "Fails", "NamingFails.txt")
+failCount = 0
 
 if not os.path.exists(specFolder):
     print("Species not found in All category!")
@@ -46,10 +48,16 @@ if not os.path.exists(outFolder):
                                         highestCountName = key
                                 name = highestCountName.replace(" ", "_")
                             else:
+                                failCount += 1
                                 print("No [protein=X] tags identified in orthogroup " + nucSeqTitle[1:])
+                                with open(failFile, "a") as fFile:
+                                    fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo [protein=X] tags")
                                 name = "Arbitrary_Gene_" + str(geneNum)
                     else:
+                        failCount += 1
                         print("No muscle output files found for orthogroup " + nucSeqTitle[1:])
+                        with open(failFile, "a") as fFile:
+                            fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo muscle_output")
                         name = "Arbitrary_Gene_" + str(geneNum)
                     with open(outFolder + "/" + name + ".txt", "w") as outFile:
                         outFile.write(nucSeqTitle + " [" + name + "]\n")

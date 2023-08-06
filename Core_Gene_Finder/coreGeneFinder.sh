@@ -51,10 +51,6 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	fi
 	
 	echo ${randomSet[@]} > core_genes/${category}/Run_${runNum}/randomSpecies.txt
-
-	# Acquire the initial list of genes from first species, which will be filtered down with each comparison to other species without a sufficient match
-	# Note that these genes don't yet have real names; they are labeled arbitrarily
-	python initialGeneSetup.py ${category} ${randomSet[0]} ${runNum}
 	
 	blastOutFolder="core_genes/${category}/Run_${runNum}/BLASTs/"
 	failOutFolder="core_genes/${category}/Run_${runNum}/Fails/"
@@ -62,6 +58,11 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 	rm -rf ${failOutFolder}
 	mkdir ${blastOutFolder}
 	mkdir ${failOutFolder}
+	touch "${failOutFolder}/NamingFails.txt"
+
+	# Acquire the initial list of genes from first species, which will be filtered down with each comparison to other species without a sufficient match
+	# Note that these genes don't yet have real names; they are labeled arbitrarily
+	python initialGeneSetup.py ${category} ${randomSet[0]} ${runNum}
 	
 	remainingGenes=()
 	for geneFile in $(find core_genes/${category}/Run_${runNum}/Genes/ -mindepth 1 -maxdepth 1 -type f); do # Move non-arbitrary naming to end of a run; adjust to use seq headers from original data
