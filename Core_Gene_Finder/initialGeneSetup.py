@@ -40,13 +40,16 @@ if not os.path.exists(outFolder):
                                         else:
                                             nameDeterminer.update({possName: nameDeterminer.get(possName) + 1})
                             if foundAny:
-                                highestCountName = list(nameDeterminer.keys())[0]
-                                print("Comparing possible gene names:")
-                                for key in list(nameDeterminer.keys()):
-                                    print("\t" + key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
-                                    if nameDeterminer.get(key) > nameDeterminer.get(highestCountName):
-                                        highestCountName = key
-                                name = highestCountName.replace(" ", "_").replace("/", "-")
+                                if len(list(nameDeterminer.keys())) == 1:
+                                    name = list(nameDeterminer.keys())[0].replace(" ", "_").replace("/", "-")
+                                else:
+                                    highestCountName = list(nameDeterminer.keys())[0]
+                                    print("Comparing possible gene names:")
+                                    for key in list(nameDeterminer.keys()):
+                                        print("\t" + key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
+                                        if nameDeterminer.get(key) > nameDeterminer.get(highestCountName):
+                                            highestCountName = key
+                                    name = highestCountName.replace(" ", "_").replace("/", "-")
                             else:
                                 failCount += 1
                                 print("No [protein=X] tags identified in orthogroup " + nucSeqTitle[1:])
