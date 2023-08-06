@@ -30,21 +30,20 @@ if not os.path.exists(outFolder):
                             foundAny = False
                             for refLine in refFile:
                                 if refLine.startswith(">") and "[protein=" in refLine:
-                                    for term in refLine.split():
-                                        subStrStart = term.find("[protein=")
-                                        subStrEnd = term.find("]")
-                                        if subStrStart >= 0:
-                                            foundAny = True
-                                            possName = term[subStrStart + 9:subStrEnd]
-                                            if possName not in list(nameDeterminer.keys()):
-                                                nameDeterminer.update({possName: 1})
-                                            else:
-                                                nameDeterminer.update({possName: nameDeterminer.get(possName) + 1})
+                                    subStrStart = refLine.find("[protein=")
+                                    if subStrStart >= 0:
+                                        subStrEnd = refLine.find("]", subStrStart)
+                                        foundAny = True
+                                        possName = refLine[subStrStart + 9:subStrEnd]
+                                        if possName not in list(nameDeterminer.keys()):
+                                            nameDeterminer.update({possName: 1})
+                                        else:
+                                            nameDeterminer.update({possName: nameDeterminer.get(possName) + 1})
                             if foundAny:
                                 highestCountName = list(nameDeterminer.keys())[0]
                                 print("Comparing possible gene names:")
                                 for key in list(nameDeterminer.keys()):
-                                    print(key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
+                                    print("\t" + key + " found in " + str(nameDeterminer.get(key)) + " sequence headers.")
                                     if nameDeterminer.get(key) > nameDeterminer.get(highestCountName):
                                         highestCountName = key
                                 name = highestCountName.replace(" ", "_").replace("/", "-")
