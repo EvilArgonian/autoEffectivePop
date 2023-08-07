@@ -48,7 +48,7 @@ if not os.path.exists(outFolder):
                                         print("\t" + key + "\t- found in " + str(nameDeterminer.get(key)) + " sequence headers.")
                                         if nameDeterminer.get(key) > nameDeterminer.get(highestCountName):
                                             highestCountName = key
-                                    name = highestCountName.replace(" ", "_").replace("/", "-")
+                                    name = highestCountName.replace(" ", "_").replace("/", "-").replace("/", "-")
                             else:
                                 failCount += 1
                                 print("No [protein=X] tags identified in orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
@@ -61,16 +61,30 @@ if not os.path.exists(outFolder):
                         with open(failFile, "a") as fFile:
                             fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo muscle_output")
                         name = "Arbitrary_Gene_" + str(geneNum)
-                    with open(outFolder + "/" + name + ".txt", "w") as outFile:
-                        outFile.write(nucSeqTitle + " [" + name + "]\n")
-                        outFile.write(nucSeqBuilder)
+                    geneFilePath = os.path.join(outFolder, name + ".txt")
+                    if not os.path.exists(geneFilePath):
+                        with open(geneFilePath, "w") as outFile:
+                            outFile.write(nucSeqTitle + " [" + name + "]\n")
+                            outFile.write(nucSeqBuilder)
+                    else:
+                        failCount += 1
+                        print("Gene name already taken for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
+                        with open(failFile, "a") as fFile:
+                            fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tGene name redundancy")
                 nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
                 geneNum += 1
             else:
                 nucSeqBuilder += line.strip().upper()
-        with open(outFolder + "/" + nucSeqTitle, "w") as outFile:
-            outFile.write(">" + nucSeqTitle + "\n")
-            outFile.write(nucSeqBuilder + "\n")
+        geneFilePath = os.path.join(outFolder, name + ".txt")
+        if not os.path.exists(geneFilePath):
+            with open(geneFilePath, "w") as outFile:
+                outFile.write(nucSeqTitle + " [" + name + "]\n")
+                outFile.write(nucSeqBuilder)
+        else:
+            failCount += 1
+            print("Gene name already taken for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
+            with open(failFile, "a") as fFile:
+                fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tGene name redundancy")
 else:
     print("Genes folder already exists.")
