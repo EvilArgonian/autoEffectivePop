@@ -9,7 +9,7 @@ categoryRuns = os.path.join("core_genes", category)
 firstRun = True
 passedInAll = []
 for run in os.listdir(categoryRuns):
-    passedGeneFile = os.path.join(run, "Passed_Genes.txt")
+    passedGeneFile = os.path.join(categoryRuns, run, "Passed_Genes.txt")
     with open(passedGeneFile, "r") as p:
         if firstRun:
             for line in p.readlines():

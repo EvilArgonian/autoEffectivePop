@@ -68,7 +68,7 @@ if not os.path.exists(outFolder):
                             outFile.write(nucSeqBuilder)
                     else:
                         failCount += 1
-                        print("Gene name already taken for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
+                        print("Gene name \"" + name + "\" already taken for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                         with open(failFile, "a") as fFile:
                             fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tGene name redundancy")
                 nucSeqTitle = line.strip()
