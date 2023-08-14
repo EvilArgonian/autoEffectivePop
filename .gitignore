@@ -1,4 +1,4 @@
-# Ignore most processing species...
+# Ignore most processing species and large data files...
 
 input/*
 temp/*
@@ -7,6 +7,7 @@ muscle_output/*
 final_output/*
 modifiedAlignmentInput/*
 Core_Gene_Finder/consensus_input/*
+Core_Gene_Finder/cog-20.cog.csv
 
 # Except Test Species...
 
