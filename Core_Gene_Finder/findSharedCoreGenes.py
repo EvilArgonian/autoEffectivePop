@@ -13,11 +13,11 @@ for run in os.listdir(categoryRuns):
     with open(passedGeneFile, "r") as p:
         if firstRun:
             for line in p.readlines():
-                passedInAll.append(line.trim())
+                passedInAll.append(line.strip())
         else:
             passedInThis = []
             for line in p.readlines():
-                passedInThis.append(line.trim())
+                passedInThis.append(line.strip())
             passedInAll = [gene for gene in passedInAll if gene in passedInThis]
 with open(outFile, "w") as out:
     for gene in passedInAll:
