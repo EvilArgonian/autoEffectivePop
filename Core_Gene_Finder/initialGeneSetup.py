@@ -75,7 +75,7 @@ if not os.path.exists(outFolder):
                                             recordKeeper.update({recordItem: recordKeeper.get(recordItem) + recordData + ", "})
                             if foundAny:
                                 if len(list(tagDeterminer.keys())) == 1:
-                                    name = list(tagDeterminer.keys())[0].replace(" ", "_").replace("/", "-")
+                                    highestCountTag = list(tagDeterminer.keys())[0].replace(" ", "_").replace("/", "-")
                                 else:
                                     if useProtein:  # Clears a list of non-helpful possible protein values from suggestion.
                                         tagDeterminer.pop("hypothetical protein", 0)
@@ -92,24 +92,24 @@ if not os.path.exists(outFolder):
                                         print("\t" + key + "\t- found in " + str(tagDeterminer.get(key)) + " sequence headers.")
                                         if tagDeterminer.get(key) > tagDeterminer.get(highestCountTag):
                                             highestCountTag = key
-                                    if useCOGviaProteinID:
-                                        cogData = csv.reader(open(cogFile, "r"), delimiter=",")
-                                        # Column 3 is ProteinID,  7 is the COG ID, and 11 is the e-value for the protein's match with the COG profile.
-                                        # Above column values are base 1; shifted -1 for programming base 0.
-                                        foundCOG = False
-                                        for row in cogData:
-                                            if row[2] == highestCountTag:
-                                                name = row[6]
-                                                foundCOG = True
-                                                break
-                                        if not foundCOG:
-                                            failCount += 1
-                                            print("No COG group found for protein_id tag in orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
-                                            with open(failFile, "a") as fFile:
-                                                fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo COG group found for tag: " + highestCountTag + "\n")
-                                            name = "Arbitrary_Gene_" + str(geneNum)
-                                    elif useProtein:
-                                        name = highestCountTag.replace(" ", "_").replace("/", "-").replace("/", "-")
+                                if useCOGviaProteinID:
+                                    cogData = csv.reader(open(cogFile, "r"), delimiter=",")
+                                    # Column 3 is ProteinID,  7 is the COG ID, and 11 is the e-value for the protein's match with the COG profile.
+                                    # Above column values are base 1; shifted -1 for programming base 0.
+                                    foundCOG = False
+                                    for row in cogData:
+                                        if row[2] == highestCountTag:
+                                            name = row[6]
+                                            foundCOG = True
+                                            break
+                                    if not foundCOG:
+                                        failCount += 1
+                                        print("No COG group found for protein_id tag in orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
+                                        with open(failFile, "a") as fFile:
+                                            fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo COG group found for tag: " + highestCountTag + "\n")
+                                        name = "Arbitrary_Gene_" + str(geneNum)
+                                elif useProtein:
+                                    name = highestCountTag.replace(" ", "_").replace("/", "-").replace("/", "-")
                             else:
                                 failCount += 1
                                 print("No " + searchTag + "X] tags identified in orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
