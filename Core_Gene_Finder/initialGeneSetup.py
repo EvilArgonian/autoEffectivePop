@@ -54,7 +54,7 @@ if not os.path.exists(outFolder):
                                     subStrStart = refLine.find(searchTag)
                                     if subStrStart >= 0:
                                         subStrEnd = refLine.find("]", subStrStart)
-                                        foundAnyProtID = True
+                                        foundAny = True
                                         possTag = refLine[subStrStart + searchLen:subStrEnd]
                                         if possTag not in list(tagDeterminer.keys()):
                                             tagDeterminer.update({possTag: 1})
