@@ -16,6 +16,9 @@ cogFile = os.path.join("cog-20.cog.csv")  # From NCBI's COG 2020. Column 1 is Ge
 useCOGviaProteinID = True
 useProtein = False
 
+# What tags from original orthogroup sequences get recorded in the orthogroup consensus sequence.
+recordList = ["gene", "locus_tag", "protein_id", "protein"]  # [gene=X], [locus_tag=X], [protein_id=X], [protein=X]
+
 if not os.path.exists(specFolder):
     print("Species not found in All category!")
     exit(1)
@@ -46,19 +49,30 @@ if not os.path.exists(outFolder):
                                 name = "Arbitrary_Gene_" + str(geneNum)
                                 continue
 
+                            recordKeeper={}
+                            for item in recordList:
+                                recordKeeper.update({item: ""})
+
                             tagDeterminer = {}  # Records counts of unique tag values for the searched tag.
                             foundAny = False
                             for refLine in refFile:
-                                if refLine.startswith(">") and searchTag in refLine:
-                                    subStrStart = refLine.find(searchTag)
-                                    if subStrStart >= 0:
-                                        subStrEnd = refLine.find("]", subStrStart)
-                                        foundAny = True
-                                        possTag = refLine[subStrStart + searchLen:subStrEnd]
-                                        if possTag not in list(tagDeterminer.keys()):
-                                            tagDeterminer.update({possTag: 1})
-                                        else:
-                                            tagDeterminer.update({possTag: tagDeterminer.get(possTag) + 1})
+                                if refLine.startswith(">"):
+                                    if searchTag in refLine:
+                                        subStrStart = refLine.find(searchTag)
+                                        if subStrStart >= 0:
+                                            subStrEnd = refLine.find("]", subStrStart)
+                                            foundAny = True
+                                            possTag = refLine[subStrStart + searchLen:subStrEnd]
+                                            if possTag not in list(tagDeterminer.keys()):
+                                                tagDeterminer.update({possTag: 1})
+                                            else:
+                                                tagDeterminer.update({possTag: tagDeterminer.get(possTag) + 1})
+                                    for recordItem in recordList:
+                                        if "[" + recordItem + "=" in refLine:
+                                            subStrStart = refLine.find("[" + recordItem + "=")
+                                            subStrEnd = refLine.find("]", subStrStart)
+                                            recordData = refLine[subStrStart + searchLen:subStrEnd]
+                                            recordKeeper.update({recordItem: recordKeeper.get(recordItem) + recordData + ", "})
                             if foundAny:
                                 if len(list(tagDeterminer.keys())) == 1:
                                     name = list(tagDeterminer.keys())[0].replace(" ", "_").replace("/", "-")
@@ -112,7 +126,11 @@ if not os.path.exists(outFolder):
                     geneFilePath = os.path.join(outFolder, name + ".txt")
                     if not os.path.exists(geneFilePath):
                         with open(geneFilePath, "w") as outFile:
-                            outFile.write(nucSeqTitle + " [" + name + "]\n")
+                            recordStr = ""
+                            for item in recordList:
+                                recordStr += "[contributing_" + item + "=" + recordKeeper.get(item).strip()[0:-1] + "] "
+                            recordStr.strip()
+                            outFile.write(nucSeqTitle + " [core_gene_ref_name=" + name + "] " + recordStr + "\n")
                             outFile.write(nucSeqBuilder)
                     else:
                         failCount += 1
