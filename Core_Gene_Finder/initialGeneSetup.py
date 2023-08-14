@@ -42,8 +42,7 @@ if not os.path.exists(outFolder):
                                 failCount += 1
                                 print("No naming implementation enabled.")
                                 with open(failFile, "a") as fFile:
-                                    fFile.write(nucSeqTitle[1:] + "\t" + str(
-                                        failCount) + "\tNo naming implementation enabled")
+                                    fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo naming implementation enabled\n")
                                 name = "Arbitrary_Gene_" + str(geneNum)
                                 continue
 
@@ -93,7 +92,7 @@ if not os.path.exists(outFolder):
                                             failCount += 1
                                             print("No COG group found for protein_id tag in orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                                             with open(failFile, "a") as fFile:
-                                                fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo COG group found for tag: " + highestCountTag)
+                                                fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo COG group found for tag: " + highestCountTag + "\n")
                                             name = "Arbitrary_Gene_" + str(geneNum)
                                     elif useProtein:
                                         name = highestCountTag.replace(" ", "_").replace("/", "-").replace("/", "-")
@@ -101,13 +100,13 @@ if not os.path.exists(outFolder):
                                 failCount += 1
                                 print("No " + searchTag + "X] tags identified in orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                                 with open(failFile, "a") as fFile:
-                                    fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo " + searchTag + "X] tags")
+                                    fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo " + searchTag + "X] tags\n")
                                 name = "Arbitrary_Gene_" + str(geneNum)
                     else:
                         failCount += 1
                         print("No muscle output files found for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                         with open(failFile, "a") as fFile:
-                            fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo muscle_output")
+                            fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tNo muscle_output\n")
                         name = "Arbitrary_Gene_" + str(geneNum)
 
                     geneFilePath = os.path.join(outFolder, name + ".txt")
@@ -119,7 +118,7 @@ if not os.path.exists(outFolder):
                         failCount += 1
                         print("Gene name \"" + name + "\" already taken for orthogroup " + nucSeqTitle[1:] + " of species " + str(species))
                         with open(failFile, "a") as fFile:
-                            fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tGene name redundancy")
+                            fFile.write(nucSeqTitle[1:] + "\t" + str(failCount) + "\tGene name redundancy\n")
                 nucSeqTitle = line.strip()
                 nucSeqBuilder = ""
                 geneNum += 1
