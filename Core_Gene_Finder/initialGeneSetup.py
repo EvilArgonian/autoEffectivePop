@@ -68,6 +68,7 @@ if not os.path.exists(outFolder):
                                             else:
                                                 tagDeterminer.update({possTag: tagDeterminer.get(possTag) + 1})
                                     for recordItem in recordList:
+                                        searchLen = len(recordItem)
                                         if "[" + recordItem + "=" in refLine:
                                             subStrStart = refLine.find("[" + recordItem + "=")
                                             subStrEnd = refLine.find("]", subStrStart)
@@ -85,6 +86,7 @@ if not os.path.exists(outFolder):
                                         tagDeterminer.pop("unknown_protein", 0)
                                         tagDeterminer.pop("unknown-protein", 0)
                                         tagDeterminer.pop("undefined", 0)
+                                        if len(list(tagDeterminer.keys())) < 1:
 
                                     highestCountTag = list(tagDeterminer.keys())[0]
                                     print("Comparing possible gene names for orthogroup " + nucSeqTitle[1:] + " of species " + str(species) + ":")

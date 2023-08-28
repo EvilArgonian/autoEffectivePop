@@ -70,6 +70,8 @@ for (( runNum=1; runNum<=${repeatRuns}; runNum++ )); do
 		gene="${geneFileWithoutFolder%%.txt*}"
 		remainingGenes+=(${gene})
 		
+		# Insert InterProScan here; inject/rename based on an element of that scan
+		
 		# blastOutFile=${blastOutFolder}/Rename_${arbitraryGene}.txt
 		# { #Try
 			# ../ncbi-blast-2.14.0+/bin/blastx -query ${geneFile} -db "/home/blastdb/nr" -num_alignments 1 >>  ${blastOutFile}
