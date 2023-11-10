@@ -29,7 +29,7 @@ Change Evaluation; the input data folders are scanned for changes in structure s
 - This comparison is still somewhat weighty, but a *lot* faster than rerunning each step 1 through 5.
 
 #### Step 1: 
-Input organization; data is concatenated into single files of nucleotide sequences for each strain, which are sent to temp/<SpeciesLevelFolder>/BLAST
+Input organization; data is concatenated into single files of nucleotide sequences for each strain, which are sent to temp/\<SpeciesLevelFolder\>/BLAST
 - Requires input data to be placed into input/\<SpeciesLevelFolder\>/\<StrainLevelFolder\>/
 - Data can be ffn's, tgz's containing ffn's that will be unpacked, or fna.gz's that will be unzipped and changed to ffn's.
 - Concatenated files are named based on the StrainLevelFolder name
