@@ -86,7 +86,7 @@ if not os.path.exists(outFolder):
                                         tagDeterminer.pop("unknown_protein", 0)
                                         tagDeterminer.pop("unknown-protein", 0)
                                         tagDeterminer.pop("undefined", 0)
-                                        if len(list(tagDeterminer.keys())) < 1:
+                                        # if len(list(tagDeterminer.keys())) < 1: # Implement possible fail state?
 
                                     highestCountTag = list(tagDeterminer.keys())[0]
                                     print("Comparing possible gene names for orthogroup " + nucSeqTitle[1:] + " of species " + str(species) + ":")
